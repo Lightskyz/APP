@@ -34,8 +34,8 @@
 			<ul>
 				<li><a href="vues/achat.php">Achat</a></li>
 				<li><a href="vues/echange.php">Echange</a></li>
-				<li><a href="vues/recette.php">Recette</a></li>
 				<li><a href="vues/forum.php">Forum</a></li>
+				<li><a href="vues/annonce.php">Annonce</a></li>
 				<li><a href="vues/contact.php">Contact</a></li>
 			</ul>
 			<a href="vues/login.php" class="login_btn">Login</a>

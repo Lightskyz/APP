@@ -35,15 +35,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
 /*  General CSS  */
 body{
     background: #fff;
@@ -81,14 +72,6 @@ h5, h6          { font-weight: bolder }
 .clearfix {  
     *zoom: 1;  
 }
-
-
-
-
-
-
-
-
 
 
 /*  Header Section  */
@@ -953,3 +936,6 @@ footer .copyrights a.ph_link{
         border-bottom: 1px solid #82abd4;
     }
 }
+
+/* Forms */
+
