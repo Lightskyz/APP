@@ -1,3 +1,5 @@
+<?php include("sessionStart.php"); ?>
+
 <!DOCTYPE HTML>
 <?php include('../modele/modele.php');?>
 
@@ -24,16 +26,18 @@
 				<label>Date de naissance : <input type="date" name="born"/></label><br/>
 				<label>Mot de passe: <input type="password" name="passe"/></label><br/>
 				<label>Confirmation du mot de passe: <input type="password" name="passe2"/></label><br/>
-			<input type="submit" value="S\'inscrire"/>
+			<input type="submit" value="S'inscrire"/>
 			<?php include("../controleurs/inscriptionController.php"); ?>
 			</form>
 	</div>
+
+<!-- Non connecté -->
 
 	<form method="post" action="../controleurs/connexionController.php">
     <fieldset>
     <legend>Connexion</legend>
     <p>
-    <label> Nom: <input type="text" name="nom"/></label><br /><br />
+    <label> Email: <input type="text" name="nom"/></label><br /><br />
     <label> Mot de passe: <input type="password" name="passe"/></label><br />
     </p>
     </fieldset>

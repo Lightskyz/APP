@@ -27,7 +27,7 @@ $req->execute(array(
 'born' => $born
 ));
 
-echo'Vous êtes inscrit';
+echo'<p>Vous êtes inscrit</p>';
 
 }
 elseif(empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['email']) || empty($_POST['passe'])){

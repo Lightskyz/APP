@@ -11,40 +11,36 @@
 <?php include('../modele/modele.php');?>
 
 <?php
-   if (isset($_POST['nom']) && !empty($_POST['passe']))  
-    {
-        if ( isset($_POST['passe']))
-        {
-            $nom = htmlspecialchars($_POST["nom"]);
-            // Criptage du mot de passe
-            $passe = sha1($_POST['passe']);
-            // Vérification des identifiants
-                $req = $bdd->prepare('SELECT id FROM user WHERE nom = :nom AND passe = :passe');
+   $success = 'Vous êtes connecté :)';
+$erreur = 'Le couple email/mot de passe ne correspond pas.';
+$erreur1 = 'Vous n\'avez pas rempli tous les champs.';
+
+if (!empty($_POST['email']) && !empty($_POST['pass'])) {
+    $email =($_POST['email']);
+    $pass = sha1($_POST['pass']);
+    $req = $bdd->prepare('SELECT id FROM user WHERE email = :email AND pass = :pass');
                 $req->execute(array(
-                    'nom' => $nom,
-                    'passe' => $passe));
+                    'email' => $email,
+                    'pass' => $pass));
                 $resultat = $req->fetch();
-
-        }
-
-        if (!$resultat)
-        {
-            echo 'Mauvais identifiant ou mot de passe ! Veuillez cliquer <a href="../vues/login.php">ici</a>';
-        }
-
-        else
-        {
-            echo 'Vous êtes connecté !';
-		}
-	}
-	else {
-		echo '<p>Vous n\'avez pas rempli tous les champs
-	Cliquez <a href="./test.php">ici</a> pour revenir</p>
-	</div>
-	</body>
-	</html>';
-	}
+if(!$resultat) {
+    echo $erreur;
+    echo'<br>Veuillez cliquer <a href="../vues/login.php">ici</a></br>.';
+}
+else {
+    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['pass'] = sha1($_POST['pass']);
+    echo $success;
+    header('location: membre.php');
+    
+}
+}
+else {
+    echo $erreur1;
+    echo'Veuillez cliquer <a href="../vues/login.php">ici</a><br />';
+    
+}
 	
-            ?>
+?>
 
-            </html>
+</html>

@@ -1,26 +1,16 @@
 <?php include("../controleurs/rechercheController.php"); ?>
 
-<p>Vous allez faire une recherche dans notre site.</p><p>Tapez une requête pour réaliser votre recherche.</p>	
-
-<!--
 <section class="search">
 	<div class="wrapper">
 			<form action="" method="post">
-				<input type="text" id="search" name="search" placeholder="Que recherchez vous ?"  autocomplete="off"/>
-				<input type="submit" id="submit_search" name="submit_search"/>
+				<input type="text" id="search" name="recherche" placeholder="Que recherchez-vous ?"  autocomplete="off"/>
+				<input type="submit" id="submit_search" name="submit_search" value="ok"/>
 			</form>		
 	</div>
 </section>
 
--->	
-	<form action="" method="POST">
-	<input type="text" name="recherche" placeholder="Recherche" size="10">
-	<input type="submit" value="Ok">
-	</form>
-
-
-
-	<?php
+	
+<?php
 	if(!empty($_POST['recherche'])){
 		$requete = $_POST['recherche'];
 	}
