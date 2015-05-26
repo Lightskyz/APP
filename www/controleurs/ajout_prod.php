@@ -1,39 +1,25 @@
 <?php
-
-include ('BDD.php');
-
-		//$id=$_POST['id'];
-		//$titre = $_POST['titre'];
-		//$variete = $_POST['variete'];
-		//$saison = $_POST['saison'];
-		//$dateRecolte = $_POST['dateRecolte'];
-		//$description = $_POST['description'];
-		//$quantite = $_POST['quantite'];
-		//$poids = $_POST['poids'];
+function addproduct($user){
+include ('modele.php');
 		
-			if(!empty($_POST['titre']) && !empty($_POST['variete']) && !empty($_POST['saison']) && !empty($_POST['dateRecolte']) && !empty($_POST['quantite']) || $_POST['poids'] == $_POST['passe2']){
+			if(!empty(!empty($_POST['id_categorie']) && !empty($_POST['saison']) && !empty($_POST['dateRecolte']) && !empty($_POST['quantite']) || $_POST['poids'] == $_POST['passe2']){
 			$id=$_POST['id'];
-			$titre = $_POST['titre'];
-			$variete = $_POST['variete'];
-			$saison = $_POST['saison'];
-			$dateRecolte = $_POST['dateRecolte'];
+			$id_categorie = $_POST['id_categorie'];
 			$description = $_POST['description'];
 			$quantite = $_POST['quantite'];
 			$poids = $_POST['poids'];
 
-			$req = $bdd->prepare('INSERT INTO product(titre, variete, saison, dateRecolte, description, quantite, poids) 
-			VALUES(:titre, :variete, :saison, :dateRecolte, :description, :quantite, :poids)');
+			$req = $bdd->prepare('INSERT INTO produit(user, id_categorie, description, quantite, poids) 
+			VALUES(:user, :id_categorie, :description, :quantite, :poids)');
 			$req->execute (array(
-				'titre'=>$titre,
-				'variete'=>$variete,
-				'saison'=>$saison,
-				'dateRecolte'=>$dateRecolte,
+				'user' =>$user
+				'id_categorie'=>$id_categorie,
 				'description'=>$description,
 				'quantite'=>$quantite,
 				'poids'=>$poids
 				));
 
-$dossier = 'upload/';
+$dossier = 'C:\Users\utilisateur\Desktop\APP\www\assets\img\products\ ';
 $fichier = basename($_FILES['avatar']['name']);
 $taille_maxi = 100000;
 $taille = filesize($_FILES['avatar']['tmp_name']);
@@ -72,4 +58,5 @@ else
 		echo'<p>Votre produit a bien été ajouté</p>';
 	}
   include('ajout_produit.php');
+}
 ?>
