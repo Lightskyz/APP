@@ -17,7 +17,7 @@ include("../modele/modele.php")
         // Remplissage de la base de donnée          
         $req = $bdd->prepare(
 
-        	'INSERT INTO annonce(title, name, category, price, quantity, cdp, city, description, date_create) VALUES(:title, :name, :category, :price, :quantity, :cdp, :city, :description, CURDATE())'
+        	'INSERT INTO annonce(title, name, category, price, quantity, cdp, city, description) VALUES(:title, :name, :category, :price, :quantity, :cdp, :city, :description')
         	);
 
         $req->execute(array(
@@ -38,7 +38,7 @@ if (isset($_POST['envoyer']) && !empty($_POST['title']) && !empty($_POST['name']
 ?>
      <script> 
     // Redirection vers la page d'accueil         
-    setTimeout("location.href = '../vues/index.php';", 3000);           
+    setTimeout("location.href = '../index.php';", 3000);           
      </script>
 
 <?php
@@ -65,11 +65,11 @@ if (isset($_POST['envoyer']) && !empty($_POST['title']) && !empty($_POST['name']
 	}
 	else
             {
-                echo"quelque chose ne vas pas !!";
+                echo"Quelque chose ne vas pas !!";
 ?>
                 <script >
                     // Redirection vers la page d'Inscription 
-                    setTimeout("location.href = '../view/InscriptionConnexion.php';", 3000);
+                    setTimeout("location.href = '../vues/login.php';", 3000);
                 </script>
 <?php
             }

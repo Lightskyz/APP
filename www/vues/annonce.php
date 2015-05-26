@@ -18,8 +18,11 @@
 
 		
 		<h1> Poster une annonce </h1>
-			
-		<form method="post" action="../controleurs/AnnonceControlleur.php" >
+		<div>
+		<form method="post" action="../controleurs/annonceController.php" >
+
+				<input type="text" name="id_annonce" id="id_annonce" hidden />
+
 
 				<input placeholder="Titre de l'annonce" type="text" name="title">
 
@@ -43,9 +46,9 @@
 		<!-- <input placeholder="Image" type="text" name=""> -->
 		
 				<button type="submit" name="envoyer">Envoyer</button>
-					<?php include("../controleurs/AnnonceControlleur.php"); ?>
+					<?php include("../controleurs/annonceController.php"); ?>
 		</form>
-
+		</div>
 		<!-- contenu de notre site -->
 
 		<?php include("footer.php"); ?>
