@@ -2,7 +2,7 @@
 
 include ('BDD.php');
 
-		//$id_produit=$_POST['id_produit'];
+		//$id=$_POST['id'];
 		//$titre = $_POST['titre'];
 		//$variete = $_POST['variete'];
 		//$saison = $_POST['saison'];
@@ -12,7 +12,7 @@ include ('BDD.php');
 		//$poids = $_POST['poids'];
 		
 			if(!empty($_POST['titre']) && !empty($_POST['variete']) && !empty($_POST['saison']) && !empty($_POST['dateRecolte']) && !empty($_POST['quantite']) || $_POST['poids'] == $_POST['passe2']){
-			$id_produit=$_POST['id_produit'];
+			$id=$_POST['id'];
 			$titre = $_POST['titre'];
 			$variete = $_POST['variete'];
 			$saison = $_POST['saison'];

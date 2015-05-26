@@ -8,7 +8,7 @@
 	<body>
 		<form method="post" action="ajout_prod.php" enctype="multipart/form-data">
 			
-			<input type="text" name="id_produit" id="id_produit" hidden />
+			<input type="text" name="id" id="id" hidden />
 
 			<label for="titre">Nom du produit</label><br />
 		     <input type="text" name="titre" id="titre" /><br />
