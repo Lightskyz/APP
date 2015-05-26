@@ -21,7 +21,7 @@ include ('BDD.php');
 			$quantite = $_POST['quantite'];
 			$poids = $_POST['poids'];
 
-			$req = $bdd->prepare('INSERT INTO produit(titre, variete, saison, dateRecolte, description, quantite, poids) 
+			$req = $bdd->prepare('INSERT INTO product(titre, variete, saison, dateRecolte, description, quantite, poids) 
 			VALUES(:titre, :variete, :saison, :dateRecolte, :description, :quantite, :poids)');
 			$req->execute (array(
 				'titre'=>$titre,
