@@ -17,7 +17,7 @@ if($_SESSION['email'] == TRUE)
 			</ul>
 			/* Carré où nous récupérons la photo de l\'utilisateur et son prénom nom */
 
-			<a href="login.php" class="login_btn">Connected</a>
+			<a href="profil.php" class="login_btn">Connected</a>
 		</nav>
 	</div>
 </header> <!-- end header section -->';

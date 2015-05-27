@@ -27,21 +27,23 @@
 	<section class="hero">	
 		
 		<header>
-	<div class="wrapper">
-		<a href="index.php"><img src="assets/img/pear2pear.svg" class="logo" alt="logo" height ="100px" title="logo" /></a>
-		<a href="#" class="hamburger"></a>
-		<nav>
-			<ul>
-				<li><a href="vues/achat.php">Achat</a></li>
-				<li><a href="vues/echange.php">Echange</a></li>
-				<li><a href="vues/forum.php">Forum</a></li>
-				<li><a href="vues/annonce.php">Annonce</a></li>
-				<li><a href="vues/contact.php">Contact</a></li>
-			</ul>
-			<a href="vues/login.php" class="login_btn">Login</a>
-		</nav>
-	</div>
-	</header> <!-- end header section -->
+			<div class="wrapper">
+				<a href="index.php"><img src="assets/img/pear2pear.svg" class="logo" alt="logo" height ="100px" title="logo" /></a>
+				<a href="#" class="hamburger"></a>
+				<nav>
+					<ul>
+						<li><a href="vues/achat.php">Achat</a></li>
+						<li><a href="vues/echange.php">Echange</a></li>
+						<li><a href="vues/forum.php">Forum</a></li>
+						<li><a href="vues/annonce.php">Annonce</a></li>
+						<li><a href="vues/contact.php">Contact</a></li>
+					</ul>
+					<a href="vues/login.php" class="login_btn">Sign in</a>
+					<a href="vues/signup.php" class="login_btn">Sign up</a>
+
+				</nav>
+			</div>
+		</header> <!-- end header section -->
 					
 		<section class="caption">
 			<h2 class="caption">Quand le marché vient à vous</h2>

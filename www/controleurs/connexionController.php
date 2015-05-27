@@ -1,11 +1,9 @@
-<!DOCTYPE HTML>
-<html>
-    
-    <head>
-        <title>Pear2Pear</title>
-        
-    </head>
-
+<?php 
+function redirection(){
+    header("Location: ../index.php");
+    exit; 
+}
+?>
 
 <?php include('../modele/modele.php'); ?>
 
@@ -15,14 +13,18 @@ $success = 'Vous êtes connecté :)';
 $erreur = 'Le couple email/mot de passe ne correspond pas.';
 $erreur1 = 'Vous n\'avez pas rempli tous les champs.';
 
-if (!empty($_POST['email']) && !empty($_POST['pass'])) {
+if (!empty($_POST['email']) && !empty($_POST['mdp'])) {
     $email =($_POST['email']);
-    $pass = sha1($_POST['pass']);
-    $req = $bdd->prepare('SELECT id FROM user WHERE email = :email AND pass = :pass');
+    $mdp = sha1($_POST['mdp']);
+    $req = $bdd->prepare('SELECT id FROM user WHERE email = :email AND mdp = :mdp');
                 $req->execute(array(
                     'email' => $email,
-                    'pass' => $pass));
+                    'mdp' => $mdp));
                 $resultat = $req->fetch();
+
+
+
+
 
 if(!$resultat) {
     echo $erreur;
@@ -31,9 +33,9 @@ if(!$resultat) {
 
 else {
     $_SESSION['email'] = $_POST['email'];
-    $_SESSION['pass'] = sha1($_POST['pass']);
-    echo $success;
-    header('location: ../vues/achat.php');
+    $_SESSION['mdp'] = sha1($_POST['mdp']);        
+    console.log($success);
+
 }
 
 }
