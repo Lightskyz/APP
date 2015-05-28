@@ -1,78 +1,87 @@
 <?php
-//Appel du modèle
-include("../modele/modele.php")
 
- if (!empty($_POST['title']) && !empty($_POST['name']) && !empty($_POST['category'])&& !empty($_POST['price'])&& !empty($_POST['quantity'])&& !empty($_POST['cdp']) && !empty($_POST['city']) && !empty($_POST['description']) )  
-    {
-    	$title 		 = htmlspecialchars($_POST["title"]);
-    	$name  		 = htmlspecialchars($_POST["name"]);
-    	$category    = htmlspecialchars($_POST["category"]);
-    	$price    	 = htmlspecialchars($_POST["price"]);
-    	$quantity    = htmlspecialchars($_POST["quantity"]);
-    	$cdp    	 = htmlspecialchars($_POST["cdp"]);
-    	$city      	 = htmlspecialchars($_POST["city"]);
-  	    $description = htmlspecialchars($_POST["description"]);
+/* Alexis Monnier 
+    28/05/2015
+    Version 1.0.0
+*/
 
+function addproduct($user){
+    include("../modele/modele.php");
+        
+            if(!empty (!empty($_POST['categorie'])  && (!empty($_POST['quantite']) || !empty($_POST['poids']) ))) {
 
-        // Remplissage de la base de donnée          
-        $req = $bdd->prepare(
+                $categorie = $_POST['categorie'];
+                $description = $_POST['description'];
+                $quantite = $_POST['quantite'];
+                $prix = $_POST['prix'];
+                $poids = $_POST['poids'];
 
-        	'INSERT INTO annonce(title, name, category, price, quantity, cdp, city, description) VALUES(:title, :name, :category, :price, :quantity, :cdp, :city, :description')
-        	);
+                $sql = 'SELECT id FROM categorie WHERE nom LIKE "%'.$categorie.'%" ';
+                $reponse = $bdd ->query($sql);
+                while ($donnees = $reponse->fetch())
+                    {
+                        $id_categorie = $donnees['id'];
+                    }
 
-        $req->execute(array(
-            'title' => $title,
-            'name' => $name,
-            'category' => $category,
-            'price' => $price,
-            'quantity' => $quantity,
-            'cdp' => $cdp,
-            'city' => $city,
-            'description'=> $description
-            ));
+                $sql2 = 'INSERT INTO produit(id_user, id_categorie, prix, quantite, poids, description) 
+                    VALUES ( :id_user, :id_categorie, :prix, :quantite, :poids, :description )';
+                $req = $bdd->prepare($sql2);
 
-if (isset($_POST['envoyer']) && !empty($_POST['title']) && !empty($_POST['name'])&& !empty($_POST['category']) && !empty($_POST['price']) && !empty($_POST['quantity']) && !empty($_POST['cdp']) && !empty($_POST['city']) &&!empty($_POST['description']))
+                $req -> bindParam(':id_user' , $user );
+                $req -> bindParam(':id_categorie' , $id_categorie );
+                $req -> bindParam(':prix' , $prix );
+                $req -> bindParam(':quantite' , $quantite );
+                $req -> bindParam(':poids' , $poids );
+                $req -> bindParam(':description' , $description );
+                $req->execute();
 
-    {
-        echo"Votre annonce a bien été publiée ! ";
-?>
-     <script> 
-    // Redirection vers la page d'accueil         
-    setTimeout("location.href = '../index.php';", 3000);           
-     </script>
-
-<?php
-    }
-    
-    //Vérification que les champs sont bien tous rempli
-        elseif (isset($_POST['valider']) && ($_POST['title']) ||
-        		isset($_POST['valider']) && empty($_POST['name']) ||
-        		isset($_POST['valider']) && empty($_POST['category']) || 
-        		isset($_POST['valider']) && empty($_POST['price']) || 
-        		isset($_POST['valider']) && empty($_POST['quantity']) || 
-        		isset($_POST['valider']) && empty($_POST['cdp']) || 
-        		isset($_POST['valider']) && empty($_POST['city']) || 
-        		isset($_POST['valider']) && empty($_POST['description']) == NULL)
-        {
-             echo"Tu as oublié de remplir un ou plusieurs champs";
-?>
-    <script >
-    // Redirection vers la page d'Inscription 
-    setTimeout("location.href = '../vues/annonce.php';", 3000);
-    </script>
-
-<?php
-	}
-	else
-            {
-                echo"Quelque chose ne vas pas !!";
-?>
-                <script >
-                    // Redirection vers la page d'Inscription 
-                    setTimeout("location.href = '../vues/login.php';", 3000);
-                </script>
-<?php
+                ajout_image();
+                echo'<p>Votre produit a bien été ajouté</p>';
             }
-    }
+  
+        }
+
 ?>
+
+<?php 
+
+/* Inutile ici car un produit n'a pas d'image pas comme les catégories et les utilisateurs 
+
+function ajout_image(){
+    $dossier = '../www/assets/img/products';
+    $fichier = basename($_FILES['avatar']['name']);
+    $taille_maxi = 100000;
+    $taille = filesize($_FILES['avatar']['tmp_name']);
+    $extensions = array('.png', '.gif', '.jpg', '.jpeg');
+    $extension = strrchr($_FILES['avatar']['name'], '.');//Début des vérifications de sécurité..
+    if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
+    {
+         $erreur = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg, txt ou doc...';
+    }
+    if($taille>$taille_maxi)
+    {
+         $erreur = 'Le fichier est trop gros...';
+    }
+    if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
+    {
+     //On formate le nom du fichier ici...
+         $fichier = strtr($fichier, 
+              'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
+              'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+        $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
+        if(move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
+        {
+            echo 'Upload effectué avec succès !';
+        } else //Sinon (la fonction renvoie FALSE).
+        {
+            echo 'Echec de l\'upload !';
+        }
+    } else
+    {
+         echo $erreur;
+    }
+}
+?>
+
+*/
 
