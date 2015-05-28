@@ -8,25 +8,25 @@
 function addproduct($user){
     include("../modele/modele.php");
         
-            if(!empty (!empty($_POST['categorie'])  && (!empty($_POST['quantite']) || !empty($_POST['poids']) ))) {
+            if(!empty (!empty($_POST['categorie'])  && (!empty($_POST['quantite']) || !empty($_POST['poids'])) )) {
 
                 $categorie = $_POST['categorie'];
                 $description = $_POST['description'];
                 $quantite = $_POST['quantite'];
                 $prix = $_POST['prix'];
                 $poids = $_POST['poids'];
-
+               
                 $sql = 'SELECT id FROM categorie WHERE nom LIKE "%'.$categorie.'%" ';
                 $reponse = $bdd ->query($sql);
                 while ($donnees = $reponse->fetch())
                     {
                         $id_categorie = $donnees['id'];
                     }
-
-                $sql2 = 'INSERT INTO produit(id_user, id_categorie, prix, quantite, poids, description) 
-                    VALUES ( :id_user, :id_categorie, :prix, :quantite, :poids, :description )';
+                
+                $sql2 = 'INSERT INTO produit(id_user, id_categorie, prix, quantite, poids, description, date_publication) 
+                    VALUES ( :id_user, :id_categorie, :prix, :quantite, :poids, :description, CURDATE() )';
                 $req = $bdd->prepare($sql2);
-
+                
                 $req -> bindParam(':id_user' , $user );
                 $req -> bindParam(':id_categorie' , $id_categorie );
                 $req -> bindParam(':prix' , $prix );
@@ -35,7 +35,7 @@ function addproduct($user){
                 $req -> bindParam(':description' , $description );
                 $req->execute();
 
-                ajout_image();
+                //ajout_image();
                 echo'<p>Votre produit a bien été ajouté</p>';
             }
   

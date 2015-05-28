@@ -19,35 +19,44 @@
 		
 		<h1> Poster une annonce </h1>
 		<div>
-		<form method="post" action="../controleurs/annonceController.php" >
+		<form method="post" action="">
+				
+				<!-- Autocomplétion et récupérer dans la table catégorie -->
 
-				<input type="text" name="id_annonce" id="id_annonce" hidden />
+				<label for="titre">Nom du produit</label><br />
+				<input placeholder="Nom" type="text" name="categorie" id="categorie"><br />
+				
+				<label for="titre">Prix</label><br />
+				<input placeholder="Prix" type="int" name="prix" id="prix"><br />
+				
+<!-- Réfléchir à un systeme pour laisser le choix à l'utilisateur si il met une quantité ou un poids uniquement, javascript -->
+				<!-- <select><br />
+					<option>Quantité</option>
+					<option>Poids en kg</option>
+				</select> <br />
+-->
+				<label for="quantite">Quantité</label><br />
+		     	<input type="number" step="1" name="quantite" id="quantite" /><br />
 
+				<label for="poids">Poids en Kg</label><br />
+				<input type="number" step="1" name="poids" id="poids"/><br />
 
-				<input placeholder="Titre de l'annonce" type="text" name="title">
+				<label for="description">Description de votre fichier (max. 255 caractères) :</label><br />
+		     	<textarea name="description" id="description"></textarea><br />
 
-				<input placeholder="Nom" type="text" name="name">
-		
-				<select placeholder="Fruit ou légumes" name="category">
-					<option>Fruits</option>
-					<option>Legumes</option>
-				</select>
-
-				<input placeholder="Prix" type="text" name="price">
-
-				<input placeholder="Quantité" type="text" name="quantity">
-
-				<input placeholder="Code Postal" type="text" name="cdp">
-
-				<input placeholder="Ville" type="text" name="city">
-
-				<input placeholder="Description" type="text" name="description">
-
-		<!-- <input placeholder="Image" type="text" name=""> -->
+			<!--	<label for="avatar">Image (JPG, PNG ou GIF | max. 100 Ko) :</label><br />
+		     	<input type="hidden" name="MAX_FILE_SIZE" value="100000">
+		     	<input type="file" name="avatar" id="avatar" /><br /> -->
 		
 				<button type="submit" name="envoyer">Envoyer</button>
-					<?php include("../controleurs/annonceController.php"); ?>
+					
 		</form>
+
+		<?php 
+		include("../controleurs/annonceController.php"); 
+		addproduct(19);						
+					?>
+
 		</div>
 		<!-- contenu de notre site -->
 

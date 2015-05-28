@@ -1,10 +1,3 @@
-<?php 
-function redirection(){
-    header("Location: ../index.php");
-    exit; 
-}
-?>
-
 <?php include('../modele/modele.php'); ?>
 
 <?php
@@ -54,7 +47,8 @@ if(!$resultat) {
 else {
     $_SESSION['email'] = $_POST['email'];
     $_SESSION['mdp'] = sha1($_POST['mdp']);        
-    echo $success;
+    echo $success;    
+    header('location: ../vues/profil.php');
 
 }
 
