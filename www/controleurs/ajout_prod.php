@@ -1,23 +1,30 @@
 <?php
+/* Alexis Monnier 
+	28/05/2015
+	Version 1.0.0
+*/
 function addproduct($user){
 	include ('modele.php');
 		
 			if(!empty (!empty($_POST['categorie'])  && (!empty($_POST['quantite']) || !empty($_POST['poids']) ))) {
+
 				$categorie = $_POST['categorie'];
 				$description = $_POST['description'];
 				$quantite = $_POST['quantite'];
 				$prix = $_POST['prix'];
 				$poids = $_POST['poids'];
+
 				$sql = 'SELECT id FROM categorie WHERE nom LIKE "%'.$categorie.'%" ';
 				$reponse = $bdd ->query($sql);
 				while ($donnees = $reponse->fetch())
 					{
 						$id_categorie = $donnees['id'];
-						echo $donnees['id'];
 					}
+
 				$sql2 = 'INSERT INTO produit(id_user, id_categorie, prix, quantite, poids, description) 
 					VALUES ( :id_user, :id_categorie, :prix, :quantite, :poids, :description )';
 				$req = $bdd->prepare($sql2);
+
 				$req -> bindParam(':id_user' , $user );
 				$req -> bindParam(':id_categorie' , $id_categorie );
 				$req -> bindParam(':prix' , $prix );
@@ -31,7 +38,8 @@ function addproduct($user){
 			}
 		}
 
-function ajout_image();
+
+function ajout_image(){
 	$dossier = 'C:\Users\utilisateur\Desktop\APP\www\assets\img\products\ ';
 	$fichier = basename($_FILES['avatar']['name']);
 	$taille_maxi = 100000;
