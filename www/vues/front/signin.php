@@ -1,23 +1,25 @@
+<?php include("/modele/sessionStart.php"); ?>
+
 <!DOCTYPE HTML>
-<?php include('../modele/modele.php');?>
+<?php include('/modele/modele.php');?>
 
 <html>
 	
 	<head>
 		<title>Connexion - Pear2Pear</title>
-		<?php include("head.php"); ?>
+		<?php include("../frames/head.php"); ?>
 		
 	</head>
 
 	<body>
 
-		<?php include("menu.php"); ?>
+		<?php include("../frames/menu.php"); ?>
 		
       
      <div  id="form_signin">
         <h2> Inscription </h2>
       		<p>Inscrivez-vous en completant le formulaire ci-dessous</p>
-			<form method="post" action="../controleurs/inscriptionController.php">
+			<form method="post" action="/controleurs/inscriptionController.php">
 				<label>Nom: <input type="text" name="nom"/></label><br/>
 				<label>Prenom: <input type="text" name="prenom"/></label><br/>
 				<label>Date de naissance : <input type="date" name="born"/></label><br/>
@@ -32,13 +34,13 @@
 				<label>Image: <input type="text" name="image"/></label><br/>
 
 			<input type="submit" value="S'inscrire"/> 
-			<?php include("../controleurs/inscriptionController.php"); ?>
+			<?php include("/controleurs/inscriptionController.php"); ?>
 			</form>
 	</div>
 	
 		<!-- contenu de notre site -->
 
-		<?php include("footer.php"); ?>
+		<?php include("../frames/footer.php"); ?>
 
 	</body>
 
@@ -51,8 +53,8 @@
 <input type="hidden" name="MAX_FILE_SIZE" value="100000">
 <input type="file" name="image" id="image" /><br /> 
 	<?php 
-		include("../controleurs/ajoutimageController.php");
-		ajout_image(user);
+	//	include("../controleurs/ajoutimageController.php");
+	// 	 ajout_image(user);
 	 ?>
 
 -->

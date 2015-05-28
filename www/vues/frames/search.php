@@ -1,4 +1,4 @@
-<?php include("../controleurs/rechercheController.php"); ?>
+<?php //include("/controleurs/rechercheController.php"); ?>  
 
 <section class="search">
 	<div class="wrapper">
@@ -11,6 +11,7 @@
 
 	
 <?php
+/*
 	if(!empty($_POST['recherche'])){
 		$requete = $_POST['recherche'];
 	}
@@ -25,4 +26,5 @@
 		recherche_champ("");
 	}
 	recherche_productbyuser(1,'quantite');
+*/
 ?>

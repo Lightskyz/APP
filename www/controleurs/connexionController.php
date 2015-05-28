@@ -2,7 +2,7 @@
 
 <?php
 
-$success = 'Vous êtes connecté :)';
+$success = 'Vous êtes connecté :) Cliquez <a href="../index.php">ici</a>';
 $erreur = 'Le couple email/mot de passe ne correspond pas.';
 $erreur1 = 'Vous n\'avez pas rempli tous les champs.';
 

@@ -1,4 +1,4 @@
-<?php include("sessionStart.php"); ?>
+<?php include("/modele/sessionStart.php"); ?>
 
 <!DOCTYPE HTML>
 
@@ -6,16 +6,16 @@
 	
 	<head>
 		<title>Profil - Pear2Pear</title>
-		<?php include("head.php"); ?>
+		<?php include("../frames/head.php"); ?>
 		
 	</head>
 	
 	<body>
 
-		<?php include("menu.php"); ?>
+		<?php include("../frames/menu.php"); ?>
 		
 			<?php
-				include("updateController.php");
+				include("/controleurs/updateController.php");
 
 			// Selection de l'utilisateur et de ses parametres.
 			$user = 1;				
@@ -48,7 +48,7 @@
 
 		<!-- contenu de notre site -->
 
-		<?php include("footer.php"); ?>
+		<?php include("../frames/footer.php"); ?>
 
 	</body>
 

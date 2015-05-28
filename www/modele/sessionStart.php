@@ -1,5 +1,8 @@
 <?php 
+//On démarre la session
 session_start(); 
+
+//On crée nos variable de session dans $_SESSION
 $email = $_SESSION["email"];
 $mdp = $_SESSION["mdp"];
 ?>
