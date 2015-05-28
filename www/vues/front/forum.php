@@ -1,4 +1,4 @@
-<?php include("sessionStart.php") ?> 
+<?php include("/modele/sessionStart.php") ?> 
 
 <!DOCTYPE HTML>
 
@@ -6,18 +6,18 @@
 	
 	<head>
 		<title>Achat - Pear2Pear</title>
-		<?php include("head.php"); ?>
+		<?php include("../frames/head.php"); ?>
 		
 	</head>
 
 	<body>
 
-		<?php include("menu.php"); ?>
-		<?php include("search.php"); ?>
+		<?php include("../frames/menu.php"); ?>
+		<?php include("../frames/search.php"); ?>
 
 		<?php
 			$user = 1;
-				include("../controleurs/forumController.php");
+				include("/controleurs/forumController.php");
 				if(empty($_GET['mes-message'])){
 					if(empty($_GET['topic'])){
 						if(isset($_GET['forum'])){
@@ -50,7 +50,7 @@
 				}
 	
 			?>
-		<?php include("footer.php"); ?>
+		<?php include("../frames/footer.php"); ?>
 
 	</body>
 

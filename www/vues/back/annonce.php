@@ -1,4 +1,4 @@
-<?php include("sessionStart.php"); ?>
+<?php include("../sessionStart.php"); ?>
 
 <!DOCTYPE HTML>
 <?php include('../modele/modele.php');?>
@@ -7,13 +7,13 @@
 	
 	<head>
 		<title>Annonce - Pear2Pear</title>
-		<?php include("head.php"); ?>
+		<?php include("../frames/head.php"); ?>
 		
 	</head>
 
 	<body>
 
-		<?php include("menu.php"); ?>
+		<?php include("../frames/menu.php"); ?>
 
 
 		
@@ -56,7 +56,7 @@
 		</div>
 		<!-- contenu de notre site -->
 
-		<?php include("footer.php"); ?>
+		<?php include("../frames/footer.php"); ?>
 
 	</body>
 

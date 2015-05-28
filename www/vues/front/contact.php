@@ -1,4 +1,4 @@
-<?php include("sessionStart.php"); ?>
+<?php include("/modele/sessionStart.php"); ?>
 
 <!DOCTYPE HTML>
 
@@ -6,17 +6,17 @@
 	
 	<head>
 		<title>Contact - Pear2Pear</title>
-		<?php include("head.php"); ?>
+		<?php include("../frames/head.php"); ?>
 		
 	</head>
 
 	<body>
 
-		<?php include("menu.php"); ?>
+		<?php include("../frames/menu.php"); ?>
 
 		<div>
 		
-		<form method="post" action="../controleurs/.php" id="contact" >
+		<form method="post" action="/controleurs/#.php" id="contact" >
 				
 				<label for="comment">Nom Prénom</label><br />
 				<input placeholder="Nom Prénom" type="text" name="nom"><br />
@@ -30,12 +30,12 @@
 				
 
 				<button type="submit" name="envoyer">Envoyer</button>
-					<?php include("../controleurs/.php"); ?>
+					<?php include("/controleurs/#.php"); ?>
 		</form>
 
 		</div>
 
-		<?php include("footer.php"); ?>
+		<?php include("../frames/footer.php"); ?>
 
 	</body>
 
