@@ -143,10 +143,11 @@ CREATE TABLE `user` (
   `prenom` varchar(255) NOT NULL,
   `born` date NOT NULL,
   `email` varchar(255) NOT NULL,
+  `mdp` varchar(255) NOT NULL,
   `adresse` text NOT NULL,
   `cdp` int(11) NOT NULL,
   `ville` varchar(255) NOT NULL,
-  `telephone` int(11) NOT NULL,
+  `telephone` varchar(10) NOT NULL,
   `image` varchar(255) NOT NULL,
   `actif` int(11) NOT NULL,
   `isAdmin` int(11) NOT NULL
