@@ -23,7 +23,27 @@ if (!empty($_POST['email']) && !empty($_POST['mdp'])) {
                 $resultat = $req->fetch();
 
 
+// #Intégration - Partie Dadou - Envoie d'un email
 
+// On récupérer les variables nécessaires à la vérification du champ 'actif' de la BDD
+        $nom = $_POST['email'];
+//récup de la valeur du champ 'actif' pour le login $nom//
+        $stmt = $bdd->prepare('SELECT actif FROM user WHERE email like :email ');
+            if($stmt->execute(array(':email' => $email))  && $row = $stmt->fetch())
+            {
+                $actif = $row['actif']; // $actif contiendra alors 0 ou 1
+            }
+//on teste la valeur du champ 'actif' pour savoir si le compte est valide ou non//
+            if($actif == '1') //on autorise la connexion
+            {
+//CONNEXION
+                echo 'Vous êtes connecté.';
+            }
+            if($actif == '0') //on refuse la connexion
+            {
+//PAS DE CONNEXION, LE COMPTE N'EST PAS ACTIF
+                echo 'Votre compte n\'est pas acitf.';
+            }
 
 
 if(!$resultat) {
@@ -34,7 +54,7 @@ if(!$resultat) {
 else {
     $_SESSION['email'] = $_POST['email'];
     $_SESSION['mdp'] = sha1($_POST['mdp']);        
-    console.log($success);
+    echo $success;
 
 }
 
