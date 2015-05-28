@@ -50,5 +50,9 @@
 <label for="image">Image (JPG, PNG ou GIF | max. 100 Ko) :</label><br />
 <input type="hidden" name="MAX_FILE_SIZE" value="100000">
 <input type="file" name="image" id="image" /><br /> 
+	<?php 
+		include("../controleurs/ajoutimageController.php");
+		ajout_image(user);
+	 ?>
 
 -->

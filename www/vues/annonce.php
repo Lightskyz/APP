@@ -50,8 +50,8 @@
 
 		<?php 
 		include("../controleurs/annonceController.php"); 
-		addproduct(19);						
-					?>
+		addproduct(19);	//A titre indicatif pour les tests, sera à mener à changer plus tard
+		?>
 
 		</div>
 		<!-- contenu de notre site -->
