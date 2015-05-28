@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <!DOCTYPE HTML>
 <?php include('../modele/modele.php');?>
 
@@ -30,7 +28,9 @@
 				<label>Code postal: <input type="text" name="cdp"/></label><br/>
 				<label>Ville: <input type="text" name="ville"/></label><br/>
 				<label>Telephone: <input type="text" name="telephone"/></label><br/>
+
 				<label>Image: <input type="text" name="image"/></label><br/>
+
 			<input type="submit" value="S'inscrire"/> 
 			<?php include("../controleurs/inscriptionController.php"); ?>
 			</form>
@@ -43,3 +43,12 @@
 	</body>
 
 </html>
+
+
+<!-- 
+
+<label for="image">Image (JPG, PNG ou GIF | max. 100 Ko) :</label><br />
+<input type="hidden" name="MAX_FILE_SIZE" value="100000">
+<input type="file" name="image" id="image" /><br /> 
+
+-->

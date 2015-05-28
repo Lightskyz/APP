@@ -43,10 +43,6 @@
 
 				<label for="description">Description de votre fichier (max. 255 caractères) :</label><br />
 		     	<textarea name="description" id="description"></textarea><br />
-
-			<!--	<label for="avatar">Image (JPG, PNG ou GIF | max. 100 Ko) :</label><br />
-		     	<input type="hidden" name="MAX_FILE_SIZE" value="100000">
-		     	<input type="file" name="avatar" id="avatar" /><br /> -->
 		
 				<button type="submit" name="envoyer">Envoyer</button>
 					

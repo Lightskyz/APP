@@ -35,13 +35,13 @@ if (!empty($_POST['email']) && !empty($_POST['mdp'])) {
             if($actif == '0') //on refuse la connexion
             {
 //PAS DE CONNEXION, LE COMPTE N'EST PAS ACTIF
-                echo 'Votre compte n\'est pas acitf.';
+                echo 'Votre compte n\'est pas actif.';
             }
 
 
 if(!$resultat) {
     echo $erreur;
-    echo'<br>Veuillez cliquer <a href="../vues/login.php">ici</a></br>.';
+    echo'<br>Veuillez cliquer <a href="../vues/signup.php">ici</a></br>.';
 }
 
 else {
@@ -55,7 +55,7 @@ else {
 }
 else {
     echo $erreur1;
-    echo'Veuillez cliquer <a href="../vues/login.php">ici</a><br />';
+    echo'Veuillez cliquer <a href="../vues/signup.php">ici</a><br />';
     
 }
 	

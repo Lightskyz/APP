@@ -41,8 +41,8 @@ else{
 				<li><a href="contact.php">Contact</a></li>
 			</ul>
 			
-			<a href="signup.php" class="login_btn">Sign in</a>
-			<a href="login.php" class="login_btn">Sign up</a>
+			<a href="signin.php" class="login_btn">Sign in</a>
+			<a href="signup.php" class="login_btn">Sign up</a>
 		</nav>
 	</div>
 </header> <!-- end header section -->';
