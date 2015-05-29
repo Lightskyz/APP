@@ -1,4 +1,13 @@
 <?php
+/* 	Payraudeau Maxime
+	28/05/2015
+	Version 1.0.1
+*/
+
+/*	Fonction pour ajouter une nouvelle categorie. 
+	28/05/2015
+	Version 1.0.1
+*/
 function create_categorie(){
 	
 	include ('modele.php');
@@ -24,6 +33,10 @@ function create_categorie(){
 	}
 }
 
+/*	Fonction pour supprimer une nouvelle categorie. 
+	28/05/2015
+	Version 1.0.1
+*/
 function delete_categorie($categorie){
 	include ('modele.php');
 	$sql = 'SELECT * FROM categorie WHERE id = $categorie ';
@@ -41,6 +54,10 @@ function delete_categorie($categorie){
 		}
 }
 
+/*	Fonction pour update une nouvelle categorie. 
+	28/05/2015
+	Version 1.0.1
+*/
 function update_categorie($name){
 	include ('modele.php');
 
@@ -61,6 +78,10 @@ function update_categorie($name){
 	}
 }
 
+/*	Fonction pour supprimer ou bannir un utilisateur. 
+	28/05/2015
+	Version 1.0.1
+*/
 function ban_supp_user($choix, $user){
 	include("modele.php");
 
@@ -76,6 +97,11 @@ function ban_supp_user($choix, $user){
 		echo "L'utilisateur d'ID = ".$user." à été banni" ; 
 	}
 }
+
+/*	Fonction pour afficher les utilisateurs bannis. 
+	28/05/2015
+	Version 1.0.1
+*/
 function utilisateurs_bannis(){
 	include("modele.php");
 
@@ -86,6 +112,11 @@ function utilisateurs_bannis(){
 			$name = $donnees['nom'];
 		}
 }
+
+/*	Fonction pour afficher l'ensemble des utilisateurs. 
+	28/05/2015
+	Version 1.0.1
+*/
 function voir_utilisateur(){
 	include("modele.php");
 
