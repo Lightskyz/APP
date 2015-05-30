@@ -52,3 +52,28 @@
        }
   	}
 ?>
+
+<?php
+
+// #Intégration - Partie Dadou - Envoie d'un email à mettre dans le controleur de la connexion
+
+// On récupérer les variables nécessaires à la vérification du champ 'actif' de la BDD
+        $nom = $_POST['email'];
+//récup de la valeur du champ 'actif' pour le login $nom//
+        $stmt = $bdd->prepare('SELECT actif FROM user WHERE email like :email ');
+            if($stmt->execute(array(':email' => $email))  && $row = $stmt->fetch())
+            {
+                $actif = $row['actif']; // $actif contiendra alors 0 ou 1
+            }
+//on teste la valeur du champ 'actif' pour savoir si le compte est valide ou non//
+            if($actif == '1') //on autorise la connexion
+            {
+//CONNEXION
+                echo 'Vous êtes connecté.';
+            }
+            if($actif == '0') //on refuse la connexion
+            {
+//PAS DE CONNEXION, LE COMPTE N'EST PAS ACTIF
+                echo 'Votre compte n\'est pas actif.';
+            }
+?>
