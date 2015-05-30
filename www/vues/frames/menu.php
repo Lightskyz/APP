@@ -1,6 +1,9 @@
 <!-- Créer 2 menus si l'utilisateur est connecté ou non connecté -->
 
 <?php 
+
+session_start();
+
 if($_SESSION['email'] == TRUE)
 	{
 		echo'<header>
@@ -17,6 +20,7 @@ if($_SESSION['email'] == TRUE)
 			</ul>
 
 			<a href="../back/profil.php" class="login_btn">Connected</a>
+			<a href="/controleurs/deconnexionController.php" class="login_btn">Deconnexion</a>
 		</nav>
 	</div>
 </header> <!-- end header section -->';

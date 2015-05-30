@@ -41,7 +41,7 @@ function recherche_crit($table, $order) {
 
 function recherche_productbyuser($user, $order){
 	include("../modele/modele.php");
-		$sql = 'SELECT * FROM product WHERE id_user LIKE "%'.$user.'%" ORDER BY '.$order.' DESC';
+		$sql = 'SELECT * FROM produit WHERE id_user LIKE "%'.$user.'%" ORDER BY '.$order.' DESC';
 		$reponse = $bdd->query($sql);
 		while ($donnees = $reponse->fetch())
 	{
