@@ -39,7 +39,7 @@ if (!empty($_POST['email']) && !empty($_POST['mdp'])) {
 
 
 }
-
+//Ajouter la connexion d'un administrateur avec la condition isAdmin == 1 
 }
 else {
     echo $erreur1;
