@@ -1,4 +1,4 @@
-<?php include("../../controleurs/rechercheController.php"); ?>  
+<?php include("/controleurs/rechercheController.php"); ?>  
 
 <section class="search">
 	<div class="wrapper">
