@@ -23,7 +23,7 @@ if (!empty($_POST['email']) && !empty($_POST['mdp'])) {
     // Le visiteur n'a pas été reconnu comme étant membre de notre site. On utilise alors un petit javascript lui signalant ce fait
         echo '<body onLoad="alert(\'Membre non reconnu...\')">';
         // puis on le redirige vers la page d'accueil
-        echo '<meta http-equiv="refresh" content="0;URL=/vues/front/signup.php">';
+        echo '<meta http-equiv="refresh" content="0;URL=/vues/front/signin.php">';
 }
 
     else {
@@ -43,7 +43,7 @@ if (!empty($_POST['email']) && !empty($_POST['mdp'])) {
 }
 else {
     echo $erreur1;
-    echo'Veuillez cliquer <a href="/vues/signup.php">ici</a><br />';
+    echo'Veuillez cliquer <a href="/vues/front/signin.php">ici</a><br />';
     
 }
     
