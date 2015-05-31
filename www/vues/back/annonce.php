@@ -1,7 +1,7 @@
-<?php include("../sessionStart.php"); ?>
+<?php include("/modele/sessionStart.php"); ?>
 
 <!DOCTYPE HTML>
-<?php include('../modele/modele.php');?>
+<?php include('/modele/modele.php');?>
 
 <html>
 	
@@ -60,12 +60,22 @@
 					</label>
 		     		<textarea name="description" id="description"></textarea>
 		     	</div>
+
+				<!--
+		     	<div class="field-wrap">
+					<label for="description">
+						Image du produit
+					</label>
+		     		<div></div>
+		     		<div></div>
+		     		<input type="file" />
+		     	</div> -->
 		
 				<button type="submit" class="button button-block" name="poster">Poster une annonce</button>		
 			</form>
 
 		<?php 
-			include("../controleurs/annonceController.php"); 
+			include("/controleurs/annonceController.php"); 
 			addproduct(19);	//A titre indicatif pour les tests, sera à mener à changer plus tard
 		?>
 		</div> <!-- fin de form -->

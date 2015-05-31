@@ -1,6 +1,6 @@
 <?php
 	function updateprofil($user){
-		include("modele.php");
+		include("/modele/modele.php");
 		if(!empty($_POST['nom'])){
 			$nom = $_POST['nom'];
 		}

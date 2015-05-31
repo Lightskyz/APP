@@ -14,26 +14,42 @@
 
 		<?php include("../frames/menu.php"); ?>
 
-		<div>
-		
-		<form method="post" action="/controleurs/#.php" id="contact" >
+		<div class="form">
+			<h1> Contactez-nous </h1>
+			<!-- créer un module qui permet à l'administrateur de recevoir des messages -->
+			<form method="post" action="/controleurs/#.php" id="contact" >
 				
-				<label for="comment">Nom Prénom</label><br />
-				<input placeholder="Nom Prénom" type="text" name="nom"><br />
-				
-				<label for="comment">Adresse email</label><br />
-				<input placeholder="Email" type="text" name="email"><br />
+				<div class="field-wrap">
+					<label for="comment">
+						Nom & Prénom
+					</label>
+					<input type="text" name="nom">
+				</div>
 
-				<label for="comment">Votre message</label><br />
-				<textarea name="comment" form="contact"> Votre message 
-				</textarea><br />
+				
+				<div class="field-wrap">
+					<label for="comment">
+						E-mail
+					</label>
+					<input type="text" name="email">
+				</div>
+
+				
+				<div class="field-wrap">
+					<label for="comment">
+						Votre message
+					</label>
+					<textarea name="message" form="contact"></textarea>
+				</div>
+
+				
 				
 
-				<button type="submit" name="envoyer">Envoyer</button>
+				<button type="submit" class="button button-block" name="envoyer">Envoyer</button>
 					<?php include("/controleurs/#.php"); ?>
 		</form>
 
-		</div>
+		</div> <!-- fin de form -->
 
 		<?php include("../frames/footer.php"); ?>
 

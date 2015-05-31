@@ -1,3 +1,5 @@
+<!-- On démarre la session (ceci est indispensable dans toutes les pages de notre section membre) -->
+
 <?php include("/modele/sessionStart.php"); ?>
 
 <!DOCTYPE HTML>
@@ -18,12 +20,10 @@
 				include("/controleurs/updateController.php");
 
 			// Selection de l'utilisateur et de ses parametres.
-			$user = 1;				
+			$user = $_SESSION['id'];
 			?>
 
 			<?php
-// On démarre la session (ceci est indispensable dans toutes les pages de notre section membre)
-session_start ();
 
 // On récupère nos variables de session
 if (isset($_SESSION['email']) && isset($_SESSION['mdp'])) {
@@ -35,42 +35,94 @@ if (isset($_SESSION['email']) && isset($_SESSION['mdp'])) {
 	echo '</head>';
 
 	echo '<body>';
-	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['mdp'].'.';
+	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['mdp'].' et votre identifiant est.'.$_SESSION['id'].'.';
 	echo '<br />';
-
-	// On affiche un lien pour fermer notre session
-	echo '<a href="/controleurs/deconnexionController.php">Déconnexion</a>';
+	
 }
 else {
 	echo 'Les variables ne sont pas déclarées.';
 }
 ?>
-				<form action="" method="POST">
-					Modification de votre nom : </br>
-				<input type="text" name="nom" placeholder="nom" size="10"></br></br>
-					Modification de votre prenom : </br>
-				<input type="text" name="prenom" placeholder="prenom" size="10"></br></br>
-					Modification de votre adresse : </br>
-				<input type="text" name="adresse" placeholder="adresse" size="10"></br></br>
-					Modification de votre code postal : </br>
-				<input type="text" name="code_postal" placeholder="code postal" size="10"></br></br>
-					Modification de votre ville : </br>
-				<input type="text" name="ville" placeholder="ville" size="10"></br></br>
-					Modification de votre telephone : </br>
-				<input type="text" name="telephone" placeholder="telephone" size="10"></br></br>
-					Modification de votre email : </br>
-				<input type="text" name="email" placeholder="email" size="10"></br></br>
-					Modification de votre mot de passe : </br>
-				<input type="text" name="mot_de_passe" placeholder="mot de passe" size="10"></br></br>
-					Vérification de votre mot de passe : </br>
-				<input type="text" name="mot_de_passe_verif" placeholder="" size="10">
-				<input type="submit" value="Ok">
-				</form>
+	<div class="form">
+		<h1>Modification du profil</h1>
+			<form action="" method="POST">
+
+				<div class="top-row">
+					<div class="field-wrap">
+		            	<label>			
+							Nom
+						</label>
+						<input type="text" name="nom" size="10">
+					</div>
+
+					<div class="field-wrap">
+		            	<label>
+							Prénom
+						</label>
+						<input type="text" name="prenom" size="10">
+					</div>
+				</div> <!-- fin de la div top row -->
+
+					<div class="field-wrap">
+		            	<label>
+							Adresse
+						</label>
+						<input type="text" name="adresse" size="10">
+					</div>
+
+				<div class="top-row">
+					<div class="field-wrap">
+		            	<label>
+							Code Postal
+						</label>
+						<input type="text" name="code_postal" size="10">
+					</div>
+
+					<div class="field-wrap">
+		            	<label>
+							Ville
+						</label>
+						<input type="text" name="ville" size="10">
+					</div>
+				</div> <!-- fin de la div top row -->
+
+					<div class="field-wrap">
+		            	<label>
+							Téléphone
+						</label>
+						<input type="text" name="telephone" size="10">
+					</div>
+
+					<div class="field-wrap">
+		            	<label>
+							Email
+						</label>
+						<input type="text" name="email" size="10">
+					</div>
+				
+				<div class="top-row">
+					<div class="field-wrap">
+		            	<label>
+							Mot de passe
+						</label>
+						<input type="text" name="mot_de_passe" size="10">
+					</div>
+
+					<div class="field-wrap">
+		            	<label>
+							Mot de passe (vérif)
+						</label>
+						<input type="text" name="mot_de_passe_verif" size="10">
+					</div>
+				</div> <!-- fin de la div top row -->
+
+					<button type="submit" class="button button-block"> Mis à jour du profil </button>
+			</form>
 
 			<?php
 				updateprofil($user); 
 			?>
-
+	</div> <!-- fin de form -->
 		<!-- contenu de notre site -->
 
 		<?php include("../frames/footer.php"); ?>

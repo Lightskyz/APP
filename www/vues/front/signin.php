@@ -43,7 +43,7 @@
 	            <input type="password" name="mdp" required autocomplete="off"/>
 	          </div>
 	          
-	          <p class="forgot"><a href="#">Forgot Password?</a></p>
+	          <p class="forgot"><a href="#">Mot de passe oublié ?</a></p><br />
 	          
 	          <button type="submit" class="button button-block"/>Se connecter</button>
 	          
@@ -125,7 +125,9 @@
 						<input type="text" name="image" required />
 					</div>
 
-					<button type="submit" class="button button-block" />S'inscrire</button>
+					<p style="color:white">En vous inscrivant vous acceptez les <a href="#">termes et conditions générales d'utilisation</a> de Pear2Pear</p><br />
+
+					<button type="submit" class="button button-block">S'inscrire</button>
 			<?php include("/controleurs/inscriptionController.php"); ?>
 			</form>
 	</div> <!--div signup -->

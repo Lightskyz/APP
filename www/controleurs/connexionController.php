@@ -28,7 +28,9 @@ if (!empty($_POST['email']) && !empty($_POST['mdp'])) {
 
     else {
         session_start ();
-        // on enregistre les paramètres de notre visiteur comme variables de session ($login et $pwd) (notez bien que l'on utilise pas le $ pour enregistrer ces variables)
+        // on enregistre les paramètres de notre visiteur comme variables de session ($email et $mdp)
+        //(notez bien que l'on utilise pas le $ pour enregistrer ces variables)
+        //les variables sont en rapport à ceux qui a été récupéré dans le formulaire et non de la base de données
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['mdp'] = $_POST['mdp'];
 
