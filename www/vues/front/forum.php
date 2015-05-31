@@ -15,7 +15,18 @@
 		<?php include("../frames/menu.php"); ?>
 		<?php include("../frames/search.php"); ?>
 
+		<div class="topic">
+			<div class="information">
+			<div class="photoProfil"></div>
+				<p class="auteur">Ecrit le<?php echo'date';?> par <?php echo'utilisateur';?></p>
+			</div>
+			<p class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis, odio pulvinar pulvinar dignissim, orci velit varius erat, ac laoreet mauris mauris ut ante. Nullam porttitor ultrices sem eget luctus. Nam sagittis laoreet risus vel suscipit. Cras pharetra molestie magna sit amet auctor. Aliquam egestas libero sit amet arcu commodo finibus. Pellentesque erat nibh, bibendum sed massa vel, congue laoreet magna. In sed ex maximus, sodales est id, iaculis risus. Fusce laoreet laoreet viverra. Praesent tristique gravida ipsum, quis elementum nunc faucibus aliquam. Sed accumsan malesuada placerat. Phasellus nec fringilla leo.
+			</p>
+			
+		</div>
+
 		<?php
+		/*
 			$user = 1;
 				include("/controleurs/forumController.php");
 				if(empty($_GET['mes-message'])){
@@ -48,7 +59,8 @@
 				} else {
 					affichage_mes_messages($user);
 				}
-	
+			*/
+
 			?>
 		<?php include("../frames/footer.php"); ?>
 

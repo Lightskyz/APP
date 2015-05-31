@@ -10,7 +10,7 @@
 </section>
 
 <?php
-
+/*
 	if(!empty($_POST['recherche'])){
 		$requete = $_POST['recherche'];
 	}
@@ -24,5 +24,5 @@
 	} else {
 		recherche_champ("");
 	}
-
+*/
 ?>
