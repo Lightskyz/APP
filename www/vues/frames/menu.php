@@ -12,8 +12,7 @@ if($_SESSION['email'] == TRUE)
 		<a href="#" class="hamburger"></a>
 		<nav>
 			<ul>
-				<li><a href="../front/achat.php">Achat</a></li>
-				<li><a href="../front/echange.php">Echange</a></li>
+				<li><a href="../front/produit.php">Nos produits</a></li>
 				<li><a href="../front/forum.php">Forum</a></li>
 				<li><a href="../back/annonce.php">Annonce</a></li>
 				<li><a href="../front/contact.php">Contact</a></li>
@@ -36,14 +35,12 @@ else{
 
 		<nav>
 			<ul>
-				<li><a href="../front/achat.php">Achat</a></li>
-				<li><a href="../front/echange.php">Echange</a></li>
+				<li><a href="../front/produit.php">Nos produits</a></li>
 				<li><a href="../front/forum.php">Forum</a></li>
 				<li><a href="../front/contact.php">Contact</a></li>
 			</ul>
 			
 			<a href="../front/signin.php" class="login_btn">Sign in</a>
-			<a href="../front/signup.php" class="login_btn">Sign up</a>
 		</nav>
 	</div>
 </header> <!-- end header section -->';

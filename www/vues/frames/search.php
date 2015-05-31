@@ -9,7 +9,6 @@
 	</div>
 </section>
 
-	
 <?php
 
 	if(!empty($_POST['recherche'])){

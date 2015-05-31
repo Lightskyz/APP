@@ -15,46 +15,66 @@
 
 		<?php include("../frames/menu.php"); ?>
 
+		<div class="form">
+			<h1> Poster une annonce </h1>
 
-		
-		<h1> Poster une annonce </h1>
-		<div>
-		<form method="post" action="">
-				
+			<form method="post" action="" >
 				<!-- Autocomplétion et récupérer dans la table catégorie -->
+				<div class="field-wrap">
+					<label for="categorie">
+						Nom du produit
+					</label>
+					<input type="text" name="categorie" id="categorie" required>
+				</div>
+				
+				<div class="field-wrap">
+					<label for="prix">
+						Prix (en €)
+					</label>
+				<input  type="int" name="prix" id="prix" required>
+				</div>
 
-				<label for="titre">Nom du produit</label><br />
-				<input placeholder="Nom" type="text" name="categorie" id="categorie"><br />
-				
-				<label for="titre">Prix</label><br />
-				<input placeholder="Prix" type="int" name="prix" id="prix"><br />
-				
 <!-- Réfléchir à un systeme pour laisser le choix à l'utilisateur si il met une quantité ou un poids uniquement, javascript -->
 				<!-- <select><br />
 					<option>Quantité</option>
 					<option>Poids en kg</option>
 				</select> <br />
 -->
-				<label for="quantite">Quantité</label><br />
-		     	<input type="number" step="1" name="quantite" id="quantite" /><br />
+				<div class="field-wrap">
+					<label for="quantite">
+						Quantité
+					</label>
+		     	<input type="number" step="1" name="quantite" id="quantite" />
+		     	</div>
 
-				<label for="poids">Poids en Kg</label><br />
-				<input type="number" step="1" name="poids" id="poids"/><br />
+				<div class="field-wrap">
+					<label for="poids">
+						Poids (en kg)
+					</label>
+				<input type="number" step="1" name="poids" id="poids"/>
+				</div>
 
-				<label for="description">Description de votre fichier (max. 255 caractères) :</label><br />
-		     	<textarea name="description" id="description"></textarea><br />
+				<div class="field-wrap">
+					<label for="description">
+						Description de votre fichier (max. 255 caractères)
+					</label>
+		     		<textarea name="description" id="description"></textarea>
+		     	</div>
 		
-				<button type="submit" name="envoyer">Envoyer</button>
-					
-		</form>
+				<button type="submit" class="button button-block" name="poster">Poster une annonce</button>		
+			</form>
 
 		<?php 
-		include("../controleurs/annonceController.php"); 
-		addproduct(19);	//A titre indicatif pour les tests, sera à mener à changer plus tard
+			include("../controleurs/annonceController.php"); 
+			addproduct(19);	//A titre indicatif pour les tests, sera à mener à changer plus tard
 		?>
+		</div> <!-- fin de form -->
 
-		</div>
+
+
 		<!-- contenu de notre site -->
+
+
 
 		<?php include("../frames/footer.php"); ?>
 

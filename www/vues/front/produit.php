@@ -5,7 +5,7 @@
 <html>
 	
 	<head>
-		<title>Echange - Pear2Pear</title>
+		<title>Nos produits - Pear2Pear</title>
 		<?php include("../frames/head.php"); ?>
 		
 	</head>
