@@ -17,7 +17,7 @@
 					<ul>
 						<li><a href="../front/faq.php">FAQ</a></li>
 						<li><a href="../front/us.php">Qui sommes-nous ?</a></li>
-						<li><a href="#">Fruit à coques</a></li>
+						<li><a href="../front/cgu.php">CGU</a></li>
 						<li><a href="#">Champignons</a></li>
 						<li><a href="#">Plantes</a></li>
 					</ul>
