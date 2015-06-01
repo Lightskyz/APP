@@ -1,4 +1,4 @@
-<?php include('../modele/modele.php'); ?>
+<?php include('../../modele/modele.php'); ?>
 
 <?php
 if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['mdp']) && !empty($_POST['mdp2']) && $_POST['mdp'] == $_POST['mdp2'] && !empty($_POST['adresse']) && !empty($_POST['cdp']) && !empty($_POST['ville']) && !empty($_POST['telephone']) && !empty($_POST['email'])) {

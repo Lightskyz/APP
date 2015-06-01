@@ -1,6 +1,4 @@
-<?php include("/controleurs/rechercheController.php"); ?>  
-
-<section class="search">
+ <section class="search">
 	<div class="wrapper">
 			<form action="" method="post">
 				<input type="text" id="search" name="recherche" placeholder="Que recherchez-vous ?"  autocomplete="off"/>
@@ -10,11 +8,14 @@
 </section>
 
 <?php
-/*
+
+	include("../../controleurs/rechercheController.php");
 	if(!empty($_POST['recherche'])){
 		$requete = $_POST['recherche'];
 	}
+
 	recherche_crit('categorie', 'nom');
+
 	if(empty($choix)){
 		if(!empty($requete)){
 			recherche_champ($requete);
@@ -24,5 +25,5 @@
 	} else {
 		recherche_champ("");
 	}
-*/
+
 ?>

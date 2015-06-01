@@ -1,6 +1,6 @@
 <?php
 function recherche_champ($requete) {
-include("../modele/modele.php");
+include("../../modele/modele.php");
 	$sql = 'SELECT * FROM categorie WHERE nom LIKE "%'.$requete.'%" ORDER BY id DESC';
 	$reponse = $bdd->query($sql);
 	while ($donnees = $reponse->fetch())
@@ -14,7 +14,7 @@ include("../modele/modele.php");
 }
 
 function recherche_crit($table, $order) {
-	include("../modele/modele.php");
+	include("../../modele/modele.php");
 ?>
 
 		<form action="" method="POST">
@@ -40,7 +40,7 @@ function recherche_crit($table, $order) {
 }
 
 function recherche_productbyuser($user, $order){
-	include("../modele/modele.php");
+	include("../../modele/modele.php");
 		$sql = 'SELECT * FROM produit WHERE id_user LIKE "%'.$user.'%" ORDER BY '.$order.' DESC';
 		$reponse = $bdd->query($sql);
 		while ($donnees = $reponse->fetch())

@@ -1,7 +1,7 @@
-<?php include("/modele/sessionStart.php"); ?>
+<?php include("../../modele/sessionStart.php"); ?>
+<?php include('../../modele/modele.php');?>
 
 <!DOCTYPE HTML>
-<?php include('/modele/modele.php');?>
 
 <html>
 	
@@ -27,7 +27,7 @@
 		<div id="login">   
 	          <h1>Bonjour :)</h1>
 	          
-	          <form action="/controleurs/connexionController.php" method="post">
+	          <form action="../../controleurs/connexionController.php" method="post">
 	          
 	            <div class="field-wrap">
 	            	<label>
@@ -54,7 +54,7 @@
 			<div id="signup">
 				<h1> Inscrivez-vous gratuitement </h1>
    
-			<form method="post" action="/controleurs/inscriptionController.php">
+			<form method="post" action="../../controleurs/inscriptionController.php">
 
 				<div class="top-row">
 					<div class="field-wrap">
@@ -70,7 +70,8 @@
 				</div><!-- div top-row -->
 
 					<div class="field-wrap">
-						<label>Date de naissance (format : aaaa-mm-jj)<span class="req">*</span>
+						<p>Date naissance</p>
+						<label><span class="req">*</span>
 						</label>
 						 <input type="date" name="born" required />
 					</div>
@@ -123,7 +124,7 @@
 					<div class="field-wrap">
 					<div class="input-file-container">
 						<label for"my-file" class="input-file-trigger">Importer une photo</label>
-						<input class="input-file" id="my-life" type="file" name="image" required />
+						<input class="input-file" id="my-life" type="file" name="image" />
 					</div>
 					</div>
 					<p class="file-return"></p>
@@ -135,7 +136,7 @@
 					
 -->
 					<button type="submit" class="button button-block">S'inscrire</button>
-			<?php include("/controleurs/inscriptionController.php"); ?>
+			<?php include("../../controleurs/inscriptionController.php"); ?>
 			</form>
 	</div> <!--div signup -->
 

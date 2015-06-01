@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-	</head>
-	
 <?php
 try
 {
@@ -13,7 +7,4 @@ catch (Exception $e)
 {
         die('Erreur : ' . $e->getMessage());
 }
-
 ?>
-
-</html>

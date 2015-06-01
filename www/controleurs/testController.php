@@ -1,4 +1,9 @@
 <?php
+include("../../modele/modele.php");
+
+function test(){
+	echo'Hello World !';
+}
 function afficheprofil($user){
 	include("../../modele/modele.php");
 	$sql = 'SELECT * FROM user WHERE id = '.$user.' ';
@@ -14,5 +19,15 @@ function afficheprofil($user){
 		echo $donnees['telephone'];
 	}
 }
-
+function autrement(){
+	include("../../modele/modele.php");
+	echo"coucou";
+	$sql = 'SELECT * FROM user';
+	echo'coucou2';
+	$req = $bdd->query($sql);
+	echo'coucou3';
+	while( $donnees = $req -> fetch()){
+		echo $donnees['nom'];
+	}
+}
 ?>

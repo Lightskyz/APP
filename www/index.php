@@ -1,4 +1,3 @@
-<?php
-	header("location: vues/front/index.php");
+<?php header("location: vues/front/index.php");
 	exit;
 ?>

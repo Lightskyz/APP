@@ -1,4 +1,4 @@
-<?php include("/modele/sessionStart.php"); ?>
+<?php include("../../modele/sessionStart.php"); ?>
 
 <!DOCTYPE html>
 <html lang="fr-FR">
@@ -26,7 +26,7 @@
 
 				<li>
 					<a href="#"><!-- lien vers le produit -->
-						<img src="/assets/img/products/fraise.jpg" alt="" title="" class="property_img"/><!-- image du produit -->
+						<img src="../../assets/img/products/fraise.jpg" alt="" title="" class="property_img"/><!-- image du produit -->
 					</a>
 					<span class="price">ÉPUISÉ</span><!-- quantité ou prix du produit -->
 
@@ -40,7 +40,7 @@
 
 				<li>
 					<a href="#">
-						<img src="/assets/img/products/framboise.jpg" alt="" title="" class="property_img" height="440px" width="300px"/>
+						<img src="../../assets/img/products/framboise.jpg" alt="" title="" class="property_img" height="440px" width="300px"/>
 					</a>
 					<span class="price">ÉPUISÉ</span>
 					<div class="property_details">
@@ -52,7 +52,7 @@
 				</li>
 				<li>
 					<a href="#">
-						<img src="/assets/img/products/aubergine.jpg" alt="" title="" class="property_img" height="440px" width="300px"/>
+						<img src="../../assets/img/products/aubergine.jpg" alt="" title="" class="property_img" height="440px" width="300px"/>
 					</a>
 					<span class="price">DISPO</span>
 					<div class="property_details">

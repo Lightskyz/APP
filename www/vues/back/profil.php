@@ -1,7 +1,7 @@
 <!-- On démarre la session (ceci est indispensable dans toutes les pages de notre section membre) -->
 
-<?php include("/modele/sessionStart.php"); ?>
-<?php include("/modele/modele.php"); ?>
+<?php include("../../modele/sessionStart.php"); ?>
+<?php include("../../modele/modele.php"); ?>
 <!DOCTYPE HTML>
 
 <html>
@@ -17,7 +17,7 @@
 		<?php include("../frames/menu.php"); ?>
 		
 			<?php
-				include("/controleurs/updateController.php");
+				include("../../controleurs/updateController.php");
 
 			// Selection de l'utilisateur et de ses parametres.
 			$user = $_SESSION['id'];
@@ -45,19 +45,19 @@ else {
 ?>
 
 <?php
-/*
-include("/controleurs/profilController.php");
+
+include("../../controleurs/profilController.php");
 echo'avant la fonction';
 afficheprofil(19);
 echo'apres la fonction';
-*/
+
 ?>
 
 <div id="profil">
 	<div class="profil profil_block" id="affichageProfil">
 		<h1>Votre profil</h1>
 			<div id="photoProfil">
-				<img />
+				<img alt="profil"/><!-- pouvoir cliquer sur l'image pour la modifier -->
 			</div>
 			<div class="">
 				<ul class="infoProfil">
@@ -69,7 +69,6 @@ echo'apres la fonction';
 					92170 Vanves</li>
 					<li>Téléphone : 0686656030</li>
 					<li>Email : antoine.rakotozafy@gmail.com</li>
-					
 				</ul>
 			</div>
 	</div>

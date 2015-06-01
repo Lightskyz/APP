@@ -4,11 +4,11 @@
 				<li class="links">
 					<h2>Plan du site</h2>
 					<ul>
-						<li><a href="/vues/front/achat.php">Achat</a></li>
-						<li><a href="/vues/front/echange.php">Echange</a></li>
-						<li><a href="/vues/back/annonce.php">Annonce</a></li>
-						<li><a href="/vues/front/forum.php">Forum</a></li>
-						<li><a href="/vues/front/contact.php">Contact</a></li>
+						<li><a href="../vues/front/achat.php">Achat</a></li>
+						<li><a href="../vues/front/echange.php">Echange</a></li>
+						<li><a href="../vues/back/annonce.php">Annonce</a></li>
+						<li><a href="../vues/front/forum.php">Forum</a></li>
+						<li><a href="../vues/front/contact.php">Contact</a></li>
 					</ul>
 				</li>
 
@@ -39,6 +39,6 @@
 		</div>
 
 		<div class="copyrights wrapper">
-			Made by  &#9829 [G7C] - <a href="#">Conditions Général d'Utilisation</a> - <a href="/vues/front/contact.php">Nous Contacter</a>
+			Made with &#9829 [G7C] - <a href="#">Conditions Général d'Utilisation</a> - <a href="/vues/front/contact.php">Nous Contacter</a>
 		</div>
 </footer><!--  end footer  -->

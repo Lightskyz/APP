@@ -1,4 +1,5 @@
-<?php include("/modele/sessionStart.php"); ?>
+<?php include("../../modele/sessionStart.php"); ?>
+<?php include('../../modele/modele.php');?>
 
 <!DOCTYPE HTML>
 
@@ -17,7 +18,7 @@
 		<div class="form">
 			<h1> Contactez-nous </h1>
 			<!-- créer un module qui permet à l'administrateur de recevoir des messages -->
-			<form method="post" action="/controleurs/#.php" id="contact" >
+			<form method="post" action="../../controleurs/#.php" id="contact" >
 				
 				<div class="field-wrap">
 					<label for="comment">
@@ -46,7 +47,7 @@
 				
 
 				<button type="submit" class="button button-block" name="envoyer">Envoyer</button>
-					<?php include("/controleurs/#.php"); ?>
+					<?php include("../../controleurs/#.php"); ?>
 		</form>
 
 		</div> <!-- fin de form -->

@@ -6,7 +6,7 @@
 */
 
 function addproduct($user){
-    include("../modele/modele.php");
+    include("../../modele/modele.php");
         
             if(!empty (!empty($_POST['categorie'])  && (!empty($_POST['quantite']) || !empty($_POST['poids'])) )) {
 

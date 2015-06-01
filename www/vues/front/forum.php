@@ -1,19 +1,29 @@
-<?php include("/modele/sessionStart.php") ?> 
+<?php include("../../modele/sessionStart.php"); ?> 
+<?php include("../../modele/modele.php"); ?>
+<?php include("../../controleurs/forumController.php"); ?>
 
 <!DOCTYPE HTML>
 
 <html>
 	
 	<head>
-		<title>Achat - Pear2Pear</title>
+		<title>Forum - Pear2Pear</title>
 		<?php include("../frames/head.php"); ?>
-		
 	</head>
 
 	<body>
 
 		<?php include("../frames/menu.php"); ?>
 		<?php include("../frames/search.php"); ?>
+		<!--
+		<nav>
+		<ul style="list-style:none">
+			<li><a href="#">Poster un message</a></li>
+			<li><a href="#">Mes messages</a></li>
+			<li><a href="#">Tous les topics</a></li>
+		</ul>
+		</nav>
+		
 
 		<div class="topic">
 			<div class="information">
@@ -24,44 +34,79 @@
 			</p>
 			
 		</div>
+-->
 
 		<?php
-		/*
-			$user = 1;
-				include("/controleurs/forumController.php");
-				if(empty($_GET['mes-message'])){
-					if(empty($_GET['topic'])){
-						if(isset($_GET['forum'])){
-							$forum = $_GET['forum'];
-							affichage_topic($forum);
-						} else {
-							affichage_forum();
-						}
-					} else {
-						$forum = $_GET['forum'];
-						$topic = $_GET['topic'];
-						affichage_message($forum, $topic);
-						?>
-						<form method="post" action="" enctype="multipart/form-data">
+/*
+	Maxime Payraudeau
+	28/05/2015
+	Version 1.0.1
+*/
 
-					    	<label for="message"> Votre réponse.</label><br />
-					     	<input type="text" name="message" id="categorie" /><br />
-						<input type="submit" name="repondre" value="Repondre" />
-						</form>
-						<?php
-						post_message($user, $forum, $topic);
-						
-					}
-			?>
-				<a href='forum.php?mes-message=1'> Mes messages </a>
+	
+$user = 19;
+	
+	echo'etape 1 ok';
+	if(empty($_GET['mes-message'])){
+		echo'etape 2 ok';
+		if(empty($_GET['topic'])){
+			echo'etape 3 ok';
 
-			<?php
-				} else {
-					affichage_mes_messages($user);
+			/* erreur */
+
+			if(isset($_GET['forum'])){
+				echo'etape 4 ok';
+				$forum = $_GET['forum'];
+				echo'etape 5 ok';
+				affichage_topic($forum);
+				echo'etape 6 ok';
+				?>
+				<div class="form">
+				<form method="post" action="" enctype="multipart/form-data">
+
+		    		<label for="nom"> Nom du topic.</label><br />
+		     		<input type="text" name="nom" id="nom" /><br />
+		     		<label for="contenu"> Description.</label><br />
+		     		<input type="text" name="contenu" id="contenu" /><br />
+				
+				<input type="submit" name="poster" value="Poster" />
+
+				</form>
+				</div>
+				<?php
+				if(!empty($_POST['nom'])){
+					ajout_topic($forum);
 				}
-			*/
 
+			} else {
+				echo'etape else';
+				/* erreur */
+				affichage_forum();
+			}
+		} else {
+			$forum = $_GET['forum'];
+			$topic = $_GET['topic'];
+			affichage_message($forum, $topic);
 			?>
+			<form method="post" action="" enctype="multipart/form-data">
+
+		    	<label for="message"> Votre réponse.</label><br />
+		     	<input type="text" name="message" id="categorie" /><br />
+			<input type="submit" name="repondre" value="Repondre" />
+			</form>
+			<?php
+			post_message($user, $forum, $topic);
+
+		}
+?>
+	<a href='../vues/front/forum.php?mes-message=1'> Mes messages </a>
+
+<?php
+	} else {
+		affichage_mes_messages($user);
+	}
+	
+?>
 		<?php include("../frames/footer.php"); ?>
 
 	</body>
