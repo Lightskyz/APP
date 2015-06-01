@@ -901,10 +901,6 @@ textarea {
   color:white;
 }
 
-#profil{
-
-}
-
 .profil_block{
   display: inline-block;
 }
@@ -937,8 +933,8 @@ textarea {
 
 #photoProfil{
   border:1px solid white;
-  height:100px;
-  width:100px;
+  height:200px;
+  width:200px;
   margin-bottom: 20px;
 }
 
@@ -947,19 +943,19 @@ textarea {
 
 .input-file-container {
   position: absolute;
-  width: 48%;
+  width: 100%;
   margin-bottom: 40px;
 } 
 .js .input-file-trigger {
   display: block;
-  padding: 14px 45px;
+  /*padding: 14px 45px;*/
   background: #39D2B4;
   color: #fff;
   font-size: 1em;
   transition: all .4s;
   cursor: pointer;
-  /*width: 100%;
-  height: 100%;*/
+  width: 100%;
+  /*height: 100%;*/
 }
 .js .input-file {
   position: absolute;

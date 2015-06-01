@@ -1,7 +1,7 @@
 <!-- On démarre la session (ceci est indispensable dans toutes les pages de notre section membre) -->
 
 <?php include("/modele/sessionStart.php"); ?>
-
+<?php include("/modele/modele.php"); ?>
 <!DOCTYPE HTML>
 
 <html>
@@ -44,6 +44,15 @@ else {
 }
 ?>
 
+<?php
+/*
+include("/controleurs/profilController.php");
+echo'avant la fonction';
+afficheprofil(19);
+echo'apres la fonction';
+*/
+?>
+
 <div id="profil">
 	<div class="profil profil_block" id="affichageProfil">
 		<h1>Votre profil</h1>
@@ -60,10 +69,12 @@ else {
 					92170 Vanves</li>
 					<li>Téléphone : 0686656030</li>
 					<li>Email : antoine.rakotozafy@gmail.com</li>
+					
 				</ul>
 			</div>
-
 	</div>
+</div>
+
 
 	<div class="form profil_block" id="modifProfil">
 		<h1>Modification du profil</h1>
@@ -138,7 +149,7 @@ else {
 					</div>
 				</div> <!-- fin de la div top row -->
 
-					<button type="submit" class="button button-block"> Mis à jour du profil </button>
+					<button type="submit" class="button button-block"> Mettre à jour le profil </button>
 			</form>
 
 			<?php
