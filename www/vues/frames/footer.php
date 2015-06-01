@@ -4,11 +4,11 @@
 				<li class="links">
 					<h2>Plan du site</h2>
 					<ul>
-						<li><a href="../vues/front/achat.php">Achat</a></li>
-						<li><a href="../vues/front/echange.php">Echange</a></li>
-						<li><a href="../vues/back/annonce.php">Annonce</a></li>
-						<li><a href="../vues/front/forum.php">Forum</a></li>
-						<li><a href="../vues/front/contact.php">Contact</a></li>
+						<li><a href="../front/produit.php">Nos produits</a></li>
+						<!-- Attention "annonce" réservé aux utilisateurs, ou pas ! Laisser peut-être libre à tout le monde mais des qu'il veut l'acheter lui demander de s'inscrire -->
+						<li><a href="../back/annonce.php">Annonce</a></li>
+						<li><a href="../front/forum.php">Forum</a></li>
+						<li><a href="../front/contact.php">Contact</a></li>
 					</ul>
 				</li>
 
