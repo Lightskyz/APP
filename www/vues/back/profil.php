@@ -35,7 +35,7 @@ if (isset($_SESSION['email']) && isset($_SESSION['mdp'])) {
 	echo '</head>';
 
 	echo '<body>';
-	echo 'Votre login est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['mdp'].' et votre identifiant est.'.$_SESSION['id'].'.';
+	echo '<div id="bienvenue">Votre email est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['mdp'].' et votre identifiant est.'.$_SESSION['id'].'.</div>';
 	echo '<br />';
 	
 }
@@ -43,7 +43,29 @@ else {
 	echo 'Les variables ne sont pas déclarées.';
 }
 ?>
-	<div class="form">
+
+<div id="profil">
+	<div class="profil profil_block" id="affichageProfil">
+		<h1>Votre profil</h1>
+			<div id="photoProfil">
+				<img />
+			</div>
+			<div class="">
+				<ul class="infoProfil">
+					<li>Nom : RAKOTOZAFY</li>
+					<li>Prénom : Antoine</li>
+					<li>Date de naissance : 14/12/1994 (20 ans)</li>
+					<li>Adresse :<br />
+					26 Rue Raymond Marcheron<br />
+					92170 Vanves</li>
+					<li>Téléphone : 0686656030</li>
+					<li>Email : antoine.rakotozafy@gmail.com</li>
+				</ul>
+			</div>
+
+	</div>
+
+	<div class="form profil_block" id="modifProfil">
 		<h1>Modification du profil</h1>
 			<form action="" method="POST">
 
@@ -124,7 +146,7 @@ else {
 			?>
 	</div> <!-- fin de form -->
 		<!-- contenu de notre site -->
-
+</div>
 		<?php include("../frames/footer.php"); ?>
 
 	</body>

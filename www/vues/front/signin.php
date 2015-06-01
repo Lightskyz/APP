@@ -70,7 +70,7 @@
 				</div><!-- div top-row -->
 
 					<div class="field-wrap">
-						<label>Date de naissance<span class="req">*</span>
+						<label>Date de naissance (format : aaaa-mm-jj)<span class="req">*</span>
 						</label>
 						 <input type="date" name="born" required />
 					</div>
@@ -119,14 +119,21 @@
 					
 
 					<!-- créer une grosse case, séparer en deux où dans l'une des case on a un beau bouton pour importer une image et l'autre pour drag & drop une image -->
+					
 					<div class="field-wrap">
-						<label>Image<span class="req">*</span> 
-						</label>
-						<input type="text" name="image" required />
+					<div class="input-file-container">
+						<label for"my-file" class="input-file-trigger">Importer une photo</label>
+						<input class="input-file" id="my-life" type="file" name="image" required />
 					</div>
-
-					<p style="color:white">En vous inscrivant vous acceptez les <a href="#">termes et conditions générales d'utilisation</a> de Pear2Pear</p><br />
-
+					</div>
+					<p class="file-return"></p>
+					
+<!--
+					<div class="field-wrap">
+						<p style="color:white">En vous inscrivant vous acceptez les <a href="#">termes et conditions générales d'utilisation</a> de Pear2Pear</p><br />
+					</div>
+					
+-->
 					<button type="submit" class="button button-block">S'inscrire</button>
 			<?php include("/controleurs/inscriptionController.php"); ?>
 			</form>
