@@ -15,8 +15,8 @@
 				<li class="links">
 					<h2>Blabla</h2>
 					<ul>
-						<li><a href="#">Fruits</a></li>
-						<li><a href="#">Legumes</a></li>
+						<li><a href="../front/faq.php">FAQ</a></li>
+						<li><a href="../front/us.php">Qui sommes-nous ?</a></li>
 						<li><a href="#">Fruit à coques</a></li>
 						<li><a href="#">Champignons</a></li>
 						<li><a href="#">Plantes</a></li>
@@ -39,6 +39,6 @@
 		</div>
 
 		<div class="copyrights wrapper">
-			Made with &#9829 [G7C] - <a href="#">Conditions Général d'Utilisation</a> - <a href="/vues/front/contact.php">Nous Contacter</a>
+			Made with &#9829 <a href="../front/us.php">[G7C]</a> - <a href="../front/cgu.php">Conditions Général d'Utilisation</a> - <a href="/vues/front/contact.php">Nous Contacter</a>
 		</div>
 </footer><!--  end footer  -->
