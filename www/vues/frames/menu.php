@@ -21,6 +21,7 @@ if($_SESSION['email'] == TRUE)
 
 			<a href="../back/profil.php" class="login_btn">Profil</a>
 			<a href="../../controleurs/deconnexionController.php" class="login_btn">Deconnexion</a>
+			<a href="../back/panier.php"><i href=""></i></a>
 		</nav>
 	</div>
 </header> <!-- end header section -->';

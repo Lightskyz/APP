@@ -991,4 +991,16 @@ textarea {
   font-weight: normal;
 }
 
+/* cgu */
+#cgu{
+  margin:20px;
+  text-align: justify;
+}
+#cgu h1{
+  color:black;
+}
+#cgu h3{
+  color:black;
+  
+}
 
