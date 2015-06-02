@@ -1,0 +1,5 @@
+AuthUserFile /homez.235/lightskyes/www/'chemin d'accès au fichier .htpasswd'/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Accès Restreint"
+AuthType Basic
+require valid-user
