@@ -50,28 +50,30 @@
 <hr>
 
 <h3>Est ce que tout le monde peut poster une annonce ?</h3><br />
-		<p>Oui, tous les utilisateurs inscrits et disposant d’un produit à vendre peuvent poster une annonce.</p>
+<p>Oui, tous les utilisateurs inscrits et disposant d’un produit à vendre peuvent poster une annonce.</p>
 
 <hr>
 
 <h3>En combien de temps notre annonce est-elle publiée ?</h3><br />
-	<p>Immédiatement! Votre annonce n’a pas besoin d’être validée pour être publiée pour ne pas perdre de temps. Mais toutes les annonces sont examinées par nos administrateurs et sont susceptibles d’être supprimées si elles ne respectent pas les règles de Pear2Pear.</p>
+<p>Immédiatement! Votre annonce n’a pas besoin d’être validée pour être publiée pour ne pas perdre de temps. Mais toutes les annonces sont examinées par nos administrateurs et sont susceptibles d’être supprimées si elles ne respectent pas les règles de Pear2Pear.</p>
 
 <hr>
 
 <h3>Qui sommes nous ?</h3><br />
-<p></p>
+<p> Nous sommes une association à but non-lucratif ayant pour but de faire perdurer l’agriculture à domicile et le partage entre agriculteurs. Anciennement nommée de “De potager à particulier”, notre association fait aujourd’hui peau neuve et s’adapte au monde numérique avec un nouveau site Internet.</p>
 
 <hr>
 
 <h3>Comment gagnez vous de l’argent ?</h3><br />
-<p></p>
+<p>En tant d'association, nous ne gagnons pas d’argent grâce au site Internet, pas de comission, pas de pub, tout pour les fruits et légumes! L’hébergement est les frais de maintenance du site Internet sont assurés par les cotisations des membres de l’association “De potager à particulier”.
+</p>
 
 <hr>
 
 <h3>Mon compte a été banni, pourquoi ?</h3><br />
-<p>Vous n’avez pas respectez les regles d’utilisation</p>
-</div>
+<p>Si vous ne parvenez plus à vous connecter à votre compte, c’est que vous avez probablement enfreint une règle. Pour éviter cela, nous vous invitons à consulter la page <a href="cgu.php"> CGU </a> </p>
+
+</div><!-- end of faq -->
 
 		<?php include("../frames/footer.php"); ?>
 

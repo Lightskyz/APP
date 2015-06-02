@@ -1,10 +1,10 @@
 <!-- Créer 2 menus si l'utilisateur est connecté ou non connecté -->
 
 <?php 
-
-session_start();
-
+echo $_SESSION["email"];
+echo $_SESSION["prenom"];
 /* rajouter que la condition si le mec est admin :  && $_SESSION['isAdmin'] == 1*/
+
 if($_SESSION['email'] == TRUE)
 	{
 		echo'<header>

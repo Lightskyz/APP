@@ -23,52 +23,28 @@
 			$user = $_SESSION['id'];
 			?>
 
-			<?php
-
-// On récupère nos variables de session
-if (isset($_SESSION['email']) && isset($_SESSION['mdp'])) {
-
-	// On teste pour voir si nos variables ont bien été enregistrées
-	echo '<html>';
-	echo '<head>';
-	echo '<title>Page de notre section membre</title>';
-	echo '</head>';
-
-	echo '<body>';
-	echo '<div id="bienvenue">Votre email est '.$_SESSION['email'].' et votre mot de passe est '.$_SESSION['mdp'].' et votre identifiant est.'.$_SESSION['id'].'.</div>';
-	echo '<br />';
-	
-}
-else {
-	echo 'Les variables ne sont pas déclarées.';
-}
-?>
-
 <?php
 
 include("../../controleurs/profilController.php");
-echo'avant la fonction';
-afficheprofil(19);
-echo'apres la fonction';
-
+afficheprofil($_SESSION['email']);
 ?>
 
 <div id="profil">
 	<div class="profil profil_block" id="affichageProfil">
 		<h1>Votre profil</h1>
 			<div id="photoProfil">
-				<img alt="profil"/><!-- pouvoir cliquer sur l'image pour la modifier -->
+				<img alt="profil"/><!-- pouvoir cliquer sur l\'image pour la modifier -->
 			</div>
 			<div class="">
 				<ul class="infoProfil">
-					<li>Nom : RAKOTOZAFY</li>
-					<li>Prénom : Antoine</li>
-					<li>Date de naissance : 14/12/1994 (20 ans)</li>
+					<li>Nom : <?php echo strtoupper($_SESSION["nom"]); ?> </li>
+					<li>Prénom : <?php echo $_SESSION["prenom"]; ?></li>
+					<li>Date de naissance : <?php echo $_SESSION["born"]; echo " "; echo "("; echo $_SESSION['age']; echo " ";echo "ans)"; ?></li>
 					<li>Adresse :<br />
-					26 Rue Raymond Marcheron<br />
-					92170 Vanves</li>
-					<li>Téléphone : 0686656030</li>
-					<li>Email : antoine.rakotozafy@gmail.com</li>
+					<?php echo $_SESSION["adresse"]; ?><br />
+					<?php echo $_SESSION["cdp"]; ?><?php echo " "; ?><?php echo $_SESSION["ville"]; ?></li>
+					<li>Téléphone : <?php echo $_SESSION["telephone"]; ?></li>
+					<li>Email : <?php echo $_SESSION["email"]; ?></li>
 				</ul>
 			</div>
 	</div>
