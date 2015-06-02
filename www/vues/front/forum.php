@@ -44,22 +44,13 @@
 */
 
 	
-$user = 19;
-	
-	echo'etape 1 ok';
+$user = $_SESSION['id'];
+
 	if(empty($_GET['mes-message'])){
-		echo'etape 2 ok';
 		if(empty($_GET['topic'])){
-			echo'etape 3 ok';
-
-			/* erreur */
-
 			if(isset($_GET['forum'])){
-				echo'etape 4 ok';
 				$forum = $_GET['forum'];
-				echo'etape 5 ok';
 				affichage_topic($forum);
-				echo'etape 6 ok';
 				?>
 				<div class="form">
 				<form method="post" action="" enctype="multipart/form-data">
@@ -79,8 +70,6 @@ $user = 19;
 				}
 
 			} else {
-				echo'etape else';
-				/* erreur */
 				affichage_forum();
 			}
 		} else {

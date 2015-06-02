@@ -19,7 +19,7 @@
 				include("../../controleurs/updateController.php");
 
 			// Selection de l'utilisateur et de ses parametres.
-			$user = $_SESSION['email'];
+			$user = $_SESSION['id'];
 			?>
 
 <div id="profil">
@@ -122,7 +122,7 @@
 			</form>
 
 			<?php
-				updateprofil($user); 
+				updateprofil($_SESSION['id']); 
 			?>
 	</div> <!-- fin de form -->
 </div><!-- profil -->

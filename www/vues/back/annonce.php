@@ -76,7 +76,7 @@
 
 		<?php 
 			include("../../controleurs/annonceController.php"); 
-			addproduct(19);	//A titre indicatif pour les tests, sera à mener à changer plus tard
+			addproduct($_SESSION["id"]);	//A titre indicatif pour les tests, sera à mener à changer plus tard
 		?>
 		</div> <!-- fin de form -->
 

@@ -10,7 +10,7 @@ function affichage_forum(){
 	$sql = ' SELECT * FROM forum ORDER BY id ASC ';
 	$req = $bdd -> query($sql);
 	while($donnees = $req -> fetch() ){
-		echo "<a href='../front/forum.php?forum=".$donnees['id']." ''>".$donnees['nom']."</a></br>" ;
+		echo "<p class='message'><a href='../front/forum.php?forum=".$donnees['id']." ''>".$donnees['nom']."</a></br></p>" ;
 
 	}
 }

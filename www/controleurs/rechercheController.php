@@ -28,7 +28,7 @@ function recherche_crit($table, $order) {
     			}
 			?>
 			</select>
-			<input type="submit" name="submit" value="Go" />
+			<button type="submit" name="submit">Go</button>
 		</form>
 		<?php 
 		$OK = isset($_POST['Go']) ? $_POST['Go'] : '';

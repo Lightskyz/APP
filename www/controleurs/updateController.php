@@ -45,7 +45,7 @@
 			if(!empty($nom)){
 				$name = $nom;
 			}else{
-				$sql2='SELECT nom FROM user WHERE id='.$user.' ';
+				$sql2='SELECT nom FROM user WHERE id="'.$user.'" ';
 				$reponse = $bdd->query($sql2);
 				while ($donnees = $reponse->fetch())
 				{
@@ -55,7 +55,7 @@
 			if(!empty($prenom)){
 				$surname = $prenom;
 			}else{
-				$sql3='SELECT prenom FROM user WHERE id='.$user.' ';
+				$sql3='SELECT prenom FROM user WHERE id="'.$user.'" ';
 				$reponse = $bdd->query($sql3);
 				while ($donnees = $reponse->fetch())
 				{
@@ -65,27 +65,27 @@
 			if(!empty($adresse)){
 				$adress = $adresse;
 			}else{
-				$sql4='SELECT adresse FROM user WHERE id='.$user.' ';
+				$sql4='SELECT adresse FROM user WHERE id="'.$user.'" ';
 				$reponse = $bdd->query($sql4);
 				while ($donnees = $reponse->fetch())
 				{
 					$adress = $donnees['adresse'];
 				}
 			}
-			if(!empty($code_postal)){
-				$cdp = $code_postal;
+			if(!empty($cdp)){
+				$code_postal = $cdp;
 			}else{
-				$sql5='SELECT code_postal FROM user WHERE id='.$user.' ';
+				$sql5='SELECT cdp FROM user WHERE id="'.$user.'" ';
 				$reponse = $bdd->query($sql5);
 				while ($donnees = $reponse->fetch())
 				{
-					$cdp = $donnees['code_postal'];
+					$code_postal = $donnees['cdp'];
 				}
 			}
 			if(!empty($vile)){	
 				$city = $ville;
 			}else{
-				$sql6='SELECT ville FROM user WHERE id='.$user.' ';
+				$sql6='SELECT ville FROM user WHERE id="'.$user.'" ';
 				$reponse = $bdd->query($sql6);
 				while ($donnees = $reponse->fetch())
 				{
@@ -95,7 +95,7 @@
 			if(!empty($email)){
 				$mail = $email;
 			}else{
-				$sql7='SELECT email FROM user WHERE id='.$user.' ';
+				$sql7='SELECT email FROM user WHERE id="'.$user.'" ';
 				$reponse = $bdd->query($sql7);
 				while ($donnees = $reponse->fetch())
 				{
@@ -105,7 +105,7 @@
 			if(!empty($telephone)){
 				$tel = $telephone;
 			}else{
-				$sql8='SELECT telephone FROM user WHERE id='.$user.' ';
+				$sql8='SELECT telephone FROM user WHERE id="'.$user.'" ';
 				$reponse = $bdd->query($sql8);
 				while ($donnees = $reponse->fetch())
 				{
@@ -116,7 +116,7 @@
 			if(!empty($mot_de_passe) && !empty($mot_de_passe_verif)){
 				if($mot_de_passe != $mot_de_passe_verif){
 					echo "Mot de passe non valide." ;
-					$sql9='SELECT mot_de_passe FROM user WHERE id='.$user.' ';
+					$sql9='SELECT mot_de_passe FROM user WHERE id="'.$user.'" ';
 					$reponse = $bdd->query($sql9);
 					while ($donnees = $reponse->fetch())
 					{
@@ -126,7 +126,7 @@
 					$mdp = $mot_de_passe;
 				}
 			}else{
-				$sql9='SELECT mot_de_passe FROM user WHERE id='.$user.' ';
+				$sql9='SELECT mot_de_passe FROM user WHERE id="'.$user.'" ';
 				$reponse = $bdd->query($sql9);
 				while ($donnees = $reponse->fetch())
 				{
