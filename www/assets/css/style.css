@@ -888,31 +888,18 @@ textarea {
   
 }
 
-/* Prfil d'un utilisateur */
+/* Profil d'un utilisateur */
 
 .profil {
   background: rgba(28, 54, 85, 0.95);
   padding: 40px;
-  max-width: 45%;
+  max-width: 600px;
   margin: 40px auto;
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
   color:white;
 }
 
-.profil_block{
-  display: inline-block;
-}
-
-#modifProfil{
-  float: right;
-  margin-right: 100px;
-}
-
-#affichageProfil{
-  float: left;
-  margin-left: 100px;
-}
 .infoProfil{
   list-style: none;
   font-size: 22px;

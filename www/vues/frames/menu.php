@@ -1,11 +1,13 @@
 <!-- Créer 2 menus si l'utilisateur est connecté ou non connecté -->
 
 <?php 
-echo $_SESSION["email"];
-echo $_SESSION["prenom"];
+
+include('../../controleurs/profilController.php');
+afficheprofil($_SESSION['email']);
+
 /* rajouter que la condition si le mec est admin :  && $_SESSION['isAdmin'] == 1*/
 
-if($_SESSION['email'] == TRUE)
+if($_SESSION['email'] == TRUE && $_SESSION['isAdmin'] == 1)
 	{
 		echo'<header>
 	<div class="wrapper">
@@ -15,10 +17,10 @@ if($_SESSION['email'] == TRUE)
 			<ul>
 				<li><a href="../front/produit.php">Nos produits</a></li>
 				<li><a href="../front/forum.php">Forum</a></li>
-				<li><a href="../back/annonce.php">Annonce</a></li>
 				<li><a href="../front/contact.php">Contact</a></li>
 			</ul>
-
+			
+			<a href="../back/admin.php" class="login_btn" id="admin">ADMIN</a>
 			<a href="../back/profil.php" class="login_btn">Profil</a>
 			<a href="../../controleurs/deconnexionController.php" class="login_btn">Deconnexion</a>
 			<a href="../back/panier.php"><i href=""></i></a>
@@ -27,7 +29,7 @@ if($_SESSION['email'] == TRUE)
 </header> <!-- end header section -->';
 
 	}
-/* else if($_SESSION['email'] == TRUE)
+elseif($_SESSION['email'] == TRUE)
 	{
 		echo'<header>
 	<div class="wrapper">
@@ -41,14 +43,14 @@ if($_SESSION['email'] == TRUE)
 				<li><a href="../front/contact.php">Contact</a></li>
 			</ul>
 			
-			<a href="../back/admin.php" class="login_btn" id="admin">ADMIN</a>
+			
 			<a href="../back/profil.php" class="login_btn">Profil</a>
 			<a href="/controleurs/deconnexionController.php" class="login_btn">Deconnexion</a>
 		</nav>
 	</div>
 </header> <!-- end header section -->';
 
-	} */
+	}
 
 else{
 	echo'<header>

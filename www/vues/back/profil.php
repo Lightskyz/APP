@@ -1,5 +1,4 @@
 <!-- On démarre la session (ceci est indispensable dans toutes les pages de notre section membre) -->
-
 <?php include("../../modele/sessionStart.php"); ?>
 <?php include("../../modele/modele.php"); ?>
 <!DOCTYPE HTML>
@@ -20,22 +19,17 @@
 				include("../../controleurs/updateController.php");
 
 			// Selection de l'utilisateur et de ses parametres.
-			$user = $_SESSION['id'];
+			$user = $_SESSION['email'];
 			?>
 
-<?php
-
-include("../../controleurs/profilController.php");
-afficheprofil($_SESSION['email']);
-?>
-
 <div id="profil">
+
 	<div class="profil profil_block" id="affichageProfil">
 		<h1>Votre profil</h1>
 			<div id="photoProfil">
 				<img alt="profil"/><!-- pouvoir cliquer sur l\'image pour la modifier -->
-			</div>
-			<div class="">
+			</div> <!-- photo profil -->
+			<div>
 				<ul class="infoProfil">
 					<li>Nom : <?php echo strtoupper($_SESSION["nom"]); ?> </li>
 					<li>Prénom : <?php echo $_SESSION["prenom"]; ?></li>
@@ -46,9 +40,9 @@ afficheprofil($_SESSION['email']);
 					<li>Téléphone : <?php echo $_SESSION["telephone"]; ?></li>
 					<li>Email : <?php echo $_SESSION["email"]; ?></li>
 				</ul>
-			</div>
-	</div>
-</div>
+			</div> <!-- info profil -->
+	</div> <!-- profil_block, profil et affichage profil -->
+
 
 
 	<div class="form profil_block" id="modifProfil">
@@ -131,8 +125,8 @@ afficheprofil($_SESSION['email']);
 				updateprofil($user); 
 			?>
 	</div> <!-- fin de form -->
-		<!-- contenu de notre site -->
-</div>
+</div><!-- profil -->
+
 		<?php include("../frames/footer.php"); ?>
 
 	</body>
