@@ -12,14 +12,14 @@ function affichage_forum(){
 	while($donnees = $req -> fetch() ){
 		//Vue des forum existants !
 
-		echo "<p class='message'><a href='../front/forum.php?forum=".$donnees['id']." ''>".$donnees['nom']."</a></br>".$donnees['description']."</p>" ;
+		echo "<a href='../front/forum.php?forum=".$donnees['id']." ''><div class='message'><p class='titre'>".$donnees['nom']."</p></br><p class='description'>".$donnees['description']."</p></div></a>" ;
 
 	}
 }
 
 function affichage_topic($forum){
 	include("../../modele/modele.php");
-	echo "<a href='../front/forum.php'>Accueil</a></br>" ;
+	echo "<a href='../front/forum.php'><span class='accueil'>Accueil Forum</span></a></br>" ;
 	$sql = ' SELECT * FROM topic WHERE id_forum = '.$forum.' ORDER BY nom ASC ';
 	$req = $bdd -> query($sql);
 	while($donnees = $req -> fetch() ){
@@ -31,7 +31,7 @@ function affichage_topic($forum){
 }
 
 function affichage_message($forum, $topic){
-	echo "<a href='../front/forum.php'>Accueil</a></br>" ;
+	echo "<a href='../front/forum.php'><span class='accueil'>Accueil Forum</span></a></br>" ;
 	include("../../modele/modele.php");
 	$sql = ' SELECT * FROM message WHERE id_topic = '.$topic.' ORDER BY date ASC ';
 	$req = $bdd -> query($sql);
@@ -49,7 +49,7 @@ function affichage_message($forum, $topic){
 }
 
 function affichage_mes_messages($user){
-	echo "<a href='../front/forum.php'>Accueil</a></br>" ;
+	echo "<a href='../front/forum.php'><span class='accueil'>Accueil Forum</span></a></br>" ;
 	include("../../modele/modele.php");
 	$sql = ' SELECT * FROM message WHERE id_user = '.$user.' ORDER BY date ASC ';
 	$req = $bdd -> query($sql);

@@ -15,14 +15,6 @@
 		<?php include("../frames/menu.php"); ?>
 		<?php include("../frames/search.php"); ?>
 		<!--
-		<nav>
-		<ul style="list-style:none">
-			<li><a href="#">Poster un message</a></li>
-			<li><a href="#">Mes messages</a></li>
-			<li><a href="#">Tous les topics</a></li>
-		</ul>
-		</nav>
-		
 
 		<div class="topic">
 			<div class="information">
@@ -33,7 +25,7 @@
 			</p>
 			
 		</div>
--->
+		-->
 
 		<?php
 /*
@@ -42,7 +34,7 @@
 	Version 1.0.1
 */
 
-	
+
 $user = $_SESSION['id'];
 
 	if(empty($_GET['mes-message'])){
@@ -106,7 +98,7 @@ $user = $_SESSION['id'];
 
 		}
 ?>
-	<a href='../vues/front/forum.php?mes-message=1'> Mes messages </a>
+	<a href='../front/forum.php?mes-message=1'> Mes messages </a>
 
 <?php
 	} else {
