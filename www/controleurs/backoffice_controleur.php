@@ -62,7 +62,9 @@ function delete_categorie($categorie){
 	}
 
 	//"supprimer" avec formulaire fonctionne => on va le faire avec une fonction qui récupère l'ID de l'user//
-	if(!empty($_POST['nom2']) && !empty($_POST['prenom2'])) {
+function delete_user(){
+	include("modele.php");
+	
 
 			//if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['born'])) {
 		$choix = $_POST['choix'];

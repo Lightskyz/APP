@@ -76,9 +76,16 @@
                     </br></br>
                     <label>Prenom</br><input type="text" name="prenom2"/></label>
                     </br></br>
+                    <label>Email</br><input type="text" name="email2"/></label>
+                    </br></br>
                     <input type="submit" name="submit3" value="Supprimer"></br>
                     <input type="submit" name="submit4" value="Ban"></br>
                 </form>
+                <?php
+                if(!empty($_POST['nom2']) && !empty($_POST['prenom2']) && !empty($_POST['email2'])) {
+                    delete_user();
+                }
+                ?>
     	</ul>
     <h4>Tout les utilisateurs inscrits</h4>
         <?php 
