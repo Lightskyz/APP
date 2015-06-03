@@ -150,7 +150,8 @@ CREATE TABLE `user` (
   `telephone` varchar(10) NOT NULL,
   `image` varchar(255) NOT NULL,
   `actif` int(11) NOT NULL,
-  `isAdmin` int(11) NOT NULL
+  `isAdmin` int(11) NOT NULL,
+  `token` varchar(255) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 --
