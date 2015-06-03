@@ -15,6 +15,8 @@ function afficheprofil($user){
 		$_SESSION['ville'] = $donnees["ville"];
 		$_SESSION['telephone'] = $donnees["telephone"];
 		$_SESSION['isAdmin'] = $donnees["isAdmin"];
+		$_SESSION['actif'] = $donnees['actif'];
+		$_SESSION['mdp'] = $donnees['mdp'];
 		$_SESSION['age'] = floor((time() - strtotime($_SESSION['born']))/3600/24/365);
 
 		/* echo $_SESSION['id']; echo"<br />";

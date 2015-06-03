@@ -65,6 +65,13 @@
 					</div>
 				</div> <!-- fin de la div top row -->
 
+				<div class="field-wrap">
+		            	<label>
+							Date de naissance
+						</label>
+						<input type="text" name="born" size="10">
+					</div>
+				
 					<div class="field-wrap">
 		            	<label>
 							Adresse
@@ -77,7 +84,7 @@
 		            	<label>
 							Code Postal
 						</label>
-						<input type="text" name="code_postal" size="10">
+						<input type="text" name="cdp" size="10">
 					</div>
 
 					<div class="field-wrap">
@@ -87,6 +94,7 @@
 						<input type="text" name="ville" size="10">
 					</div>
 				</div> <!-- fin de la div top row -->
+					
 
 					<div class="field-wrap">
 		            	<label>
@@ -95,26 +103,20 @@
 						<input type="text" name="telephone" size="10">
 					</div>
 
-					<div class="field-wrap">
-		            	<label>
-							Email
-						</label>
-						<input type="text" name="email" size="10">
-					</div>
 				
 				<div class="top-row">
 					<div class="field-wrap">
 		            	<label>
 							Mot de passe
 						</label>
-						<input type="text" name="mot_de_passe" size="10">
+						<input type="text" name="mdp" size="10">
 					</div>
 
 					<div class="field-wrap">
 		            	<label>
 							Mot de passe (vérif)
 						</label>
-						<input type="text" name="mot_de_passe_verif" size="10">
+						<input type="text" name="mdp2" size="10">
 					</div>
 				</div> <!-- fin de la div top row -->
 

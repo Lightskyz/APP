@@ -7,11 +7,20 @@
 		if(!empty($_POST['prenom'])){
 			$prenom = $_POST['prenom'];
 		}
+		if(!empty($_POST['born'])){
+			$born = $_POST['born'];
+		}
+		if(!empty($_POST['email'])){
+			$email = $_POST['email'];
+		}
+		if(!empty($_POST['mdp'])){
+			$mdp = $_POST['mdp'];
+		}
 		if(!empty($_POST['adresse'])){
 			$adresse = $_POST['adresse'];
 		}
-		if(!empty($_POST['code_postal'])){
-			$code_postal = $_POST['code_postal'];	
+		if(!empty($_POST['cdp'])){
+			$cdp = $_POST['cdp'];	
 		}
 		if(!empty($_POST['ville'])){
 			$ville = $_POST['ville'];
@@ -19,118 +28,121 @@
 		if(!empty($_POST['telephone'])){
 			$telephone = $_POST['telephone'];
 		}
-		if(!empty($_POST['email'])){
-			$email = $_POST['email'];
-		}
-		if(!empty($_POST['mot_de_passe'])){
-			$mot_de_passe = $_POST['mot_de_passe'];
-		}
-		if(!empty($_POST['mot_de_passe_verif'])){
-			$mot_de_passe_verif = $_POST['mot_de_passe_verif'];
+		if(!empty($_POST['mdp2'])){
+			$mdp2 = $_POST['mdp2'];
 		}
 
-			$sql = 'UPDATE `user` SET `nom`=?,`prenom`=?,`adresse`=?, `adresse_verif`=?, `code_postal`=?, `ville`=?, `telephone`=?, `email`=?, `mot_de_passe`=?, `mot_de_passe_verif`=? WHERE id = '.$user.' '; // Ajouter les autres champs de modifications.
+			$sql = 'UPDATE `user` SET `nom`=?,`prenom`=?,`born`=?, `email`=?, `mdp`=?, `adresse`=?, `cdp`=?, `ville`=?, `telephone`=? WHERE id = '.$user.' '; 
 			$reponse2= $bdd->prepare($sql);
-			$reponse2->bindParam(1, $name);						// Parametre de modification du champ 1
-			$reponse2->bindParam(2, $surname);					//									  2 
-			$reponse2->bindParam(3, $adress);					//									  3
-			$reponse2->bindParam(4, $adress);
-			$reponse2->bindParam(5, $cdp);
-			$reponse2->bindParam(6, $city);
-			$reponse2->bindParam(7, $tel);
-			$reponse2->bindParam(8, $mail);	
-			$reponse2->bindParam(9, $mdp);
-			$reponse2->bindParam(10, $mdp);
+			$reponse2->bindParam(1, $lastname);						// Parametre de modification du champ 1
+			$reponse2->bindParam(2, $firstname);					//									  2 
+			$reponse2->bindParam(3, $datebirth);					//									  3
+			$reponse2->bindParam(4, $mail);
+			$reponse2->bindParam(5, $pass);
+			$reponse2->bindParam(6, $adress);
+			$reponse2->bindParam(7, $codepostal);
+			$reponse2->bindParam(8, $city);
+			$reponse2->bindParam(9, $phone);
 
 			if(!empty($nom)){
-				$name = $nom;
+				$lastname = $nom;
 			}else{
 				$sql2='SELECT nom FROM user WHERE id="'.$user.'" ';
 				$reponse = $bdd->query($sql2);
 				while ($donnees = $reponse->fetch())
 				{
-					$name = $donnees['nom'];
+					$lastname = $donnees['nom'];
 				}
 			}
 			if(!empty($prenom)){
-				$surname = $prenom;
+				$firstname = $prenom;
 			}else{
 				$sql3='SELECT prenom FROM user WHERE id="'.$user.'" ';
 				$reponse = $bdd->query($sql3);
 				while ($donnees = $reponse->fetch())
 				{
-					$surname = $donnees['prenom'];
+					$firstname = $donnees['prenom'];
 				}
 			}
-			if(!empty($adresse)){
+			if(!empty($born)){
+				$datebirth = $born;
+			}else{
+				$sql4='SELECT born FROM user WHERE id="'.$user.'" ';
+				$reponse = $bdd->query($sql4);
+				while ($donnees = $reponse->fetch())
+				{
+					$datebirth = $donnees['born'];
+				}
+			}
+			if(!empty($email)){
+				$mail = $email;
+			}else{
+				$sql5='SELECT email FROM user WHERE id="'.$user.'" ';
+				$reponse = $bdd->query($sql5);
+				while ($donnees = $reponse->fetch())
+				{
+					$mail = $donnees['email'];
+				}
+			}
+			if(!empty($adresse)){	
 				$adress = $adresse;
 			}else{
-				$sql4='SELECT adresse FROM user WHERE id="'.$user.'" ';
-				$reponse = $bdd->query($sql4);
+				$sql6='SELECT adresse FROM user WHERE id="'.$user.'" ';
+				$reponse = $bdd->query($sql6);
 				while ($donnees = $reponse->fetch())
 				{
 					$adress = $donnees['adresse'];
 				}
 			}
 			if(!empty($cdp)){
-				$code_postal = $cdp;
+				$codepostal = $cdp;
 			}else{
-				$sql5='SELECT cdp FROM user WHERE id="'.$user.'" ';
-				$reponse = $bdd->query($sql5);
+				$sql7='SELECT cdp FROM user WHERE id="'.$user.'" ';
+				$reponse = $bdd->query($sql7);
 				while ($donnees = $reponse->fetch())
 				{
-					$code_postal = $donnees['cdp'];
+					$codepostal = $donnees['cdp'];
 				}
 			}
-			if(!empty($vile)){	
+			if(!empty($ville)){
 				$city = $ville;
 			}else{
-				$sql6='SELECT ville FROM user WHERE id="'.$user.'" ';
-				$reponse = $bdd->query($sql6);
+				$sql8='SELECT ville FROM user WHERE id="'.$user.'" ';
+				$reponse = $bdd->query($sql8);
 				while ($donnees = $reponse->fetch())
 				{
 					$city = $donnees['ville'];
 				}
 			}
-			if(!empty($email)){
-				$mail = $email;
-			}else{
-				$sql7='SELECT email FROM user WHERE id="'.$user.'" ';
-				$reponse = $bdd->query($sql7);
-				while ($donnees = $reponse->fetch())
-				{
-					$mail = $donnees['email'];
-				}
-			}
 			if(!empty($telephone)){
-				$tel = $telephone;
+				$phone = $telephone;
 			}else{
 				$sql8='SELECT telephone FROM user WHERE id="'.$user.'" ';
 				$reponse = $bdd->query($sql8);
 				while ($donnees = $reponse->fetch())
 				{
-					$tel = $donnees['telephone'];
+					$phone = $donnees['telephone'];
 				}
 			}
 		
-			if(!empty($mot_de_passe) && !empty($mot_de_passe_verif)){
-				if($mot_de_passe != $mot_de_passe_verif){
+			if(!empty($mdp) && !empty($mdp2)){
+				if($mdp != $mdp2){
 					echo "Mot de passe non valide." ;
-					$sql9='SELECT mot_de_passe FROM user WHERE id="'.$user.'" ';
+					$sql9='SELECT mdp FROM user WHERE id="'.$user.'" ';
 					$reponse = $bdd->query($sql9);
 					while ($donnees = $reponse->fetch())
 					{
-						$mdp = $donnees['mot_de_passe'];
+						$pass = sha1($donnees['mdp']);
 					}
 				} else {
-					$mdp = $mot_de_passe;
+					$pass = sha1($mdp);
 				}
 			}else{
-				$sql9='SELECT mot_de_passe FROM user WHERE id="'.$user.'" ';
+				$sql9='SELECT mdp FROM user WHERE id="'.$user.'" ';
 				$reponse = $bdd->query($sql9);
 				while ($donnees = $reponse->fetch())
 				{
-					$mdp = $donnees['mot_de_passe'];
+					$pass = sha1($donnees['mdp']);
 				}
 			}
 		
