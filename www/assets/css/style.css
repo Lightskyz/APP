@@ -560,6 +560,7 @@ footer .copyrights a.ph_link{
         display: block;
         padding: 25px 0;
         border-bottom: 1px solid #f2f3f3;
+        color: black;
 
         transition: background .2s linear;
         -webkit-transition: background .2s linear;
@@ -1011,7 +1012,6 @@ background: rgba(28, 54, 85, 0.90);
 
 /* Deconnexion */
 
-header nav ul li a,
 header nav .login_btn2{
     text-decoration: none;
     color: #fff;
