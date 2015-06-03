@@ -1,7 +1,7 @@
 <?php
-function afficheprofil($user){
+function afficheprofil($email){
 	include("modele.php");
-	$sql = 'SELECT * FROM user WHERE id = '.$user.' ';
+	$sql = 'SELECT * FROM user WHERE email = '.$email.' ';
 	$req = $bdd-> query($sql);
 	while( $donnees = $req -> fetch()){
 		echo $donnees['nom'];
