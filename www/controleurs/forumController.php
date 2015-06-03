@@ -10,7 +10,9 @@ function affichage_forum(){
 	$sql = ' SELECT * FROM forum ORDER BY id ASC ';
 	$req = $bdd -> query($sql);
 	while($donnees = $req -> fetch() ){
-		echo "<p class='message'><a href='../front/forum.php?forum=".$donnees['id']." ''>".$donnees['nom']."</a></br></p>" ;
+		//Vue des forum existants !
+
+		echo "<p class='message'><a href='../front/forum.php?forum=".$donnees['id']." ''>".$donnees['nom']."</a></br>".$donnees['description']."</p>" ;
 
 	}
 }
@@ -21,6 +23,8 @@ function affichage_topic($forum){
 	$sql = ' SELECT * FROM topic WHERE id_forum = '.$forum.' ORDER BY nom ASC ';
 	$req = $bdd -> query($sql);
 	while($donnees = $req -> fetch() ){
+		//Vue des topics dans un topic
+
 		echo "<a href='../front/forum.php?forum=".$forum."&topic=".$donnees['id']." ''>".$donnees['nom']."</a></br>" ;
 	}
 	echo "<a href='../front/forum.php'>Retour</a></br>" ;
@@ -36,6 +40,7 @@ function affichage_message($forum, $topic){
 		$sql2 = ' SELECT * FROM user WHERE id = '.$user.' ';
 		$req2 = $bdd -> query($sql2);
 		while($donnees2 = $req2 -> fetch() ){
+			//Vue des message dans un topic !
 			echo " ".$donnees2['nom']." ".$donnees2['prenom']." ";
 		}
 		echo " ".$donnees['message']." </br> ";

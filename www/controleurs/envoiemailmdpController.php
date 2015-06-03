@@ -32,10 +32,8 @@ echo'Veuillez cliquer <a href="../back/envoieMail.php">ici</a>';
  
   Pour activer votre compte, veuillez cliquer sur le lien ci dessous
   ou copier/coller dans votre navigateur internet.
- 
-<!-- je n\'ai pas ce fichier, que faut-il mettre dedans ? -->
 
- http://localhost/app/mdp/validation.php?log='.urlencode($email).'&token='.urlencode($token).'
+ http://localhost/app/vues/back/validation.php?log='.urlencode($email).'&token='.urlencode($token).'
   ---------------
   Ceci est un mail automatique.
   Merci de ne pas y répondre.';

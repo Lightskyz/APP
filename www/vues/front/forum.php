@@ -51,15 +51,23 @@ $user = $_SESSION['id'];
 				$forum = $_GET['forum'];
 				affichage_topic($forum);
 				?>
+
 				<div class="form">
 				<form method="post" action="" enctype="multipart/form-data">
-
-		    		<label for="nom"> Nom du topic.</label><br />
-		     		<input type="text" name="nom" id="nom" /><br />
-		     		<label for="contenu"> Description.</label><br />
-		     		<input type="text" name="contenu" id="contenu" /><br />
+					<div class="field-wrap">
+		    			<label for="nom"> 
+		    				Nom du topic
+		    			</label>
+		    		<input type="text" name="nom" id="nom" />
+		    		</div>
+		    		<div class="field-wrap">
+		     			<label for="contenu"> 
+		     				Description
+		     			</label>
+		     		<input type="text" name="contenu" id="contenu" />
+		     		</div>
 				
-				<input type="submit" name="poster" value="Poster" />
+				<button class="button button-block" type="submit" name="poster">Poster</button>
 
 				</form>
 				</div>
@@ -76,12 +84,23 @@ $user = $_SESSION['id'];
 			$topic = $_GET['topic'];
 			affichage_message($forum, $topic);
 			?>
-			<form method="post" action="" enctype="multipart/form-data">
 
-		    	<label for="message"> Votre réponse.</label><br />
-		     	<input type="text" name="message" id="categorie" /><br />
-			<input type="submit" name="repondre" value="Repondre" />
+
+			<div class="form">
+				<form method="post" action="" enctype="multipart/form-data">
+			
+			<div class="field-wrap">
+		    	<label for="message">
+		    		Votre réponse
+		    	</label>
+		     	<input type="text" name="message" id="categorie" />
+		     </div>
+
+
+			<button type="submit" name="repondre" class="button button-block">Répondre</button>
 			</form>
+			</div>
+
 			<?php
 			post_message($user, $forum, $topic);
 
