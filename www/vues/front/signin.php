@@ -42,7 +42,7 @@
 	            <input type="password" name="mdp" required autocomplete="off"/>
 	          </div>
 	          
-	          <p class="forgot"><a href="#">Mot de passe oublié ?</a></p><br />
+	          <p class="forgot"><a href="../back/envoieMail.php">Mot de passe oublié ?</a></p><br />
 	          
 	          <button type="submit" class="button button-block"/>Se connecter</button>
 	          
