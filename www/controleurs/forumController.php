@@ -40,7 +40,7 @@ function affichage_message($forum, $topic){
 		$sql2 = ' SELECT * FROM user WHERE id = '.$user.' ';
 		$req2 = $bdd -> query($sql2);
 		while($donnees2 = $req2 -> fetch() ){
-			//Vue des message dans un topic !
+			//Vue des message dans un topic ! (avec le nom de l'auteur)
 			echo " ".$donnees2['nom']." ".$donnees2['prenom']." ";
 		}
 		echo " ".$donnees['message']." </br> ";
