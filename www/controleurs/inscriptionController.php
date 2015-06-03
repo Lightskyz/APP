@@ -12,7 +12,7 @@ if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) 
   $telephone = $_POST["telephone"];
   //$image = $_POST["image"];
 
-$req = $bdd->prepare('INSERT INTO user(nom, prenom, born, email, mdp, adresse, cdp, ville, telephone ) VALUES(:nom, :prenom, :born, :email, :mdp, :adresse, :cdp, :ville, :telephone)');
+$req = $bdd->prepare('INSERT INTO user(nom, prenom, born, email, mdp, adresse, cdp, ville, telephone ) VALUES(:nom, :prenom, :born, :email, :mdp, :adresse, :cdp, :ville, :telephone   )');
 $req->execute(array(
 'nom' => $nom,
 'prenom' => $prenom,

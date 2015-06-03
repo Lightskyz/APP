@@ -22,8 +22,8 @@ if($_SESSION['email'] == TRUE && $_SESSION['isAdmin'] == 1)
 			
 			<a href="../back/admin.php" class="login_btn" id="admin">ADMIN</a>
 			<a href="../back/profil.php" class="login_btn">Profil</a>
-			<a href="../../controleurs/deconnexionController.php" class="login_btn">Deconnexion</a>
-			<a href="../back/panier.php"><i href=""></i></a>
+			<a href="../../controleurs/deconnexionController.php"><i class="fa fa-power-off"></i></a>
+			
 		</nav>
 	</div>
 </header> <!-- end header section -->';
@@ -44,8 +44,10 @@ elseif($_SESSION['email'] == TRUE)
 			</ul>
 			
 			
+			<a href="../../controleurs/deconnexionController.php" class="login_btn2"><i class="fa fa-power-off"></i></a>
+			<a href="../back/panier.php" class="login_btn2"><i class="fa fa-shopping-cart"></i></a>
 			<a href="../back/profil.php" class="login_btn">Profil</a>
-			<a href="/controleurs/deconnexionController.php" class="login_btn">Deconnexion</a>
+			
 		</nav>
 	</div>
 </header> <!-- end header section -->';

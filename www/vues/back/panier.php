@@ -7,13 +7,14 @@
 	<head>
 		<title>Contact - Pear2Pear</title>
 		<?php include("../frames/head.php"); ?>
-		<?php include("../frames/search.php"); ?>
+		
 		
 	</head>
 
 	<body>
 
 		<?php include("../frames/menu.php"); ?>
+		<?php include("../frames/search.php"); ?>
 
 		<!-- Notre panier -->
 
