@@ -41,7 +41,9 @@ function affichage_message($forum, $topic){
 		$req2 = $bdd -> query($sql2);
 		while($donnees2 = $req2 -> fetch() ){
 			//Vue des message dans un topic ! (avec le nom de l'auteur)
-			echo " ".$donnees2['nom']." ".$donnees2['prenom']." ";
+
+
+		echo " ".$donnees2['nom']." ".$donnees2['prenom']." ";
 		}
 		echo " ".$donnees['message']." </br> ";
 	}
@@ -79,5 +81,17 @@ function post_message($user, $forum, $topic){
 				$req -> bindParam(':message' , $message );
 				$req->execute();
 			}
+}
+
+function ajout_topic($forum){
+	include("../../modele/modele.php");
+	$nom = $_POST['nom'];
+	$contenu = $_POST['contenu'];
+	$sql = 'INSERT INTO `topic`(`id_forum`, `nom`, `contenu`) VALUES (:id_forum,:nom,:contenu)';
+				$req = $bdd->prepare($sql);
+				$req -> bindParam(':id_forum' , $forum );
+				$req -> bindParam(':nom' , $nom );
+				$req -> bindParam(':contenu' , $contenu );
+				$req -> execute(); 
 }
 ?>
