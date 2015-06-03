@@ -1,6 +1,5 @@
-<?php include('../../modele/modele.php'); ?>
-
 <?php
+include('../modele/modele.php');
 if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['mdp']) && !empty($_POST['mdp2']) && $_POST['mdp'] == $_POST['mdp2'] && !empty($_POST['adresse']) && !empty($_POST['cdp']) && !empty($_POST['ville']) && !empty($_POST['telephone']) && !empty($_POST['email'])) {
   $nom     = $_POST["nom"];
   $prenom = $_POST["prenom"];
@@ -11,9 +10,9 @@ if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) 
   $cdp = $_POST["cdp"];
   $ville = $_POST["ville"];
   $telephone = $_POST["telephone"];
-  $image = $_POST["image"];
+  //$image = $_POST["image"];
 
-$req = $bdd->prepare('INSERT INTO user(nom, prenom, born, email, mdp, adresse, cdp, ville, telephone, image ) VALUES(:nom, :prenom, :born, :email, :mdp, :adresse, :cdp, :ville, :telephone, :image)');
+$req = $bdd->prepare('INSERT INTO user(nom, prenom, born, email, mdp, adresse, cdp, ville, telephone ) VALUES(:nom, :prenom, :born, :email, :mdp, :adresse, :cdp, :ville, :telephone)');
 $req->execute(array(
 'nom' => $nom,
 'prenom' => $prenom,
@@ -24,7 +23,7 @@ $req->execute(array(
 'cdp' => $cdp,
 'ville' => $ville,
 'telephone' => $telephone,
-'image' => $image
+//'image' => $image
 
 ));
 
@@ -67,7 +66,7 @@ echo'Vous êtes inscrit ! Bievenue ! Veuillez activer votre compte en confirmant
 }
 elseif(empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['born']) || empty($_POST['email']) || empty($_POST['mdp']) || empty($_POST['adresse']) || empty($_POST['cdp']) || empty($_POST['ville']) || empty($_POST['telephone']) ){
 	echo '<p>Vous n\'avez pas rempli tous les champs
-	Cliquez <a href="../vues/signin.php">ici</a> pour revenir</p>
+	Cliquez <a href="../vues/front/signin.php">ici</a> pour revenir</p>
 	</div>
 	</body>
 	</html>';
@@ -75,7 +74,7 @@ elseif(empty($_POST['nom']) || empty($_POST['prenom']) || empty($_POST['born']) 
 }
 elseif($_POST['mdp'] != $_POST['mdp2']){
 		echo '<p>Les mots de passe ne corespondent pas
-		Cliquez <a href="../vues/signin.php">ici</a> pour revenir</p>
+		Cliquez <a href="../vues/front/signin.php">ici</a> pour revenir</p>
 	</div>
 	</body>
 	</html>';

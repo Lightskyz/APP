@@ -1,5 +1,4 @@
 <?php include("../../modele/sessionStart.php"); ?>
-<?php include('../../modele/modele.php');?>
 
 <!DOCTYPE HTML>
 
@@ -136,7 +135,7 @@
 					
 -->
 					<button type="submit" class="button button-block">S'inscrire</button>
-			<?php include("../../controleurs/inscriptionController.php"); ?>
+			<?php //include("../../controleurs/inscriptionController.php"); ?>
 			</form>
 	</div> <!--div signup -->
 

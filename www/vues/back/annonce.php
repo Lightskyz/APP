@@ -1,7 +1,6 @@
 <?php include("../../modele/sessionStart.php"); ?>
 
 <!DOCTYPE HTML>
-<?php include('../../modele/modele.php');?>
 
 <html>
 	

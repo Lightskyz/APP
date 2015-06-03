@@ -1,5 +1,5 @@
 <?php include("../../modele/sessionStart.php"); ?>
-<?php include('../../modele/modele.php');?>
+
 
 <!DOCTYPE HTML>
 

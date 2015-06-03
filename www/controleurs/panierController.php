@@ -7,7 +7,7 @@
 
 	function addpanier($user, $produtct, $quantite){
 
-		include("../modele/modele.php");  // Inclue la base de donnée + connexion.
+		include("../../modele/modele.php");  // Inclue la base de donnée + connexion.
 		
 		$sql = 'INSERT INTO `detailcommande`(`id`, `id_product`, `id_user`, `quantite`) VALUES (,'.$product.','.$user.','.$quantite.') '; // Ajout d'une ligne dans la table detailCommande 
 																													 // suivant les informations entrer dans la fonction panier.
@@ -27,7 +27,7 @@
 
 	}
 	function deletepanier($user, $product){
-		include("../modele/modele.php");
+		include("../../modele/modele.php");
 		$sql = 'SELECT id FROM detailcommande WHERE id_product='.$product.', id_user='.$user.' ';
 		$reponse = $bdd->query($sql);
 		while ($donnees = $reponse->fetch())
@@ -42,14 +42,14 @@
 	}
 
 	function updatepanier($user, $product, $quantite){
-		include("../modele/modele.php");
+		include("../../modele/modele.php");
 		$sql = 'UPDATE `detailcommande` SET `quantite`=? WHERE id_user='.$user.', id_product='.$product.' '; 
 		$reponse = $bdd->prepare($sql);
 		$reponse ->execute();
 	}
 
 	function affichepanier($user){
-		include("../modele/modele.php");
+		include("../../modele/modele.php");
 		$sql = 'SELECT * FROM commande WHERE id_user='.$user.' ';
 		$reponse = $bdd->query($sql);
 		while ($donnees = $reponse->fetch())

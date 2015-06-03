@@ -7,7 +7,7 @@
 
 function create_categorie(){
 	
-	include ('../modele/modele.php');
+	include ('../../modele/modele.php');
 
 	if(!empty($_POST['nom']) ) {
 		$nom = $_POST['nom'];
@@ -32,7 +32,7 @@ function create_categorie(){
 }
 
 function delete_categorie($categorie){
-	include ('../modele/modele.php');
+	include ('../../modele/modele.php');
 	$sql = 'SELECT * FROM categorie WHERE id = $categorie ';
 	$req = $bdd -> query($sql);
 	while ($donnees = $reponse->fetch())
@@ -49,7 +49,7 @@ function delete_categorie($categorie){
 }
 
 function update_categorie($name){
-	include ('../modele/modele.php');
+	include ('../../modele/modele.php');
 
 	$sql =' SELECT nom FROM categorie WHERE nom = '.$name.' ';
 	$req = $bdd -> query($sql);
@@ -69,7 +69,7 @@ function update_categorie($name){
 }
 
 function ban_supp_user($choix, $user){
-	include("../modele/modele.php");
+	include("../../modele/modele.php");
 
 	if( $choix == '1' ){
 		$sql = ' DELETE FROM `user` WHERE id = '.$user.' ';
@@ -84,7 +84,7 @@ function ban_supp_user($choix, $user){
 	}
 }
 function utilisateurs_bannis(){
-	include("../modele/modele.php");
+	include("../../modele/modele.php");
 
 	$sql = 'SELECT * FROM user WHERE isAdmin = '10' ';
 	$req = $bdd -> query($sql);
@@ -94,7 +94,7 @@ function utilisateurs_bannis(){
 		}
 }
 function voir_utilisateur(){
-	include("../modele/modele.php");
+	include("../../modele/modele.php");
 
 	$sql = 'SELECT * FROM user WHERE isAdmin != '10', isAdmin != '1' ';
 	$req = $bdd -> query($sql);

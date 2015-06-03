@@ -13,13 +13,11 @@
 				</li>
 
 				<li class="links">
-					<h2>Blabla</h2>
+					<h2>Informations</h2>
 					<ul>
-						<li><a href="../front/faq.php">FAQ</a></li>
 						<li><a href="../front/us.php">Qui sommes-nous ?</a></li>
+						<li><a href="../front/faq.php">FAQ</a></li>
 						<li><a href="../front/cgu.php">CGU</a></li>
-						<li><a href="#">Champignons</a></li>
-						<li><a href="#">Plantes</a></li>
 					</ul>
 				</li>
 

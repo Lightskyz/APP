@@ -1,6 +1,6 @@
 <!-- On démarre la session (ceci est indispensable dans toutes les pages de notre section membre) -->
 <?php include("../../modele/sessionStart.php"); ?>
-<?php include("../../modele/modele.php"); ?>
+
 <!DOCTYPE HTML>
 
 <html>

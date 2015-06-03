@@ -60,8 +60,8 @@ else{
 
 		<nav>
 			<ul>
+				<li><a href="../front/index.php">Accueil</a></li>
 				<li><a href="../front/produit.php">Nos produits</a></li>
-				<li><a href="../front/forum.php">Forum</a></li>
 				<li><a href="../front/contact.php">Contact</a></li>
 			</ul>
 			

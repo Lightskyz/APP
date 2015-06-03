@@ -3,7 +3,7 @@
 
 // #Intégration - Partie Dadou - Envoie d'un email/Activation du compte
 
-  include('../modele/modele.php');
+  include('../../modele/modele.php');
 
   echo '<html lang="fr-FR, en-US">
         <head>

@@ -1,5 +1,4 @@
 <?php include("../../modele/sessionStart.php"); ?> 
-<?php include("../../modele/modele.php"); ?>
 <?php include("../../controleurs/forumController.php"); ?>
 
 <!DOCTYPE HTML>
