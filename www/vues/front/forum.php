@@ -48,7 +48,10 @@ $user = $_SESSION['id'];
 		     			</label>
 		     		<input type="text" name="contenu" id="contenu" />
 		     		</div>
-				
+					
+					<!-- Re-Captcha by Google -->
+					<div class="g-recaptcha" data-sitekey="6Ldb5gcTAAAAAGAtNongnDYz3Er7GJHxfCehtwFR"></div>
+
 					<button class="button button-block" type="submit" name="poster">Poster</button>
 
 				</form>
@@ -94,10 +97,12 @@ $user = $_SESSION['id'];
 		}
 ?>
 	<a href='forum.php?mes-message=1'> Mes messages </a>
+<!-- erreur par là -->
 
 <?php
 	} else {
 		affichage_mes_messages($user);
+	
 	}
 	
 ?>

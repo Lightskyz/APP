@@ -16,3 +16,6 @@
 		<!-- Javascript nécessaire dans le code -->
 		<script type="text/javascript" src="../../assets/js/jQuery.min.js"></script>
 		<script type="text/javascript" src="../../assets/js/main.js"></script>
+
+		<!-- Re-Captcha by Google -->
+		<script src='https://www.google.com/recaptcha/api.js'></script>

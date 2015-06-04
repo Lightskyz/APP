@@ -50,7 +50,8 @@
 					<textarea style="height:150px" name="message" form="contact"></textarea>
 				</div>
 
-				
+				<!-- Re-Captcha by Google -->
+				<div class="g-recaptcha" data-sitekey="6Ldb5gcTAAAAAGAtNongnDYz3Er7GJHxfCehtwFR"></div>
 				
 
 				<button type="submit" class="button button-block" name="envoyer">Envoyer</button>

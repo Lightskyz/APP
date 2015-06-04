@@ -127,7 +127,11 @@
 					
 					<p class="file-return"></p>
 -->
-				
+
+					<!-- Re-Captcha by Google -->
+					<div class="g-recaptcha" data-sitekey="6Ldb5gcTAAAAAGAtNongnDYz3Er7GJHxfCehtwFR"></div>
+
+
 					<div class="field-wrap">
 						<p style="color:white">En vous inscrivant vous acceptez les <a href="cgu.php">termes et conditions générales d'utilisation</a> de Pear2Pear</p><br />
 					</div>
