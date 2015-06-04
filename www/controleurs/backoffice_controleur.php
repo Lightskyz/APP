@@ -62,6 +62,7 @@ function delete_categorie($categorie){
 	}
 
 	//"supprimer" avec formulaire fonctionne => on va le faire avec une fonction qui récupère l'ID de l'user//
+
 function delete_user(){
 	include("modele.php");
 	
@@ -98,9 +99,15 @@ function delete_user(){
 		while ($donnees = $req->fetch())
 			{
 				$name = " ".$donnees['nom']." ";
-				echo " ".$donnees['nom']." ";
+				echo " ".$donnees['nom']." ".$donnees['prenom']." </br>";
 			}
 	}
+
+
+/* Payraudeau Maxime
+Voir les commandes en cours. 
+03/06/2015
+*/
 function voir_commande(){
 	include("modele.php");
 
@@ -137,6 +144,10 @@ function voir_commande(){
 			}
 		}
 
+/* Payraudeau Maxime
+Ajouter une categorie au forum (Racine du forum) 
+03/06/2015
+*/
 function ajout_forum_cat(){
 	include("modele.php");
 	$nom = $_POST['nom4'];
@@ -146,6 +157,10 @@ function ajout_forum_cat(){
 				$req -> execute(); 
 }
 
+/* Payraudeau Maxime
+Voir les utilisateurs bannis 
+03/06/2015
+*/
 function utilisateurs_bannis(){
 	include("modele.php");
 
@@ -153,7 +168,7 @@ function utilisateurs_bannis(){
 	$req = $bdd -> query($sql);
 	while ($donnees = $req->fetch())
 		{
-			echo $donnees['nom']." ".$donnees['prenom'];
+			echo $donnees['nom']." ".$donnees['prenom']."</br>";
 		}
 }
 ?>

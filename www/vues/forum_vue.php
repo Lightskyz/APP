@@ -5,6 +5,7 @@
 	Version 1.0.1
 */
 $user = 1;
+
 	include("forum_controleur.php");
 
 	if(empty($_GET['mes-message'])){
@@ -29,13 +30,17 @@ $user = 1;
 					ajout_topic($forum);
 				}
 			} else {
-
 				affichage_forum();
 			}
 		} else {
 			$forum = $_GET['forum'];
 			$topic = $_GET['topic'];
 			affichage_message($forum, $topic);
+
+			if(!empty($_POST['changer'])){
+				delete_message($user, $_GET['delete']);
+				echo " Veuillez actualiser votre page web.";
+			}
 			?>
 			<form method="post" action="" enctype="multipart/form-data">
 

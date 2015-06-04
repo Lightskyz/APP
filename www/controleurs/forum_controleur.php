@@ -57,6 +57,13 @@ function affichage_message($forum, $topic){
 			echo " ".$donnees2['nom']." ".$donnees2['prenom']." ";
 		}
 		echo " ".$donnees['message']." </br> ";
+		$id = $donnees['id'];
+		?>
+		<form action="<?php echo "forum_vue.php?forum=".$forum."&topic=".$topic."&delete=".$id." "; ?> " method="POST">
+			<input type="submit" name="changer" value="Delete" />
+		</form>
+	<?php
+		
 	}
 	echo "<a href='forum_vue.php?forum=".$_GET['forum']." ''>Retour</a></br>" ;
 }
@@ -103,7 +110,9 @@ function post_message($user, $forum, $topic){
 				$req -> bindParam(':id_topic' , $topic );
 				$req -> bindParam(':message' , $message );
 				$req->execute();
+			echo " Veuillez actualiser votre page web.";
 			}
+
 }
 
 /* 
@@ -124,4 +133,24 @@ function ajout_topic($forum){
 				$req -> execute(); 
 }
 
+/*
+	Supprimer un commentaire 
+	04/06/2015
+*/
+function delete_message($user, $id){
+	include("modele.php");
+	$sql = 'SELECT id_user FROM message ';
+	$req = $bdd -> query($sql);
+	while($donnees = $req -> fetch()){
+		if( $user == $donnees['id_user'] ){
+			$sql2 = 'DELETE FROM message WHERE id = "'.$id.'" AND id_user="'.$user.'" ';
+			$req2 = $bdd -> prepare($sql2);
+			$req2 -> execute();
+		} else if( $_SESSION['isAdmin'] == '1' ){
+			$sql2 = 'DELETE FROM message WHERE id = "'.$id.'" ';
+			$req2 = $bdd -> prepare($sql2);
+			$req2 -> execute();
+		}
+	}
+}
 ?>
