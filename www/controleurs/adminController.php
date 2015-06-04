@@ -31,6 +31,20 @@ function delete_categorie($categorie){
 				}
 		}
 }
+
+function voir_categorie(){
+		include('../../modele/modele.php');
+
+		$sql = ' SELECT * FROM categorie ';
+		$req = $bdd -> query($sql);
+		while ($donnees = $req->fetch())
+			{
+				$name = " ".$donnees['nom']." ";
+				echo "<div id='listuser'>Nom : ".$name."";
+			}
+	}
+
+	/* Ajout d'un utilisateur */
 	if(!empty($_POST['nom1']) && !empty($_POST['prenom1']) && !empty($_POST['email1']) && !empty($_POST['passe1']) && !empty($_POST['adresse1']) && !empty($_POST['cdp1']) && !empty($_POST['born1'])) {
 		$nom1=$_POST['nom1'];
 		$prenom1=$_POST['prenom1'];
@@ -90,7 +104,8 @@ function delete_categorie($categorie){
 		while ($donnees = $req->fetch())
 			{
 				$name = " ".$donnees['nom']." ";
-				echo "Nom : ".$donnees['nom']."<br />";
+				$firstname = " ".$donnees['prenom']." ";
+				echo "<div id='listuser'>Nom : ".$name." | Prénom :".$firstname."</div><br />";
 			}
 	}
 function voir_commande(){

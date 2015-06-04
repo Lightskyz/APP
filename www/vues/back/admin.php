@@ -16,6 +16,7 @@
 
         <?php include("../frames/menu.php"); ?>
 
+<div id="backoffice">
     <h1>Back office Administrateur</h1>
     
     <!-- Centrer tous les futurs titres ! -->
@@ -48,6 +49,11 @@
                 }
                 ?>
         </div>
+
+    <h3>Toutes les catégories existantes</h3>
+        <?php 
+            voir_categorie();
+            ?> </br>
 
     <!-- Deuxieme case pour supprimer une catégorie -->
     <h3>Supprimer une catégorie</h3>
@@ -140,48 +146,59 @@
     		</form>
         </div>
 
-    		<h3>Suppression d'un utilisateur</h3>
-                <!--formulaire suppression utilisateur-->
-                <div class="form">
-    			     <form method="post" action="">
-                        <div class="field-wrap">
-                            <label>Nom</br><input type="text" name="nom2"/></label>
-                            </br></br>
-                        </div>
-                        <div class="field-wrap">
-                            <label>Prenom</br><input type="text" name="prenom2"/></label>
-                            </br></br>
-                        </div>
-                        <div class="top-row">
-                            <button type="submit" name="submit3" class="button button-block">Supprimer</button>
-                            <button type="submit" name="submit4" class="button button-block">Ban</button>
-                        </div>
-                    </form>
-                </div>
-
-    <h4>Tout les utilisateurs inscrits</h4>
+    <h3>Tout les utilisateurs inscrits</h3>
         <?php 
             voir_utilisateur();
             ?> </br>
-    <h4>Tout les utilisateurs bannis</h4>
+
+            <h3>Suppression d'un utilisateur</h3>
+                <!--formulaire suppression utilisateur-->
+                <div class="form">
+                     <form method="post" action="">
+                     <div class="top-row">
+                        <div class="field-wrap">
+                            <label>
+                                Nom
+                            </label>
+                            <input type="text" name="nom2"/>
+                        </div>
+                        <div class="field-wrap">
+                            <label>
+                                Prenom
+                            </label>
+                            <input type="text" name="prenom2"/>
+                        </div>
+                    </div>
+                        <button type="submit" name="submit3" class="button button-block">Supprimer</button><br />
+                        <button type="submit" name="submit4" class="button button-block">Bannir</button>
+                        
+                    </form>
+                </div>
+
+    <h3>Tout les utilisateurs bannis</h3>
+        
         <?php 
             utilisateurs_bannis();
-            ?> </br>
-    <h4>Affichages des commandes</h4>   
-            <?php
+            ?> <br />
+
+    <h3>Affichages des commandes</h3>   
+        <?php
             voir_commande();
-        ?>
-    <h4>Créer une categorie forum</h4>
+        ?> <br />
+
+    <h3>Créer une categorie du forum</h3>
 
     <div class="form">
         <form method="post" action="">
+            <div class="field-wrap">
             <label>
-                Nom
+                Nom d'une nouvelle catégorie du forum
             </label>
             <input type="text" name="nom4"/>
-        <button type="submit" name="submit5" value="Ajouter">Ajouter</button>
+        </div>
+         <button type="submit" name="submit5" value="Ajouter" class="button button-block">Ajouter</button>
         </form>
     </div>
-
+</div> <!-- backoffice -->
   </body>
 </html>

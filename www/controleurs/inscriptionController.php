@@ -52,7 +52,7 @@ header("Location: /index.php")
   Pour activer votre compte, veuillez cliquer sur le lien ci dessous
   ou copier/coller dans votre navigateur internet.
  
-  http://pear2pear.com/validation.php?log='.urlencode($email).'&cle='.urlencode($cle).'
+  http://www.lightskyz.com/vues/back/validation.php?log='.urlencode($email).'&cle='.urlencode($cle).'
  
  
   ---------------

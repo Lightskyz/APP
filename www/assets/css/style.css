@@ -1098,3 +1098,13 @@ header nav .login_btn2:hover{
 }
 
 /* Mise en forme du back office de l'administrateur du site */
+
+#backoffice h1{
+  margin:20px;
+}
+#backoffice h3{
+  text-align: center;
+}
+#listuser{
+  text-align: center
+}
