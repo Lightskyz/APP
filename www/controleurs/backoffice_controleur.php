@@ -94,7 +94,7 @@ function delete_user(){
 	function voir_utilisateur(){
 		include('modele.php');
 
-		$sql = ' SELECT * FROM user WHERE isAdmin != 10 AND isAdmin != 1 ';
+		$sql = ' SELECT * FROM user WHERE isAdmin != 10 AND isAdmin != 1 ORDER BY nom ASC';
 		$req = $bdd -> query($sql);
 		while ($donnees = $req->fetch())
 			{
@@ -164,7 +164,7 @@ Voir les utilisateurs bannis
 function utilisateurs_bannis(){
 	include("modele.php");
 
-	$sql = 'SELECT * FROM user WHERE isAdmin = 10 ';
+	$sql = 'SELECT * FROM user WHERE isAdmin = 10 ORDER BY nom ASC';
 	$req = $bdd -> query($sql);
 	while ($donnees = $req->fetch())
 		{
