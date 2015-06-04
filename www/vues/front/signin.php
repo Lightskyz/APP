@@ -129,7 +129,7 @@
 -->
 				
 					<div class="field-wrap">
-						<p style="color:white">En vous inscrivant vous acceptez les <a href="#">termes et conditions générales d'utilisation</a> de Pear2Pear</p><br />
+						<p style="color:white">En vous inscrivant vous acceptez les <a href="cgu.php">termes et conditions générales d'utilisation</a> de Pear2Pear</p><br />
 					</div>
 					
 					<button type="submit" class="button button-block">S'inscrire</button>

@@ -10,7 +10,7 @@ $req->execute(array(':email' => $email));
         $data=$req->fetch();
 //si le token de l'url est le même que celui de la bdd on redirige l'utilisateur vers la page changement de mot de passe
 if($data['token'] == $cle){
-	header('location: http://localhost/app/vues/back/changementMdp.php?log='.$email.'&token='.$cle.'');
+	header('location: http://www.lightskyz.com/vues/back/changementMdp.php?log='.$email.'&token='.$cle.'');
 }
 //sinon
 else {
