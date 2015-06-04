@@ -1,13 +1,11 @@
-<!-- Créer 2 menus si l'utilisateur est connecté ou non connecté -->
-
 <?php 
 
 include('../../controleurs/profilController.php');
 afficheprofil($_SESSION['email']);
 
-/* rajouter que la condition si le mec est admin :  && $_SESSION['isAdmin'] == 1*/
 
-if($_SESSION['email'] == TRUE && $_SESSION['isAdmin'] == 1)
+// Menu pour les admins du site
+if($_SESSION['email'] == TRUE && $_SESSION['isAdmin'] == 1 && $_SESSION['actif'] == 1)
 	{
 		echo'<header>
 	<div class="wrapper">
@@ -20,16 +18,19 @@ if($_SESSION['email'] == TRUE && $_SESSION['isAdmin'] == 1)
 				<li><a href="../front/contact.php">Contact</a></li>
 			</ul>
 			
+			<a href="../../controleurs/deconnexionController.php" class="login_btn2"><i class="fa fa-power-off"></i></a>
 			<a href="../back/admin.php" class="login_btn" id="admin">ADMIN</a>
 			<a href="../back/profil.php" class="login_btn">Profil</a>
-			<a href="../../controleurs/deconnexionController.php"><i class="fa fa-power-off"></i></a>
+			
 			
 		</nav>
 	</div>
 </header> <!-- end header section -->';
 
 	}
-elseif($_SESSION['email'] == TRUE)
+
+// Menu pour les utilisateurs du site
+elseif($_SESSION['email'] == TRUE && $_SESSION['actif'] ==1)
 	{
 		echo'<header>
 	<div class="wrapper">
@@ -37,6 +38,7 @@ elseif($_SESSION['email'] == TRUE)
 		<a href="#" class="hamburger"></a>
 		<nav>
 			<ul>
+				<li><a href="../front/index.php">Accueil</a></li>
 				<li><a href="../front/produit.php">Nos produits</a></li>
 				<li><a href="../front/forum.php">Forum</a></li>
 				<li><a href="../back/annonce.php">Annonce</a></li>
@@ -54,7 +56,34 @@ elseif($_SESSION['email'] == TRUE)
 
 	}
 
-else{
+//Si le compte n'est pas encore activé
+
+elseif($_SESSION['email'] == TRUE)
+	{
+		echo'<header>
+	<div class="wrapper">
+		<a href="/index.php"><img src="/assets/img/pear2pear.svg" class="logo" alt="logo" height ="100px" title="logo" /></a>
+		<a href="#" class="hamburger"></a>
+		<nav>
+			<ul>
+				<li><a href="../front/index.php">Accueil</a></li>
+				<li><a href="../front/produit.php">Nos produits</a></li>
+				<li><a href="../front/contact.php">Contact</a></li>
+			</ul>
+			
+			
+			<a href="../../controleurs/deconnexionController.php" class="login_btn2"><i class="fa fa-power-off"></i></a>
+			<a href="../back/profil.php" class="login_btn">Profil</a>
+			
+		</nav>
+	</div>
+</header> <!-- end header section -->
+<p id="nonactif">Vous êtes inscrit ! Bievenue ! Veuillez activer votre compte en confirmant votre adresse mail, vérifier vos emails</p>';
+}
+
+// Menu pour les non-utilisateurs du site
+else
+{
 	echo'<header>
 	<div class="wrapper">
 		<a href="/index.php"><img src="../../assets/img/pear2pear.svg" class="logo" alt="logo" height ="100px" title="logo" /></a>
@@ -75,85 +104,3 @@ else{
 	}
 
 ?>
-
-
-
-
-<!-- Créer 2 menus si l'utilisateur est connecté ou non connecté -->
-
-<?php 
-/*
-session_start();
-
-/* rajouter que la condition si le mec est admin :  && $_SESSION['isAdmin'] == 1*/
-/*if($_SESSION['email'] == NULL)
-	{
-		echo'<header>
-	<div class="wrapper">
-		<a href="/index.php"><img src="/assets/img/pear2pear.svg" class="logo" alt="logo" height ="100px" title="logo" /></a>
-		<a href="#" class="hamburger"></a>
-
-		<nav>
-			<ul>
-				<li><a href="../front/produit.php">Nos produits</a></li>
-				<li><a href="../front/forum.php">Forum</a></li>
-				<li><a href="../front/contact.php">Contact</a></li>
-			</ul>
-			
-			<a href="../front/signin.php" class="login_btn">Sign in</a>
-		</nav>
-	</div>
-</header> <!-- end header section -->';
-
-	}
-elseif($_SESSION['email'] == TRUE)
-	{
-		if($_SESSION['isAdmin'] == 0 ){
-			echo'<header>
-	<div class="wrapper">
-		<a href="/index.php"><img src="/assets/img/pear2pear.svg" class="logo" alt="logo" height ="100px" title="logo" /></a>
-		<a href="#" class="hamburger"></a>
-		<nav>
-			<ul>
-				<li><a href="../front/produit.php">Nos produits</a></li>
-				<li><a href="../front/forum.php">Forum</a></li>
-				<li><a href="../back/annonce.php">Annonce</a></li>
-				<li><a href="../front/contact.php">Contact</a></li>
-			</ul>
-
-			<a href="../back/profil.php" class="login_btn">Profil</a>
-			<a href="/controleurs/deconnexionController.php" class="login_btn">Deconnexion</a>
-		</nav>
-	</div>
-</header> <!-- end header section -->';
-}
-	else($_SESSION['isAdmin'] == 1){
-		echo'<header>
-	<div class="wrapper">
-		<a href="/index.php"><img src="/assets/img/pear2pear.svg" class="logo" alt="logo" height ="100px" title="logo" /></a>
-		<a href="#" class="hamburger"></a>
-		<nav>
-			<ul>
-				<li><a href="../front/produit.php">Nos produits</a></li>
-				<li><a href="../front/forum.php">Forum</a></li>
-				<li><a href="../back/annonce.php">Annonce</a></li>
-				<li><a href="../front/contact.php">Contact</a></li>
-			</ul>
-			
-			<a href="../back/admin.php" class="login_btn" id="admin">ADMIN</a>
-			<a href="../back/profil.php" class="login_btn">Profil</a>
-			<a href="/controleurs/deconnexionController.php" class="login_btn">Deconnexion</a>
-		</nav>
-	</div>
-</header> <!-- end header section -->';
-	}
-
-	}
-
-
-	
-
-	}
-
-*/ ?>
-

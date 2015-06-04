@@ -1,6 +1,5 @@
 <?php
-session_start();
-//récup de isAdmin : comme la clé avec la connexion etc ...//
+
 include('../../modele/modele.php');
 
 	function create_categorie(){

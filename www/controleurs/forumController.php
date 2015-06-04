@@ -12,26 +12,26 @@ function affichage_forum(){
 	while($donnees = $req -> fetch() ){
 		//Vue des forum existants !
 
-		echo "<a href='../front/forum.php?forum=".$donnees['id']." ''><div class='message'><p class='titre'>".$donnees['nom']."</p></br><p class='description'>".$donnees['description']."</p></div></a>" ;
+		echo "<a href='../front/forum.php?forum=".$donnees['id']." ''><div class='forum'><p class='titre'>".$donnees['nom']."</p></br><p class='description'>".$donnees['description']."</p></div></a>" ;
 
 	}
 }
 
 function affichage_topic($forum){
 	include("../../modele/modele.php");
-	echo "<a href='../front/forum.php'><span class='accueil'>Accueil Forum</span></a></br>" ;
+	echo "<a href='../front/forum.php'><span class='accueil'>Accueil du forum</span></a></br>" ;
 	$sql = ' SELECT * FROM topic WHERE id_forum = '.$forum.' ORDER BY nom ASC ';
 	$req = $bdd -> query($sql);
 	while($donnees = $req -> fetch() ){
 		//Vue des topics dans un topic
 
-		echo "<a href='../front/forum.php?forum=".$forum."&topic=".$donnees['id']." ''>".$donnees['nom']."</a></br>" ;
+		echo "<a href='../front/forum.php?forum=".$forum."&topic=".$donnees['id']." ''><div class='forum'><p class='titre'>".$donnees['nom']."</p><p class='description'>".$donnees['contenu']."</p></div></a>" ;
 	}
-	echo "<a href='../front/forum.php'>Retour</a></br>" ;
+	echo "<a href='../front/forum.php'><button class='button button-block2'>Retour</button></a></br>" ;
 }
 
 function affichage_message($forum, $topic){
-	echo "<a href='../front/forum.php'><span class='accueil'>Accueil Forum</span></a></br>" ;
+	echo "<a href='../front/forum.php'><span class='accueil'>Accueil du forum</span></a></br>" ;
 	include("../../modele/modele.php");
 	$sql = ' SELECT * FROM message WHERE id_topic = '.$topic.' ORDER BY date ASC ';
 	$req = $bdd -> query($sql);
@@ -42,16 +42,17 @@ function affichage_message($forum, $topic){
 		while($donnees2 = $req2 -> fetch() ){
 			//Vue des message dans un topic ! (avec le nom de l'auteur)
 
-
-		echo " ".$donnees2['nom']." ".$donnees2['prenom']." ";
+			//Données de l'utilisateur qui poste (récupérer la photo si possible)
+		echo "<div class='reponse'><div class='auteur tout'>".$donnees2['nom']." ".$donnees2['prenom']." </div><div class='message tout'>".$donnees['message']."</div></div>";
 		}
-		echo " ".$donnees['message']." </br> ";
+		
+		echo'<hr>';
 	}
-	echo "<a href='../front/forum.php?forum=".$_GET['forum']." ''>Retour</a></br>" ;
+	echo "<a href='../front/forum.php?forum=".$_GET['forum']." ''><button class='button button-block2'>Retour</button></a></br>" ;
 }
 
 function affichage_mes_messages($user){
-	echo "<a href='../front/forum.php'><span class='accueil'>Accueil Forum</span></a></br>" ;
+	echo "<a href='../front/forum.php'><span class='accueil'>Accueil du forum</span></a><br /><br /><hr>" ;
 	include("../../modele/modele.php");
 	$sql = ' SELECT * FROM message WHERE id_user = '.$user.' ORDER BY date ASC ';
 	$req = $bdd -> query($sql);
@@ -62,6 +63,11 @@ function affichage_mes_messages($user){
 			$sql3 = ' SELECT * FROM forum WHERE id = '.$donnees2['id_forum'].' ';
 			$req3 = $bdd -> query($sql3);
 			while($donnees3 = $req3 -> fetch() ){
+
+				//Récupérer le topic tout en haut pour savoir à quoi il reponde sinon inutile ...
+
+				//Tous les messages que l'utilisateur à écrit (récupérer nom du forum et du topic sur lequel il a posté)
+
 				echo " Forum ".$donnees3['nom']." Topic ".$donnees2['nom']." Message ".$donnees['message']." 
 				<a href='../front/forum.php?forum=".$donnees3['id']."&topic=".$donnees2['id']." '> Accéder au topic </a></br>"; 
 			}

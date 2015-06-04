@@ -27,7 +27,8 @@ $req->execute(array(
 
 ));
 
-echo'Vous êtes inscrit ! Bievenue ! Veuillez activer votre compte en confirmant votre adresse mail.';
+header("Location: /index.php")
+
 
 // #Intégration - Partie Dadou - Envoie d'un email
 
@@ -43,7 +44,7 @@ echo'Vous êtes inscrit ! Bievenue ! Veuillez activer votre compte en confirmant
   //préparation du mail contenant le lien d'activation
   $destinataire = $email;
   $sujet = "Activer votre compte" ;
-  $entete = "From: antoine.rakotozafy@gmail.com" ;
+  $entete = "From: contact@lightskyz.com" ;
   
   //email avec lien d'activation (composé du login(email) et de la clé(cle)
   $message = 'Bienvenue sur Pear2Pear,
@@ -58,7 +59,7 @@ echo'Vous êtes inscrit ! Bievenue ! Veuillez activer votre compte en confirmant
   Ceci est un mail automatique.
   Merci de ne pas y répondre.';
   
-  //envoi du mail//
+  //envoi du mail
   mail($destinataire, $sujet, $message, $entete) ;
 
 

@@ -863,11 +863,20 @@ textarea {
 }
 
 /* Forum */
+
+/* Accueil du forum */
 .accueil{
   font-size: 2em;
   color:black;
   text-align: center;
+  margin:5px;
 }
+.titreForum{
+  margin:20px auto;
+}
+
+
+/* Mise en forme des topics */
 .topic {
   background: rgba(28, 54, 85, 0.95);
   padding: 40px;
@@ -883,7 +892,8 @@ textarea {
 
 }
 
-.message{
+/* Forum dans la BDD - affichage */
+.forum{
 background: rgba(28, 54, 85, 0.90);
   padding: 30px;
   max-width: 80%;
@@ -891,22 +901,53 @@ background: rgba(28, 54, 85, 0.90);
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
   color:white;
-
+  height:120px;
 }
-.message .titre{
+.forum .titre{
   color:gray;
   font-size: 1.4em;
 }
 
-.message .description{
+.forum .description{
   color:white;
   font-size: 1em;
 }
 
-.auteur{
-
-  
+/* Message posté dans une BDD */
+.message{
+background: rgba(28, 54, 85, 0.90);
+  padding: 30px;
+  max-width: 68%;
+  margin: 1%;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  color:white;
+  height:120px;
 }
+
+.tout{
+  display: inline-block;
+  vertical-align: top;
+  }
+.reponse{
+ margin:auto;
+}
+
+
+.auteur{
+  background: rgba(28, 54, 85, 0.85);
+  padding: 30px;
+  max-width: 28%;
+  margin: 1%;
+  color:white;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  color:white;
+  height:120px;
+  width: 120px;  
+}
+
+
 
 /* Profil d'un utilisateur */
 
@@ -924,7 +965,6 @@ background: rgba(28, 54, 85, 0.90);
   list-style: none;
   font-size: 22px;
   line-height: 30px;
-
 }
 
 #bienvenue{
@@ -942,10 +982,16 @@ background: rgba(28, 54, 85, 0.90);
   height:200px;
   width:200px;
   margin-bottom: 20px;
+  text-align: center;
+}
+
+.button-block2 {
+  display: block;
+  width: 30%;
 }
 
 
-/* File input */
+/* Format de l'input type="file" */
 
 .input-file-container {
   position: absolute;
@@ -1036,4 +1082,17 @@ header nav .login_btn2{
 header nav .login_btn2:hover{
     background: #ffffff;
     color: #1c3655;
+}
+
+/* Compte non activé - message d'alerte */
+
+#nonactif{
+  color:white;
+  background-color: red;
+  font-size: 1.2em;
+  font-weight: 900;
+  height: 30px;
+  margin:15px;
+  padding:2px;
+  text-align: center;
 }
