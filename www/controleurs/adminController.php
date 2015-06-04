@@ -90,7 +90,7 @@ function delete_categorie($categorie){
 		while ($donnees = $req->fetch())
 			{
 				$name = " ".$donnees['nom']." ";
-				echo " ".$donnees['nom']." ";
+				echo "Nom : ".$donnees['nom']."<br />";
 			}
 	}
 function voir_commande(){
