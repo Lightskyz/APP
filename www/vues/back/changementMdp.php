@@ -15,7 +15,7 @@
     <?php include("../frames/menu.php"); ?>
 
     <!-- Formulaire de changement de mot de passe -->
-    <div clsass="form">
+    <div class="form">
       <h1> Changement du mot de passe </h1>
 
         <form method="post" action="../../controleurs/changemdpController.php?log=<?php echo $_GET['log']?>">

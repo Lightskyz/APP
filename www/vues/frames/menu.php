@@ -77,7 +77,7 @@ elseif($_SESSION['email'] == TRUE)
 		</nav>
 	</div>
 </header> <!-- end header section -->
-<p id="nonactif">Vous êtes inscrit ! Bievenue ! Veuillez activer votre compte en confirmant votre adresse mail, vérifier vos emails</p>';
+<p id="nonactif">Bievenue ! Vous êtes inscrit, veuillez activer votre compte en confirmant votre adresse mail, vérifier vos emails !</p>';
 }
 
 // Menu pour les non-utilisateurs du site
