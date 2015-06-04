@@ -107,11 +107,14 @@
                     </br></br>
         <input type="submit" name="submit5" value="Ajouter"></br>
         </form>
+    </br>
+    <h4>Modérer le forum</h4>
 
         <?php 
         if(!empty($_POST['nom4'])){
              ajout_forum_cat();
         }
+        include("forum_vue.php");
         ?>
   		<p>Faire le forum d'abord.</p>
   </body>
