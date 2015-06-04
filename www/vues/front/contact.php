@@ -18,7 +18,8 @@
 		<div class="form">
 			<h1> Contactez-nous </h1>
 			<!-- créer un module qui permet à l'administrateur de recevoir des messages -->
-			<form method="post" action="../../controleurs/#.php" id="contact" >
+			<!-- est-ce que c'est nécessaire de mettre l'action ici ou pas, je ne pense pas, à discuter -->
+			<form method="post" action="" id="contact" >
 				
 				<div class="field-wrap">
 					<label for="nom">
@@ -53,7 +54,11 @@
 				
 
 				<button type="submit" class="button button-block" name="envoyer">Envoyer</button>
-					<?php include("../../controleurs/#.php"); ?>
+					<?php include("../../controleurs/contactController.php"); 
+					if(!empty($_POST['envoyer'])){
+						contact();
+					}
+					?>
 		</form>
 
 		</div> <!-- fin de form -->

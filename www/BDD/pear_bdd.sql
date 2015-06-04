@@ -155,6 +155,20 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 --
+-- Structure de la table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `contenu` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Index pour les tables exportées
 --
 
