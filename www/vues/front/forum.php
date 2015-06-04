@@ -34,7 +34,7 @@ $user = $_SESSION['id'];
 				affichage_topic($forum);
 				?>
 
-				<div class="form">
+			<div class="form">
 				<form method="post" action="" enctype="multipart/form-data">
 					<div class="field-wrap">
 		    			<label for="nom"> 
@@ -49,23 +49,27 @@ $user = $_SESSION['id'];
 		     		<input type="text" name="contenu" id="contenu" />
 		     		</div>
 				
-				<button class="button button-block" type="submit" name="poster">Poster</button>
+					<button class="button button-block" type="submit" name="poster">Poster</button>
 
 				</form>
-				</div>
+			</div> <!-- fin de la div form -->
+
 				<?php
 				if(!empty($_POST['nom'])){
-
 					ajout_topic($forum);
 				}
-
 			} else {
 				affichage_forum();
 			}
+
 		} else {
 			$forum = $_GET['forum'];
 			$topic = $_GET['topic'];
 			affichage_message($forum, $topic);
+
+			if(!empty($_POST['changer'])){
+				delete_message($user, $_GET['delete']);
+				echo " Veuillez actualiser votre page web.";
 			?>
 
 
@@ -89,7 +93,7 @@ $user = $_SESSION['id'];
 
 		}
 ?>
-	<a href='../front/forum.php?mes-message=1'> Mes messages </a>
+	<a href='forum.php?mes-message=1'> Mes messages </a>
 
 <?php
 	} else {
