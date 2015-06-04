@@ -68,9 +68,9 @@
                     </br></br>
 					<input type="submit" name="submit2" value="Ajouter"/>								    	
     			</form></br>
-    		<li>Suppression d'un utilisateur</li>
+    		<!-- <li>Suppression d'un utilisateur</li>
                 </br>
-                <!--formulaire suppression utilisateur-->
+                formulaire suppression utilisateur
     			<form method="post" action="">
                     <label>Nom</br><input type="text" name="nom2"/></label>
                     </br></br>
@@ -85,11 +85,17 @@
                 if(!empty($_POST['nom2']) && !empty($_POST['prenom2']) && !empty($_POST['email2'])) {
                     delete_user();
                 }
-                ?>
+                ?> -->
     	</ul>
     <h4>Tout les utilisateurs inscrits</h4>
         <?php 
             voir_utilisateur();
+            if(!empty($_GET['delete2'])){
+                delete_user();
+            } else if(!empty($_GET['ban'])){
+                ban_user();
+            }
+
             ?> </br>
     <h4>Tout les utilisateurs bannis</h4>
         <?php 

@@ -1,16 +1,17 @@
 <?php
 function recherche_champ($requete) {
 include("../modele/modele.php");
+	$sql2 = 'SELECT COUNT(id) FROM categorie WHERE nom LIKE "%'.$requete.'%" ';
+	$count = current($bdd->query($sql2)->fetch());
+	echo $count;
+	
 	$sql = 'SELECT * FROM categorie WHERE nom LIKE "%'.$requete.'%" ORDER BY id DESC';
 	$reponse = $bdd->query($sql);
 	while ($donnees = $reponse->fetch())
 	{
-		?>
-	<?php echo $donnees['nom']." "; ?>
-	
-	<?php
+		echo $donnees['nom']." ";
 	}
-	$reponse->closeCursor(); 
+	$reponse->closeCursor();
 }
 
 function recherche_crit($table, $order) {

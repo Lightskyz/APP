@@ -66,9 +66,16 @@ function delete_categorie($categorie){
 function delete_user(){
 	include("modele.php");
 	
+		$id = $_GET['delete2'];
+
+		$sql = 'DELETE FROM user WHERE id = "'.$id.'" ';
+		$req = $bdd -> prepare($sql);
+		$req -> execute();
+		echo "Veuillez actualiser votre page internet.";
+
 
 			//if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['born'])) {
-		$choix = $_POST['choix'];
+		/* $choix = $_POST['choix'];
 		$nom2=$_POST['nom2'];
 		$prenom2=$_POST['prenom2'];
 		$sql0 = ' SELECT * FROM user WHERE nom = '.$nom2.' AND prenom = '.$prenom2.' ';
@@ -87,7 +94,18 @@ function delete_user(){
 		$req2 = $bdd -> prepare($sql2);
 		$req2 -> execute();
 		echo "L'utilisateur d'ID = ".$user." à été banni" ; 
-	}
+	}*/
+}
+
+function ban_user(){
+	include("modele.php");
+
+	$id = $_GET['ban'];
+
+	$sql2 = ' UPDATE `user` SET isAdmin = 10 WHERE id = "'.$id.'" ';
+	$req2 = $bdd -> prepare($sql2);
+	$req2 -> execute();
+	echo "L'utilisateur d'ID = ".$id." à été banni" ;
 }
 	
 
@@ -98,8 +116,16 @@ function delete_user(){
 		$req = $bdd -> query($sql);
 		while ($donnees = $req->fetch())
 			{
-				$name = " ".$donnees['nom']." ";
+				$name = $donnees['nom'];
+				$id = $donnees['id'];
 				echo " ".$donnees['nom']." ".$donnees['prenom']." </br>";
+				?>
+				<form action="<?php echo "backoffice_vue.php?delete2=".$id." "; ?> " method="POST">
+					<input type="submit" name="changer" value="Delete" />
+				</form>
+				<form action="<?php echo "backoffice_vue.php?ban=".$id." "; ?> " method="POST">
+					<input type="submit" name="changer2" value="Ban" />
+				</form> </br> <?php
 			}
 	}
 

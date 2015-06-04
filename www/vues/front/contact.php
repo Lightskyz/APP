@@ -30,7 +30,11 @@
 				
 
 				<button type="submit" name="envoyer">Envoyer</button>
-					<?php include("/controleurs/#.php"); ?>
+					<?php include("contact.php"); 
+					if(!empty($_POST['envoyer'])){
+						contact();
+					}
+					?>
 		</form>
 
 		</div>
