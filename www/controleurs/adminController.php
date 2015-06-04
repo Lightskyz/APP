@@ -8,7 +8,7 @@ include('../../modele/modele.php');
 
 	if(!empty($_POST['nom']) ) {
 		$nom = $_POST['nom'];
-			$sql2 = 'INSERT INTO categorie VALUES ( :nom ) ';
+			$sql2 = 'INSERT INTO categorie(nom) VALUES ( :nom ) ';
 			$req = $bdd->prepare($sql2);
 			$req -> bindParam(':nom' , $nom );
 			$req->execute();
@@ -70,9 +70,21 @@ function voir_categorie(){
 	}
 
 	//"supprimer" avec formulaire fonctionne => on va le faire avec une fonction qui récupère l'ID de l'user//
+	
+	function delete_user(){
+	include("../../modele/modele.php");
+	
+		$id = $_GET['delete2'];
+
+		$sql = 'DELETE FROM user WHERE id = "'.$id.'" ';
+		$req = $bdd -> prepare($sql);
+		$req -> execute();
+		echo "Veuillez actualiser votre page internet.";
+
+	/*
 	if(!empty($_POST['nom2']) && !empty($_POST['prenom2'])) {
 
-			//if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['born'])) {
+	if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['born'])) {
 		$choix = $_POST['choix'];
 		$nom2=$_POST['nom2'];
 		$prenom2=$_POST['prenom2'];
@@ -92,8 +104,20 @@ function voir_categorie(){
 		$req2 = $bdd -> prepare($sql2);
 		$req2 -> execute();
 		echo "L'utilisateur d'ID = ".$user." à été banni" ; 
-	}
+	}*/
 }
+
+function ban_user(){
+	include("../../modele/modele.php");
+
+	$id = $_GET['ban'];
+
+	$sql2 = ' UPDATE `user` SET isAdmin = 10 WHERE id = "'.$id.'" ';
+	$req2 = $bdd -> prepare($sql2);
+	$req2 -> execute();
+	echo "L'utilisateur d'ID = ".$id." à été banni" ;
+}
+
 	
 
 	function voir_utilisateur(){
@@ -103,9 +127,28 @@ function voir_categorie(){
 		$req = $bdd -> query($sql);
 		while ($donnees = $req->fetch())
 			{
+
+				//Ancienne vue
+
+				/*
 				$name = " ".$donnees['nom']." ";
 				$firstname = " ".$donnees['prenom']." ";
 				echo "<div id='listuser'>Nom : ".$name." | Prénom :".$firstname."</div><br />";
+				*/
+
+				//Vue Maxime
+
+				$name = $donnees['nom'];
+				$id = $donnees['id'];
+				echo " ".$donnees['nom']." ".$donnees['prenom']." </br>";
+				?>
+				<form action="<?php echo "backoffice_vue.php?delete2=".$id." "; ?> " method="POST">
+					<input type="submit" name="changer" value="Delete" />
+				</form>
+				<form action="<?php echo "backoffice_vue.php?ban=".$id." "; ?> " method="POST">
+					<input type="submit" name="changer2" value="Ban" />
+				</form> </br> <?php //pourquoi une balise <?php comme ça en liberté ?
+
 			}
 	}
 function voir_commande(){

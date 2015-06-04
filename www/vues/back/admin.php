@@ -17,6 +17,7 @@
         <?php include("../frames/menu.php"); ?>
 
 <div id="backoffice">
+
     <h1>Back office Administrateur</h1>
     
     <!-- Centrer tous les futurs titres ! -->
@@ -61,11 +62,11 @@
     <div class="form">
         <form method="post" action="">
             <div class="field-wrap">
-            <label>
-                Nom du produit
-            </label>
-            <input type="text" name="nom3"/>
-        </div>
+                <label>
+                    Nom du produit
+                </label>
+                <input type="text" name="nom3"/>
+            </div> <!-- end of field-wrap -->
 
         <button type="submit" name="submit1" class="button button-block"/>Supprimer</button>                                     
         </form>
@@ -74,7 +75,7 @@
             delete_categorie($_POST['nom3']);
         }
         ?>
-        </div>
+    </div> <!-- end of form -->
 
     <!-- 3eme case gestion des utilisateurs -->
 
@@ -120,7 +121,8 @@
                         </label>
                         <input type="text" name="adresse" required />
                     </div>
-
+                    
+                <div class="top-row">
                     <div class="field-wrap">
                         <label>Code postal<span class="req">*</span> 
                         </label>
@@ -132,6 +134,7 @@
                         </label>
                         <input type="text" name="ville" required />
                     </div>
+                </div> <!-- end of top-row -->
 
                     <div class="field-wrap">
                         <label>Telephone<span class="req">*</span> 
@@ -139,20 +142,24 @@
                         <input type="text" name="telephone" required />
                     </div>
 
-
-					<button type="submit" class="button button=-black" value="Ajouter"/> Ajouter un utilisateur </button>
-
-
+					<button type="submit" class="button button-block" value="Ajouter"/> Ajouter un utilisateur </button>
     		</form>
         </div>
 
     <h3>Tout les utilisateurs inscrits</h3>
         <?php 
             voir_utilisateur();
+            if(!empty($_GET['delete2'])){
+                delete_user();
+            } else if(!empty($_GET['ban'])){
+                ban_user();
+            }
             ?> </br>
 
-            <h3>Suppression d'un utilisateur</h3>
+
+            <!--<h3>Suppression d'un utilisateur</h3>-->
                 <!--formulaire suppression utilisateur-->
+               <!--
                 <div class="form">
                      <form method="post" action="">
                      <div class="top-row">
@@ -173,7 +180,7 @@
                         <button type="submit" name="submit4" class="button button-block">Bannir</button>
                         
                     </form>
-                </div>
+                </div> -->
 
     <h3>Tout les utilisateurs bannis</h3>
         
@@ -199,6 +206,17 @@
          <button type="submit" name="submit5" value="Ajouter" class="button button-block">Ajouter</button>
         </form>
     </div>
+
+    <h4>Modérer le forum</h4>
+
+        <?php 
+        if(!empty($_POST['nom4'])){
+             ajout_forum_cat();
+        }
+        include("../front/forum.php");
+        ?>
+        <p>Faire le forum d'abord.</p>
+
 </div> <!-- backoffice -->
 
 <?php include("../frames/footer.php"); ?>
