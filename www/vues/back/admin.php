@@ -200,5 +200,8 @@
         </form>
     </div>
 </div> <!-- backoffice -->
+
+<?php include("../frames/footer.php"); ?>
+
   </body>
 </html>

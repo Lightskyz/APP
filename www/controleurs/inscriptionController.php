@@ -27,10 +27,10 @@ $req->execute(array(
 
 ));
 
-header("Location: /index.php")
+header("Location: /index.php");
 
 
-// #Intégration - Partie Dadou - Envoie d'un email
+// #Intégration - Partie David - Envoie d'un email
 
 //génération d'une clé aléatoire
   $cle = md5(microtime(TRUE)*100000); 

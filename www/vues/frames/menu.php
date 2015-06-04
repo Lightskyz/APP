@@ -13,9 +13,9 @@ if($_SESSION['email'] == TRUE && $_SESSION['isAdmin'] == 1 && $_SESSION['actif']
 		<a href="#" class="hamburger"></a>
 		<nav>
 			<ul>
-				<li><a href="../front/produit.php">Nos produits</a></li>
+				<li><a href="../front/produit.php">Les produits</a></li>
 				<li><a href="../front/forum.php">Forum</a></li>
-				<li><a href="../front/contact.php">Contact</a></li>
+				<li><a href="../back/annonce.php">Annonce</a></li>
 			</ul>
 			
 			<a href="../../controleurs/deconnexionController.php" class="login_btn2"><i class="fa fa-power-off"></i></a>
@@ -39,10 +39,9 @@ elseif($_SESSION['email'] == TRUE && $_SESSION['actif'] ==1)
 		<nav>
 			<ul>
 				<li><a href="../front/index.php">Accueil</a></li>
-				<li><a href="../front/produit.php">Nos produits</a></li>
+				<li><a href="../front/produit.php">Les produits</a></li>
 				<li><a href="../front/forum.php">Forum</a></li>
 				<li><a href="../back/annonce.php">Annonce</a></li>
-				<li><a href="../front/contact.php">Contact</a></li>
 			</ul>
 			
 			
@@ -67,8 +66,8 @@ elseif($_SESSION['email'] == TRUE)
 		<nav>
 			<ul>
 				<li><a href="../front/index.php">Accueil</a></li>
-				<li><a href="../front/produit.php">Nos produits</a></li>
-				<li><a href="../front/contact.php">Contact</a></li>
+				<li><a href="../front/produit.php">Les produits</a></li>
+				<li><a href="../back/annonce.php">Poster une annonce</a></li>
 			</ul>
 			
 			
@@ -82,6 +81,7 @@ elseif($_SESSION['email'] == TRUE)
 }
 
 // Menu pour les non-utilisateurs du site
+
 else
 {
 	echo'<header>
@@ -92,7 +92,7 @@ else
 		<nav>
 			<ul>
 				<li><a href="../front/index.php">Accueil</a></li>
-				<li><a href="../front/produit.php">Nos produits</a></li>
+				<li><a href="../front/produit.php">Les produits</a></li>
 				<li><a href="../front/contact.php">Contact</a></li>
 			</ul>
 			

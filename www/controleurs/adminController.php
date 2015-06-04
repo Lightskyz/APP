@@ -8,7 +8,7 @@ include('../../modele/modele.php');
 
 	if(!empty($_POST['nom']) ) {
 		$nom = $_POST['nom'];
-			$sql2 = 'INSERT INTO categorie(nom) VALUES ( :nom ) ';
+			$sql2 = 'INSERT INTO categorie VALUES ( :nom ) ';
 			$req = $bdd->prepare($sql2);
 			$req -> bindParam(':nom' , $nom );
 			$req->execute();
@@ -35,7 +35,7 @@ function delete_categorie($categorie){
 function voir_categorie(){
 		include('../../modele/modele.php');
 
-		$sql = ' SELECT * FROM categorie ';
+		$sql = ' SELECT * FROM categorie ORDER BY nom ASC ';
 		$req = $bdd -> query($sql);
 		while ($donnees = $req->fetch())
 			{
@@ -99,7 +99,7 @@ function voir_categorie(){
 	function voir_utilisateur(){
 		include('../../modele/modele.php');
 
-		$sql = ' SELECT * FROM user WHERE isAdmin != 10 AND isAdmin != 1 ';
+		$sql = ' SELECT * FROM user WHERE isAdmin != 10 AND isAdmin != 1 ORDER BY nom ASC';
 		$req = $bdd -> query($sql);
 		while ($donnees = $req->fetch())
 			{

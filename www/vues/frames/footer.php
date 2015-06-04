@@ -8,10 +8,8 @@ echo'<footer>
 				<li class="links">
 					<h2>Plan du site</h2>
 					<ul>
-						<li><a href="../front/produit.php">Nos produits</a></li>
-						<!-- Attention "annonce" réservé aux utilisateurs, ou pas ! Laisser peut-être libre à tout le monde mais des qu\'il veut l\'acheter lui demander de s\'inscrire -->
+						<li><a href="../front/produit.php">Les produits</a></li>
 						<li><a href="../back/annonce.php">Annonce</a></li>
-						<!-- idem reservé aux utilisateurs -->
 						<li><a href="../front/forum.php">Forum</a></li>
 						<li><a href="../front/contact.php">Contact</a></li>
 					</ul>
@@ -46,7 +44,9 @@ echo'<footer>
 		</div>
 </footer><!--  end footer  -->';
 }
+elseif($_SESSION['email'] == TRUE {
 
+}
 else{
 	echo'<footer>
 		<div class="wrapper footer">
@@ -54,7 +54,7 @@ else{
 				<li class="links">
 					<h2>Plan du site</h2>
 					<ul>
-						<li><a href="../front/produit.php">Nos produits</a></li>
+						<li><a href="../front/produit.php">Les produits</a></li>
 						<li><a href="../front/contact.php">Contact</a></li>
 						<li><a href:"../front/signin.php">S\'inscrire</a></li>
 					</ul>
