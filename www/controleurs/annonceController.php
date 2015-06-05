@@ -15,7 +15,8 @@ function addproduct($user){
                 $quantite = $_POST['quantite'];
                 $prix = $_POST['prix'];
                 $poids = $_POST['poids'];
-               
+                $transaction = $_POST['transaction'];
+
                 $sql = 'SELECT id FROM categorie WHERE nom LIKE "%'.$categorie.'%" ';
                 $reponse = $bdd ->query($sql);
                 while ($donnees = $reponse->fetch())
@@ -23,8 +24,8 @@ function addproduct($user){
                         $id_categorie = $donnees['id'];
                     }
                 
-                $sql2 = 'INSERT INTO produit(id_user, id_categorie, prix, quantite, poids, description, date_publication) 
-                    VALUES ( :id_user, :id_categorie, :prix, :quantite, :poids, :description, CURDATE() )';
+                $sql2 = 'INSERT INTO produit(id_user, id_categorie, prix, quantite, poids, description, transaction, date_publication) 
+                    VALUES ( :id_user, :id_categorie, :prix, :quantite, :poids, :description, :transaction, CURDATE() )';
                 $req = $bdd->prepare($sql2);
                 
                 $req -> bindParam(':id_user' , $user );
@@ -33,6 +34,7 @@ function addproduct($user){
                 $req -> bindParam(':quantite' , $quantite );
                 $req -> bindParam(':poids' , $poids );
                 $req -> bindParam(':description' , $description );
+                $req -> bindParam(':transaction' , $transaction );
                 $req->execute();
 
                 //ajout_image();

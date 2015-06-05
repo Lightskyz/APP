@@ -59,16 +59,21 @@
 					</label>
 		     		<textarea name="description" id="description"></textarea>
 		     	</div>
+				
+				<div class="field-wrap">
+						Vente et/ou Echange
+					<input type="radio" name="transaction" id="transaction"
+						<?php
+						if(isset($transaction) && $transaction == "echange") echo "checked"; 
+						?>
+					value="echange">Echange <br />
+					<input type="radio" name="transaction" id="transaction"
+						<?php
+						if(isset($transaction) && $transaction == "vente") echo "checked"; 
+						?>
+					value="vente">Vente<br />
 
-				<!--
-		     	<div class="field-wrap">
-					<label for="description">
-						Image du produit
-					</label>
-		     		<div></div>
-		     		<div></div>
-		     		<input type="file" />
-		     	</div> -->
+				</div>
 		
 				<button type="submit" class="button button-block" name="envoyer">Poster une annonce</button>		
 			</form>

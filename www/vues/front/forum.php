@@ -65,7 +65,7 @@ $user = $_SESSION['id'];
 				affichage_forum();
 				}
 
-			} else {
+		} else {
 			$forum = $_GET['forum'];
 			$topic = $_GET['topic'];
 			affichage_message($forum, $topic);
@@ -94,16 +94,18 @@ $user = $_SESSION['id'];
 			<?php
 			post_message($user, $forum, $topic);
 
-		}}
+		}
+	}
+
 ?>
 	<a href='forum.php?mes-message=1'> Mes messages </a>
 <!-- erreur par là -->
 
 <?php
-	//} /*else {
-	//	affichage_mes_messages($user);
+	} else {
+		affichage_mes_messages($user);
 	
-	//}*/
+	}
 	
 ?>
 		<?php include("../frames/footer.php"); ?>
