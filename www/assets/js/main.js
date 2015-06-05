@@ -1,5 +1,38 @@
 $(document).ready(function(){
 
+$('.listings ul li').click(function(){
+
+/* Afficher les informations supplémentaires */
+
+	var text = $(this).children('.hidden');
+
+	if (text.is(':hidden')){
+		text.slideDown('500');
+		$(this).children('span').html('Moins de détails');
+	}
+	else{
+		text.slideUp('300');
+		$(this).children('span').html('Plus de détails');
+	}
+
+});
+	/* Test fonction */
+
+$('#paragraphe li').click(function(){
+
+	var text = $(this).children('');
+
+	if (text.is(':hidden')){
+		text.slideDown('500');
+		$(this).children('span').html('-');
+	}
+	else{
+		text.slideUp('300');
+		$(this).children('span').html('Plus de détails');
+	}
+
+});
+
 /*  Hamburger Menu & Icon  - Responsive Design */
 	$('.hamburger').on('click', function(e){
 		e.preventDefault();
@@ -50,6 +83,7 @@ $(document).ready(function(){
 		  
 		});
 
+
 /* Input file */
 // ajout de la classe JS à HTML
 document.querySelector("html").classList.add('js');
@@ -76,7 +110,6 @@ button.addEventListener( "click", function( event ) {
 fileInput.addEventListener( "change", function( event ) {  
     the_return.innerHTML = this.value;  
 });
-
 
 
 });

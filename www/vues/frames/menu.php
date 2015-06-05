@@ -71,7 +71,7 @@ else
 				<li><a href="../front/contact.php">Contact</a></li>
 			</ul>
 			
-			<a href="../front/signin.php" class="login_btn">Sign in</a>
+			<a href="../front/signin.php" class="login_btn">Connexion</a>
 		</nav>
 	</div>
 </header> <!-- end header section -->';

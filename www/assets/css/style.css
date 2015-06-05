@@ -247,8 +247,16 @@ header nav .login_btn:hover{
     padding: 100px 0;
 }
 
+/* Case d'un prduit tout en entier */
 .listings li{
     display: inline-block;
+}
+
+/* Lorsqu'on survole le truc */
+.listings li:hover{
+    display: inline-block;
+    background-color: yellow;
+    
 }
 
 .listings ul.properties_list{
@@ -256,14 +264,15 @@ header nav .login_btn:hover{
     overflow: hidden;
 }
 
-/* cadre autour de l'image et de la légened */
+/* cadre autour de l'image et de la légend */
 .listings ul.properties_list li{
-   /* display: block; */
+   display: inline-block;
     width: 200px;
     height: auto;
     position: relative;
     float: left;
-    margin: 0 3.636363636363636% 3.636363636363636% 0;
+    margin: 0.74650%;
+    cursor: pointer;
 }
 
 /* Image */
@@ -278,11 +287,11 @@ header nav .login_btn:hover{
 
 .listings ul.properties_list li .price{
     position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 15px 20px;
-    background: rgba(255,255,255,0);
-    color: #514d4d;
+    top: 5px;
+    left: 5px;
+    padding: 5px 5px;
+    background: rgba(28, 54, 85, 0.8);
+    color: white;
     font-family: "lato-bold", Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-weight: bold;
@@ -294,8 +303,8 @@ header nav .login_btn:hover{
     -o-border-radius: 2px;
 }
 
-
-.listings ul.properties_list li:nth-child(3n+0){
+/* Créer une marge tous les 6n élements, s'il y a 7 élements sur la ligne alors écrire : 7n + 0 */
+.listings ul.properties_list li:nth-child(6n+0){
     margin-right: 0;
 }
 
@@ -320,13 +329,27 @@ header nav .login_btn:hover{
     border-right: 1px solid #95badf;
 }
 
+/* CSS du nom du fruit */
 .listings ul li .property_details h1{
     color: #666464;
     font-family: "lato-bold", Helvetica, Arial, sans-serif;
-    font-size: 16px!important;
+    font-size: 18px!important;
     font-weight: bold;
     margin-bottom: 5px;
     line-height: 28px;
+    text-align: left;
+}
+
+/* Information complémentaire caché !*/
+.listings ul li .hidden{
+    color: #666464;
+    font-family: "lato-bold", Helvetica, Arial, sans-serif;
+    font-size: 18px!important;
+    font-weight: bold;
+    margin-bottom: 5px;
+    line-height: 28px;
+    text-align: left;
+    display: none;
 }
 
 .listings ul li .property_details h1 a{
@@ -338,8 +361,21 @@ header nav .login_btn:hover{
     color: #9d9d9d;
     font-family: "lato-regular", Helvetica, Arial, sans-serif;
     font-size: 12px;
-    line-height: 26px;
+    line-height: 15px;
     font-weight: normal;
+}
+
+/* Prix d'un fruit */
+
+.property_price{
+    position: absolute;
+    right:0px;
+    float:right;
+    background-color: rgba(28, 54, 85, 0.8);
+    padding: 0px 4px;
+    color:white;
+    font-family: "lato-bold", Helvetica, Arial, sans-serif;
+    
 }
 
 .listings ul li .property_details .property_size{
@@ -630,12 +666,7 @@ footer .copyrights a.ph_link{
         margin:0;
     }
 
-    .listings .more_listing_btn{
-        display: block;
-        width: 100%; 
-        padding-left: 0!important;
-        padding-right: 0!important;
-    }
+
 
     footer .footer > ul > li.links,
     footer .footer > ul > li.about{
