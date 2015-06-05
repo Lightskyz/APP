@@ -5,7 +5,7 @@ afficheprofil($_SESSION['email']);
 
 
 // Menu pour les admins du site
-if($_SESSION['email'] == TRUE && $_SESSION['isAdmin'] == 1 && $_SESSION['actif'] == 1)
+if($_SESSION['email'] == TRUE && $_SESSION['isAdmin'] == 1)
 	{
 		echo'<header>
 	<div class="wrapper">
@@ -30,7 +30,7 @@ if($_SESSION['email'] == TRUE && $_SESSION['isAdmin'] == 1 && $_SESSION['actif']
 	}
 
 // Menu pour les utilisateurs du site
-elseif($_SESSION['email'] == TRUE && $_SESSION['actif'] ==1)
+elseif($_SESSION['email'] == TRUE)
 	{
 		echo'<header>
 	<div class="wrapper">
@@ -54,31 +54,6 @@ elseif($_SESSION['email'] == TRUE && $_SESSION['actif'] ==1)
 </header> <!-- end header section -->';
 
 	}
-
-//Si le compte n'est pas encore activé
-
-elseif($_SESSION['email'] == TRUE)
-	{
-		echo'<header>
-	<div class="wrapper">
-		<a href="/index.php"><img src="/assets/img/pear2pear.svg" class="logo" alt="logo" height ="100px" title="logo" /></a>
-		<a href="#" class="hamburger"></a>
-		<nav>
-			<ul>
-				<li><a href="../front/index.php">Accueil</a></li>
-				<li><a href="../front/produit.php">Les produits</a></li>
-				<li><a href="../back/annonce.php">Poster une annonce</a></li>
-			</ul>
-			
-			
-			<a href="../../controleurs/deconnexionController.php" class="login_btn2"><i class="fa fa-power-off"></i></a>
-			<a href="../back/profil.php" class="login_btn">Profil</a>
-			
-		</nav>
-	</div>
-</header> <!-- end header section -->
-<p id="nonactif">Bievenue ! Vous êtes inscrit, veuillez activer votre compte en confirmant votre adresse mail, vérifier vos emails !</p>';
-}
 
 // Menu pour les non-utilisateurs du site
 
