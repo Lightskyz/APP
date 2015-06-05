@@ -115,6 +115,7 @@ CREATE TABLE `produit` (
   `quantite` int(255) NOT NULL,
   `poids` int(11) NOT NULL,
   `description` text NOT NULL,
+  `transaction`varchar(255) NOT NULL,
   `date_publication` date NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
@@ -149,7 +150,6 @@ CREATE TABLE `user` (
   `ville` varchar(255) NOT NULL,
   `telephone` varchar(10) NOT NULL,
   `image` varchar(255) NOT NULL,
-  `actif` int(11) NOT NULL,
   `isAdmin` int(11) NOT NULL,
   `token` varchar(255) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;

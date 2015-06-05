@@ -61,6 +61,18 @@
 						<h2>Origine France <span class="property_size"></span></h2>
 					</div>
 				</li>
+				<li>
+					<a href="#">
+						<img src="../../assets/img/products/aubergine.jpg" alt="" title="" class="property_img" height="440px" width="300px"/>
+					</a>
+					<span class="price">DISPO</span>
+					<div class="property_details">
+						<h1>
+							<a href="#">AUBERGINE</a>
+						</h1>
+						<h2>Origine France <span class="property_size"></span></h2>
+					</div>
+				</li>
 				
 			</ul>
 			

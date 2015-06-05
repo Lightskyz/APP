@@ -2,7 +2,7 @@
 include('../modele/modele.php'); 
 
 //Messages
-$success = 'Vous êtes connecté :)</a>';
+$success = 'Vous êtes connecté :)';
 $erreur = 'Le couple email/mot de passe ne correspond pas.';
 $erreur1 = 'Vous n\'avez pas rempli tous les champs.';
 
@@ -14,9 +14,9 @@ $req->execute(array(
     'email' => $email,
     'mdp' => $mdp));
 $resultat = $req->fetch();
-
+ 
 // on teste si nos variables sont définies
-if (!empty($_POST['email']) && !empty(sha1($_POST['mdp']))) {
+if (!empty($_POST['email']) && !empty($_POST['mdp'])) {
     
     // on vérifie les informations du formulaire, à savoir si le pseudo saisi est bien un pseudo autorisé, de même pour le mot de passe
     if(!$resultat) {

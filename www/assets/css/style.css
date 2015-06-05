@@ -256,21 +256,25 @@ header nav .login_btn:hover{
     overflow: hidden;
 }
 
+/* cadre autour de l'image et de la légened */
 .listings ul.properties_list li{
-    display: block;
-    width: 300px;
+   /* display: block; */
+    width: 200px;
     height: auto;
     position: relative;
     float: left;
     margin: 0 3.636363636363636% 3.636363636363636% 0;
 }
 
+/* Image */
+
 .listings ul.properties_list li img.property_img{
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     vertical-align: top;
 }
 
+/* Etiquette en haut à gauche de l'image */
 
 .listings ul.properties_list li .price{
     position: absolute;
@@ -295,8 +299,10 @@ header nav .login_btn:hover{
     margin-right: 0;
 }
 
+/* Légende en bas de la photo */
 .listings ul li .property_details{
-    width: 300px;
+    width: 200px;
+    background-color: rgba(255,255,255,0.8);
     padding: 2.941176470588235% 5.882352941176471% 4.117647058823529% 5.882352941176471%;
     border-bottom: 1px solid #f2f1f1;
     border-left: 1px solid #f2f1f1;

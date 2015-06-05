@@ -28,23 +28,23 @@
 	          
 	          <form action="../../controleurs/connexionController.php" method="post">
 	          
-	            <div class="field-wrap">
-	            	<label>
-	              		Adresse email<span class="req">*</span>
-	            	</label>
-	            	<input type="email" name="email" required autocomplete="off"/>
-	          	</div>
-	          
-	          <div class="field-wrap">
-	            <label>
-	              Mot de passe<span class="req">*</span>
-	            </label>
-	            <input type="password" name="mdp" required autocomplete="off"/>
-	          </div>
+		            <div class="field-wrap">
+		            	<label>
+		              		Adresse email<span class="req">*</span>
+		            	</label>
+		            	<input type="email" name="email" required autocomplete="off"/>
+		          	</div>
+		          
+		          <div class="field-wrap">
+		            <label>
+		              Mot de passe<span class="req">*</span>
+		            </label>
+		            <input type="password" name="mdp" required autocomplete="off"/>
+		          </div>
 	          
 	          <p class="forgot"><a href="../back/envoieMail.php">Mot de passe oublié ?</a></p><br />
 	          
-	          <button type="submit" class="button button-block"/>Se connecter</button>
+	          <button type="submit" class="button button-block">Se connecter</button>
 	          
 	          </form>
 
@@ -136,7 +136,7 @@
 						<p style="color:white">En vous inscrivant vous acceptez les <a href="cgu.php">termes et conditions générales d'utilisation</a> de Pear2Pear</p><br />
 					</div>
 					
-					<button type="submit" class="button button-block">S'inscrire</button>
+					<button type="submit2" class="button button-block">S'inscrire</button>
 			<?php //include("../../controleurs/inscriptionController.php"); ?>
 			</form>
 	</div> <!--div signup -->

@@ -64,12 +64,12 @@
 						Vente et/ou Echange
 					<input type="radio" name="transaction" id="transaction"
 						<?php
-						if(isset($transaction) && $transaction == "echange") echo "checked"; 
+						if(isset($transaction) && $transaction == "Echange") echo "checked"; 
 						?>
 					value="echange">Echange <br />
 					<input type="radio" name="transaction" id="transaction"
 						<?php
-						if(isset($transaction) && $transaction == "vente") echo "checked"; 
+						if(isset($transaction) && $transaction == "Vente") echo "checked"; 
 						?>
 					value="vente">Vente<br />
 
