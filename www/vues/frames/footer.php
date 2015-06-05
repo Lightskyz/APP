@@ -56,7 +56,7 @@ else{
 						<li><a href="../front/signin.php">S\'inscrire</a></li>
 					</ul>
 				</li>
-
+ 
 				<li class="links">
 					<h2>Informations</h2>
 					<ul>

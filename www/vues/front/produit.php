@@ -63,9 +63,7 @@
 				</li>
 				
 			</ul>
-			<div class="more_listing">
-				<a href="#" class="more_listing_btn">Voir plus</a>
-			</div>
+			
 		</div>
 	</section>	<!--  end listing section  -->
 

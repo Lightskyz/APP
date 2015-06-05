@@ -241,6 +241,7 @@ header nav .login_btn:hover{
     display: none;
 }
 
+
 /*  Affichage des fruits et légumes */
 .listings{
     padding: 100px 0;
@@ -256,8 +257,8 @@ header nav .login_btn:hover{
 }
 
 .listings ul.properties_list li{
-    /*display: block;*/
-    width: 30.90909090909091%;
+    display: block;
+    width: 300px;
     height: auto;
     position: relative;
     float: left;
@@ -265,8 +266,8 @@ header nav .login_btn:hover{
 }
 
 .listings ul.properties_list li img.property_img{
-    width: 100%;
-    height: auto!important;
+    width: 300px;
+    height: 300px;
     vertical-align: top;
 }
 
@@ -276,7 +277,7 @@ header nav .login_btn:hover{
     top: 10px;
     left: 10px;
     padding: 15px 20px;
-    background: #ffffff;
+    background: rgba(255,255,255,0);
     color: #514d4d;
     font-family: "lato-bold", Helvetica, Arial, sans-serif;
     font-size: 16px;
@@ -295,7 +296,7 @@ header nav .login_btn:hover{
 }
 
 .listings ul li .property_details{
-    width: 87.64705882352941%;
+    width: 300px;
     padding: 2.941176470588235% 5.882352941176471% 4.117647058823529% 5.882352941176471%;
     border-bottom: 1px solid #f2f1f1;
     border-left: 1px solid #f2f1f1;
@@ -339,38 +340,9 @@ header nav .login_btn:hover{
     color: #676767;
 }
 
-.listings .more_listing{
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin: 84px 0 22px 0;
-}
 
-.listings .more_listing_btn{
-    text-decoration: none;
-    padding: 20px 40px;
-    border: 2px solid #bfd9f1;
-    border-radius: 30px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -o-border-radius: 30px;
-    color: #afcbe6;
-    font-family: "lato-regular", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    text-align: center;
 
-    transition: all .2s linear;
-    -webkit-transition: all .2s linear;
-    -moz-transition: all .2s linear;
-    -o-transition: all .2s linear;
-}
 
-.listings .more_listing_btn:hover{
-    color: #a0c3e5;
-    border: 2px solid #a0c3e5;    
-}
 
 /*  Footer  */
 footer{
