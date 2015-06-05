@@ -18,7 +18,7 @@
     <div class="form">
       <h1> Récupérer votre mot de passe </h1>
 
-        <form method="post" action="envoiemailmdpController.php"><!-- ou envoieControleur - séparer les deux fichiers à voir -->
+        <form method="post" action="../../controleurs/envoiemailmdpController.php"><!-- ou envoieControleur - séparer les deux fichiers à voir -->
   
           <div class="field-wrap">
             <label for="email">

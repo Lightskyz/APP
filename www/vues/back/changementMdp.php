@@ -14,6 +14,10 @@
 
     <?php include("../frames/menu.php"); ?>
 
+    <?php include("../../controleurs/changemdpController.php"); 
+      $email = $_GET['log'];
+    ?>
+
     <!-- Formulaire de changement de mot de passe -->
     <div class="form">
       <h1> Changement du mot de passe </h1>
@@ -37,6 +41,11 @@
           <button type="submit" class="button button-block" name "envoyer">Changer</button>
 
       </form>
+
+      <?php 
+        updatepassword($_GET['log']);
+      ?>
+
     </div> <!-- fin de form -->
 
     <?php include("../frames/footer.php"); ?>

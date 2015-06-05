@@ -43,7 +43,7 @@
         			<button type="submit" name="submit" class="button button-block"/>Ajouter une catégorie</button>
             </form>
                 <?php
-                if(!empty($_POST['submit'])){
+                if(!empty($_POST['nom'])){
                     create_categorie();
                     include("../../controleurs/ajoutimageController.php");
                     ajout_image();
@@ -142,7 +142,7 @@
                         <input type="text" name="telephone" required />
                     </div>
 
-					<button type="submit" class="button button-block" value="Ajouter"/> Ajouter un utilisateur </button>
+					<button name="submit3" type="submit" class="button button-block" value="Ajouter"/> Ajouter un utilisateur </button>
     		</form>
         </div>
 

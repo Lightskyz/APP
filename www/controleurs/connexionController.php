@@ -16,7 +16,7 @@ $req->execute(array(
 $resultat = $req->fetch();
 
 // on teste si nos variables sont définies
-if (!empty($_POST['email']) && !empty($_POST['mdp'])) {
+if (!empty($_POST['email']) && !empty(sha1($_POST['mdp']))) {
     
     // on vérifie les informations du formulaire, à savoir si le pseudo saisi est bien un pseudo autorisé, de même pour le mot de passe
     if(!$resultat) {

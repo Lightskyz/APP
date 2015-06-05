@@ -1,7 +1,7 @@
 <?php 
 
-function ajout_image($dossier){
-    $dossier = '../assets/img/$dossier';
+function ajout_image(){
+    $dossier = '../../assets/img/products';
     $fichier = basename($_FILES['avatar']['name']);
     $taille_maxi = 100000;
     $taille = filesize($_FILES['avatar']['tmp_name']);

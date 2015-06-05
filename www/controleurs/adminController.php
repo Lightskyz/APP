@@ -139,16 +139,17 @@ function ban_user(){
 				//Vue Maxime
 
 				$name = $donnees['nom'];
-				$id = $donnees['id'];
-				echo " ".$donnees['nom']." ".$donnees['prenom']." </br>";
+				$id = $donnees['id'];?>
+				<div class="form"><?php
+				echo "<p style='color:white'>Nom : ".$donnees['nom']." | Prénom ".$donnees['prenom']." </p><br />";
 				?>
-				<form action="<?php echo "backoffice_vue.php?delete2=".$id." "; ?> " method="POST">
-					<input type="submit" name="changer" value="Delete" />
+				<form action="<?php echo "admin.php?delete2=".$id." "; ?> " method="POST">
+					<button class="button button-block" type="submit" name="changer" value="Delete">Supprimer</button>
 				</form>
-				<form action="<?php echo "backoffice_vue.php?ban=".$id." "; ?> " method="POST">
-					<input type="submit" name="changer2" value="Ban" />
-				</form> </br> <?php //pourquoi une balise <?php comme ça en liberté ?
-
+				<form action="<?php echo "admin.php?ban=".$id." "; ?> " method="POST">
+					<button class="button button-block" type="submit" name="changer2" value="Ban">Bannir</button>
+				</form> </br> 
+				</div><?php
 			}
 	}
 function voir_commande(){

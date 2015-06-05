@@ -49,11 +49,11 @@ header("Location: /index.php");
   //email avec lien d'activation (composé du login(email) et de la clé(cle)
   $message = 'Bienvenue sur Pear2Pear,
  
-  Pour activer votre compte, veuillez cliquer sur le lien ci dessous
-  ou copier/coller dans votre navigateur internet.
- 
-  http://www.lightskyz.com/vues/back/validation.php?log='.urlencode($email).'&cle='.urlencode($cle).'
- 
+  Bravo ! Vous êtes maintenant inscrit à notre site, vous pouvez faire votre marché sur la toile avec nos supers vendeurs de proximité !
+
+  Enjoy and be fruit !
+
+  L\'équipe de Pear2Pear
  
   ---------------
   Ceci est un mail automatique.
@@ -83,5 +83,6 @@ elseif($_POST['mdp'] != $_POST['mdp2']){
 	}
 ?>
 
+<!-- http://www.lightskyz.com/vues/back/validation.php?log='.urlencode($email).'&cle='.urlencode($cle).' -->
 
 </html>

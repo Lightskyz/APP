@@ -17,7 +17,7 @@
 
 		<h1 class="titreForum"> Bienvenue sur le forum de Pear2Pear </h1>
 
-		<?php
+<?php
 /*
 	Maxime Payraudeau
 	28/05/2015
@@ -61,11 +61,11 @@ $user = $_SESSION['id'];
 				if(!empty($_POST['nom'])){
 					ajout_topic($forum);
 				}
-			} else {
+				} else {
 				affichage_forum();
-			}
+				}
 
-		} else {
+			} else {
 			$forum = $_GET['forum'];
 			$topic = $_GET['topic'];
 			affichage_message($forum, $topic);
@@ -89,21 +89,21 @@ $user = $_SESSION['id'];
 
 			<button type="submit" name="repondre" class="button button-block">Répondre</button>
 			</form>
-			</div>
+			</div> <!-- end of div form -->
 
 			<?php
 			post_message($user, $forum, $topic);
 
-		}
+		}}
 ?>
 	<a href='forum.php?mes-message=1'> Mes messages </a>
 <!-- erreur par là -->
 
 <?php
-	} else {
-		affichage_mes_messages($user);
+	//} /*else {
+	//	affichage_mes_messages($user);
 	
-	}
+	//}*/
 	
 ?>
 		<?php include("../frames/footer.php"); ?>

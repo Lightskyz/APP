@@ -15,7 +15,7 @@
 		<?php include("../frames/menu.php"); ?>
 		<?php include("../frames/search.php"); ?>
 
-		<!-- contenu de notre site -->
+		<!-- Portfolio de tous les produits qui existent dans notre base de données -->
 
 		<?php include("../frames/footer.php"); ?>
 
