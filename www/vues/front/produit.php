@@ -35,33 +35,41 @@
 					<div class="property_details"> 
 
 						<h1>
-							<a href="#">FRAISE</a><!-- Récupération du Nom du produit -->
-							<span class="property_price">
-									10€/kg <!-- récupération du prix au kilo ou à l'unité directement dans la base de donnée -->
-							</span> 
+								<span>FRAISE</span><!-- Récupération du Nom du produit -->
+								<span class="property_price">
+										10€/kg <!-- récupération du prix au kilo ou à l'unité directement dans la base de donnée -->
+								</span> 
 						</h1>
 						
-							<h2>
+						<h2>
 								<span class="property_size">
 									Vendeur Lambda
 								</span>
-							</h2> <!-- Récupération du nom du vendeur -->
+								<span class="bag_icon">
+									<i>
+									</i>
+								</span>
+						</h2> <!-- Récupération du nom du vendeur -->
 
-							<span id="details"><h2>
+						<h2>
+							<span id="details">
 								Plus de détails
-							</h2></span>
+							</span>
+						</h2>
 							
-							<div class="hidden">
+						 <div class="something">
 								<h2>
 									<span class="property_size">
 										Quantité disponible : 3 <!-- récupération du chiffre directement dans la base de donnée -->
 									</span>
 								</h2>
+						
 								<h2>
 									<span class="property_size">
 										Poids disponible : 5kg <!-- récupération du chiffre directement dans la base de donnée -->
 									</span>
 								</h2>
+					
 								<h2>
 									<span class="property_size">
 										Date de publication : 06/06/2015 <!-- récupération de la date directement dans la base de donnée -->
@@ -73,12 +81,14 @@
 										Description : Blablablabla <!-- récupération de la description directement dans la base de donnée, mais par l'intermediaire d'un bouton qui permet de ralonger les détails si besoin -->
 									</span>
 								</h2>
-							</div> <!-- hidden -->
+
+						</div> <!-- hidden -->
+
 					</div>
 
 					
 				</li>
-
+<!-- 
 				<li>
 					<a href="#">
 						<img src="../../assets/img/products/framboise.jpg" alt="" title="" class="property_img"/>
@@ -137,16 +147,16 @@
 
 
 				<li>
-					<a href="#"><!-- lien vers le produit -->
-						<img src="../../assets/img/products/fraise.jpg" alt="" title="" class="property_img"/><!-- image du produit -->
+					<a href="#">
+						<img src="../../assets/img/products/fraise.jpg" alt="" title="" class="property_img"/>
 					</a>
-					<span class="price">ÉPUISÉ</span><!-- quantité ou prix du produit -->
+					<span class="price">ÉPUISÉ</span>
 
 					<div class="property_details">
 						<h1>
-							<a href="#">FRAISE</a> <!-- nom du produit -->
+							<a href="#">FRAISE</a>
 						</h1>
-						<h2>Origine France<span class="property_size"></span></h2> <!-- détails/disponibilité du produit -->
+						<h2>Origine France<span class="property_size"></span></h2>
 					</div>
 				</li>
 
@@ -201,8 +211,12 @@
 						<h2>Origine France <span class="property_size"></span></h2>
 					</div>
 				</li>
+
+				-->
+
 			</ul>
 			
+
 		</div>
 	</section>	<!--  end listing section  -->
 

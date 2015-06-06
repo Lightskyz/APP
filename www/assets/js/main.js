@@ -1,37 +1,22 @@
 $(document).ready(function(){
 
-$('.listings ul li').click(function(){
+$('.property_details').click(function(){
 
 /* Afficher les informations supplémentaires */
 
-	var text = $(this).children('.hidden');
+	var text = $(this).children('.something');
 
 	if (text.is(':hidden')){
 		text.slideDown('500');
-		$(this).children('span').html('Moins de détails');
+		$(this).children('#details').html('');
 	}
 	else{
 		text.slideUp('300');
-		$(this).children('span').html('Plus de détails');
+		$(this).children('#details').html('');
 	}
 
 });
-	/* Test fonction */
 
-$('#paragraphe li').click(function(){
-
-	var text = $(this).children('');
-
-	if (text.is(':hidden')){
-		text.slideDown('500');
-		$(this).children('span').html('-');
-	}
-	else{
-		text.slideUp('300');
-		$(this).children('span').html('Plus de détails');
-	}
-
-});
 
 /*  Hamburger Menu & Icon  - Responsive Design */
 	$('.hamburger').on('click', function(e){
