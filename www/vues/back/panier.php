@@ -1,6 +1,8 @@
-<?php include("../../modele/sessionStart.php");
-include('../../controleurs/profilController.php');
-afficheprofil($_SESSION['email']);
+<?php 
+		include("../../modele/sessionStart.php");
+		//include('../../controleurs/profilController.php');
+
+		//afficheprofil($email);
 ?>
 
 <!DOCTYPE HTML>
@@ -8,7 +10,7 @@ afficheprofil($_SESSION['email']);
 <html>
 	
 	<head>
-		<title>Contact - Pear2Pear</title>
+		<title>Panier - Pear2Pear</title>
 		<?php include("../frames/head.php"); ?>
 		
 		

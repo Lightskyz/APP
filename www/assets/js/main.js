@@ -2,8 +2,7 @@ $(document).ready(function(){
 
 $('.property_details').click(function(){
 
-/* Afficher les informations supplémentaires */
-
+/* Afficher les informations supplémentaires d'un produit */
 	var text = $(this).children('.something');
 
 	if (text.is(':hidden')){
@@ -17,6 +16,13 @@ $('.property_details').click(function(){
 
 });
 
+/* Bouton radio */
+
+ $('input').iCheck({
+    checkboxClass: 'icheckbox_polaris',
+    radioClass: 'iradio_polaris',
+    increaseArea: '-10%' // optional
+  });
 
 /*  Hamburger Menu & Icon  - Responsive Design */
 	$('.hamburger').on('click', function(e){
@@ -69,7 +75,7 @@ $('.property_details').click(function(){
 		});
 
 
-/* Input file */
+/* Input file 
 // ajout de la classe JS à HTML
 document.querySelector("html").classList.add('js');
  
@@ -94,7 +100,7 @@ button.addEventListener( "click", function( event ) {
 // affiche un retour visuel dès que input:file change
 fileInput.addEventListener( "change", function( event ) {  
     the_return.innerHTML = this.value;  
-});
+});*/
 
 
 });

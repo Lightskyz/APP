@@ -61,17 +61,16 @@
 		     	</div>
 				
 				<div class="field-wrap">
-						Vente et/ou Echange
 					<input type="radio" name="transaction" id="transaction"
 						<?php
 						if(isset($transaction) && $transaction == "Echange") echo "checked"; 
 						?>
-					value="echange">Echange <br />
+					value="Echange"><span class="radio_legend">Echange</span>
 					<input type="radio" name="transaction" id="transaction"
 						<?php
 						if(isset($transaction) && $transaction == "Vente") echo "checked"; 
 						?>
-					value="vente">Vente<br />
+					value="Vente"><span class="radio_legend">Vente</span><br />
 
 				</div>
 		

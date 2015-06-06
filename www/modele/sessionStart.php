@@ -9,7 +9,7 @@ $email = $_SESSION["email"];
 include("modele.php");
 $req = $bdd -> prepare ('SELECT * FROM user WHERE email= '.$email.'');
 				$req -> execute (array(
-					'email'=>$email));
+				'email'=>$email));
 				$resultat = $req->fetch();
 
 //On place dans des variables de session => on demande ensuite la valeur de $_SESSION['isAdmin'] dans la page 'backoffice_controleur.php' afin d'y accéder

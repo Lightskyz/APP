@@ -20,4 +20,5 @@ function afficheprofil($user){
 
 	}
 }
+
 ?>

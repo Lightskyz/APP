@@ -9,7 +9,7 @@ if($_SESSION['email'] == TRUE && $_SESSION['isAdmin'] == 1)
 	{
 		echo'<header>
 	<div class="wrapper">
-		<a href="/index.php"><img src="../../assets/img/pear2pear.svg" class="logo" alt="logo" height ="150px" title="logo" /></a>
+		<a href="/index.php"><img src="../../assets/img/pear2pear.svg" class="logo" alt="logo" height ="100px" title="logo" /></a>
 		<a href="#" class="hamburger"></a>
 		<nav>
 			<ul>
@@ -18,8 +18,9 @@ if($_SESSION['email'] == TRUE && $_SESSION['isAdmin'] == 1)
 				<li><a href="../back/annonce.php">Annonce</a></li>
 			</ul>
 			
-			<a href="../../controleurs/deconnexionController.php" class="login_btn2"><i class="fa fa-power-off"></i></a>
+			<a href="../../controleurs/deconnexionController.php" class="login_btn login_btn2"><i class="fa fa-power-off"></i></a>
 			<a href="../back/admin.php" class="login_btn" id="admin">ADMIN</a>
+			<a href="../back/panier.php" class="login_btn login_btn2"><i class="fa fa-shopping-cart"></i></a>
 			<a href="../back/profil.php" class="login_btn">Profil</a>
 			
 			
@@ -45,8 +46,8 @@ elseif($_SESSION['email'] == TRUE)
 			</ul>
 			
 			
-			<a href="../../controleurs/deconnexionController.php" class="login_btn2"><i class="fa fa-power-off"></i></a>
-			<a href="../back/panier.php" class="login_btn2"><i class="fa fa-shopping-cart"></i></a>
+			<a href="../../controleurs/deconnexionController.php" class="login_btn login_btn2"><i class="fa fa-power-off"></i></a>
+			<a href="../back/panier.php" class="login_btn login_btn2"><i class="fa fa-shopping-cart"></i></a>
 			<a href="../back/profil.php" class="login_btn">Profil</a>
 			
 		</nav>

@@ -70,7 +70,7 @@ $user = $_SESSION['id'];
 			$topic = $_GET['topic'];
 			affichage_message($forum, $topic);
 
-			if(!empty($_POST['changer'])){
+			if(!empty($_POST['changer']) && $_SESSION['isAdmin']){
 				delete_message($user, $_GET['delete']);
 				echo " Veuillez actualiser votre page web.";
 			?>

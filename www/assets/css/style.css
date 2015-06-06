@@ -295,6 +295,7 @@ header nav .login_btn:hover{
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 1px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 
     border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -391,6 +392,7 @@ header nav .login_btn:hover{
     padding: 0px 4px;
     color:white;
     font-family: "lato-bold", Helvetica, Arial, sans-serif;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
     
 }
 
@@ -492,6 +494,7 @@ footer .copyrights a.ph_link{
     text-decoration: none;
 }
 
+/*********************************************/
 /*  RESPONSIVE */
 
 /* Pour les écrans d'une largeur de moins de 1500px */
@@ -1085,7 +1088,6 @@ background: rgba(28, 54, 85, 0.90);
 
 header nav .login_btn2{
     text-decoration: none;
-    color: #fff;
     font-family: "lato-regular", Helvetica, Arial, sans-serif;
     font-size: 16px;
     letter-spacing: 1px;
@@ -1094,15 +1096,8 @@ header nav .login_btn2{
 
 header nav .login_btn2{
     float: right;
-    margin: 30px 0 0 30px;
-    padding: 10px 20px 11px 20px;
-    background: transparent;
-
-    transition: background .1s linear;
-    -webkit-transition: background .1s linear;
-    -moz-transition: background .1s linear;
-    -o-transition: background .1s linear;
-}
+    border:none;
+    }
 
 header nav .login_btn2:hover{
     background: #ffffff;
@@ -1133,3 +1128,35 @@ header nav .login_btn2:hover{
 #listuser{
   text-align: center
 }
+
+/* Legend des boutons radio */
+
+.radio_legend{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 22px;
+    margin:10px;
+    /*padding:10px;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

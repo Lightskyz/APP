@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="../../assets/css/reset.css">
 		<link rel="stylesheet" type="text/css" href="../../assets/css/style.css">
 		<link rel="stylesheet" type="text/css" href="../../assets/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../../assets/css/polaris/polaris.css">
 
 		<!-- Favicon -->
 
@@ -16,6 +17,6 @@
 		<!-- Javascript nécessaire dans le code -->
 		<script type="text/javascript" src="../../assets/js/jQuery.min.js"></script>
 		<script type="text/javascript" src="../../assets/js/main.js"></script>
-
+		<script type="text/javascript" src="../../assets/js/icheck.min.js"></script>
 		<!-- Re-Captcha by Google -->
 		<script src='https://www.google.com/recaptcha/api.js'></script>

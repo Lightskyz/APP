@@ -32,7 +32,7 @@
 			<div>
 				<ul class="infoProfil">
 					<li>Nom : <?php echo strtoupper($_SESSION["nom"]); ?> </li>
-					<li>Prénom : <?php echo $_SESSION["prenom"]; ?></li>
+					<li>Prénom : <?php echo ucfirst($_SESSION["prenom"]); ?></li>
 					<li>Date de naissance : <?php echo $_SESSION["born"]; echo " "; echo "("; echo $_SESSION['age']; echo " ";echo "ans)"; ?></li>
 					<li>Adresse :<br />
 					<?php echo $_SESSION["adresse"]; ?><br />
