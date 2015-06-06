@@ -50,7 +50,8 @@ header("Location: /index.php");
   $message = 'Bienvenue sur Pear2Pear,
  
   Bravo ! Vous êtes maintenant inscrit à notre site, vous pouvez faire votre marché sur la toile avec nos supers vendeurs de proximité !
-
+  RDV sur <a href="http://www.lightskyz.com">Pear2Pear</a>
+  
   Enjoy and be fruit !
 
   L\'équipe de Pear2Pear
