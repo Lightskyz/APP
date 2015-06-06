@@ -9,7 +9,7 @@ if($_SESSION['email'] == TRUE && $_SESSION['isAdmin'] == 1)
 	{
 		echo'<header>
 	<div class="wrapper">
-		<a href="/index.php"><img src="../../assets/img/pear2pear.svg" class="logo" alt="logo" height ="100px" title="logo" /></a>
+		<a href="/index.php"><img src="../../assets/img/pear2pear.svg" class="logo" alt="logo" height ="150px" title="logo" /></a>
 		<a href="#" class="hamburger"></a>
 		<nav>
 			<ul>

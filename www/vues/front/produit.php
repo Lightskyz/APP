@@ -45,10 +45,11 @@
 								<span class="property_size">
 									Vendeur Lambda
 								</span>
-								<span class="bag_icon">
-									<i>
-									</i>
-								</span>
+
+								
+								<div class="bag_icon">
+									<img src="../../assets/img/bag.svg" title="bag" alt="panier" />
+								</div>
 						</h2> <!-- Récupération du nom du vendeur -->
 
 						<h2>
@@ -79,7 +80,7 @@
 								<h2>
 									<span class="property_size">
 										Description : Blablablabla <!-- récupération de la description directement dans la base de donnée, mais par l'intermediaire d'un bouton qui permet de ralonger les détails si besoin -->
-									</span>
+									</span><br /><br /><br />
 								</h2>
 
 						</div> <!-- hidden -->
