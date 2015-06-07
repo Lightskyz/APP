@@ -255,7 +255,6 @@ header nav .login_btn:hover{
 /* Lorsqu'on survole le truc */
 .listings li:hover{
     display: inline-block;
-    background-color: yellow;
     
 }
 
@@ -316,11 +315,16 @@ header nav .login_btn:hover{
     border-bottom: 1px solid #f2f1f1;
     border-left: 1px solid #f2f1f1;
     border-right: 1px solid #f2f1f1;
+   /* height:100px; */
 
     transition: all .2s linear;
     -webkit-transition: all .2s linear;
     -moz-transition: all .2s linear;
     -o-transition: all .2s linear;
+}
+
+.listings ul li .property_details:hover{
+   background-color: rgba(250,250,210,1);
 }
 
 .listings ul li:hover .property_details{
@@ -1089,8 +1093,10 @@ background: rgba(28, 54, 85, 0.90);
 header nav .login_btn2{
     text-decoration: none;
     font-family: "lato-regular", Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    font-size: 24px;
     letter-spacing: 1px;
+    padding: 10px 10px 11px 10px;
+
 
 }
 
@@ -1138,25 +1144,188 @@ header nav .login_btn2:hover{
     /*padding:10px;*/
 }
 
+/* Commande */
+
+/* Légende en bas de la photo */
+.listings ul li .property_details2{
+    width: 200px;
+    background-color: rgba(255,255,255,0.8);
+    padding: 2.941176470588235% 5.882352941176471% 4.117647058823529% 5.882352941176471%;
+    border-bottom: 1px solid #f2f1f1;
+    border-left: 1px solid #f2f1f1;
+    border-right: 1px solid #f2f1f1;
+    height:100px;
+
+    transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    -o-transition: all .2s linear;
+}
+
+
+.listings ul li:hover .property_details2{
+    border-bottom: 1px solid #95badf;
+    border-left: 1px solid #95badf;
+    border-right: 1px solid #95badf;
+}
+
+/* CSS du nom du fruit */
+.listings ul li .property_details2 h1{
+    color: #666464;
+    font-family: "lato-bold", Helvetica, Arial, sans-serif;
+    font-size: 18px!important;
+    font-weight: bold;
+    margin-bottom: 5px;
+    line-height: 28px;
+    text-align: left;
+}
+
+.listings ul li .property_details2 .bag_icon{
+    background-color: rgba(28, 54, 85, 0.8);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    height: 35px;
+    width: 35px;
+    padding: 2px;
+    padding-top: 5px;
+    position: absolute;
+    bottom: 5px;
+    right:4px;
+    border-radius: 100%;
+}
+
+.listings ul li .property_details2 form input{
+  font-size: 11px;
+  display: block;
+  width: 40%;
+  height:24px;
+  padding: 5px 10px;
+  margin-bottom: 2px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: black;
+  font-weight: 1100;
+  font-family: "lato-bold", Helvetica, Arial, sans-serif;
+  position: relative;
+
+
+  border-radius: 0;
+  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+          transition: border-color .25s ease, box-shadow .25s ease;
+}
+.listings ul li .property_details2 form .poids_input{
+    float:right;
+    margin-bottom: 5px;
+}
+
+.listings ul li .property_details2 form .quantity_input{
+    float:right;
+}
+
+.listings ul li .property_details2 input:focus, textarea:focus {
+  outline: 0;
+  border-color: #1ab188;
+}
+
+.listings ul li .property_details2 button{
+   background-color: rgba(28, 54, 85, 0.8);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    margin: 0;
+    padding: 10px;
+    line-height: 100%; /* Si ça fonctionne pas mets 0 */
+    border: 0;
+    font-family: "lato-bold", Helvetica, Arial, sans-serif;/* Définis le même font qu'un lien traditionnel */
+    color: white ;/* La même couleur... */
+   /* font-weight: 500;*/
+   font-size: 0.8em;
+   cursor: pointer;
+
+}
+
+.listings ul li .property_details2 .commander{
+    position: absolute;
+    bottom:0px;
+    right:0px;
+}
+.listings ul li .property_details2 .retour{
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+}
+
+/* LABEL */
+
+.listings ul li .property_details2 form label {
+  position: absolute;
+  left: 13px;
+  color: #666464;
+  font-size: 14px;
+  font-weight: ;
+  font-family: "lato-bold", Helvetica, Arial, sans-serif;
+  pointer-events: none;
+}
+.listings ul li .property_details2 form label .req {
+  margin: 2px;
+  color: #1ab188;
+}
+
+
+ .listings ul li .property_details2 form label.active {
+  -webkit-transform: translateY(-20px);
+      -ms-transform: translateY(-20px);
+          transform: translateY(-20px);
+  left: 2px;
+  font-size: 14px;
+}
+.listings ul li .property_details2 form label.active .req {
+  opacity: 0;
+}
+
+.listings ul li .property_details2 form label.highlight {
+  color: #ffffff;
+}
 
 
 
 
 
 
+/*
+
+input[type="number"]{
+
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+
+-webkit-background-clip: padding;
+-moz-background-clip: padding;
+background-clip:padding-box;
+
+-webkit-border-radius:0;
+-moz-border-radius:0;
+-ms-border-radius:0;
+-o-border-radius:0;
+border-radius:0;
+
+-webkit-appearance:none;
+
+background-color:#fff;
+color:#000;
+outline:0;
+margin:0;
+padding:0;
+text-align: left;
+font-size:1em;
+height: 1em;
+vertical-align: middle;
+
+}
 
 
 
 
-
-
-
-
-
-
-
-
-
+*/
 
 
 
