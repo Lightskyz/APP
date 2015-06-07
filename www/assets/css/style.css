@@ -202,11 +202,12 @@ header nav .login_btn:hover{
     height: 100px;
     background: rgba(28, 54, 85, 0.9);
     position: relative;
+    display: block;
 }
 
 .search #search{
-    display: block;
-    width: 90.90909090909091%;
+    display: inline-block;
+    width: 70%;
     height: 100px;
     float: left;
     border: 0;
@@ -219,6 +220,7 @@ header nav .login_btn:hover{
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 22px;
+
 }
 
 .search #search::-webkit-input-placeholder{
@@ -795,6 +797,7 @@ label {
           transform: translateY(6px);
   left: 13px;
   color: rgba(255, 255, 255, 0.5);
+  font-size: 22px;
   -webkit-transition: all 0.25s ease;
           transition: all 0.25s ease;
   -webkit-backface-visibility: hidden;
@@ -933,7 +936,7 @@ background: rgba(28, 54, 85, 0.90);
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
   color:white;
-  height:120px;
+  height:auto;
 }
 .forum .titre{
   color:gray;
@@ -1236,7 +1239,6 @@ header nav .login_btn2:hover{
     border: 0;
     font-family: "lato-bold", Helvetica, Arial, sans-serif;/* Définis le même font qu'un lien traditionnel */
     color: white ;/* La même couleur... */
-   /* font-weight: 500;*/
    font-size: 0.8em;
    cursor: pointer;
 
@@ -1253,7 +1255,7 @@ header nav .login_btn2:hover{
     left:0px;
 }
 
-/* LABEL */
+/* label des inputs de la présentation produit */
 
 .listings ul li .property_details2 form label {
   position: absolute;
@@ -1286,46 +1288,205 @@ header nav .login_btn2:hover{
 }
 
 
+/* Style de la recherche avancée, menu déroulant */
 
+select {
+    cursor: pointer;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'><polyline points='46.139,15.518 25.166,36.49 4.193,15.519'/></svg>");
+  background-color: rgba(28, 54, 85, 1);
+  background-repeat:no-repeat;
+  background-position: right 10px top 36px;
+  background-size: 24px 24px;
+  color:white;
+  padding:12px;
+  padding-right: 35px;
+  width:15%;
+  height:100px;
+  font-family:"lato-regular", Helvetica, arial,tahoma;
+  color:#95badf;
+  text-align:center;
+  border-radius: 0;
+  -webkit-appearance: none;
+  outline:0;
+  -webkit-transition:0.3s ease all;
+       -moz-transition:0.3s ease all;
+        -ms-transition:0.3s ease all;
+         -o-transition:0.3s ease all;
+            transition:0.3s ease all;
+    display: inline-block;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 22px;
+    float: right;
+    position: absolute;
+    right: 100px;
+    border:0;
+}
 
+#blue {
+  background-color:rgba(28, 54, 85, 1);;
+}
 
-
-/*
-
-input[type="number"]{
-
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-
--webkit-background-clip: padding;
--moz-background-clip: padding;
-background-clip:padding-box;
-
--webkit-border-radius:0;
--moz-border-radius:0;
--ms-border-radius:0;
--o-border-radius:0;
-border-radius:0;
-
--webkit-appearance:none;
-
-background-color:#fff;
-color:#000;
-outline:0;
-margin:0;
-padding:0;
-text-align: left;
-font-size:1em;
-height: 1em;
-vertical-align: middle;
-
+#blue:hover {
+  background-color:rgba(28, 54, 85, 1);;
 }
 
 
+select:focus, select:active {
+  border:0;
+  outline:0;
+}
+
+button.go_search{
+    display: inline-block;
+    outline: 0;
+    -webkit-appearance: none;
+    height:100px;
+    width:100px;
+    border:0;
+    background-color: rgba(28, 54, 85, 0.8);
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 22px;
+    float: right;
+    color:#95badf;
+    cursor: pointer;
+    position: absolute;
+    right:0px;
+    font-family:"lato-bold", Helvetica, arial,tahoma;
+}
+button.go_search:hover{
+    background-color: #179b77;
+}
+
+/* Panier */
+
+#panier{
+    position: relative;
+}
+#panier h1{
+    margin-top: 15px;
+}
+
+.panier {
+  position: relative;
+  background: rgba(28, 54, 85, 0.95);
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  background:  background: rgba(28, 54, 85, 0.9);
+
+}
+
+.panier ul{
+    list-style: none;
+    margin:10px;
+}
+
+.panier ul li {
+    margin:20px;
+    background-color: white;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 1);
+}
+
+.panier ul li div.information_produit{
+    margin:10px;
+    height:80px;
+    width: 70%;
+    background-color: white;
+    position: relative;
+}
+
+.panier ul li .block{
+    margin:10px;
+    display: inline-block;
+    position: relative;
+}
+
+.panier ul li img.property_img{
+    width: 80px;
+    height: 80px;
+    vertical-align: top;
+}
+
+.panier ul li span.quantite_produit{
+    font-family:"lato-regular", Helvetica, arial,tahoma;
+    font-size: 20px;
+}
+
+.panier ul li span.nom_vendeur{
+    font-family:"lato-regular", Helvetica, arial,tahoma;
+    font-size: 20px;
+}
+
+.panier ul li span.nom_produit{
+    font-family:"lato-regular", Helvetica, arial,tahoma;
+    font-size: 20px;
+}
+
+.panier ul li div.prix_produit{
+    font-family:"lato-regular", Helvetica, arial,tahoma;
+    font-size: 20px;
+    height:30px;
+    width:60px;
+    position: absolute;
+    top: 0px;
+    right:0px;
+    background-color: #8DC63F;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    padding: 10px;
+    border: 0;
+    font-family: "lato-bold", Helvetica, Arial, sans-serif;
+    color: white ;
+    font-size: 0.8em;
+}
 
 
-*/
+.panier .total_panier{
+    background-color: #8DC63F;
+    height:30px;
+    width: 60px;
+    text-align: center;
+    padding-top:7px;
+    font-family: "lato-bold", Helvetica, Arial, sans-serif;
+    color:white;
+    font-size: 20px;
+    margin-top:20px;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+.panier button{
+    border:0;
+    -webkit-appearance: none;
+    position: absolute;
+    bottom: 2px;
+    right:0;
+    height: 50px;
+    background-color: #8DC63F;
+    font-family: "lato-bold", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    color:white;
+    cursor: pointer;
 
+}
+.totalSpan{
+    font-family: "lato-bold", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    color:white;
+}
 
+/* Navigateur Chrome pour l'inscription*/
+.field-wrap #birth{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.g-recaptcha{
+    margin-bottom: 20px;
+}
 

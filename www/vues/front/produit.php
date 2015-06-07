@@ -176,6 +176,8 @@
 			
 			<h1>Vue panier</h1>
 
+				<div class="panier">
+
 			<li> <!-- Un produit est un élement d'une liste -->
 					<!-- lien pour ajouter au panier, rajouter un effet "hover" en rajoutant la phrase "mettre au panier" ou alors créer un bouton spécial et enelever le lien sur l'image -->
 						<!-- Chargement de l'image qu'il faut récupérer dans son dossier -->
@@ -228,7 +230,11 @@
 						</div> <!-- hidden -->
 					</div>
 				</li>
+		</div><!-- panier -->
 
+
+
+		
 		</div>
 	</section>	<!--  end listing section  -->
 

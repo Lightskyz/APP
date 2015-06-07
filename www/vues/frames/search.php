@@ -3,9 +3,8 @@
 			<form action="" method="post">
 				<input type="text" id="search" name="recherche" placeholder="Recherche"  autocomplete="off"/>
 				<input type="submit" id="submit_search" name="submit_search" value="ok"/>
-			</form>		
-	</div>
-</section>
+				
+	
 
 <?php
 
@@ -14,7 +13,7 @@
 ?>
 
 <?php
-/*
+
 	if(!empty($_POST['recherche'])){
 		$requete = $_POST['recherche'];
 	}
@@ -30,5 +29,8 @@
 	} else {
 		recherche_champ("");
 	}
-*/
+
 ?>
+</form>	
+</div>
+</section>

@@ -22,8 +22,8 @@ function recherche_crit($table, $order) {
 ?>
 
 		<form action="" method="POST">
-			<select name="liste">
-				<option value="Tous les produits" selected="Tous les produits"> Tous les produits </option> 
+			<select name="liste" id="blue">
+				<option value="Produits" selected="Produits">Produits</option> 
 				<?php
 				$sql2 ='SELECT * FROM '.$table.' ORDER BY '.$order.' ASC';
 				$list = $bdd->query($sql2);
@@ -32,7 +32,7 @@ function recherche_crit($table, $order) {
     			}
 			?>
 			</select>
-			<button type="submit" name="submit">Go</button>
+			<button type="submit" name="submit" class="go_search">Go</button>
 		</form>
 		<?php 
 		$OK = isset($_POST['Go']) ? $_POST['Go'] : '';

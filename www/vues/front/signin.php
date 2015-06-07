@@ -70,8 +70,9 @@
 				</div><!-- div top-row -->
 
 					<div class="field-wrap">
-						<label>Date de naissance<span class="req">*</span>
-						</label>
+						<p id="birth">Date de naissance<span class="req">*</span></p>
+						<!--<label>Date de naissance<span class="req">*</span>
+						</label> A cause de Google Chrome--> 
 						 <input type="date" name="born" required />
 					</div>
 

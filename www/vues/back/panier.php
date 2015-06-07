@@ -49,6 +49,54 @@ if(!empty($_POST["changer"])){
 */
 ?>
 
+	<div id="panier">
+
+    <h1>Panier de $_SESSION['nom']</h1>
+
+    	<div class="panier">
+			<ul><!-- Liste des produits ajouter au panier -->
+				<li> 
+					<img src="../../assets/img/products/fraise.jpg" alt="" title="" class="property_img block" /> <!-- Image du produit ajouté au panier -->
+						<div class="information_produit block">
+							<span class="quantite_produit">0.400g de </span>
+							<span class="nom_produit">Premier produit</span><br /><br /><br /> <!-- Nom du produit -->
+							<span class="nom_vendeur">Vendeur BetaOmega</span><br />
+							<div class="prix_produit"> 5€
+							</div> <!-- fin prix produit, mis en place d'une case -->
+						</div> <!-- fin information_produit -->
+					
+				</li>
+
+				<li> 
+					<img src="../../assets/img/products/banane.jpg" alt="" title="" class="property_img block" /> <!-- Image du produit ajouté au panier -->
+						<div class="information_produit block">
+							<span class="quantite_produit">2 </span>
+							<span class="nom_produit">Deuxiemes produit</span><br /><br /><br /> <!-- Nom du produit -->
+							<span class="nom_vendeur">Vendeur AlphaLambda</span><br />
+							<div class="prix_produit"> 1 fruit
+							</div> <!-- fin prix produit, mis en place d'une case -->
+						</div> <!-- fin information_produit -->
+				</li>
+
+
+				<li> 
+					<img src="../../assets/img/products/fraise.jpg" alt="" title="" class="property_img block" /> <!-- Image du produit ajouté au panier -->
+						<div class="information_produit block">
+							<span class="quantite_produit">0.400g de </span>
+							<span class="nom_produit">Premier produit</span><br /><br /><br /> <!-- Nom du produit -->
+							<span class="nom_vendeur">Vendeur BetaOmega</span><br />
+							<div class="prix_produit"> 5€
+							</div> <!-- fin prix produit, mis en place d'une case -->
+						</div> <!-- fin information_produit -->
+				</li>
+			</ul>
+
+			<span class="totalSpan">TOTAL : </span><div class="total_panier">100€ <!--somme des élements du panier)--></div>
+			<button type="submit">Acheter/Echanger</button>
+
+    	</div> <!-- end of class panier -->
+    </div> <!-- end of id panier -->
+
 		<?php include("../frames/footer.php"); ?>
 
 	</body>
