@@ -9,7 +9,7 @@
 	28/05/2015
 	Version 1.0.1
 */
-	function addpanier($user, $produtct, $quantite){
+	function addpanier($user, $produtct, $quantite){	// Fonction pour ajouter un produit au panier
 
 		include("../../modele/modele.php");  // Inclue la base de donnée + connexion.
 		
@@ -37,8 +37,10 @@
 	28/05/2015
 	Version 1.0.1
 */
-	function deletepanier($user, $product){
+	function deletepanier($user, $product){		// Fonction pour supprimer un produit du panier
+
 		include("../../modele/modele.php");
+
 		$sql = 'SELECT * FROM detailcommande WHERE id_product= "'.$product.'" AND id_user= "'.$user.'" ';
 		$reponse = $bdd->query($sql);
 		
@@ -58,8 +60,10 @@
 	28/05/2015
 	Version 1.0.1
 */
-	function updatepanier($user, $product, $quantite){
+	function updatepanier($user, $product, $quantite){ 		// Fonction pour update la quantite d'un produit au panier
+
 		include("../../modele/modele.php");
+
 		$sql = 'UPDATE `detailcommande` SET `quantite`='.$quantite.' WHERE id_user='.$user.' AND id_product='.$product.' '; 
 		$reponse = $bdd->prepare($sql);
 		$reponse ->execute();
@@ -69,8 +73,10 @@
 	28/05/2015
 	Version 1.0.1
 */
-	function affichepanier($user){
+	function affichepanier($user){		// Fonction pour afficher l'ensemble des produits du panier
+
 		include("../../modele/modele.php");
+
 		$sql = 'SELECT * FROM commande WHERE id_user='.$user.' ';
 		$reponse = $bdd->query($sql);
 		while ($donnees = $reponse->fetch())
@@ -96,18 +102,14 @@
 						while ($donnees5 = $reponse5->fetch())
 						{
 							$data = $donnees2['quantite'];
-
-							
-
 							?>
-							<form action="<?php echo "panier.php?product=".$product." "; ?> " method="POST">
+							<form action="<?php echo "panier.php?product=".$product." "; ?> " method="POST">			<!-- On cree un formulaire qui permet de changer le nombre de produit acheter ou de delete cet item au panier -->
 							<input type="number" name="quantite" step="1" placeholder="<?php echo $data; ?>" min="0" />
 							<?php echo $donnees4['nom'].' '.$donnees4['prenom'].' '.$donnees5['nom'].' '.$donnees3['prix']; ?>
 							<input type="submit" name="changer" value="Valider">
 							<input type="submit" name="changer" value="Delete" />
-							</form> </br> <?php //encore une balise <?php perdue au milieu de nul part			
-
-
+							</form> </br> 
+							<?php 			
 						}
 					}
 				}

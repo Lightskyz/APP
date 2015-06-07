@@ -2,50 +2,66 @@
 
 include('../../modele/modele.php');
 
-	function create_categorie(){
+/*
+	Payraudeau Maxime
+*/
+function create_categorie(){					// Fonction pour ajouter une categorie dans la base de donnee
 	
-	include ('../../modele/modele.php');
+	include ('../../modele/modele.php');		// On include le modele pour avoir acces a la bdd
 
-	if(!empty($_POST['nom']) ) {
-		$nom = $_POST['nom'];
-			$sql2 = 'INSERT INTO categorie(nom) VALUES ( :nom ) ';
-			$req = $bdd->prepare($sql2);
-			$req -> bindParam(':nom' , $nom );
-			$req->execute();
-			echo "La categorie ".$nom." à bien été crée.";
+	if(!empty($_POST['nom']) ) {				// On recupere le post "nom" du formulaire de la vue
+		$nom = $_POST['nom'];					// On assigne le post a la variable $nom
+			$sql2 = 'INSERT INTO categorie(nom) VALUES ( :nom ) ';			// Requete SQL pour inserer un nouvel element dans la table categorie
+			$req = $bdd->prepare($sql2);									// On prepare la requete SQL
+			$req -> bindParam(':nom' , $nom );								// On associe la donnee :nom a la variable $nom
+			$req->execute();												// On execute la requete SQL
+			echo "La categorie ".$nom." à bien été crée.";					// On affiche que la categorie a bien ete cree
 	}
 }
-function delete_categorie($categorie){
-	include ('../../modele/modele.php');
-	$sql = 'SELECT * FROM categorie WHERE nom = "'.$categorie.'" ';
+
+/*
+	Payraudeau Maxime
+*/
+function delete_categorie($categorie){			// Fonction pour supprimer une categorie de la base de donnee avec pour argument $categorie
+
+	include ('../../modele/modele.php');		// On include le modele pour avoir acces a la bdd
+
+	$sql = 'SELECT * FROM categorie WHERE nom = "'.$categorie.'" ';	// Requete SQL pour selectionner tout les elements de la table categorie qui ont pour nom la valeur de la variable $categorie
 	$req = $bdd -> query($sql);
-	while ($donnees = $req->fetch())
+	while ($donnees = $req->fetch())								// Mise en forme des résultats sous la forme de tableau
 		{
-				if($donnees['vide'] == '0'){
-					$sql2 = 'DELETE FROM categorie WHERE nom = "'.$categorie.'" ';
-					$req2 = $bdd -> prepare($sql2);
-					$req2 -> execute();
-					echo "La catégorie ".$categorie." à été supprimée." ;
-				} else {
+				if($donnees['vide'] == '0'){						// Pour chaque element, on regarde avec un if si l'élement a pour son attribut vide egal a zero
+					$sql2 = 'DELETE FROM categorie WHERE nom = "'.$categorie.'" ';		// Si il est egal a zero, alors on delete la categorie avec pour nom $categorie
+					$req2 = $bdd -> prepare($sql2);										// On prepare la requete SQL
+					$req2 -> execute();													// On execute la requete SQL
+					echo "La catégorie ".$categorie." à été supprimée." ;				// On affiche que la categorie a bien ete cree
+				} else {											// Si son attribut n'est pas egal a zero, alors on affiche que la categorie n'est pas vide ( qu'il y a des produit en vente de cette categorie )
 					echo "La categorie n'est pas vide.";
 				}
 		}
 }
 
-function voir_categorie(){
-		include('../../modele/modele.php');
+/*
+	Payraudeau Maxime
+*/
+function voir_categorie(){						// Fonction pour voir l'ensemble des categorie presente dans notre base de donnee
 
-		$sql = ' SELECT * FROM categorie ORDER BY nom ASC ';
-		$req = $bdd -> query($sql);
-		while ($donnees = $req->fetch())
+		include('../../modele/modele.php');		// On include le modele pour avoir acces a la bdd
+
+		$sql = ' SELECT * FROM categorie ORDER BY nom ASC ';	// Requete SQL pour selectionner tout les elements de la table categorie et les ordonner par ordre de nom ascendant
+		$req = $bdd -> query($sql);								// On execute la requete
+		while ($donnees = $req->fetch())						// On liste les elements sous forme d'un tableau
 			{
-				$name = " ".$donnees['nom']." ";
+				$name = " ".$donnees['nom']." ";				// Pour chaque element, on affiche le nom de l'element 
 				echo "<div id='listuser'>Nom : ".$name."";
 			}
 	}
 
 	/* Ajout d'un utilisateur */
 	if(!empty($_POST['nom1']) && !empty($_POST['prenom1']) && !empty($_POST['email1']) && !empty($_POST['passe1']) && !empty($_POST['adresse1']) && !empty($_POST['cdp1']) && !empty($_POST['born1'])) {
+
+		// Pour chaque champ de formulaire, on verifie qu'il n'est pas vide 
+		// On stock les valeur du formulaire au sein de variable local
 		$nom1=$_POST['nom1'];
 		$prenom1=$_POST['prenom1'];
 		$born1=$_POST['born1'];
@@ -55,7 +71,8 @@ function voir_categorie(){
 		$adresse1=$_POST['adresse1'];
 		$cdp1=$_POST['cdp1'];
 		
-		$req = $bdd -> prepare ('INSERT INTO user(nom, prenom, born, email, passe, adresse, cdp) VALUES(:nom, :prenom, :born, :email, :passe, :adresse, :cdp)');
+		$req = $bdd -> prepare ('INSERT INTO user(nom, prenom, born, email, passe, adresse, cdp) VALUES(:nom, :prenom, :born, :email, :passe, :adresse, :cdp)'); // On prepare la requete SQL pour inserer un utilisateur dans la table user avec les elements retourner par le formulaire de la vue
+
 				$req -> execute (array(
 					':nom'=>$nom1,
 					':prenom'=>$prenom1,
@@ -64,68 +81,52 @@ function voir_categorie(){
 					':passe'=>$passe1,
 					':adresse'=>$adresse1,
 					':cdp'=>$cdp1
-					));
+					));	// On l'executre
 
-		echo 'L\'utilisateur a bien été ajouté.';
+		echo 'L\'utilisateur a bien été ajouté.'; // On affiche que l'utilisateur a bien ete ajoute
 	}
 
 	//"supprimer" avec formulaire fonctionne => on va le faire avec une fonction qui récupère l'ID de l'user//
+/*
+	Payraudeau Maxime
+*/	
+	function delete_user(){ 		// Fonction pour supprimer un utilisateur
+
+	include("../../modele/modele.php"); 	// On include le modele pour avoir acces a la bdd
 	
-	function delete_user(){
-	include("../../modele/modele.php");
-	
-		$id = $_GET['delete2'];
-
-		$sql = 'DELETE FROM user WHERE id = "'.$id.'" ';
-		$req = $bdd -> prepare($sql);
-		$req -> execute();
-		echo "Veuillez actualiser votre page internet.";
-
-	/*
-	if(!empty($_POST['nom2']) && !empty($_POST['prenom2'])) {
-
-	if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['born'])) {
-		$choix = $_POST['choix'];
-		$nom2=$_POST['nom2'];
-		$prenom2=$_POST['prenom2'];
-		$sql0 = ' SELECT * FROM user WHERE nom = '.$nom2.' AND prenom = '.$prenom2.' ';
-		$req0 = $bdd -> query($sql0);
-		while( $donnees0 = $req0 -> fetch() ){
-			$user = $donnees0['id'];
-		}
-
-	if( !empty($_POST['Supprimer']) ){
-		$sql1 = ' DELETE FROM `user` WHERE id = '.$user.' ';
-		$req1 = $bdd -> prepare($sql1);
-		$req1 -> execute();
-		echo "L'utilisateur d'ID = ".$user." à été supprimé" ;
-	}else{
-		$sql2 = ' UPDATE `user` SET isAdmin = 10 WHERE id = '.$user.' ';
-		$req2 = $bdd -> prepare($sql2);
-		$req2 -> execute();
-		echo "L'utilisateur d'ID = ".$user." à été banni" ; 
-	}*/
+		$id = $_GET['delete2'];				// On utilise l'URL pour recuperer la valeur de la variable delete2 et la stocker dans la varieble id
+		$sql = 'DELETE FROM user WHERE id = "'.$id.'" ';		// On supprime l'utilisateur de la table user qui a pour id la valeur de la variable $id
+		$req = $bdd -> prepare($sql);							// On prepare la requete SQL
+		$req -> execute();										// On execute la requete SQL
+		echo "Veuillez actualiser votre page internet.";		// On affiche a l'utilisateur d'actualiser sa page web pour voir les changements.
 }
 
-function ban_user(){
-	include("../../modele/modele.php");
+/*
+	Payraudeau Maxime
+*/
+function ban_user(){				// Fonction pour ban un utilisateur
 
-	$id = $_GET['ban'];
+	include("../../modele/modele.php");		// On include le modele pour avoir acces a la bdd
 
-	$sql2 = ' UPDATE `user` SET isAdmin = 10 WHERE id = "'.$id.'" ';
-	$req2 = $bdd -> prepare($sql2);
-	$req2 -> execute();
-	echo "L'utilisateur d'ID = ".$id." à été banni" ;
+	$id = $_GET['ban'];						// On utilise l'URL pour recuperer la valeur de la variable ban et la stocker dans la varieble id
+
+	$sql2 = ' UPDATE user SET isAdmin = 10 WHERE id = "'.$id.'" ';	// On update l'utilisateur de la table user qui a pour id la valeur de la variable id en lui assignant isAdmin a 10
+	$req2 = $bdd -> prepare($sql2);									// On prepare la requete SQL
+	$req2 -> execute();												// On execute la requete SQL
+	echo "L'utilisateur d'ID = ".$id." à été banni" ;				// On affiche que l'utilisateur a bien ete banni
+	echo "Veuillez actualiser votre page internet.";				// On affiche a l'utilisateur d'actualiser sa page web pour voir les changements.
 }
 
-	
+/*
+	Payraudeau Maxime
+*/
+	function voir_utilisateur(){		// Fonction pour voir l'ensemble des utilisateurs
 
-	function voir_utilisateur(){
-		include('../../modele/modele.php');
+		include('../../modele/modele.php');		// On include le modele pour avoir acces a la bdd
 
-		$sql = ' SELECT * FROM user WHERE isAdmin != 10 AND isAdmin != 1 ORDER BY nom ASC';
-		$req = $bdd -> query($sql);
-		while ($donnees = $req->fetch())
+		$sql = ' SELECT * FROM user WHERE isAdmin != 10 AND isAdmin != 1 ORDER BY nom ASC';			// On selectionne l'ensemble des user qui on isAdmin different de 10 et de 1 ( qui ne sont ni admin ni bannis.)
+		$req = $bdd -> query($sql);																	// On execute la requete SQL
+		while ($donnees = $req->fetch())												// On met les resultats sous forme de tableau
 			{
 
 				//Ancienne vue
@@ -138,24 +139,29 @@ function ban_user(){
 
 				//Vue Maxime
 
-				$name = $donnees['nom'];
+				$name = $donnees['nom'];			// On assigne les valeurs retourner par la requete SQL a des variables locale
 				$id = $donnees['id'];?>
 				<div class="form"><?php
 				echo "<p style='color:white'>Nom : ".$donnees['nom']." | Prénom ".$donnees['prenom']." </p><br />";
 				?>
-				<form action="<?php echo "admin.php?delete2=".$id." "; ?> " method="POST">
+				<form action="<?php echo "admin.php?delete2=".$id." "; ?> " method="POST">									<!-- On cree un formulaire avec un bouton pour mettre a jour la valeur de la variable delete2 si on clique dessus -->
 					<button class="button button-block" type="submit" name="changer" value="Delete">Supprimer</button>
 				</form>
-				<form action="<?php echo "admin.php?ban=".$id." "; ?> " method="POST">
+				<form action="<?php echo "admin.php?ban=".$id." "; ?> " method="POST">										<!-- On cree un formulaire avec un bouton pour mettre a jour la valeur de la variable ban si on clique dessus -->
 					<button class="button button-block" type="submit" name="changer2" value="Ban">Bannir</button>
 				</form> </br> 
 				</div><?php
 			}
 	}
-function voir_commande(){
-	include("../../modele/modele.php");
 
-	$sql = ' SELECT * FROM commande ORDER BY id_user ASC ';
+/*
+	Payraudeau Maxime
+*/
+function voir_commande(){			// Fonction pour voir l'ensemble des commandes actuellement en cours
+
+	include("../../modele/modele.php");		// On include le modele pour avoir acces a la bdd
+
+	$sql = ' SELECT * FROM commande ORDER BY id_user ASC ';		// Ensemble de requete SQL nous permettant d'obtenir l'ensemble des informations necessaire a l'affichage de la commande
 	$req = $bdd -> query($sql);
 	while ($donnees = $req->fetch())
 			{
@@ -180,6 +186,7 @@ function voir_commande(){
 								while ($donnees6 = $req6->fetch())
 								{
 									echo " Vendeur : ".$donnees5['nom']." ".$donnees5['prenom']." Produit : ".$donnees6['nom']." Quantité : ".$donnees3['quantite']." Acheteur : ".$donnees2['nom']." ".$donnees2['prenom']. "</br>";
+									// On affiche l'ensemble de ces informations
 								}
 							}
 						}
@@ -188,23 +195,32 @@ function voir_commande(){
 			}
 		}
 
-function ajout_forum_cat(){
-	include("../../modele/modele.php");
-	$nom = $_POST['nom4'];
-	$sql = 'INSERT INTO `forum`(`nom`) VALUES (:nom)';
+/*
+	Payraudeau Maxime
+*/
+function ajout_forum_cat(){			// Fonction pour ajouter une categorie au forum
+
+	include("../../modele/modele.php");		// On include le modele pour avoir acces a la bdd
+
+	$nom = $_POST['nom4'];			// On recupere le nom de la categorie a ajouter
+	$sql = 'INSERT INTO forum(nom) VALUES (:nom)';		// Requete SQL pour inserer une nouvelle categorie a la table forum avec pour nom la valeur de la variable $nom
 				$req = $bdd->prepare($sql);
 				$req -> bindParam(':nom' , $nom );
 				$req -> execute(); 
 }
 
+/*
+	Payraudeau Maxime
+*/
 function utilisateurs_bannis(){
-	include("../../modele/modele.php");
 
-	$sql = 'SELECT * FROM user WHERE isAdmin = 10 ';
+	include("../../modele/modele.php");		// On include le modele pour avoir acces a la bdd
+
+	$sql = 'SELECT * FROM user WHERE isAdmin = 10 ';		// On selectionne l'ensemble des utilisateur de la table user qui ont isAdmin a 10 ( users bannis )
 	$req = $bdd -> query($sql);
 	while ($donnees = $req->fetch())
 		{
-			echo $donnees['nom']." ".$donnees['prenom'];
+			echo $donnees['nom']." ".$donnees['prenom'];	// On affiches leurs noms et prenoms
 		}
 }
 ?>

@@ -1,7 +1,13 @@
 <?php
-	function updateprofil($user){
+
+/*
+	Payraudeau Maxime
+*/
+function updateprofil($user){		// Fonction pour update le profif
+
 		include("../../modele/modele.php");
-		if(!empty($_POST['nom'])){
+
+		if(!empty($_POST['nom'])){			// Pour chaque champ non vide du formulaire, on assigne une variable 
 			$nom = $_POST['nom'];
 		}
 		if(!empty($_POST['prenom'])){
@@ -44,9 +50,9 @@
 			$reponse2->bindParam(8, $city);
 			$reponse2->bindParam(9, $phone);
 
-			if(!empty($nom)){
-				$lastname = $nom;
-			}else{
+			if(!empty($nom)){											// Pour l'ensemble des variables, on regarde si la variable du formulaire est vide ou non, si elle n'est pas vide
+				$lastname = $nom;										// alors on assigne cette variable a la variable relatif a l'update
+			}else{														// si elle est vide, alors on assigne a cette variable la valeur deja existante dans la base de donnee
 				$sql2='SELECT nom FROM user WHERE id="'.$user.'" ';
 				$reponse = $bdd->query($sql2);
 				while ($donnees = $reponse->fetch())
