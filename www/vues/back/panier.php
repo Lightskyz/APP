@@ -63,6 +63,12 @@ if(!empty($_POST["changer"])){
 							<span class="nom_vendeur">Vendeur BetaOmega</span><br />
 							<div class="prix_produit"> 5€
 							</div> <!-- fin prix produit, mis en place d'une case -->
+							<a href="">
+								<div class="trash_icon">
+									<i class="fa fa-trash-o fa-2x"></i>
+								</div>
+							</a>
+							
 						</div> <!-- fin information_produit -->
 					
 				</li>
@@ -74,7 +80,15 @@ if(!empty($_POST["changer"])){
 							<span class="nom_produit">Deuxiemes produit</span><br /><br /><br /> <!-- Nom du produit -->
 							<span class="nom_vendeur">Vendeur AlphaLambda</span><br />
 							<div class="prix_produit"> 1 fruit
-							</div> <!-- fin prix produit, mis en place d'une case -->
+							</div>
+
+							<a href="">
+								<div class="trash_icon">
+									<i class="fa fa-trash-o fa-2x"></i>
+								</div>
+							</a>
+							
+							
 						</div> <!-- fin information_produit -->
 				</li>
 
@@ -86,8 +100,14 @@ if(!empty($_POST["changer"])){
 							<span class="nom_produit">Premier produit</span><br /><br /><br /> <!-- Nom du produit -->
 							<span class="nom_vendeur">Vendeur BetaOmega</span><br />
 							<div class="prix_produit"> 5€
-							</div> <!-- fin prix produit, mis en place d'une case -->
-						</div> <!-- fin information_produit -->
+							</div>
+							<a href="">
+								<div class="trash_icon">
+									<i class="fa fa-trash-o fa-2x"></i>
+								</div>
+							</a>
+
+							
 				</li>
 			</ul>
 

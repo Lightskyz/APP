@@ -964,6 +964,7 @@ background: rgba(28, 54, 85, 0.90);
   display: inline-block;
   vertical-align: top;
   }
+
 .reponse{
  margin:auto;
 }
@@ -1434,7 +1435,7 @@ button.go_search:hover{
     height:30px;
     width:60px;
     position: absolute;
-    top: 0px;
+    top : 0px;
     right:0px;
     background-color: #8DC63F;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
@@ -1478,6 +1479,23 @@ button.go_search:hover{
     font-size: 20px;
     color:white;
 }
+.panier ul li div.information_produit .trash_icon{
+    background-color: rgba(255, 0, 0, 0.8);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    height: 42px;
+    width: 42px;
+    padding: 2px;
+    padding-top: 5px;
+    position: absolute;
+    bottom: 0px;
+    right:0px;
+    border-radius: 100%;
+}
+.panier ul li div.information_produit .trash_icon i{
+    padding-left: 6px;
+    color:white;
+}
+
 
 /* Navigateur Chrome pour l'inscription*/
 .field-wrap #birth{
@@ -1489,4 +1507,7 @@ button.go_search:hover{
 .g-recaptcha{
     margin-bottom: 20px;
 }
+
+/* Modération du forum */
+
 

@@ -16,6 +16,14 @@
 		<?php include("../frames/search.php"); ?>
 
 		<h1 class="titreForum"> Bienvenue sur le forum de Pear2Pear </h1>
+		
+		<nav>
+			<ul>
+				<a href="../front/forum.php"><li> Accueil</li></a>
+				<a href="../front/forum.php?forum=".<?php $forum ?>."&topic=".<?php $donnees['id'] ?>.""><li>Topic </li></a>
+				<a href="forum.php?mes-message=1"><li> Mes messages </li></a>
+			</ul>
+		</nav>
 
 <?php
 /*
@@ -49,9 +57,7 @@ $user = $_SESSION['id'];
 		     		<input type="text" name="contenu" id="contenu" />
 		     		</div>
 					
-					<!-- Re-Captcha by Google -->
-					<div class="g-recaptcha" data-sitekey="6Ldb5gcTAAAAAGAtNongnDYz3Er7GJHxfCehtwFR"></div>
-
+					
 					<button class="button button-block" type="submit" name="poster">Poster</button>
 
 				</form>
@@ -70,9 +76,6 @@ $user = $_SESSION['id'];
 			$topic = $_GET['topic'];
 			affichage_message($forum, $topic);
 
-			if(!empty($_POST['changer']) && $_SESSION['isAdmin']){
-				delete_message($user, $_GET['delete']);
-				echo " Veuillez actualiser votre page web.";
 			?>
 
 
@@ -93,15 +96,13 @@ $user = $_SESSION['id'];
 
 			<?php
 			post_message($user, $forum, $topic);
+			if(!empty($_POST['changer']) && $_SESSION['isAdmin']){
+				delete_message($user, $_GET['delete']);
+				echo " Veuillez actualiser votre page web.";
 
 		}
 	}
 
-?>
-	<a href='forum.php?mes-message=1'> Mes messages </a>
-<!-- erreur par là -->
-
-<?php
 	} else {
 		affichage_mes_messages($user);
 	

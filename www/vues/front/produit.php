@@ -173,70 +173,41 @@
 
 
 			</ul>
-			
-			<h1>Vue panier</h1>
-
-				<div class="panier">
-
-			<li> <!-- Un produit est un élement d'une liste -->
-					<!-- lien pour ajouter au panier, rajouter un effet "hover" en rajoutant la phrase "mettre au panier" ou alors créer un bouton spécial et enelever le lien sur l'image -->
-						<!-- Chargement de l'image qu'il faut récupérer dans son dossier -->
-						<img src="../../assets/img/products/fraise.jpg" alt="" title="" class="property_img"/><!-- image du produit -->
-					<!-- fin du lien -->
-					<span class="">VENTE</span><!-- Savoir si le produit est en vente ou en echange -->
-					<!-- Légende en bas de l'image -->
-					<div class=""> 
-
-						<h1>
-								<span>FRAISE</span><!-- Récupération du Nom du produit -->
-								<span class="">
-										10€ <!-- récupération du prix au kilo ou à l'unité directement dans la base de donnée -->
-								</span> 
-						</h1>
-						
-						<h2>
-								<span class="">
-									Vendeur Alpha
-								</span>
-
-						</h2> <!-- Récupération du nom du vendeur -->
-
-						<h2>
-							<span id="">
-								Plus de détails
-							</span>
-						</h2>
-						 <div class="">
-								<h2>
-									<span class="">
-										Quantité commandé : 2 <!-- récupération du chiffre directement dans la base de donnée -->
-									</span>
-								</h2>
-								<h2>
-									<span class="">
-										Poids commandé : 0.400kg <!-- récupération du chiffre directement dans la base de donnée -->
-									</span>
-								</h2>
-								<h2>
-									<span class="">
-										Date de publication : 06/06/2015 <!-- récupération de la date directement dans la base de donnée -->
-									</span>
-								</h2>
-								<h2>
-									<span class="">
-										Description : Blablablabla <!-- récupération de la description directement dans la base de donnée, mais par l'intermediaire d'un bouton qui permet de ralonger les détails si besoin -->
-									</span><br /><br /><br />
-								</h2>
-						</div> <!-- hidden -->
-					</div>
-				</li>
-		</div><!-- panier -->
-
-
-
-		
 		</div>
-	</section>	<!--  end listing section  -->
+		</section>	<!--  end listing section  -->
+
+			<h1>Vue panier</h1>
+	
+	<div id="panier">
+		<div class="panier">
+			<ul><!-- Liste des produits ajouter au panier -->
+				<li> 
+					<img src="../../assets/img/products/fraise.jpg" alt="" title="" class="property_img block" /> <!-- Image du produit ajouté au panier -->
+						<div class="information_produit block">
+							<span class="quantite_produit">0.400g de </span>
+							<span class="nom_produit">Premier produit</span><br /><br /><br /> <!-- Nom du produit -->
+							<span class="nom_vendeur">Vendeur BetaOmega</span><br />
+							<div class="prix_produit"> 5€
+							</div> <!-- fin prix produit, mis en place d'une case -->
+							<a href="">
+								<div class="trash_icon">
+									<i class="fa fa-trash-o fa-2x"></i>
+								</div>
+							</a>
+							
+						</div> <!-- fin information_produit -->
+					
+				</li>
+			</ul>
+
+			<span class="totalSpan">TOTAL : </span><div class="total_panier">5€ <!--somme des élements du panier)--></div>
+			<button type="submit">Acheter/Echanger</button>
+
+		</div> <!-- class panier -->
+	</div> <!-- id panier -->
+
+
+	
 
 		<?php include("../frames/footer.php"); ?>
 

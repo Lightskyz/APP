@@ -69,7 +69,16 @@ function affichage_message($forum, $topic){		// Fonction pour afficher les messa
 			//Vue des message dans un topic ! (avec le nom de l'auteur)
 
 			//Données de l'utilisateur qui poste (récupérer la photo si possible)
-			echo "<div class='reponse'><div class='auteur tout'>".$donnees2['nom']." ".$donnees2['prenom']." </div><div class='message tout'>".$donnees['message']."</div></div>";  // On affiche le nom / prenom de l'auteur ainsi que le contenu du message
+			echo "<div class='reponse'>
+
+					<div class='auteur tout'>
+						".$donnees2['nom']." ".$donnees2['prenom']." 
+					</div>
+
+					<div class='message tout'>
+						".$donnees['message']."
+					</div>
+				</div>";  // On affiche le nom / prenom de l'auteur ainsi que le contenu du message
 		}
 		$id = $donnees['id'];
 		echo'<hr>'
@@ -77,9 +86,18 @@ function affichage_message($forum, $topic){		// Fonction pour afficher les messa
 
 		<!-- Test à faire, si erreur alors c'est due au chemin -->
 
+<!-- Ici le truc pour effacer les messages -->
 		<form action="<?php echo "forum.php?forum=".$forum."&topic=".$topic."&delete=".$id." "; ?> " method="POST">
-			<input type="submit" name="changer" value="Delete" />
+			<a href="">				
+				<button type="submit" class="trash_icon" name="changer" value="delete">
+					<i class="fa fa-trash-o fa-2x"></i>
+				</button>
+			</a>
 		</form>
+
+			<!-- <input type="submit" name="changer" value="Delete" /> -->
+
+
 		<?php
 	}
 	echo "<a href='../front/forum.php?forum=".$_GET['forum']." ''><button class='button button-block2'>Retour</button></a></br>" ; // Lien pour retourner a la page categorie du forum 
