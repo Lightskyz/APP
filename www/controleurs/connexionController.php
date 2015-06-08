@@ -19,14 +19,12 @@ $resultat = $req->fetch();
 if (!empty($_POST['email']) && !empty($_POST['mdp'])) {
     
     // on vérifie les informations du formulaire, à savoir si le pseudo saisi est bien un pseudo autorisé, de même pour le mot de passe
-    if(!$resultat) {
+    if(empty($resultat) {
     // Le visiteur n'a pas été reconnu comme étant membre de notre site. On utilise alors un petit javascript lui signalant ce fait
         echo '<body onLoad="alert(\'Membre non reconnu...\')">';
         // puis on le redirige vers la page d'accueil
         echo '<meta http-equiv="refresh" content="0;URL=/vues/front/signin.php">';
-}
-
-    else {
+    } else {
         session_start ();
         // on enregistre les paramètres de notre visiteur comme variables de session ($email et $mdp)
         //(notez bien que l'on utilise pas le $ pour enregistrer ces variables)
@@ -38,15 +36,11 @@ if (!empty($_POST['email']) && !empty($_POST['mdp'])) {
         header ('location: /index.php');
         
         echo'<a href="/index.php">Accueil</a>';
-
-
-}
+    }
 //Ajouter la connexion d'un administrateur avec la condition isAdmin == 1 
-}
-else {
+} else {
     echo $erreur1;
     echo'Veuillez cliquer <a href="/vues/front/signin.php">ici</a><br />';
-    
 }
     
 ?>

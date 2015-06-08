@@ -1,5 +1,8 @@
 <?php 
 
+/* 
+    Alexis Monnier
+*/
 function ajout_image(){
     $dossier = '../../assets/img/products';
     $fichier = basename($_FILES['avatar']['name']);
