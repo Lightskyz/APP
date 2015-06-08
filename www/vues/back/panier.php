@@ -28,10 +28,10 @@
 		include('../../controleurs/panierController.php');
 
 		$user = $_SESSION['id'] ;
-		if(!empty($_POST['changer'])){				// On recuperer la variable changer du formulaire
-			if($_POST['changer'] == 'Delete'){		// Si elle a pour valeur 'Delete', alors on lance la fonction deletepanier
+		if(!empty($_POST['changer'])){													// On recuperer la variable changer du formulaire
+			if($_POST['changer'] == 'Delete'){											// Si elle a pour valeur 'Delete', alors on lance la fonction deletepanier
 				deletepanier($user, $_GET['product']);
-		}else {										// Sinon on lance la fonction updatepanier avec les valeurs recuperer dans l'URL
+		}else {																			// Sinon on lance la fonction updatepanier avec les valeurs recuperer dans l'URL
 				updatepanier($user, $_GET['product'], $_POST['quantite']);
 		}
 		affichepanier($user);
@@ -51,7 +51,7 @@ if(!empty($_POST["changer"])){
 
 	<div id="panier">
 
-    <h1>Panier de $_SESSION['nom']</h1>
+    <h1>Panier de <?php echo $_SESSION['nom']; ?> </h1>
 
     	<div class="panier">
 			<ul><!-- Liste des produits ajouter au panier -->
@@ -111,11 +111,11 @@ if(!empty($_POST["changer"])){
 				</li>
 			</ul>
 
-			<span class="totalSpan">TOTAL : </span><div class="total_panier">100€ <!--somme des élements du panier)--></div>
+			<span class="totalSpan">TOTAL : </span><div class="total_panier">100€ <!--somme des élements du panier --></div>
 			<button type="submit">Acheter/Echanger</button>
 
-    	</div> <!-- end of class panier -->
-    </div> <!-- end of id panier -->
+    	</div> <!-- fin de classe panier -->
+    </div> <!-- fin de id panier -->
 
 		<?php include("../frames/footer.php"); ?>
 

@@ -15,6 +15,7 @@
 	}
 
 	recherche_crit('categorie', 'nom');
+	recherche_crit_2('user', 'nom');
 
 	if(empty($choix)){
 		if(!empty($requete)){
