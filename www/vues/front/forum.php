@@ -45,10 +45,8 @@ $user = $_SESSION['id'];
 				}
 				} else {					// Sinon on affiche l'ensemble des forum deja existants
 					affichage_forum();
-				}
-				?>
-
-			<div class="form">																		<!-- Formulaire pour l'ajout d'un topic avec nom et description -->
+					?>
+					<div class="form">																		<!-- Formulaire pour l'ajout d'un topic avec nom et description -->
 				<form method="post" action="" enctype="multipart/form-data">
 					<div class="field-wrap">
 		    			<label for="nom"> 
@@ -68,9 +66,9 @@ $user = $_SESSION['id'];
 
 				</form>
 			</div> <!-- fin de la div form -->
-
+			<?php
+				}
 				
-<?php
 		} else {										// Si on a la condition topic qui n'est pas vide, alors on affiche l'ensemble des messages relatif a ce topic
 			$forum = $_GET['forum'];
 			$topic = $_GET['topic'];
