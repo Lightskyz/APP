@@ -79,17 +79,18 @@ function affichage_message($forum, $topic){		// Fonction pour afficher les messa
 						".$donnees['message']."
 					</div>
 				</div>";  // On affiche le nom / prenom de l'auteur ainsi que le contenu du message
+		
 		}
 		$id = $donnees['id'];
-		echo'<hr>'
+		echo'<hr>';
 		?>
 
 		<!-- Test à faire, si erreur alors c'est due au chemin -->
 
 <!-- Ici le truc pour effacer les messages -->
-		<form action="<?php echo "forum.php?forum=".$forum."&topic=".$topic."&delete=".$id." "; ?> " method="POST">
+		<form action="<?php echo "../front/Sforum.php?forum=".$forum."&topic=".$topic."&delete=".$id." "; ?> " method="POST">
 			<a href="">				
-				<button type="submit" class="trash_icon" name="changer" value="delete">
+				<button type="submit" class="trash_icon" name="changer" value="Delete">
 					<i class="fa fa-trash-o fa-2x"></i>
 				</button>
 			</a>
