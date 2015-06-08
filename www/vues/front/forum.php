@@ -72,13 +72,14 @@ $user = $_SESSION['id'];
 		} else {										// Si on a la condition topic qui n'est pas vide, alors on affiche l'ensemble des messages relatif a ce topic
 			$forum = $_GET['forum'];
 			$topic = $_GET['topic'];
-			affichage_message($forum, $topic);
 			if(!empty($_POST['repondre'])){
 				post_message($user, $forum, $topic);
 			}
 			if(!empty($_POST['changer']) && $_SESSION['isAdmin']){
 				delete_message($user, $_GET['delete']);
 			}
+			affichage_message($forum, $topic);
+			
 			?>
 
 
