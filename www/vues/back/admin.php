@@ -41,9 +41,7 @@
                 </div> 
 
                 <div class="field-wrap">
-        			<label for="avatar">
-                       <!-- Image (JPG, PNG ou GIF | max. 100 Ko) -->
-                    </label>
+        			<p id="birth">Image (JPG, PNG ou GIF | max. 100 Ko)<span class="req">*</span></p>
                     <input type="hidden" name="MAX_FILE_SIZE" value="100000">
                     <input type="file" name="avatar" id="avatar" /><br />
         		</div>
@@ -191,7 +189,7 @@
             utilisateurs_bannis();
             ?> <br />
 
-    <h3>Affichages des commandes</h3>   
+    <h3>Affichage des commandes</h3>   
         <?php
             voir_commande();
         ?> <br />

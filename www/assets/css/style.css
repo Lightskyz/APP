@@ -1550,3 +1550,53 @@ article #signature{
     padding:3px;
     background-color: green;
 }
+
+/* ban supprimer user admin */
+
+.button_admin{
+    height:50px;
+    width:100px;
+    background-color: red;
+    -webkit-appearance: none;
+    border:none;
+    float:right;
+    position: relative;
+    display: block;
+    margin:5px;
+    background: #8DC63F;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color:white;
+
+}
+.button_admin:hover{
+    background: #179b77;
+}
+
+.bandeleteuser{
+    position: relative;
+    height:115px;
+    width:270px;
+    background: rgba(28, 54, 85, 0.95);
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    margin: 20px auto;
+    border-radius: 4px;
+    padding: 40px;
+    display: inline-block;
+}
+
+.bandeleteuser(6n+0){
+    margin-right: 0;
+}
+.delete_admin{
+   position: absolute;
+   top:0;
+   right:0;
+}
+.ban_admin{
+    position: absolute;
+   bottom:0;
+   right:0;
+}

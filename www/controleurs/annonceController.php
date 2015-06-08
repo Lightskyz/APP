@@ -25,7 +25,7 @@ function addproduct($user){
                     }
                 
                 $sql2 = 'INSERT INTO produit(id_user, id_categorie, prix, quantite, poids, description, transaction, date_publication) 
-                    VALUES ( :id_user, :id_categorie, :prix, :quantite, :poids, :description, :transaction, CURDATE() )';
+                    VALUES ( :id_user, :id_categorie, :prix, :quantite, :poids, :description, :transaction, DATE() )';
                 $req = $bdd->prepare($sql2);
                 
                 $req -> bindParam(':id_user' , $user );

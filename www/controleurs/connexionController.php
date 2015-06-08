@@ -19,11 +19,9 @@ $resultat = $req->fetch();
 if (!empty($_POST['email']) && !empty($_POST['mdp'])) {
     
     // on vérifie les informations du formulaire, à savoir si le pseudo saisi est bien un pseudo autorisé, de même pour le mot de passe
-<<<<<<< HEAD
+
     if(empty($resultat)) {
-=======
-    if(empty($resultat) {
->>>>>>> 346afa8411b7999f384f81a130ef807395d9324e
+
     // Le visiteur n'a pas été reconnu comme étant membre de notre site. On utilise alors un petit javascript lui signalant ce fait
         echo '<body onLoad="alert(\'Membre non reconnu...\')">';
         // puis on le redirige vers la page d'accueil

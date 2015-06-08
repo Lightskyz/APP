@@ -98,7 +98,7 @@ function voir_categorie(){						// Fonction pour voir l'ensemble des categorie p
 		$sql = 'DELETE FROM user WHERE id = "'.$id.'" ';		// On supprime l'utilisateur de la table user qui a pour id la valeur de la variable $id
 		$req = $bdd -> prepare($sql);							// On prepare la requete SQL
 		$req -> execute();										// On execute la requete SQL
-		echo "Veuillez actualiser votre page internet.";		// On affiche a l'utilisateur d'actualiser sa page web pour voir les changements.
+		//echo "Veuillez actualiser votre page internet.";		// On affiche a l'utilisateur d'actualiser sa page web pour voir les changements.
 }
 
 /*
@@ -114,7 +114,7 @@ function ban_user(){				// Fonction pour ban un utilisateur
 	$req2 = $bdd -> prepare($sql2);									// On prepare la requete SQL
 	$req2 -> execute();												// On execute la requete SQL
 	echo "L'utilisateur d'ID = ".$id." à été banni" ;				// On affiche que l'utilisateur a bien ete banni
-	echo "Veuillez actualiser votre page internet.";				// On affiche a l'utilisateur d'actualiser sa page web pour voir les changements.
+	//echo "Veuillez actualiser votre page internet.";				// On affiche a l'utilisateur d'actualiser sa page web pour voir les changements.
 }
 
 /*
@@ -129,26 +129,18 @@ function ban_user(){				// Fonction pour ban un utilisateur
 		while ($donnees = $req->fetch())												// On met les resultats sous forme de tableau
 			{
 
-				//Ancienne vue
-
-				/*
-				$name = " ".$donnees['nom']." ";
-				$firstname = " ".$donnees['prenom']." ";
-				echo "<div id='listuser'>Nom : ".$name." | Prénom :".$firstname."</div><br />";
-				*/
-
-				//Vue Maxime
-
 				$name = $donnees['nom'];			// On assigne les valeurs retourner par la requete SQL a des variables locale
 				$id = $donnees['id'];?>
-				<div class="form"><?php
-				echo "<p style='color:white'>Nom : ".$donnees['nom']." | Prénom ".$donnees['prenom']." </p><br />";
+
+				<div class="bandeleteuser">
+				<?php
+				echo "<p style='color:white; float:left; font-size: 0.9em; font-weight: 500; text-align:left; letter-spacing: .1em; color:white; '>Nom : ".$donnees['nom']."<br /><br /> Prénom ".$donnees['prenom']." </p><br />";
 				?>
 				<form action="<?php echo "admin.php?delete2=".$id." "; ?> " method="POST">									<!-- On cree un formulaire avec un bouton pour mettre a jour la valeur de la variable delete2 si on clique dessus -->
-					<button class="button button-block" type="submit" name="changer" value="Delete">Supprimer</button>
+					<button class="button_admin delete_admin" type="submit" name="changer" value="Delete">Supprimer</button>
 				</form>
 				<form action="<?php echo "admin.php?ban=".$id." "; ?> " method="POST">										<!-- On cree un formulaire avec un bouton pour mettre a jour la valeur de la variable ban si on clique dessus -->
-					<button class="button button-block" type="submit" name="changer2" value="Ban">Bannir</button>
+					<button class="button_admin ban_admin" type="submit" name="changer2" value="Ban">Bannir</button>
 				</form> </br> 
 				</div><?php
 			}
@@ -220,7 +212,7 @@ function utilisateurs_bannis(){		// Fonction pour voir l'ensemble des utilisateu
 	$req = $bdd -> query($sql);
 	while ($donnees = $req->fetch())
 		{
-			echo $donnees['nom']." ".$donnees['prenom'];	// On affiches leurs noms et prenoms
+			echo "<div class='ban_user'>".$donnees['nom']." ".$donnees['prenom']."</div>";	// On affiches leurs noms et prenoms
 		}
 }
 
