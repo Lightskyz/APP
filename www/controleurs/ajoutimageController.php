@@ -38,3 +38,4 @@ function ajout_image(){
     }
 }
 ?>
+<!-- Formater le nom de l'image avec l'id et le nom de l'utilisateur pour que l'image soit unique -->

@@ -71,8 +71,18 @@
 						if(isset($transaction) && $transaction == "Vente") echo "checked"; 
 						?>
 					value="Vente"><span class="radio_legend">Vente</span><br />
-
 				</div>
+
+				<div class="field-wrap">
+        			<p id="birth">Image (JPG, PNG ou GIF | max. 100 Ko)<span class="req">*</span></p>
+                    	<input type="hidden" name="MAX_FILE_SIZE" value="100000">
+                    	<input type="file" name="avatar" id="avatar" /><br />
+        		</div>
+
+				<?php 
+				include("../../controleurs/ajoutimageController.php");
+                    ajout_image();
+                 ?>
 		
 				<button type="submit" class="button button-block" name="envoyer">Poster une annonce</button>		
 			</form>
