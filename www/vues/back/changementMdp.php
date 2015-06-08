@@ -43,7 +43,9 @@
       </form>
 
       <?php 
+      if(!empty($_POST['envoyer'])){
         updatepassword($_GET['log']);
+      }
       ?>
 
     </div> <!-- fin de form -->

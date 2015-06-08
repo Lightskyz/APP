@@ -43,7 +43,11 @@
 			</div> <!-- info profil -->
 	</div> <!-- profil_block, profil et affichage profil -->
 
-
+			<?php
+			if(!empty($_POST['update'])){
+				updateprofil($_SESSION['id']);
+			} 
+			?>
 
 	<div class="form profil_block" id="modifProfil">
 		<h1>Modification du profil</h1>
@@ -120,12 +124,10 @@
 					</div>
 				</div> <!-- fin de la div top row -->
 
-					<button type="submit" class="button button-block"> Mettre à jour le profil </button>
+					<button type="submit" name="update" class="button button-block"> Mettre à jour le profil </button>
 			</form>
 
-			<?php
-				updateprofil($_SESSION['id']); 
-			?>
+			
 	</div> <!-- fin de form -->
 </div><!-- profil -->
 

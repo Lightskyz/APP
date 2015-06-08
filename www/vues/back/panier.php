@@ -28,13 +28,13 @@
 		include('../../controleurs/panierController.php');
 
 		$user = $_SESSION['id'] ;
-		if(!empty($_POST['changer'])){
-			if($_POST['changer'] == 'Delete'){
+		if(!empty($_POST['changer'])){				// On recuperer la variable changer du formulaire
+			if($_POST['changer'] == 'Delete'){		// Si elle a pour valeur 'Delete', alors on lance la fonction deletepanier
 				deletepanier($user, $_GET['product']);
-		}else {
+		}else {										// Sinon on lance la fonction updatepanier avec les valeurs recuperer dans l'URL
 				updatepanier($user, $_GET['product'], $_POST['quantite']);
 		}
-			affichepanier($user);
+		affichepanier($user);
 }
 
 /*
