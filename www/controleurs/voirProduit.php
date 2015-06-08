@@ -5,7 +5,7 @@
 function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la base de donnee
 
 	include("../../modele/modele.php");		// On include le modele pour avoir acces a la bdd
-	include("../back/panier.php");
+	include("../controleurs/panierContoller.php");
 
 	$sql = 'SELECT * FROM produit' ;
 	$req = $bdd -> query($sql);
@@ -19,7 +19,7 @@ function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la
 				echo "Vendeur : ".$donnees2['nom']." ".$donnees2['prenom']." Categorie : ".$donnees3['nom']." Quantité : ".$donnees['quantité']." Prix : ".$donnees['prix']." "; 
 				$product = $donnees['id'];
 				?>
-				<form action="../vues/front/produit.php?product=".$product."" method="POST" > <!-- Met l'URL de la page de ta vue avec ?product=".$product." apres comme dans le panier -->
+				<form action="../vues/front/produit.php?product="<?php echo $product; ?>"&quantite="<?php echo $_POST['quantite']; ?>" " method="POST" > <!-- Met l'URL de la page de ta vue avec ?product=".$product." apres comme dans le panier -->
 					<input type="number" name="quantite" step="1" min="0" max="<?php echo $donnees['quantite']; ?>" />
 					<input type="button" name="addproduct" value="ajouter au panier" >
 				</form>
@@ -29,12 +29,4 @@ function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la
 		}
 	}
 }
-/* dans ta vue copie - colle ca :
-				if(!empty($_POST['addproduct'])){
-					addpanier($user, $_GET['product'], $_POST['quantite']);
-				}
-
-				voirProduit();
-				
-*/
 ?>

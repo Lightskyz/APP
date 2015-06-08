@@ -142,12 +142,12 @@
 				</li>
 				
 				<?php 
-				/*
 				 include("../../controleurs/voirProduit.php"); 
-					  voirProduit();
-					  if(!empty($_POST['addproduct'])){
-					addpanier($user, $_GET['product'], $_POST['quantite']); 
-				}*/
+					  
+				if(!empty($_GET['product'])){
+					addpanier($user, $_GET['product'], $_GET['quantite']); 
+				}
+				voirProduit();
 				?>
 
 <!-- Test de l'animation -->
@@ -254,13 +254,11 @@
 	</ul>
 </div>
 				<?php 
-				/*
-				 include("../../controleurs/voirProduit.php"); 
-				 if(!empty($_POST['addproduct'])){
-					addpanier($user, $_GET['product'], $_POST['quantite']); 
+								  
+				if(!empty($_GET['product'])){
+					addpanier($user, $_GET['product'], $_GET['quantite']); 
 				}
-					  voirProduit();
-				*/
+				voirProduit();
 				?>
 
 
