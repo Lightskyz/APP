@@ -165,10 +165,11 @@
 				<?php 
 				/*
 				 include("../../controleurs/voirProduit.php"); 
-					  voirProduit();
-					  if(!empty($_POST['addproduct'])){
+				 if(!empty($_POST['addproduct'])){
 					addpanier($user, $_GET['product'], $_POST['quantite']); 
-				}*/
+				}
+					  voirProduit();
+				*/
 				?>
 
 

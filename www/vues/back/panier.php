@@ -26,15 +26,15 @@
 		// J'en déduis le controleur ou alors c'est bien un autre fichier panier ?? (différent de panier_vue et panierController)
 		//include("panier.php");
 		include('../../controleurs/panierController.php');
+
 		$user = $_SESSION['id'] ;
-			affichepanier($user);
 		if(!empty($_POST['changer'])){
 			if($_POST['changer'] == 'Delete'){
 				deletepanier($user, $_GET['product']);
 		}else {
 				updatepanier($user, $_GET['product'], $_POST['quantite']);
-	}
-	echo " Veuillez actualiser votre page web.";
+		}
+			affichepanier($user);
 }
 
 /*

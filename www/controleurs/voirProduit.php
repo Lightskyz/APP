@@ -1,7 +1,10 @@
 <?php
+/*
+	Payraudeau Maxime
+*/
+function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la base de donnee
 
-function voirProduit(){
-	include("../../modele/modele.php");
+	include("../../modele/modele.php");		// On include le modele pour avoir acces a la bdd
 	include("../back/panier.php");
 
 	$sql = 'SELECT * FROM produit' ;
@@ -26,11 +29,12 @@ function voirProduit(){
 		}
 	}
 }
-/* dans ta vue copie - colle ca : 
-				voirProduit();
+/* dans ta vue copie - colle ca :
 				if(!empty($_POST['addproduct'])){
 					addpanier($user, $_GET['product'], $_POST['quantite']);
 				}
 
+				voirProduit();
+				
 */
 ?>

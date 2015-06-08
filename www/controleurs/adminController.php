@@ -212,7 +212,7 @@ function ajout_forum_cat(){			// Fonction pour ajouter une categorie au forum
 /*
 	Payraudeau Maxime
 */
-function utilisateurs_bannis(){
+function utilisateurs_bannis(){		// Fonction pour voir l'ensemble des utilisateurs qui sont bannis du site
 
 	include("../../modele/modele.php");		// On include le modele pour avoir acces a la bdd
 
@@ -221,6 +221,21 @@ function utilisateurs_bannis(){
 	while ($donnees = $req->fetch())
 		{
 			echo $donnees['nom']." ".$donnees['prenom'];	// On affiches leurs noms et prenoms
+		}
+}
+
+/*
+	Payraudeau Maxime
+*/
+function voir_messages_contact(){	// Fonction pour afficher l'ensemble des messages postes via la page contact
+
+	include("../../modele/modele.php");		// On include le modele pour avoir acces a la bdd
+
+	$sql = 'SELECT * FROM contact ';
+	$req = $bdd -> query($sql);
+	while ($donnees = $req->fetch())
+		{
+			echo $donnees['message']." ".$donnees['email']." ".$donnees['contenu'];	// On affiches leurs noms et prenoms
 		}
 }
 ?>
