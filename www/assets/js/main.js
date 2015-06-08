@@ -74,6 +74,64 @@ $('.property_details').click(function(){
 		  
 		});
 
+/* Produit : changer les deux vues */
+	/* en appuyant sur le sac pour commander */
+	$('.bag_icon a').on('click', function (e) {
+		  e.preventDefault();
+		   
+		  target = $(this).attr('href');
+
+		  $('.properties_details > div').not(target).hide();
+		  
+		  $(target).fadeIn(600);
+		  
+		});
+
+	/* en appuyant sur le bouton retour */
+	$('.retour a').on('click', function (e) {
+		  e.preventDefault();
+		  var text = $(this).children('.something');
+
+		  target = $(this).attr('href');
+
+		  $('.properties_details > div').not(target).hide();
+		  
+		  $(target).fadeIn(600);
+		  
+		});
+
+
+/* Connexion/Inscription 
+
+<div class="form">
+		<ul class="tab-group">
+			<li class="tab active"><a href="#login"></a></li>
+			<li class="tab"><a href="signup"></a></li>
+		</ul>
+	<div class="tab-content">
+		<div id="login">
+		</div>
+		<div id="signup">
+		</div>
+	</div> <!-- tab-content -->
+</div> <!-- class form -->
+
+/* Produits
+
+	<ul class="properties_list">
+		<li>
+			<a href="#">(image)</a>
+				<div class="properties_details">
+					<div class="property_details" id="information">
+					</div>
+					<div class="property_details2" id="transaction">			
+						<form>
+						</form>
+					</div>
+				</div>
+		</li>
+
+*/	
 
 /* Input file 
 // ajout de la classe JS à HTML

@@ -1510,4 +1510,10 @@ button.go_search:hover{
 
 /* Modération du forum */
 
+/* Produits */
 
+.properties_details > div:last-child {
+  display: none;
+}
+
+/* Présentation du concept */
