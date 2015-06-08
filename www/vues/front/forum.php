@@ -42,11 +42,8 @@ $user = $_SESSION['id'];
 				affichage_topic($forum);	// On appel la fonction affichage_topic
 				if(!empty($_POST['nom'])){	// On ajoute un topic si le formulaire est rempli
 					ajout_topic($forum);
-				}
-				} else {					// Sinon on affiche l'ensemble des forum deja existants
-					affichage_forum();
-					?>
-					<div class="form">																		<!-- Formulaire pour l'ajout d'un topic avec nom et description -->
+				} ?>
+				<div class="form">																		<!-- Formulaire pour l'ajout d'un topic avec nom et description -->
 				<form method="post" action="" enctype="multipart/form-data">
 					<div class="field-wrap">
 		    			<label for="nom"> 
@@ -66,18 +63,16 @@ $user = $_SESSION['id'];
 
 				</form>
 			</div> <!-- fin de la div form -->
-			<?php
+			<?php 
+				} else {					// Sinon on affiche l'ensemble des forum deja existants
+					affichage_forum();
+					
 				}
 				
 		} else {										// Si on a la condition topic qui n'est pas vide, alors on affiche l'ensemble des messages relatif a ce topic
 			$forum = $_GET['forum'];
 			$topic = $_GET['topic'];
-			if(!empty($_POST['repondre'])){
-				post_message($user, $forum, $topic);
-			}
-			if(!empty($_POST['changer']) && $_SESSION['isAdmin']){
-				delete_message($user, $_GET['delete']);
-			}
+			
 			affichage_message($forum, $topic);
 			
 			?>
@@ -99,6 +94,12 @@ $user = $_SESSION['id'];
 			</div> <!-- end of div form -->
 
 			<?php
+			if(!empty($_POST['repondre'])){
+				post_message($user, $forum, $topic);
+			}
+			if(!empty($_POST['changer']) && $_SESSION['isAdmin']){
+				delete_message($user, $_GET['delete']);
+			}
 		}
 
 	} else {				// Si mes-message n'est pas vide, on affiche l'ensemble des messages relatif a l'utilisateur actuellement connecter.
