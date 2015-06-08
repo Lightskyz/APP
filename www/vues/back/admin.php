@@ -24,6 +24,13 @@
     <!-- Premiere case pour ajouter une catégorie -->
     <h3>Ajouter une catégorie</h3>
         <!--formulaire ajout catégorie-->
+        <?php
+                if(!empty($_POST['nom'])){
+                    create_categorie();
+                    include("../../controleurs/ajoutimageController.php");
+                    ajout_image();
+                }
+        ?>
         <div class="form">    
             <form method="post" action="">
                 <div class="field-wrap">
@@ -42,13 +49,7 @@
         		</div>
         			<button type="submit" name="submit" class="button button-block"/>Ajouter une catégorie</button>
             </form>
-                <?php
-                if(!empty($_POST['nom'])){
-                    create_categorie();
-                    include("../../controleurs/ajoutimageController.php");
-                    ajout_image();
-                }
-                ?>
+                
         </div>
 
     <h3>Toutes les catégories existantes</h3>
@@ -59,6 +60,11 @@
     <!-- Deuxieme case pour supprimer une catégorie -->
     <h3>Supprimer une catégorie</h3>
         <!--formulaire ajout catégorie-->
+        <?php
+        if(!empty($_POST['submit1'])){
+            delete_categorie($_POST['nom3']);
+        }
+        ?>
     <div class="form">
         <form method="post" action="">
             <div class="field-wrap">
@@ -70,11 +76,8 @@
 
         <button type="submit" name="submit1" class="button button-block"/>Supprimer</button>                                     
         </form>
-        <?php
-        if(!empty($_POST['submit1'])){
-            delete_categorie($_POST['nom3']);
-        }
-        ?>
+        
+        
     </div> <!-- end of form -->
 
     <!-- 3eme case gestion des utilisateurs -->
@@ -194,7 +197,11 @@
         ?> <br />
 
     <h3>Créer une categorie du forum</h3>
-
+    <?php
+        if(!empty($_POST['nom4'])){
+             ajout_forum_cat();
+        }
+        ?>
     <div class="form">
         <form method="post" action="">
             <div class="field-wrap">
@@ -210,9 +217,7 @@
     <h4>Modérer le forum</h4>
 
         <?php 
-        if(!empty($_POST['nom4'])){
-             ajout_forum_cat();
-        }
+        
         include("../front/forum.php");
         ?>
         <p>Faire le forum d'abord.</p>
