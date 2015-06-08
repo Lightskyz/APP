@@ -21,7 +21,7 @@
 			<ul>
 				<a href="../front/forum.php"><li> Accueil</li></a>
 				<a href="../front/forum.php?forum=".<?php $forum ?>."&topic=".<?php $donnees['id'] ?>.""><li>Topic </li></a>
-				<a href="forum.php?mes-message=1"><li> Mes messages </li></a>
+				<a href="../front/forum.php?mes-message=1"><li> Mes messages </li></a>
 			</ul>
 		</nav>
 
@@ -42,8 +42,14 @@ $user = $_SESSION['id'];
 				affichage_topic($forum);	// On appel la fonction affichage_topic
 				if(!empty($_POST['nom'])){	// On ajoute un topic si le formulaire est rempli
 					ajout_topic($forum);
+<<<<<<< HEAD
 				} ?>
 				<div class="form">																		<!-- Formulaire pour l'ajout d'un topic avec nom et description -->
+=======
+				}
+				?>
+					<div class="form">																		<!-- Formulaire pour l'ajout d'un topic avec nom et description -->
+>>>>>>> 8785f8aa1a79b7182167deab50837d7bf912142a
 				<form method="post" action="" enctype="multipart/form-data">
 					<div class="field-wrap">
 		    			<label for="nom"> 
@@ -63,7 +69,11 @@ $user = $_SESSION['id'];
 
 				</form>
 			</div> <!-- fin de la div form -->
+<<<<<<< HEAD
 			<?php 
+=======
+			<?php
+>>>>>>> 8785f8aa1a79b7182167deab50837d7bf912142a
 				} else {					// Sinon on affiche l'ensemble des forum deja existants
 					affichage_forum();
 					
