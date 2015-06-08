@@ -1245,15 +1245,18 @@ header nav .login_btn2:hover{
 
 }
 
+
 .listings ul li .property_details2 .commander{
     position: absolute;
     bottom:0px;
     right:0px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 .listings ul li .property_details2 .retour{
     position: absolute;
     bottom: 0px;
     left:0px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); 
 }
 
 /* label des inputs de la présentation produit */
@@ -1517,3 +1520,33 @@ button.go_search:hover{
 }
 
 /* Présentation du concept */
+
+article{
+    background-color: blue;
+    width:100%;
+    color:white;
+    text-align: justify;
+    margin:auto;
+    padding: 7%;
+    font-family: "lato-regular", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+
+article #signature{
+    text-align: right;
+    font-weight: bold;
+    font-size: 26px;
+     font-family: "lato-bold", Helvetica, Arial, sans-serif;
+
+}
+
+/* Dernier produit */
+
+.dernierProduit{
+    font-family: "lato-regular", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    width:100%;
+    height:auto;
+    padding:3px;
+    background-color: green;
+}

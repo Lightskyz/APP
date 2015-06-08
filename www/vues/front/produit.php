@@ -156,6 +156,7 @@
 				<a href="#"><!-- lien pour ajouter au panier, rajouter un effet "hover" en rajoutant la phrase "mettre au panier" ou alors créer un bouton spécial et enelever le lien sur l'image -->
 						<!-- Chargement de l'image qu'il faut récupérer dans son dossier -->
 					<img src="../../assets/img/products/fraise.jpg" alt="" title="" class="property_img"/><!-- image du produit -->
+					
 				</a> <!-- fin du lien -->
 
 
@@ -247,9 +248,11 @@
 
 				</div> <!-- property_details2 fin -->
 				
-<<<<<<< HEAD
+
 			</div> <!-- properties details -->
-=======
+		</li>
+	</ul>
+</div>
 				<?php 
 				/*
 				 include("../../controleurs/voirProduit.php"); 
@@ -259,12 +262,9 @@
 					  voirProduit();
 				*/
 				?>
->>>>>>> 2010c033b87d42486078567a2ea6add9fa4b1d6c
 
-			</li>
 
-		</ul>
-	</div>
+
 	
 	</section>	<!--  end listing section  -->
 

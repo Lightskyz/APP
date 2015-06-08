@@ -90,7 +90,6 @@ $('.property_details').click(function(){
 	/* en appuyant sur le bouton retour */
 	$('.retour a').on('click', function (e) {
 		  e.preventDefault();
-		  var text = $(this).children('.something');
 
 		  target = $(this).attr('href');
 
