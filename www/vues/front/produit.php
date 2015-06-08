@@ -247,7 +247,19 @@
 
 				</div> <!-- property_details2 fin -->
 				
+<<<<<<< HEAD
 			</div> <!-- properties details -->
+=======
+				<?php 
+				/*
+				 include("../../controleurs/voirProduit.php"); 
+				 if(!empty($_POST['addproduct'])){
+					addpanier($user, $_GET['product'], $_POST['quantite']); 
+				}
+					  voirProduit();
+				*/
+				?>
+>>>>>>> 2010c033b87d42486078567a2ea6add9fa4b1d6c
 
 			</li>
 
