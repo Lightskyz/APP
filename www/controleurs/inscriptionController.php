@@ -1,18 +1,25 @@
 <?php
+
 include('../modele/modele.php');
+
 if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['mdp']) && !empty($_POST['mdp2']) && $_POST['mdp'] == $_POST['mdp2'] && !empty($_POST['adresse']) && !empty($_POST['cdp']) && !empty($_POST['ville']) && !empty($_POST['telephone']) && !empty($_POST['email'])) {
-  $nom     = $_POST["nom"];
+ 
+
+ // Debut initialisation des variables a rentrer dans la bdd
+  $nom = $_POST["nom"];
   $prenom = $_POST["prenom"];
   $born = $_POST["born"];
-  $email     = htmlspecialchars($_POST["email"]);
-  $mdp      = sha1($_POST["mdp"]);
+  $email = htmlspecialchars($_POST["email"]);
+  $mdp = sha1($_POST["mdp"]); // Codage du mdp en sha1 
   $adresse = $_POST["adresse"];
   $cdp = $_POST["cdp"];
   $ville = $_POST["ville"];
   $telephone = $_POST["telephone"];
-  //$image = $_POST["image"];
+ // Fin assignation des variable dans la bdd
 
-$req = $bdd->prepare('INSERT INTO user(nom, prenom, born, email, mdp, adresse, cdp, ville, telephone ) VALUES(:nom, :prenom, :born, :email, :mdp, :adresse, :cdp, :ville, :telephone   )');
+ // Requete SQL pour ajouter l'ensemble des informations relatif a l'utilisateur dans la bdd.
+$sql= 'INSERT INTO user(nom, prenom, born, email, mdp, adresse, cdp, ville, telephone ) VALUES(:nom, :prenom, :born, :email, :mdp, :adresse, :cdp, :ville, :telephone )';
+$req = $bdd->prepare($sql);
 $req->execute(array(
 'nom' => $nom,
 'prenom' => $prenom,
@@ -23,10 +30,8 @@ $req->execute(array(
 'cdp' => $cdp,
 'ville' => $ville,
 'telephone' => $telephone,
-//'image' => $image
-
 ));
-
+ // Fin de la requete SQL
 header("Location: /index.php");
 
 

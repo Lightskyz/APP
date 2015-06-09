@@ -9,20 +9,23 @@ function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la
 
 	$sql = 'SELECT * FROM produit' ;
 	$req = $bdd -> query($sql);
-	while( $donnees = $req -> fetch()){
+	while( $donnees = $req -> fetch() )
+	{
 		$sql2 = 'SELECT * FROM user WHERE id = '.$donnees['id_user'].' ';
 		$req2 = $bdd -> query($sql2);
-		while( $donnees2 = $req2 -> fetch()){
+		while( $donnees2 = $req2 -> fetch())
+		{
 			$sql3 = ' SELECT * FROM categorie WHERE id = '.$donnees['id_categorie'].' ';
 			$req3 = $bdd -> query($sql3);
-			while( $donnees3 = $req3 -> fetch()){
-			?>
-			<li> <!-- Un produit est un élement d\'une liste -->
-				<a href="#"><!-- lien pour ajouter au panier, rajouter un effet "hover" en rajoutant la phrase "mettre au panier" ou alors créer un bouton spécial et enelever le lien sur l\'image -->
+			while( $donnees3 = $req3 -> fetch())
+			{
+				?>
+				<li> <!-- Un produit est un élement d\'une liste -->
+					<a href="#"><!-- lien pour ajouter au panier, rajouter un effet "hover" en rajoutant la phrase "mettre au panier" ou alors créer un bouton spécial et enelever le lien sur l\'image -->
 						<!-- Chargement de l\'image qu\'il faut récupérer dans son dossier -->
-					<img src="../../assets/img/products/fraise.jpg" alt="" title="" class="property_img"/><!-- image du produit -->
+						<img src="../../assets/img/products/fraise.jpg" alt="" title="" class="property_img"/><!-- image du produit -->
 					
-				</a> <!-- fin du lien -->
+					</a> <!-- fin du lien -->
 
 
 					<span class="price"><?php echo strtoupper($donnees["transaction"]); ?></span><!-- Savoir si le produit est en vente ou en echange -->

@@ -50,6 +50,8 @@ function updateprofil($user){		// Fonction pour update le profif
 			$reponse2->bindParam(8, $city);
 			$reponse2->bindParam(9, $phone);
 
+// Nous avons dissocier chaque variable pour que l'on puisse independament changer les infos sans modifier les autres dans la bdd
+			
 			if(!empty($nom)){											// Pour l'ensemble des variables, on regarde si la variable du formulaire est vide ou non, si elle n'est pas vide
 				$lastname = $nom;										// alors on assigne cette variable a la variable relatif a l'update
 			}else{														// si elle est vide, alors on assigne a cette variable la valeur deja existante dans la base de donnee
@@ -150,9 +152,7 @@ function updateprofil($user){		// Fonction pour update le profif
 				{
 					$pass = sha1($donnees['mdp']);
 				}
-			}
-		
+			}		
 		$reponse2->execute();
-
 	}
 ?>

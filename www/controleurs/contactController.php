@@ -1,6 +1,7 @@
 <?php
 /*
 	Payraudeau Maxime
+	09/06/2015
 */
 function contact(){		// Fonction pour ajouter un message contact a la base de donnee
 
@@ -16,6 +17,7 @@ function contact(){		// Fonction pour ajouter un message contact a la base de do
 	$req -> bindParam(':email', $email);
 	$req -> bindParam(':contenu', $contenu);
 	$req -> execute();
-	echo "Le message a bien ete ajoutet.";
+
+	echo "Le message a bien ete ajouté.";
 }
 ?>
