@@ -12,9 +12,16 @@ function addproduct($user){
 
                 $categorie = $_POST['categorie'];
                 $description = $_POST['description'];
-                $quantite = $_POST['quantite'];
+                
+                if(!empty($_POST['poids'])){
+                    $poids = $_POST['poids'];
+                    $quantite = 0;
+                }else{
+                    $quantite = $_POST['quantite'];
+                    $poids = 0;
+                }
                 $prix = $_POST['prix'];
-                $poids = $_POST['poids'];
+                
                 $transaction = $_POST['transaction'];
 
                 $sql = 'SELECT id FROM categorie WHERE nom LIKE "%'.$categorie.'%" ';
@@ -25,7 +32,7 @@ function addproduct($user){
                     }
                 
                 $sql2 = 'INSERT INTO produit(id_user, id_categorie, prix, quantite, poids, description, transaction, date_publication) 
-                    VALUES ( :id_user, :id_categorie, :prix, :quantite, :poids, :description, :transaction, DATE() )';
+                    VALUES ( :id_user, :id_categorie, :prix, :quantite, :poids, :description, :transaction, CURDATE() )';
                 $req = $bdd->prepare($sql2);
                 
                 $req -> bindParam(':id_user' , $user );
