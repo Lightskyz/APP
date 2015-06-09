@@ -53,36 +53,6 @@ function recherche_crit($table, $order) {
 		}
 }
 
-/*
-	Payraudeau Maxime
-*/
-function recherche_crit_2($table, $order) {
-
-	include("../../modele/modele.php");
-
-?>
-
-		<form action="" method="POST">
-			<select name="liste1" id="blue">
-				<option value="user" selected="user">Utilisateur</option> 
-				<?php
-				$sql2 ='SELECT * FROM '.$table.' ORDER BY '.$order.' ASC';
-				$list = $bdd->query($sql2);
-				while ($data = $list->fetch()){
-			     	echo'<option value="'.$data['nom'].'">'.$data['nom'].'</option>';
-    			}
-			?>
-			</select>
-			<button type="submit" name="submit1" class="go_search">Go</button>
-		</form>
-		<?php 
-		$OK = isset($_POST['submit1']) ? $_POST['submit1'] : '';
-		if (isset($OK))	
-		{
-			$choix=isset($_POST['liste1']) ? $_POST['liste1'] : '';
-			$GLOBALS['choix2'] = $choix2; 
-		}
-}
 
 /*
 	Payraudeau Maxime

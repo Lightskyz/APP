@@ -9,7 +9,7 @@
 	28/05/2015
 	Version 1.0.1
 */
-	function addpanier($user, $produtct, $quantite){	// Fonction pour ajouter un produit au panier
+	function addpanier($user, $produtct, $quantite) {	// Fonction pour ajouter un produit au panier
 
 		include("../../modele/modele.php");  // Inclue la base de donnée + connexion.
 		
@@ -23,14 +23,22 @@
 		while ($donnees = $reponse3->fetch())		// Mise en forme de tableau.
 			{
 				$id_detailCommande = $donnees['id'];
+<<<<<<< HEAD
+				$sql2 = 'INSERT INTO `commande`(`id_user`, `id_detailCommande`) VALUES ('.$user.','.$id_detailCommande.')'; 	// Ajout d'une ligne dans la table commande
+																																		// suivant les informations d'entrées
+																																		// Ajout date ???
+				$reponse2 = $bdd->prepare($sql2);
+				$reponse2 ->execute();
 			}
-		 
-		$sql2 = 'INSERT INTO `commande`(`id_user`, `id_detailCommande`,`date`) VALUES ('.$user.','.$id_detailCommande.', NOW())'; 	// Ajout d'une ligne dans la table commande
+=======
+				$sql2 = 'INSERT INTO `commande`(`id_user`, `id_detailCommande`,`date`) VALUES ('.$user.','.$id_detailCommande.', NOW())'; 	// Ajout d'une ligne dans la table commande
 																																		// suivant les informations d'entrées
 																																		// Ajout date ???
 		$reponse2 = $bdd->prepare($sql2);
 		$reponse2 ->execute();
+			}
 
+>>>>>>> ce197a67e528ec13748496107b54ffb0d884d2fe
 	}
 
 /*	Fonction pour supprimer un produit du panier. 

@@ -21,7 +21,7 @@
 			<ul>
 				<a href="../front/forum.php"><li> Accueil</li></a>
 				<a href="../front/forum.php?forum=".<?php $forum ?>."&topic=".<?php $donnees['id'] ?>.""><li>Topic </li></a>
-				<a href="../front/forum.php?mes-message=1"><li> Mes messages </li></a>
+				<a href="forum.php?mes-message=1"><li> Mes messages </li></a>
 			</ul>
 		</nav>
 
@@ -42,9 +42,13 @@ $user = $_SESSION['id'];
 				affichage_topic($forum);	// On appel la fonction affichage_topic
 				if(!empty($_POST['nom'])){	// On ajoute un topic si le formulaire est rempli
 					ajout_topic($forum);
+
 				}
-				?>
+				} else {					// Sinon on affiche l'ensemble des forum deja existants
+					affichage_forum();
+					?>
 					<div class="form">																		<!-- Formulaire pour l'ajout d'un topic avec nom et description -->
+
 				<form method="post" action="" enctype="multipart/form-data">
 					<div class="field-wrap">
 		    			<label for="nom"> 
@@ -64,16 +68,27 @@ $user = $_SESSION['id'];
 
 				</form>
 			</div> <!-- fin de la div form -->
+<<<<<<< HEAD
 			<?php
+=======
+
+			<?php 
+
 				} else {					// Sinon on affiche l'ensemble des forum deja existants
 					affichage_forum();
 					
+>>>>>>> ce197a67e528ec13748496107b54ffb0d884d2fe
 				}
 				
 		} else {										// Si on a la condition topic qui n'est pas vide, alors on affiche l'ensemble des messages relatif a ce topic
 			$forum = $_GET['forum'];
 			$topic = $_GET['topic'];
-			
+			if(!empty($_POST['repondre'])){
+				post_message($user, $forum, $topic);
+			}
+			if(!empty($_POST['changer']) && $_SESSION['isAdmin']){
+				delete_message($user, $_GET['delete']);
+			}
 			affichage_message($forum, $topic);
 			
 			?>
@@ -95,12 +110,6 @@ $user = $_SESSION['id'];
 			</div> <!-- end of div form -->
 
 			<?php
-			if(!empty($_POST['repondre'])){
-				post_message($user, $forum, $topic);
-			}
-			if(!empty($_POST['changer']) && $_SESSION['isAdmin']){
-				delete_message($user, $_GET['delete']);
-			}
 		}
 
 	} else {				// Si mes-message n'est pas vide, on affiche l'ensemble des messages relatif a l'utilisateur actuellement connecter.

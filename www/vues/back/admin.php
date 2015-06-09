@@ -212,14 +212,7 @@
         </form>
     </div>
 
-    <h4>Modérer le forum</h4>
-
-        <?php 
-        
-        include("../front/forum.php");
-        ?>
-        <p>Faire le forum d'abord.</p>
-
+    
 </div> <!-- backoffice -->
 
 <?php include("../frames/footer.php"); ?>

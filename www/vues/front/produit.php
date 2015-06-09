@@ -1,5 +1,6 @@
 <?php include("../../modele/sessionStart.php"); ?>
 
+
 <!DOCTYPE HTML>
 
 <html>
@@ -253,20 +254,8 @@
 		</li>
 	</ul>
 </div>
-				<?php 
-								  
-				if(!empty($_GET['product'])){
-					addpanier($user, $_GET['product'], $_GET['quantite']); 
-				}
-				voirProduit();
-				?>
 
-
-
-	
-	</section>	<!--  end listing section  -->
-
-			<h1>Vue panier</h1>
+		<h1>Vue panier</h1>
 	
 	<div id="panier">
 		<div class="panier">
@@ -295,6 +284,20 @@
 
 		</div> <!-- class panier -->
 	</div> <!-- id panier -->
+				<?php 
+					include("../../controleurs/panierController.php");			  
+				if(!empty($_GET['product'])){
+					addpanier($_SESSION["id"], $_GET['product'], $_GET['quantite']); 
+				}
+				voirProduit();
+				?>
+
+
+
+	
+	</section>	<!--  end listing section  -->
+
+	
 
 
 	

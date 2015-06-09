@@ -5,6 +5,6 @@ try
 }
 catch (Exception $e)
 {
-        die('Erreur : ' . $e->getMessage());						// Dans le cas ou on ne peux pas se connecter, alors on affiche un message d'erreur
+        die('Erreur : ' . $e->getMessage());													// Dans le cas ou on ne peux pas se connecter, alors on affiche un message d'erreur
 }
 ?>
