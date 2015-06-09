@@ -12,17 +12,20 @@ function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la
 	$req = $bdd -> query($sql);
 	while( $donnees = $req -> fetch() )
 	{
-		$sql2 = 'SELECT * FROM user WHERE id = '.$donnees['id_user'].' ';
-		$req2 = $bdd -> query($sql2);
-		while( $donnees2 = $req2 -> fetch())
-		{
-			$sql3 = ' SELECT * FROM categorie WHERE id = '.$donnees['id_categorie'].' ';
-			$req3 = $bdd -> query($sql3);
-			while( $donnees3 = $req3 -> fetch())
+		if(($donnees['quantite'] == 0) && ($donnees['poids'] == 0)){
+ 
+		} else {
+			$sql2 = 'SELECT * FROM user WHERE id = '.$donnees['id_user'].' ';
+			$req2 = $bdd -> query($sql2);
+			while( $donnees2 = $req2 -> fetch())
 			{
-				$fichier = $donnees3['image'];
-				$dossier = '../../assets/img/products/'.$fichier.'';
-				?>
+				$sql3 = ' SELECT * FROM categorie WHERE id = '.$donnees['id_categorie'].' ';
+				$req3 = $bdd -> query($sql3);
+				while( $donnees3 = $req3 -> fetch())
+				{
+					$fichier = $donnees3['image'];
+					$dossier = '../../assets/img/products/'.$fichier.'';
+					?>
 
 
 <li> <!-- Un produit est un élement d\'une liste -->
@@ -128,9 +131,10 @@ function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la
 		</li>
 
 		<?php
-				$product = $donnees['id'];
+					$product = $donnees['id'];
 
 	
+				}
 			}
 		}
 	}
