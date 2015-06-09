@@ -70,7 +70,7 @@
 				</div><!-- div top-row -->
 
 					<div class="field-wrap">
-						<p id="birth">Image (JPG, PNG ou GIF | max. 100 Ko)<span class="req">*</span></p>
+						<p id="birth">Date de naissance<span class="req">*</span></p>
 						<!--<label>Date de naissance<span class="req">*</span>
 						</label> A cause de Google Chrome--> 
 						 <input type="date" name="born" required />
