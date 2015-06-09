@@ -19,13 +19,17 @@ function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la
 			$req3 = $bdd -> query($sql3);
 			while( $donnees3 = $req3 -> fetch())
 			{
+				$fichier = $donnees3['image'];
+				$dossier = '../../assets/img/products/'.$fichier.'';
 				?>
-				<li> <!-- Un produit est un élement d\'une liste -->
-					<a href="#"><!-- lien pour ajouter au panier, rajouter un effet "hover" en rajoutant la phrase "mettre au panier" ou alors créer un bouton spécial et enelever le lien sur l\'image -->
-						<!-- Chargement de l\'image qu\'il faut récupérer dans son dossier -->
-						<img src="../../assets/img/products/fraise.jpg" alt="" title="" class="property_img"/><!-- image du produit -->
+
+
+<li> <!-- Un produit est un élement d\'une liste -->
+	<a href="#"><!-- lien pour ajouter au panier, rajouter un effet "hover" en rajoutant la phrase "mettre au panier" ou alors créer un bouton spécial et enelever le lien sur l\'image -->
+			<!-- Chargement de l\'image qu\'il faut récupérer dans son dossier -->
+		<img src="<?php echo $dossier; ?>" alt="" title="" class="property_img"/><!-- image du produit -->
 					
-					</a> <!-- fin du lien -->
+		</a> <!-- fin du lien -->
 
 
 					<span class="price"><?php echo strtoupper($donnees["transaction"]); ?></span><!-- Savoir si le produit est en vente ou en echange -->
@@ -47,9 +51,13 @@ function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la
 									<?php echo ucfirst($donnees2["nom"])." ".ucfirst($donnees2["prenom"]); ?>
 								</span>
 
-								
+								<?php 
+									$transaction = "transaction".$donnees['id'];
+									$information = "information".$donnees['id'];
+								?>
+
 								<div class="bag_icon">
-									<a href="#transaction">
+									<a href="#<?php echo $transaction; ?>">
 										<img src="../../assets/img/bag.svg" title="bag" alt="panier" />
 									</a>
 								</div>
@@ -64,25 +72,25 @@ function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la
 						 <div class="something">
 								<h2>
 									<span class="property_size">
-										Quantité disponible : <?php $donnees["quantite"]; ?> <!-- récupération du chiffre directement dans la base de donnée -->
+										Quantité disponible : <?php echo $donnees["quantite"]; ?> <!-- récupération du chiffre directement dans la base de donnée -->
 									</span>
 								</h2>
 						
 								<h2>
 									<span class="property_size">
-										Poids disponible : <?php $donnees["poids"]; ?> kg <!-- récupération du chiffre directement dans la base de donnée -->
+										Poids disponible : <?php echo $donnees["poids"]; ?> kg <!-- récupération du chiffre directement dans la base de donnée -->
 									</span>
 								</h2>
 					
 								<h2>
 									<span class="property_size">
-										Date de publication : <?php $donnees["date_publication"]; ?> <!-- récupération de la date directement dans la base de donnée -->
+										Date de publication : <?php echo $donnees["date_publication"]; ?> <!-- récupération de la date directement dans la base de donnée -->
 									</span>
 								</h2>
 								
 								<h2>
 									<span class="property_size">
-										Description : <?php $donnees["description"]; ?> <!-- récupération de la description directement dans la base de donnée, mais par l\'intermediaire d\'un bouton qui permet de ralonger les détails si besoin -->
+										Description : <?php echo $donnees["description"]; ?> <!-- récupération de la description directement dans la base de donnée, mais par l\'intermediaire d\'un bouton qui permet de ralonger les détails si besoin -->
 									</span>
 									<br />
 									<br />
@@ -93,27 +101,24 @@ function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la
 						</div> <!-- something -->	
 					</div> <!-- property details -->
 					
-					<div class="property_details2" id="transaction"> 
+			<div class="property_details2" id="<?php echo $transaction; ?>"> 
 					
-					<form method="post" action="<?php echo'../front/produit.php?product=".$product."&quantite=".$_POST["quantite"]."&poids=".$_POST["poids"]."'; ?>"
-						<label>
-							Quantité :
-						</label>
-					<input type="number" name="quantite" step="1" min="0" max="<?php echo $donnees["quantite"]; ?>" class="quantity_input"/><br /><br />
-						<label>
-							Poids :
-						</label>
-					<input type="number" name="poids" step="0.01" min="0" max="<?php echo $donnees["poids"]; ?>" class="poids_input" />
-						<br />
-						<br />
-						<br />
-						
-
-						<button type="submit" value="addproduct" class="commander">Commander</button><!-- appelle la fonctione, ajoutpanier() -->
-						<button type="submit" value="Retour" class="retour"><a href="#information">Annuler</a></button>
+					<form method="post" action="<?php echo'../front/produit.php?product=".$product."&quantite=".$_POST["quantite"]."&poids=".$_POST["poids"]."'; ?>">
+								<label>
+									Quantité :
+								</label>
+							<input type="number" name="quantite" step="1" min="0" max="<?php echo $donnees["quantite"]; ?>" class="quantity_input"/><br /><br />
+								<label>
+									Poids :
+								</label>
+							<input type="number" name="poids" step="0.01" min="0" max="<?php echo $donnees["poids"]; ?>" class="poids_input" />
+								<br />
+								<br />
+								<br />
+	
+						<button type="submit" value="addproduct" class="commander" name="product">Commander</button><!-- appelle la fonctione, ajoutpanier() -->
+						<button type="submit" value="Retour" class="retour"><a href="<?php echo $information; ?>">Annuler</a></button>
 					</form>
-					
-
 				</div> <!-- property_details2 fin -->
 				
 

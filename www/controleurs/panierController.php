@@ -23,7 +23,7 @@
 		while ($donnees = $reponse3->fetch())		// Mise en forme de tableau.
 			{
 				$id_detailCommande = $donnees['id'];
-				$sql2 = 'INSERT INTO `commande`(`id_user`, `id_detailCommande`,`date`) VALUES ('.$user.','.$id_detailCommande.', NOW())'; 	// Ajout d'une ligne dans la table commande
+				$sql2 = 'INSERT INTO `commande`(`id_user`, `id_detailCommande`,`date`) VALUES ('.$user.','.$id_detailCommande.', CURDATE())'; 	// Ajout d'une ligne dans la table commande
 																																		// suivant les informations d'entrées
 																																		// Ajout date ???
 				$reponse2 = $bdd->prepare($sql2);

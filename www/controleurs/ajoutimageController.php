@@ -6,14 +6,12 @@
 function ajout_image($categorie){ // Fonction pour ajouter une image et ajouter un lien dans la base de donnee vers cette localisation.
 
   include("../../modele/modele.php");
-<<<<<<< HEAD
+
     $dossier = '../../assets/img/products/';
-=======
+
 
 // On creer le chemin du fichier avec des variable et des extensions.
     $dossier = '../../assets/img/products/';
-    $ffs = $_FILES['avatar']['name'];
->>>>>>> bd44c8087d4933462e25fd4bb001a20144441e9c
     $fichier = basename($_FILES['avatar']['name']);
     $taille_maxi = 100000;
     $taille = filesize($_FILES['avatar']['tmp_name']); // ou  utiliser $_FILES['avatar']['size']; 
@@ -42,7 +40,7 @@ function ajout_image($categorie){ // Fonction pour ajouter une image et ajouter 
             echo 'Upload effectué avec succès !';
 
 // Partie requete SQL pour ajouter le nom de l'image associer à la categorie
-            $sql = ' UPDATE categorie SET image= ".$ffs." WHERE nom = ".$categorie." ';
+            $sql = ' UPDATE categorie SET image= "'.$fichier.'" WHERE nom = "'.$categorie.'" ';
             $req = $bdd -> prepare($sql);
             $req -> execute();
 // Fin de la partie requete SQL

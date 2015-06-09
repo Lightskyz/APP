@@ -49,7 +49,9 @@ if(!empty($_POST["changer"])){
 */
 ?>
 
-	<div id="panier">
+<?php
+
+/*	<div id="panier">
 
     <h1>Panier de <?php echo $_SESSION['nom']; ?> </h1>
 
@@ -116,7 +118,7 @@ if(!empty($_POST["changer"])){
 
     	</div> <!-- fin de classe panier -->
     </div> <!-- fin de id panier -->
-
+*/ ?>
 		<?php include("../frames/footer.php"); ?>
 
 	</body>

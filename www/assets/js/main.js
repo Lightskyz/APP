@@ -81,7 +81,7 @@ $('.property_details').click(function(){
 		   
 		  target = $(this).attr('href');
 
-		  $('.properties_details > div').not(target).hide();
+		  $('.property_details > div').not(target).hide();
 		  
 		  $(target).fadeIn(600);
 		  
@@ -93,10 +93,9 @@ $('.property_details').click(function(){
 
 		  target = $(this).attr('href');
 
-		  $('.properties_details > div').not(target).hide();
+		  $('.property_details2').not(target).hide();
 		  
 		  $(target).fadeIn(600);
-		  
 		});
 
 
