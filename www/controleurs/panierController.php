@@ -13,20 +13,26 @@
 
 		include("../../modele/modele.php");  // Inclue la base de donnée + connexion.
 		
-		$sql = 'INSERT INTO `detailcommande`(`id_product`, `id_user`, `quantite`, `poids`) VALUES ('.$product.','.$user.','.$quantite.','.$poids.') '; // Ajout d'une ligne dans la table detailCommande 
+		$sql = 'INSERT INTO detailcommande(id_product, id_user, quantite, poids) VALUES (:id_product , :id_user , :quantite , :poids) '; // Ajout d'une ligne dans la table detailCommande 
 																													 // suivant les informations entrer dans la fonction panier.
 		$reponse = $bdd->prepare($sql);			// Preparation de la requete SQL.
+		$reponse -> bindParam(':id_product', $product);
+		$reponse -> bindParam(':id_user', $user);
+		$reponse -> bindParam(':quantite', $quantite);
+		$reponse -> bindParam(':poids', $poids);
 		$reponse ->execute();					// Execution de la requete SQL.
 
-		$sql3 = 'SELECT * FROM detailcommande WHERE id_product = "'.$product.'" AND id_user ="'.$user.'" AND quantite ="'.$quantite.'" AND poids ="'.$poids.'" ';
+		$sql3 = 'SELECT * FROM detailcommande WHERE id_product = "'.$product.'" AND id_user ="'.$user.'" AND quantite ="'.$quantite.'" AND poids="'.$poids.'" ';
 		$reponse3 = $bdd->query($sql3);
-		while ($donnees = $reponse3->fetch())		// Mise en forme de tableau.
+		while ($donnees = $reponse3 -> fetch())		// Mise en forme de tableau.
 			{
 				$id_detailCommande = $donnees['id'];
-				$sql2 = 'INSERT INTO `commande`(`id_user`, `id_detailCommande`,`date`) VALUES ('.$user.','.$id_detailCommande.', CURDATE())'; 	// Ajout d'une ligne dans la table commande
+				$sql2 = 'INSERT INTO commande(id_user, id_detailCommande, date) VALUES (:id_user, :id_detailCommande, CURDATE())'; 	// Ajout d'une ligne dans la table commande
 																																		// suivant les informations d'entrées
 																																		// Ajout date ???
 				$reponse2 = $bdd->prepare($sql2);
+				$reponse2 -> bindParam(':id_user', $user);
+				$reponse2 -> bindParam(':id_detailCommande', $id_detailCommande);
 				$reponse2 ->execute();
 			}
 	}
@@ -75,27 +81,27 @@
 
 		include("../../modele/modele.php");
 
-		$sql = 'SELECT * FROM commande WHERE id_user='.$user.' ';
+		$sql = 'SELECT * FROM commande WHERE id_user="'.$user.'" ';
 		$reponse = $bdd->query($sql);
 		while ($donnees = $reponse->fetch())
 		{
 			$detailCommande = $donnees['id_detailCommande'];
-			$sql2 ='SELECT * FROM detailcommande WHERE id_user = '.$user.' AND id = '.$detailCommande.' ';
+			$sql2 ='SELECT * FROM detailcommande WHERE id_user = "'.$user.'" AND id = "'.$detailCommande.'" ';
 			$reponse2 = $bdd->query($sql2);
 			while ($donnees2 = $reponse2->fetch())
 			{
 				$product = $donnees2['id_product'];
-				$sql3 ='SELECT * FROM produit WHERE id='.$product.' ';
+				$sql3 ='SELECT * FROM produit WHERE id="'.$product.'" ';
 				$reponse3 = $bdd->query($sql3);
 				while ($donnees3 = $reponse3->fetch())
 				{
 					$id_user=$donnees3['id_user'];
-					$sql4 ='SELECT * FROM user WHERE id='.$id_user.' ';
+					$sql4 ='SELECT * FROM user WHERE id="'.$id_user.'" ';
 					$reponse4 = $bdd->query($sql4);
 					while ($donnees4 = $reponse4->fetch())
 					{
 						$id_categorie = $donnees3['id_categorie'];
-						$sql5 ='SELECT * FROM categorie WHERE id='.$id_categorie.' ';
+						$sql5 ='SELECT * FROM categorie WHERE id="'.$id_categorie.'" ';
 						$reponse5 = $bdd->query($sql5);
 						while ($donnees5 = $reponse5->fetch())
 						{

@@ -30,15 +30,22 @@
 				 include("../../controleurs/voirProduit.php"); 				
 				//include("../../controleurs/panierController.php");			  
 				 voirProduit();
+				 if(!empty($_GET['product'])){
 
-				if(!empty($_GET['product'])){
+						$quantite = $_POST['quantite'];
+						$poids = $_POST['poids'];
+
+						addpanier($_SESSION['id'], $_GET['product'], $quantite, $poids );
+					
+				}
+				/*if(!empty($_GET['product'])){
 					if(!empty($_GET['quantite'])){
-						addpanier($_SESSION["id"], $_GET['product'], $_GET['quantite'], 0); 
+						addpanier($_SESSION["id"], $_GET['product'], $_POST['quantite'], 0); 
 				}
 				else{
-						addpanier($_SESSION["id"], $_GET['product'], 0,  $_GET['poids']);
+						addpanier($_SESSION["id"], $_GET['product'], 0,  $_POST['poids']);
 				}
-			}
+			}*/
 		?>
 
 		</ul>

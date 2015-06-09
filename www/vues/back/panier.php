@@ -26,15 +26,16 @@
 		// J'en déduis le controleur ou alors c'est bien un autre fichier panier ?? (différent de panier_vue et panierController)
 		//include("panier.php");
 		include('../../controleurs/panierController.php');
-
+		
 		$user = $_SESSION['id'] ;
+		affichepanier($user);
 		if(!empty($_POST['changer'])){													// On recuperer la variable changer du formulaire
 			if($_POST['changer'] == 'Delete'){											// Si elle a pour valeur 'Delete', alors on lance la fonction deletepanier
 				deletepanier($user, $_GET['product']);
 		}else {																			// Sinon on lance la fonction updatepanier avec les valeurs recuperer dans l'URL
 				updatepanier($user, $_GET['product'], $_POST['quantite'], $_POST['poids']);
 		}
-		affichepanier($user);
+		
 }
 
 /*

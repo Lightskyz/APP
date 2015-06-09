@@ -7,6 +7,7 @@ function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la
 	include("../../modele/modele.php");		// On include le modele pour avoir acces a la bdd
 	include("../../controleurs/panierController.php");
 
+
 	$sql = 'SELECT * FROM produit' ;
 	$req = $bdd -> query($sql);
 	while( $donnees = $req -> fetch() )
@@ -102,7 +103,7 @@ function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la
 					</div> <!-- property details -->
 					
 			<div class="property_details2" id="<?php echo $transaction; ?>"> 
-					<?php $data = "../front/produit.php?product=".$donnees['id']."&quantite=".$_POST["quantite"]."&poids=".$_POST["poids"]." " ?>
+					<?php $data = "../front/produit.php?product=".$donnees['id']; ?>
 					<form method="post" action="<?php echo $data; ?>">
 								<label>
 									Quantité :
@@ -128,12 +129,11 @@ function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la
 
 		<?php
 				$product = $donnees['id'];
-				?>
-				
-				<?php
-				
+
+	
 			}
 		}
 	}
 }
+
 ?>
