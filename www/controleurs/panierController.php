@@ -26,8 +26,8 @@
 				$sql2 = 'INSERT INTO `commande`(`id_user`, `id_detailCommande`,`date`) VALUES ('.$user.','.$id_detailCommande.', NOW())'; 	// Ajout d'une ligne dans la table commande
 																																		// suivant les informations d'entrées
 																																		// Ajout date ???
-		$reponse2 = $bdd->prepare($sql2);
-		$reponse2 ->execute();
+				$reponse2 = $bdd->prepare($sql2);
+				$reponse2 ->execute();
 			}
 	}
 
@@ -103,11 +103,11 @@
 							$data2 = $donnees2['poids'];
 							?>
 							<form action="<?php echo "panier.php?product=".$product." "; ?> " method="POST">			<!-- On cree un formulaire qui permet de changer le nombre de produit acheter ou de delete cet item au panier -->
-							<input type="number" name="quantite" step="1" placeholder="<?php echo $data; ?>" min="0" />
-							<input type="number" name="poids" step="1" placeholder="<?php echo $data2; ?>" min="0" />
-							<?php echo $donnees4['nom'].' '.$donnees4['prenom'].' '.$donnees5['nom'].' '.$donnees3['prix']; ?>
-							<input type="submit" name="changer" value="Valider">
-							<input type="submit" name="changer" value="Delete" />
+								<input type="number" name="quantite" step="1" placeholder="<?php echo $data; ?>" min="0" />
+								<input type="number" name="poids" step="1" placeholder="<?php echo $data2; ?>" min="0" />
+									<?php echo $donnees4['nom'].' '.$donnees4['prenom'].' '.$donnees5['nom'].' '.$donnees3['prix']; ?>
+								<input type="submit" name="changer" value="Valider">
+								<input type="submit" name="changer" value="Delete" />
 							</form> </br> 
 							<?php 			
 						}

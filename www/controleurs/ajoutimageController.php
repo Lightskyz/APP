@@ -3,42 +3,54 @@
 /* 
     Alexis Monnier
 */
-function ajout_image($categorie){
+function ajout_image($categorie){ // Fonction pour ajouter une image et ajouter un lien dans la base de donnee vers cette localisation.
+
   include("../../modele/modele.php");
+<<<<<<< HEAD
     $dossier = '../../assets/img/products/';
+=======
+
+// On creer le chemin du fichier avec des variable et des extensions.
+    $dossier = '../../assets/img/products/';
+    $ffs = $_FILES['avatar']['name'];
+>>>>>>> bd44c8087d4933462e25fd4bb001a20144441e9c
     $fichier = basename($_FILES['avatar']['name']);
     $taille_maxi = 100000;
-    $taille = filesize($_FILES['avatar']['tmp_name']);
+    $taille = filesize($_FILES['avatar']['tmp_name']); // ou  utiliser $_FILES['avatar']['size']; 
     $extensions = array('.png', '.gif', '.jpg', '.jpeg');
-    $extension = strrchr($_FILES['avatar']['name'], '.');//Début des vérifications de sécurité..
+    $extension = strrchr($_FILES['avatar']['name'], '.');
+
+//Début des vérifications de sécurité..
+
     if(!in_array($extension, $extensions)) //Si l'extension n'est pas dans le tableau
     {
          $erreur = 'Vous devez uploader un fichier de type png, gif, jpg, jpeg, txt ou doc...';
     }
-    if($taille>$taille_maxi)
-    {
+    if($taille > $taille_maxi) {
          $erreur = 'Le fichier est trop gros...';
     }
-    if(!isset($erreur)) //S'il n'y a pas d'erreur, on upload
-    {
-     //On formate le nom du fichier ici...
+    if(!isset($erreur)) { //S'il n'y a pas d'erreur, on upload
+
+    //On formate le nom du fichier ici
          $fichier = strtr($fichier, 
               'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ', 
-              'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+              'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy'); // Permet d'accepter les caracteres speciaux et de les remplacer par des caracteres normaux.
         $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
-        if(move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
-        {
+    // Fin formatage
+
+        if(move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier . $fichier)) { //Si la condition renvoie TRUE, c'est que ça a fonctionné
             echo 'Upload effectué avec succès !';
-            $sql = 'UPDATE categorie SET image=".$fichier." WHERE nom = ".$categorie." ';
+
+// Partie requete SQL pour ajouter le nom de l'image associer à la categorie
+            $sql = ' UPDATE categorie SET image= ".$ffs." WHERE nom = ".$categorie." ';
             $req = $bdd -> prepare($sql);
             $req -> execute();
+// Fin de la partie requete SQL
 
-        } else //Sinon (la fonction renvoie FALSE).
-        {
+        } else {
             echo 'Echec de l\'upload !';
         }
-    } else
-    {
+    } else {
          echo $erreur;
     }
 }

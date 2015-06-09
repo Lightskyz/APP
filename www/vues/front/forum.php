@@ -29,8 +29,8 @@
 
 /*
 	Maxime Payraudeau
-	28/05/2015
-	Version 1.0.1
+	09/06/2015
+	Version 1.0.2
 */
 
 
@@ -43,8 +43,10 @@ $user = $_SESSION['id'];
 				affichage_topic($forum);	// On appel la fonction affichage_topic
 				if(!empty($_POST['nom'])){	// On ajoute un topic si le formulaire est rempli
 					ajout_topic($forum);
-
 				}
+
+		// Bien mettre les fctions avant les formulaires pour un pb d'affichage.
+
 				?>
 					<div class="form"><!-- Formulaire pour l'ajout d'un topic avec nom et description -->
 
@@ -72,7 +74,6 @@ $user = $_SESSION['id'];
 
 				} else {					// Sinon on affiche l'ensemble des forum deja existants
 					affichage_forum();
-					
 				}
 				
 		} else {										// Si on a la condition topic qui n'est pas vide, alors on affiche l'ensemble des messages relatif a ce topic

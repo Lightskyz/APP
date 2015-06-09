@@ -1,10 +1,16 @@
 <?php
+/*
+
+*/
 function afficheprofil($user){
+
 	include("../../modele/modele.php");
+
 	$sql = 'SELECT * FROM user WHERE email = "'.$user.'" ';
 	$req = $bdd-> query($sql);
-	while( $donnees = $req -> fetch()){
-
+	while( $donnees = $req -> fetch())
+	{
+	 // Association des variable retourner par la bdd aux variables de session
 		$_SESSION["id"]=$donnees["id"];
 		$_SESSION["nom"]=$donnees["nom"];
 		$_SESSION['prenom'] = $donnees["prenom"];

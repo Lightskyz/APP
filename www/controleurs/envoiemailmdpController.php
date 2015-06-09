@@ -1,34 +1,34 @@
 <?php
+
 include("../modele/modele.php");
+
 $subject = 'Test';
 $headers = 'From: contact@lightskyz.com';
 $erreur = 'Cet email est inconnu de notre base de données.Veuillez réessayer';
 $erreur1 = 'Vous n\'avez pas rempli le champ';
+
 //on vérifie si le champ n'est pas vide
 if (!empty($_POST['email'])){
-$req = $bdd->prepare('SELECT id, email FROM user WHERE email = :email');
-$req->bindValue(':email',$_POST['email'], PDO::PARAM_STR);
-        $req->execute();
-        $data=$req->fetch();
+	$req = $bdd->prepare('SELECT id, email FROM user WHERE email = :email');
+	$req->bindValue(':email',$_POST['email'], PDO::PARAM_STR);
+    $req->execute();
+    $data=$req->fetch();
 //si l'email entré n'existe pas dans la bdd on affiche un message d'erreur
- if($data['email'] != $_POST['email']) {
-echo $erreur;
-echo'Veuillez cliquer <a href="../back/envoieMail.php">ici</a>';
-
- }
-
- else{
+	if($data['email'] != $_POST['email']) {
+		echo $erreur;
+		echo'Veuillez cliquer <a href="../back/envoieMail.php">ici</a>';
+	} else {
 	
-	 $email = $_POST['email'];
+		$email = $_POST['email'];
 	 //on génère un jeton aléatoire unique
-     $token = uniqid(rand(), true);
+    	$token = uniqid(rand(), true);
 	 //on remplie la colonne 'token' de la table user avec ce jeton
-	 $req = $bdd->prepare('UPDATE user SET token =:token WHERE email = :email');
-	 $req->bindParam(':token', $token);
-	 $req->bindParam(':email', $email);
-	 $req->execute();
+		$req = $bdd->prepare('UPDATE user SET token =:token WHERE email = :email');
+		$req->bindParam(':token', $token);
+		$req->bindParam(':email', $email);
+		$req->execute();
 	
-	   $message = 'Bienvenue sur Pear2Pear,
+		$message = 'Bienvenue sur Pear2Pear,
  
   Pour changer votre mot de passe, veuillez cliquer sur le lien ci dessous
   ou copier/coller dans votre navigateur internet.
@@ -38,9 +38,9 @@ echo'Veuillez cliquer <a href="../back/envoieMail.php">ici</a>';
   Ceci est un mail automatique.
   Merci de ne pas y répondre.';
   //on envoie l'url de changement de mot de passe avec comme variable à l'intérieur de l'url  l'email de l'utilisateur ainsi que le token
-   mail($email, $subject, $message, $headers);
-   echo'Un lien vous a été envoyé par mail';
-   }
+   		mail($email, $subject, $message, $headers);
+   		echo'Un lien vous a été envoyé par mail';
+    }
 }
 //si le champ est vide on envoie un message d'erreur
 else {
