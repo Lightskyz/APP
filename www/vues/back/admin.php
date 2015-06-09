@@ -2,7 +2,9 @@
 
 <!DOCTYPE HTML>
 
-<?php include("../../controleurs/adminController.php");?>
+<?php include("../../controleurs/adminController.php");
+      include("../../controleurs/contactController.php" 
+    ?>
 
 <html>
     
@@ -193,6 +195,11 @@
         <?php
             voir_commande();
         ?> <br />
+
+    <h3>Voir les contacts</h3>
+        <?php
+            afficheContact();
+        ?>   <br />
 
     <h3>Créer une categorie du forum</h3>
     <?php

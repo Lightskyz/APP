@@ -20,4 +20,16 @@ function contact(){		// Fonction pour ajouter un message contact a la base de do
 
 	echo "Le message a bien ete ajouté.";
 }
+
+function afficheContact(){
+
+	include("../../modele/modele.php");
+
+	$sql = ' SELECT * FROM contact ORDER BY id DESC ';
+	$req = $bdd -> query($sql);
+	while( $data = $req -> fetch() )
+	{
+		echo "Nom : ".$data['nom']." email : ".$data['email']." contenu : ".$data['contenu']. " "; 
+	}
+}
 ?>
