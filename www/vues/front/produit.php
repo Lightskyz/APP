@@ -287,8 +287,14 @@
 				<?php 
 					include("../../controleurs/panierController.php");			  
 				if(!empty($_GET['product'])){
-					addpanier($_SESSION["id"], $_GET['product'], $_GET['quantite']); 
+					if(!empty($_GET['product'])){
+					addpanier($_SESSION["id"], $_GET['product'], $_GET['quantite'], 0); 
 				}
+				else{
+					addpanier($_SESSION["id"], $_GET['product'], 0,  $_GET['poids']);
+				}
+
+			}
 				voirProduit();
 				?>
 

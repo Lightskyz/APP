@@ -28,11 +28,11 @@
                 if(!empty($_POST['nom'])){
                     create_categorie();
                     include("../../controleurs/ajoutimageController.php");
-                    ajout_image();
+                    ajout_image($_POST['nom']);
                 }
         ?>
         <div class="form">    
-            <form method="post" action="">
+            <form method="post" action="" enctype="multipart/form-data">
                 <div class="field-wrap">
                 	<label>
                         Nom du produit
@@ -43,7 +43,7 @@
                 <div class="field-wrap">
         			<p id="birth">Image (JPG, PNG ou GIF | max. 100 Ko)<span class="req">*</span></p>
                     <input type="hidden" name="MAX_FILE_SIZE" value="100000">
-                    <input type="file" name="avatar" id="avatar" /><br />
+                    <input type="file" name="avatar" id="avatar"/><br />
         		</div>
         			<button type="submit" name="submit" class="button button-block"/>Ajouter une catégorie</button>
             </form>

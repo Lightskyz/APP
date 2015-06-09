@@ -32,7 +32,7 @@
 			if($_POST['changer'] == 'Delete'){											// Si elle a pour valeur 'Delete', alors on lance la fonction deletepanier
 				deletepanier($user, $_GET['product']);
 		}else {																			// Sinon on lance la fonction updatepanier avec les valeurs recuperer dans l'URL
-				updatepanier($user, $_GET['product'], $_POST['quantite']);
+				updatepanier($user, $_GET['product'], $_POST['quantite'], $_POST['poids']);
 		}
 		affichepanier($user);
 }

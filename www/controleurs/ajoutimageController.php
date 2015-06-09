@@ -3,7 +3,8 @@
 /* 
     Alexis Monnier
 */
-function ajout_image(){
+function ajout_image($categorie){
+  include("../../modele/modele.php");
     $dossier = '../../assets/img/products';
     $fichier = basename($_FILES['avatar']['name']);
     $taille_maxi = 100000;
@@ -28,6 +29,10 @@ function ajout_image(){
         if(move_uploaded_file($_FILES['avatar']['tmp_name'], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
         {
             echo 'Upload effectué avec succès !';
+            $sql = 'UPDATE categorie SET image=".$fichier." WHERE nom = ".$categorie." ';
+            $req = $bdd -> prepare($sql);
+            $req -> execute();
+
         } else //Sinon (la fonction renvoie FALSE).
         {
             echo 'Echec de l\'upload !';

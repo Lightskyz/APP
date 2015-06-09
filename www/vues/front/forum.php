@@ -20,12 +20,13 @@
 		<nav>
 			<ul>
 				<a href="../front/forum.php"><li> Accueil</li></a>
-				<a href="../front/forum.php?forum=".<?php $forum ?>."&topic=".<?php $donnees['id'] ?>.""><li>Topic </li></a>
+				<a href="<?php echo'../front/forum.php?forum=.$forum.&topic=".$donnees["id"]."'; ?>"><li>Topic </li></a>
 				<a href="../front/forum.php?mes-message=1"><li> Mes messages </li></a>
 			</ul>
 		</nav>
 
 <?php
+
 /*
 	Maxime Payraudeau
 	28/05/2015
@@ -45,7 +46,7 @@ $user = $_SESSION['id'];
 
 				}
 				?>
-					<div class="form">																		<!-- Formulaire pour l'ajout d'un topic avec nom et description -->
+					<div class="form"><!-- Formulaire pour l'ajout d'un topic avec nom et description -->
 
 				<form method="post" action="" enctype="multipart/form-data">
 					<div class="field-wrap">
@@ -80,6 +81,9 @@ $user = $_SESSION['id'];
 			
 			affichage_message($forum, $topic);
 			
+			if(!empty($_POST['changer']) && $_SESSION['isAdmin']){
+				delete_message($user, $_GET['delete']);
+			}
 			?>
 
 
@@ -94,16 +98,13 @@ $user = $_SESSION['id'];
 		     </div>
 
 
-			<button type="submit" name="repondre" class="button button-block">Répondre</button>
+			<button type="submit" name="repondre" value="repondre" class="button button-block">Répondre</button>
 			</form>
 			</div> <!-- end of div form -->
 
 			<?php
 			if(!empty($_POST['repondre'])){
 				post_message($user, $forum, $topic);
-			}
-			if(!empty($_POST['changer']) && $_SESSION['isAdmin']){
-				delete_message($user, $_GET['delete']);
 			}
 		}
 

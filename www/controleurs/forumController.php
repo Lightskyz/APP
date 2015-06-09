@@ -88,7 +88,7 @@ function affichage_message($forum, $topic){		// Fonction pour afficher les messa
 		<!-- Test à faire, si erreur alors c'est due au chemin -->
 
 <!-- Ici le truc pour effacer les messages -->
-		<form action="<?php echo "../front/Sforum.php?forum=".$forum."&topic=".$topic."&delete=".$id." "; ?> " method="POST">
+		<form action="<?php echo "../front/forum.php?forum=".$forum."&topic=".$topic."&delete=".$id." "; ?> " method="POST">
 			<a href="">				
 				<button type="submit" class="trash_icon" name="changer" value="Delete">
 					<i class="fa fa-trash-o fa-2x"></i>
@@ -146,18 +146,16 @@ function affichage_mes_messages($user){ 	// Fonction pour afficher les messages 
 function post_message($user, $forum, $topic){		// Fonction  pour ajouter un message a la base de donnee
 
 	include("../../modele/modele.php");		// On include le modele pour avoir acces a la bdd
-
-	if(!empty($_POST['message'])) {			// Si on a le formulaire ou le message et non vide, alors on rentre dans la condition
+		// Si on a le formulaire ou le message et non vide, alors on rentre dans la condition
 		$message = $_POST['message'];
-				$message = $_POST['message'];
-				$sql = 'INSERT INTO `message`(`id_topic`, `id_user`, `date`, `message`) VALUES (:id_topic, :id_user, NOW() ,:message)';		// On insere le message dans la table message avec chaque variable associer a un attribut
+			
+				$sql = 'INSERT INTO `message`(`id_topic`, `id_user`, `date`, `message`) VALUES (:id_topic, :id_user, CURDATE() ,:message)';		// On insere le message dans la table message avec chaque variable associer a un attribut
 				$req = $bdd->prepare($sql);
-				$req -> bindParam(':id_user' , $user );
 				$req -> bindParam(':id_topic' , $topic );
+				$req -> bindParam(':id_user' , $user );
 				$req -> bindParam(':message' , $message );
-				$req->execute();
-			echo " Veuillez actualiser votre page web.";
-			}
+				$req -> execute();
+		
 }
 
 /* 

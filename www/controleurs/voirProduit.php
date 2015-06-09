@@ -92,7 +92,7 @@ function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la
 					
 					<div class="property_details2" id="transaction"> 
 					
-					<form method="post" action="../vues/front/produit.php?product="<?php echo $product; ?>"&quantite="<?php echo $_POST["quantite"]; ?>"">
+					<form method="post" action="<?php echo'../front/produit.php?product=".$product."&quantite=".$_POST["quantite"]."&poids=".$_POST["poids"]."'; ?>"
 						<label>
 							Quantité :
 						</label>
@@ -106,7 +106,7 @@ function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la
 						<br />
 						
 
-						<button type="submit" value="Valider" class="commander">Commander</button><!-- appelle la fonctione, ajoutpanier() -->
+						<button type="submit" value="addproduct" class="commander">Commander</button><!-- appelle la fonctione, ajoutpanier() -->
 						<button type="submit" value="Retour" class="retour"><a href="#information">Annuler</a></button>
 					</form>
 					
@@ -120,14 +120,7 @@ function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la
 		<?php
 				$product = $donnees['id'];
 				?>
-
-				<form action="../vues/front/produit.php?product="<?php echo $product; ?>"&quantite="<?php echo $_POST['quantite']; ?>" " method="POST" > <!-- Met l'URL de la page de ta vue avec ?product=".$product." apres comme dans le panier -->
-					<input type="number" name="quantite" step="1" min="0" max="<?php echo $donnees['quantite']; ?>" />
-					<input type="button" name="addproduct" value="ajouter au panier" >
-				</form>
-
 				
-
 				<?php
 				
 			}

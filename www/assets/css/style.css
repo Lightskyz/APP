@@ -1329,11 +1329,11 @@ select {
 }
 
 #blue {
-  background-color:rgba(28, 54, 85, 1);;
+  background-color:rgba(28, 54, 85, 0.1);;
 }
 
 #blue:hover {
-  background-color:rgba(28, 54, 85, 1);;
+  background-color:rgba(28, 54, 85, 0.1);;
 }
 
 
@@ -1522,7 +1522,7 @@ button.go_search:hover{
 /* Présentation du concept */
 
 article{
-    background-color: blue;
+    background: rgba(28, 54, 85, 0.9);
     width:100%;
     color:white;
     text-align: justify;
@@ -1530,6 +1530,7 @@ article{
     padding: 7%;
     font-family: "lato-regular", Helvetica, Arial, sans-serif;
     font-size: 20px;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.55);
 }
 
 article #signature{
@@ -1548,7 +1549,7 @@ article #signature{
     width:100%;
     height:auto;
     padding:3px;
-    background-color: green;
+    margin-top: 20px;
 }
 
 /* ban supprimer user admin */
