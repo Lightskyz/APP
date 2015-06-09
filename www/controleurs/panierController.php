@@ -112,6 +112,7 @@
 							$data = $donnees2['quantite'];
 							$data2 = $donnees2['poids'];
 							?>
+
 							<form action="<?php echo "panier.php?product=".$product." "; ?> " method="POST">			<!-- On cree un formulaire qui permet de changer le nombre de produit acheter ou de delete cet item au panier -->
 								<input type="number" name="quantite" step="1" placeholder="<?php echo $data; ?>" min="0" />
 								<input type="number" name="poids" step="1" placeholder="<?php echo $data2; ?>" min="0" />
@@ -166,6 +167,71 @@
 					$reponse5 = $bdd->prepare($sql5);
 					$reponse5 ->execute();
 
+					$id_user=$donnees3['id_user'];
+					$sql4 ='SELECT * FROM user WHERE id="'.$id_user.'" ';
+					$reponse4 = $bdd->query($sql4);
+					while ($donnees4 = $reponse4->fetch())
+					{
+						$id_categorie = $donnees3['id_categorie'];
+						$sql5 ='SELECT * FROM categorie WHERE id="'.$id_categorie.'" ';
+						$reponse5 = $bdd->query($sql5);
+						while ($donnees5 = $reponse5->fetch())
+						{
+							$sql6 ='SELECT * FROM user WHERE id="'.$user.'" ';
+							$reponse6 = $bdd->query($sql6);
+							while ($donnees6 = $reponse6->fetch())
+							{
+								if( $donnees2['quantite'] == 0){
+									$var = $donnees2['poids']."kg";
+								} else  {
+									$var = $donnees2['quantite'];
+								}
+								$destinataire = $donnees4['email'];
+ 								$sujet = "Achat de vos produit sur Pear2Pear" ;
+ 								$entete = "From: contact@lightskyz.com" ;
+  
+  $message = 'Achat de vos produit '.$donnees5['nom'].' sur Pear2Pear,
+ 
+  Bonjour,
+
+  '.$var' de vos produits '.$donnees5['nom'].'ont ete achetés sur <a href="http://www.lightskyz.com">Pear2Pear</a>.
+  
+  Pour contacter votre acheteur, envoyer lui un email:
+  	Son adresse : '.$donnees6['email'].'
+
+  L\'équipe de Pear2Pear
+ 
+  ---------------
+  Ceci est un mail automatique.
+  Merci de ne pas y répondre.';
+  
+  //envoi du mail
+  mail($destinataire, $sujet, $message, $entete) ;
+
+  								$destinataire2 = $donnees6['email'];
+ 								$sujet2 = "Confirmation de commande" ;
+ 								$entete2 = "From: contact@lightskyz.com" ;
+  
+  $message2 = 'Confirmation de commande sur Pear2Pear,
+ 
+  Bonjour,
+
+  Vous avez acheté '.$var' de '.$donnees5['nom'].' sur <a href="http://www.lightskyz.com">Pear2Pear</a>.
+  
+  Pour contacter votre vendeur, envoyer lui un email:
+  	Son adresse : '.$donnees4['email'].'
+
+  L\'équipe de Pear2Pear
+ 
+  ---------------
+  Ceci est un mail automatique.
+  Merci de ne pas y répondre.';
+  
+  //envoi du mail
+  mail($destinataire2, $sujet2, $message2, $entete2) ;
+							}
+						}
+					}
 				}
 			}
 		}
