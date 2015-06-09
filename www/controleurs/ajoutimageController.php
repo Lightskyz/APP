@@ -5,7 +5,7 @@
 */
 function ajout_image($categorie){
   include("../../modele/modele.php");
-    $dossier = '../../assets/img/products';
+    $dossier = '../../assets/img/products/';
     $fichier = basename($_FILES['avatar']['name']);
     $taille_maxi = 100000;
     $taille = filesize($_FILES['avatar']['tmp_name']);
