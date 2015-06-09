@@ -190,13 +190,13 @@
  								$sujet = "Achat de vos produit sur Pear2Pear" ;
  								$entete = "From: contact@lightskyz.com" ;
   
-  $message = 'Achat de vos produit '.$donnees5['nom'].' sur Pear2Pear,
+  $message = 'Achat de vos produits '.$donnees5['nom'].' sur Pear2Pear,
  
   Bonjour,
 
   '.$var' de vos produits '.$donnees5['nom'].'ont ete achetés sur <a href="http://www.lightskyz.com">Pear2Pear</a>.
   
-  Pour contacter votre acheteur, envoyer lui un email:
+  Pour contacter votre acheteur, envoyé lui un email:
   	Son adresse : '.$donnees6['email'].'
 
   L\'équipe de Pear2Pear
@@ -208,6 +208,7 @@
   //envoi du mail
   mail($destinataire, $sujet, $message, $entete) ;
 
+
   								$destinataire2 = $donnees6['email'];
  								$sujet2 = "Confirmation de commande" ;
  								$entete2 = "From: contact@lightskyz.com" ;
@@ -218,7 +219,7 @@
 
   Vous avez acheté '.$var' de '.$donnees5['nom'].' sur <a href="http://www.lightskyz.com">Pear2Pear</a>.
   
-  Pour contacter votre vendeur, envoyer lui un email:
+  Pour contacter votre vendeur, envoyé lui un email:
   	Son adresse : '.$donnees4['email'].'
 
   L\'équipe de Pear2Pear
