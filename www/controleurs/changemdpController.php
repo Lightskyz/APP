@@ -3,16 +3,16 @@
 <?php
 function updatepassword($email){
  
-echo $email;
+	echo $email;
 // si les champs ne sont pas vides et qu'ils correspondent alors...
-if (!empty($_POST['mdp'])){
-	$mdp = $_POST['mdp'];
-	echo $mdp;
-}
-if (!empty($_POST['mdp2'])){
-	$mdp2 = $_POST['mdp2'];
-	echo $mdp2;
-}
+	if (!empty($_POST['mdp'])){
+		$mdp = $_POST['mdp'];
+		echo $mdp;
+	}
+	if (!empty($_POST['mdp2'])){
+		$mdp2 = $_POST['mdp2'];
+		echo $mdp2;
+	}
 
 //...le mot de passe est modifié dans la bdd et on efface le token de la bdd
 
