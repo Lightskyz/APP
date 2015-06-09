@@ -9,7 +9,7 @@ function contact(){		// Fonction pour ajouter un message contact a la base de do
 
 	$nom = $_POST['nom'];					// On recupere les donnees des differents formulaires
 	$email = $_POST['email'];
-	$contenu = $_POST['comment'];
+	$contenu = $_POST['message'];
 	
 	$sql = ' INSERT INTO contact(nom, email, contenu) VALUES (:nom, :email, :contenu ) ';		// On les ajoutes dans la base de donnee
 	$req = $bdd -> prepare($sql);
@@ -29,7 +29,7 @@ function afficheContact(){
 	$req = $bdd -> query($sql);
 	while( $data = $req -> fetch() )
 	{
-		echo "Nom : ".$data['nom']." email : ".$data['email']." contenu : ".$data['contenu']. " "; 
+		echo "Nom : ".$data['nom']." email : ".$data['email']." contenu : ".$data['contenu']. " </br>"; 
 	}
 }
 ?>

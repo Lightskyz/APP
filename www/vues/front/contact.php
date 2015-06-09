@@ -19,11 +19,7 @@
 			<h1> Contactez-nous </h1>
 			<!-- créer un module qui permet à l'administrateur de recevoir des messages -->
 			<!-- est-ce que c'est nécessaire de mettre l'action ici ou pas, je ne pense pas, à discuter -->
-			<?php include("../../controleurs/contactController.php"); // On include le controleur pour inserer le message dans la base de donnee.
-					if(!empty($_POST['envoyer'])){
-						contact();
-					}
-			?>
+			
 			<form method="post" action="" id="contact" >
 				
 				<div class="field-wrap">
@@ -60,6 +56,11 @@
 				
 
 				<button type="submit" class="button button-block" name="envoyer">Envoyer</button>
+				<?php include("../../controleurs/contactController.php"); // On include le controleur pour inserer le message dans la base de donnee.
+					if(!empty($_POST['nom'])){
+						contact();
+					}
+			?>
 					
 		</form>
 

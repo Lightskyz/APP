@@ -13,26 +13,30 @@
 
 		include("../../modele/modele.php");  // Inclue la base de donnée + connexion.
 		
-		$sql = 'INSERT INTO detailcommande(id_product, id_user, quantite, poids) VALUES (:id_product , :id_user , :quantite , :poids) '; // Ajout d'une ligne dans la table detailCommande 
+		$actif = '1' ;
+		$sql = 'INSERT INTO detailcommande(id_product, id_user, quantite, poids, actif) VALUES (:id_product , :id_user , :quantite , :poids, :actif) '; // Ajout d'une ligne dans la table detailCommande 
 																													 // suivant les informations entrer dans la fonction panier.
 		$reponse = $bdd->prepare($sql);			// Preparation de la requete SQL.
 		$reponse -> bindParam(':id_product', $product);
 		$reponse -> bindParam(':id_user', $user);
 		$reponse -> bindParam(':quantite', $quantite);
 		$reponse -> bindParam(':poids', $poids);
+		$reponse -> bindParam(':actif', $actif );
 		$reponse ->execute();					// Execution de la requete SQL.
 
-		$sql3 = 'SELECT * FROM detailcommande WHERE id_product = "'.$product.'" AND id_user ="'.$user.'" AND quantite ="'.$quantite.'" AND poids="'.$poids.'" ';
+		$sql3 = 'SELECT * FROM detailcommande WHERE id_product = "'.$product.'" AND id_user ="'.$user.'" AND quantite ="'.$quantite.'" AND poids="'.$poids.'" AND actif = 1  ';
 		$reponse3 = $bdd->query($sql3);
 		while ($donnees = $reponse3 -> fetch())		// Mise en forme de tableau.
 			{
+				$actif = '1' ;
 				$id_detailCommande = $donnees['id'];
-				$sql2 = 'INSERT INTO commande(id_user, id_detailCommande, date) VALUES (:id_user, :id_detailCommande, CURDATE())'; 	// Ajout d'une ligne dans la table commande
+				$sql2 = 'INSERT INTO commande(id_user, id_detailCommande, date, actif) VALUES (:id_user, :id_detailCommande, CURDATE(), :actif)'; 	// Ajout d'une ligne dans la table commande
 																																		// suivant les informations d'entrées
 																																		// Ajout date ???
 				$reponse2 = $bdd->prepare($sql2);
 				$reponse2 -> bindParam(':id_user', $user);
 				$reponse2 -> bindParam(':id_detailCommande', $id_detailCommande);
+				$reponse2 -> bindParam(':actif', $actif );
 				$reponse2 ->execute();
 			}
 	}
@@ -45,16 +49,16 @@
 
 		include("../../modele/modele.php");
 
-		$sql = 'SELECT * FROM detailcommande WHERE id_product= "'.$product.'" AND id_user= "'.$user.'" ';
+		$sql = 'SELECT * FROM detailcommande WHERE id_product= "'.$product.'" AND id_user= "'.$user.'" AND actif = 1';
 		$reponse = $bdd->query($sql);
 		
 		while ($donnees = $reponse->fetch())
 		{
-			$sql2 = 'DELETE FROM commande WHERE id_user = "'.$user.'" AND id_detailCommande = "'.$donnees['id'].'"  ';
+			$sql2 = 'DELETE FROM commande WHERE id_user = "'.$user.'" AND id_detailCommande = "'.$donnees['id'].'"  AND actif = 1 ';
 			$reponse2 = $bdd->prepare($sql2);
 			$reponse2 ->execute();
 		}
-		$sql3 = 'DELETE FROM detailcommande WHERE id_product= "'.$product.'" AND  id_user= "'.$user.'" ';
+		$sql3 = 'DELETE FROM detailcommande WHERE id_product= "'.$product.'" AND  id_user= "'.$user.'" AND actif = 1 ';
 		$reponse3 = $bdd->prepare($sql3);
 		$reponse3 ->execute();
 
@@ -68,7 +72,7 @@
 
 		include("../../modele/modele.php");
 
-		$sql = 'UPDATE `detailcommande` SET `quantite`='.$quantite.', `poids`='.$poids.' WHERE id_user='.$user.' AND id_product='.$product.' '; 
+		$sql = 'UPDATE `detailcommande` SET `quantite`='.$quantite.', `poids`='.$poids.' WHERE id_user='.$user.' AND id_product='.$product.'  AND actif = 1'; 
 		$reponse = $bdd->prepare($sql);
 		$reponse ->execute();
 	}
@@ -81,12 +85,12 @@
 
 		include("../../modele/modele.php");
 
-		$sql = 'SELECT * FROM commande WHERE id_user="'.$user.'" ';
+		$sql = 'SELECT * FROM commande WHERE id_user="'.$user.'" AND actif = 1 ';
 		$reponse = $bdd->query($sql);
 		while ($donnees = $reponse->fetch())
 		{
 			$detailCommande = $donnees['id_detailCommande'];
-			$sql2 ='SELECT * FROM detailcommande WHERE id_user = "'.$user.'" AND id = "'.$detailCommande.'" ';
+			$sql2 ='SELECT * FROM detailcommande WHERE id_user = "'.$user.'" AND id = "'.$detailCommande.'" AND actif = 1 ';
 			$reponse2 = $bdd->query($sql2);
 			while ($donnees2 = $reponse2->fetch())
 			{
@@ -120,6 +124,60 @@
 					}
 				}
 			}
+			$panier = $donnees['id'];
+			$GLOBALS['panier'] = $panier; 
 		}
+		
+	}
+
+	function facture($user, $id_commande){
+
+		include("../../modele/modele.php");
+
+		// Creation facture
+		$sql01 = ' INSERT INTO facture(id_commande, type) VALUES (:id_commande, :type)';
+		$req = $bdd -> prepare($sql01);
+		$req -> bindParam(':id_commande', $id_commande);
+		$req -> bindParam(':type', $type);
+		$req -> execute();
+		// Fin creation facture
+
+		// Suppression de la quantite acheter
+		$sql = 'SELECT * FROM commande WHERE id_user="'.$user.'" AND actif = 1 ';
+		$reponse = $bdd->query($sql);
+		while ($donnees = $reponse->fetch())
+		{
+			$detailCommande = $donnees['id_detailCommande'];
+			$sql2 ='SELECT * FROM detailcommande WHERE id_user = "'.$user.'" AND id = "'.$detailCommande.'" AND actif = 1 ';
+			$reponse2 = $bdd->query($sql2);
+			while ($donnees2 = $reponse2->fetch())
+			{
+				$product = $donnees2['id_product'];
+				$sql3 ='SELECT * FROM produit WHERE id="'.$product.'" ';
+				$reponse3 = $bdd->query($sql3);
+				while ($donnees3 = $reponse3->fetch())
+				{
+					$quantitenew = $donnees3['quantite'] - $donnees2['quantite'];
+					$poidsnew = $donnees3['poids'] - $donnees2['poids'];
+					$sql4 = ' UPDATE produit SET quantite = "'.$quantitenew.'" WHERE id = "'.$donnees3['id'].'" ';
+					$reponse4 = $bdd->prepare($sql4);
+					$reponse4 ->execute();
+					$sql5 = ' UPDATE produit SET poids = "'.$poidsnew.'" WHERE id = "'.$donnees3['id'].'" ';
+					$reponse5 = $bdd->prepare($sql5);
+					$reponse5 ->execute();
+
+				}
+			}
+		}
+
+
+		$sql02 = 'UPDATE `detailcommande` SET actif = 0 WHERE id_user='.$user.' '; 
+		$req1 = $bdd->prepare($sql02);
+		$req1 ->execute();
+		$sql03 = 'UPDATE `commande` SET actif = 0 WHERE id_user='.$user.' '; 
+		$req2 = $bdd->prepare($sql03);
+		$req2 ->execute();
+
+
 	}
 ?>
