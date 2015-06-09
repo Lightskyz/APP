@@ -9,7 +9,7 @@
 	28/05/2015
 	Version 1.0.1
 */
-	function addpanier($user, $produtct, $quantite, $poids){	// Fonction pour ajouter un produit au panier
+	function addpanier($user, $product, $quantite, $poids){	// Fonction pour ajouter un produit au panier
 
 		include("../../modele/modele.php");  // Inclue la base de donnée + connexion.
 		

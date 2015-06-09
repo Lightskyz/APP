@@ -102,7 +102,7 @@ function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la
 					</div> <!-- property details -->
 					
 			<div class="property_details2" id="<?php echo $transaction; ?>"> 
-					<?php $data = "../front/produit.php?product=".$product."&quantite=".$_POST["quantite"]."&poids=".$_POST["poids"]." " ?>
+					<?php $data = "../front/produit.php?product=".$donnees['id']."&quantite=".$_POST["quantite"]."&poids=".$_POST["poids"]." " ?>
 					<form method="post" action="<?php echo $data; ?>">
 								<label>
 									Quantité :
