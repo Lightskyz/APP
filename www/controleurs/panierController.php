@@ -194,10 +194,10 @@
  
   Bonjour,
 
-  '.$var' de vos produits '.$donnees5['nom'].'ont ete achetés sur <a href="http://www.lightskyz.com">Pear2Pear</a>.
+  "'.$var.'" de vos produits "'.$donnees5['nom'].'"ont ete achetés sur <a href="http://www.lightskyz.com">Pear2Pear</a>.
   
   Pour contacter votre acheteur, envoyé lui un email:
-  	Son adresse : '.$donnees6['email'].'
+  	Son adresse : "'.$donnees6['email'].'"
 
   L\'équipe de Pear2Pear
  
@@ -217,10 +217,10 @@
  
   Bonjour,
 
-  Vous avez acheté '.$var' de '.$donnees5['nom'].' sur <a href="http://www.lightskyz.com">Pear2Pear</a>.
+  Vous avez acheté "'.$var.'" de "'.$donnees5['nom'].'" sur <a href="http://www.lightskyz.com">Pear2Pear</a>.
   
   Pour contacter votre vendeur, envoyé lui un email:
-  	Son adresse : '.$donnees4['email'].'
+  	Son adresse : "'.$donnees4['email'].'"
 
   L\'équipe de Pear2Pear
  
