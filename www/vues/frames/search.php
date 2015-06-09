@@ -10,15 +10,11 @@
 
 	include("../../controleurs/rechercheController.php");
 
-	if(!empty($_POST['recherche'])){
-		$requete = $_POST['recherche'];
-	}
-
 	recherche_crit('categorie', 'nom');
-
 
 	if(empty($choix)){
 		if(!empty($requete)){
+			$requete = $_POST['recherche'];
 			recherche_champ($requete);
 		}
 	} else if($choix != 'Tout les produits' ){
@@ -28,6 +24,6 @@
 	}
 
 ?>
-</form>	
-</div>
+			</form>	
+	</div>
 </section>

@@ -6,18 +6,15 @@ function recherche_champ($requete) {
 
 include("../../modele/modele.php");
 
-	$sql2 = 'SELECT COUNT(id) FROM categorie WHERE nom LIKE "%'.$requete.'%" ';
+	$sql2 = 'SELECT COUNT(id) FROM categorie WHERE nom = "%'.$requete.'%" ';
 	$count = current($bdd->query($sql2)->fetch());
 	echo $count;
 	
-	$sql = 'SELECT * FROM categorie WHERE nom LIKE "%'.$requete.'%" ORDER BY id DESC';
+	$sql = 'SELECT * FROM categorie WHERE nom = "%'.$requete.'%" ORDER BY id DESC';
 	$reponse = $bdd->query($sql);
 	while ($donnees = $reponse->fetch())
 	{
-		?>
-	<?php echo $donnees['nom']." "; ?>
-	
-	<?php
+		echo $donnees['nom']." "; 
 	}
 	$reponse->closeCursor(); 
 }
@@ -46,7 +43,7 @@ function recherche_crit($table, $order) {
 	<?php 
 	$OK = isset($_POST['submit']) ? $_POST['submit'] : '';
 	if (isset($OK))	{
-		$choix=isset($_POST['liste']) ? $_POST['liste'] : '';
+		$choix = isset($_POST['liste']) ? $_POST['liste'] : '';
 		$GLOBALS['choix'] = $choix; 
 	}
 }
