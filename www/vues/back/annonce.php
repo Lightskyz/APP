@@ -61,16 +61,9 @@
 		     	</div>
 				
 				<div class="field-wrap">
-					<input type="radio" name="transaction" id="transaction"
-						<?php
-						if(isset($transaction) && $transaction == "Echange") echo "checked"; 
-						?>
-					value="Echange"><span class="radio_legend">Echange</span>
-					<input type="radio" name="transaction" id="transaction"
-						<?php
-						if(isset($transaction) && $transaction == "Vente") echo "checked"; 
-						?>
-					value="Vente"><span class="radio_legend">Vente</span><br />
+					<input type="radio" name="transaction" id="transaction" value="Echange"><span class="radio_legend">Echange</span>
+					<input type="radio" name="transaction" id="transaction" value="Vente">
+					<span class="radio_legend">Vente</span><br />
 				</div>
 <!--
 				<div class="field-wrap">
@@ -89,7 +82,10 @@
 
 		<?php 
 			include("../../controleurs/annonceController.php"); 
-			addproduct($_SESSION["id"]);	//A titre indicatif pour les tests, sera à mener à changer plus tard
+
+			if(!empty($_POST['envoyer'])){
+				addproduct($_SESSION["id"]);	//A titre indicatif pour les tests, sera à mener à changer plus tard
+			}
 		?>
 
 		</div> <!-- fin de form -->
