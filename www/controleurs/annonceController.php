@@ -12,9 +12,14 @@ function addproduct($user){
 
                 $categorie = $_POST['categorie'];
                 $description = $_POST['description'];
-                $quantite = $_POST['quantite'];
+                if(!empty($_POST['quantite'])
+                    $quantite = $_POST['quantite'];
+                    $poids = 0;
+                }else{
+                    $poids = $_POST['poids'];
+                    $quantite = 0;
+                }
                 $prix = $_POST['prix'];
-                $poids = $_POST['poids'];
                 $transaction = $_POST['transaction'];
 
                 $sql = 'SELECT id FROM categorie WHERE nom LIKE "%'.$categorie.'%" ';
