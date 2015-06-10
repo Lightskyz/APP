@@ -26,12 +26,12 @@ function delete_categorie($categorie){			// Fonction pour supprimer une categori
 
 	include ('../../modele/modele.php');		// On include le modele pour avoir acces a la bdd
 
-	$sql = 'SELECT * FROM categorie WHERE nom = "'.$categorie.'" ';	// Requete SQL pour selectionner tout les elements de la table categorie qui ont pour nom la valeur de la variable $categorie
+	$sql = 'SELECT * FROM categorie WHERE nom LIKE "%'.$categorie.'%" ';	// Requete SQL pour selectionner tout les elements de la table categorie qui ont pour nom la valeur de la variable $categorie
 	$req = $bdd -> query($sql);
 	while ($donnees = $req->fetch())								// Mise en forme des résultats sous la forme de tableau
 		{
 				if($donnees['vide'] == '0'){						// Pour chaque element, on regarde avec un if si l'élement a pour son attribut vide egal a zero
-					$sql2 = 'DELETE FROM categorie WHERE nom = "'.$categorie.'" ';		// Si il est egal a zero, alors on delete la categorie avec pour nom $categorie
+					$sql2 = 'DELETE FROM categorie WHERE nom LIKE "%'.$categorie.'%" ';		// Si il est egal a zero, alors on delete la categorie avec pour nom $categorie
 					$req2 = $bdd -> prepare($sql2);										// On prepare la requete SQL
 					$req2 -> execute();													// On execute la requete SQL
 					echo "La catégorie ".$categorie." à été supprimée." ;				// On affiche que la categorie a bien ete cree
