@@ -26,6 +26,49 @@
 				
 			<h1>Derniers produits ajoutés !</h1>
 
+			<section class="listings">
+		<div class="wrapper">
+
+			<ul class="properties_list">
+				
+
+				<?php 
+			include("../../controleurs/voirProduit.php");
+			if($_SESSION['recherche'] == 1 ){
+				affichenewproduct();
+				if(!empty($_GET['product'])){
+
+					$quantite = $_POST['quantite'];
+					$poids = $_POST['poids'];
+
+					addpanier($_SESSION['id'], $_GET['product'], $quantite, $poids );
+					
+					}
+			}else{
+				if(!empty($_GET['product2'])){
+
+					$quantite = $_POST['quantite2'];
+					$poids = $_POST['poids2'];
+
+					addpanier($_SESSION['id'], $_GET['product2'], $quantite, $poids );
+					$_SESSION['recherche'] = 0 ;
+				}
+			}
+				
+				/*if(!empty($_GET['product'])){
+					if(!empty($_GET['quantite'])){
+						addpanier($_SESSION["id"], $_GET['product'], $_POST['quantite'], 0); 
+				}
+				else{
+						addpanier($_SESSION["id"], $_GET['product'], 0,  $_POST['poids']);
+				}
+			}*/
+		?>
+
+		</ul>
+	</div>
+</section>	<!--  end listing section  -->
+
 			<ul class="properties_list">
 			<!-- Afficher les derniers produits ajouter -->
 
