@@ -113,6 +113,7 @@
 							$data2 = $donnees2['poids'];
 							?>
 
+<<<<<<< HEAD
 		<div id="panier">
     		<h1>Panier de <?php echo $_SESSION['nom']; ?> </h1>
     			<div class="panier">
@@ -158,6 +159,16 @@
     </div> <!-- fin de id panier -->
 
 	<?php 			
+=======
+							<form action="<?php echo "panier.php?product=".$product." "; ?> " method="POST">			<!-- On cree un formulaire qui permet de changer le nombre de produit acheter ou de delete cet item au panier -->
+								<input type="number" name="quantite" step="1" placeholder="<?php echo $data; ?>" min="0" />
+								<input type="number" name="poids" step="1" placeholder="<?php echo $data2; ?>" min="0" />
+									<?php echo $donnees4['nom'].' '.$donnees4['prenom'].' '.$donnees5['nom'].' '.$donnees3['prix']; ?>
+								<input type="submit" name="changer" value="Valider">
+								<input type="submit" name="changer" value="Delete" />
+							</form> </br> 
+							<?php 			
+>>>>>>> e405c34e3417acdb413771887c1d40ced28a45b6
 						}
 					}
 				}
@@ -254,7 +265,7 @@
  
   Bonjour,
 
-  Vous avez acheté "'.$var.'" de "'.$donnees5['nom'].'" sur Pear2Pear (http://www.lightskyz.com).
+  Vous avez acheté "'.$var.'" de "'.$donnees5['nom'].'" sur "<a href="http://www.lightskyz.com">Pear2Pear</a>."
   
   Pour contacter votre vendeur, envoyé lui un email:
   	Son adresse : "'.$donnees4['email'].'"

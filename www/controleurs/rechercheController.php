@@ -5,17 +5,33 @@
 function recherche_champ($requete) {
 
 include("../../modele/modele.php");
-include("../../controleurs/voirProduit.php");
+include("../../controleurs/voirProduitbis.php");
 
 	$sql02 = 'SELECT count(*) FROM categorie WHERE nom LIKE "%'.$requete.'%" ';
 	$count = current($bdd->query($sql02)->fetch());
 	echo $count."</br>";
+	$_SESSION['recherche'] = 1 ;
 	
 	$sql = 'SELECT * FROM categorie WHERE nom LIKE "%'.$requete.'%" ORDER BY id DESC';
 	$reponse = $bdd->query($sql);
 	while ($donnees = $reponse->fetch())
 	{
-		voirProduit($donnees['id']);
+		?>
+		<section class="listings">
+		<div class="wrapper">
+
+			<ul class="properties_list">
+				
+
+				<?php 
+				 voirProduitbis($donnees['id']);
+		?>
+
+			</ul>
+		</div>
+		</section>	<!--  end listing section  -->
+		<?php
+		
 	}
 }
 

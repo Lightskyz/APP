@@ -77,6 +77,9 @@
 
 
 
+		<!-- contenu de notre site -->
+
+
 
 		<?php include("../frames/footer.php"); ?>
 
