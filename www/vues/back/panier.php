@@ -28,7 +28,13 @@
 		include('../../controleurs/panierController.php');
 		
 		$user = $_SESSION['id'] ;
+		?>
+		<div id="panier">
+    		<h1>Panier de <?php echo $_SESSION['nom']; ?> </h1>
+    		
+    	<?php
 		affichepanier($user);
+
 		if(!empty($_POST['changer'])){													// On recuperer la variable changer du formulaire
 			if($_POST['changer'] == 'Delete'){											// Si elle a pour valeur 'Delete', alors on lance la fonction deletepanier
 				deletepanier($user, $_GET['product']);
@@ -37,22 +43,15 @@
 			}
 		}
 		?>
-<<<<<<< HEAD
+
 		<div class="form">
-		<div class="top-row">
-		<form method="post" action="" id="contact" >
-			<button type="submit" class="button button-block" name="valider" value="valider" >Valider</button>
-		</form>
-		</div>
+			<div class="top-row">
+				<form method="post" action="" id="contact" >
+					<button type="submit" class="button button-block" name="valider" value="valider" >Valider</button>
+				</form>
+			</div>
 		</div>
 
-=======
-		
-		
-		<form method="post" action="" id="contact" >
-			<button type="submit" class="button button-block" name="valider" value="valider" >Valider</button>
-		</form>
->>>>>>> e405c34e3417acdb413771887c1d40ced28a45b6
 		<?php
 	if(!empty($_POST['valider'])){
 		facture($user, $panier);

@@ -146,6 +146,7 @@
 
 			
 	</div> <!-- fin de form -->
+
 <?php 
 		afficheAnnonce($_SESSION['id']);
 		if(!empty($_POST['changer'])){			// On recuperer la variable changer du formulaire
@@ -156,9 +157,13 @@
 			sedesincrire($_SESSION['id']);
 		}
 ?>
-	<form action="" method="POST">
-		<input type="submit" name="delete" value="Se désincrire" />
-	</form> </br> 
+	<div class="form">
+			<div class="top-row">
+				<form action="" method="POST">
+					<button type="submit" class="button button-block" name="delete" value="Se désincrire" >Se désinscrire</button>
+				</form>
+			</div>
+	</div>
 </div><!-- profil -->
 
 		<?php include("../frames/footer.php"); ?>

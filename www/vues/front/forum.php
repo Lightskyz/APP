@@ -13,7 +13,6 @@
 	<body>
 
 		<?php include("../frames/menu.php"); ?>
-		<?php include("../frames/search.php"); ?>
 
 		<h1 class="titreForum"> Bienvenue sur le forum de Pear2Pear </h1>
 		

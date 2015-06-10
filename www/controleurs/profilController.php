@@ -50,10 +50,12 @@ function afficheAnnonce($user){
 					$data = $donnees['id'];
 					$url = '../../back/profil.php?product='.$data.' ' ;
 					?>
-	   				<form action="<?php echo $url; ?>" method="POST">			<!-- On cree un formulaire qui permet de changer le nombre de produit acheter ou de delete cet item au panier -->
-							Vendeur : <?php echo $donnees3['nom']." "; echo $donnees3['prenom'];?> Categorie : <?php echo $donnees2['nom']; ?> Prix : <?php echo $donnees['prix']; ?> Quantité : <?php echo $donnees['quantite']; ?>
-						<input type="submit" name="changer" value="Supprimer" />
-					</form> </br> 
+					 <div class="bandeleteuser">
+	   					<form action="<?php echo $url; ?>" method="POST">			<!-- On cree un formulaire qui permet de changer le nombre de produit acheter ou de delete cet item au panier -->
+							<?php echo"<p  style='position:absolute; top:0; left:0;  padding:10px; color:white; float:left; font-size: 0.9em; font-weight: 500; text-align:left; letter-spacing: .1em; color:white; '>Vendeur : ".$donnees3['nom'].$donnees3['prenom']."<br />Categorie : ".$donnees2['nom']."<br />Prix : ".$donnees['prix']." <br />Quantité : ".$donnees['quantite']."</p>"; ?>
+							<button type="submit" class="buttonProduit" name="changer" value="Supprimer" >Supprimer</button>
+						</form>
+					</div>
 					<?php
 				}
 			}

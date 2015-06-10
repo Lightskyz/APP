@@ -38,27 +38,20 @@
 						$poids = $_POST['poids'];
 
 						addpanier($_SESSION['id'], $_GET['product'], $quantite, $poids );
+				} else {
 					
-					}
-				}else{
 					if(!empty($_GET['product2'])){
 
 						$quantite = $_POST['quantite2'];
 						$poids = $_POST['poids2'];
-
+							
 						addpanier($_SESSION['id'], $_GET['product2'], $quantite, $poids );
 						$_SESSION['recherche'] = 0 ;
-					}
+								}
 				}
+			
+			}
 				
-				/*if(!empty($_GET['product'])){
-					if(!empty($_GET['quantite'])){
-						addpanier($_SESSION["id"], $_GET['product'], $_POST['quantite'], 0); 
-				}
-				else{
-						addpanier($_SESSION["id"], $_GET['product'], 0,  $_POST['poids']);
-				}
-			}*/
 		?>
 
 		</ul>

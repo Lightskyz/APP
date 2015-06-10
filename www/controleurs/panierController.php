@@ -111,15 +111,16 @@
 						{
 							$data = $donnees2['quantite'];
 							$data2 = $donnees2['poids'];
+							$fichier = $donnees5['image'];
+							$dossier = "../../assets/img/products/$fichier";
 							?>
 
-<<<<<<< HEAD
-		<div id="panier">
-    		<h1>Panier de <?php echo $_SESSION['nom']; ?> </h1>
+
+		
     			<div class="panier">
 					<ul><!-- Liste des produits ajouter au panier -->
 						<li>
-							<img src="../../assets/img/products/fraise.jpg" alt="" title="" class="property_img block" /> <!-- Image du produit ajouté au panier -->							
+							<img src="<?php echo $dossier; ?>" alt="" title="" class="property_img block" /> <!-- Image du produit ajouté au panier -->							
 								<div class="information_produit block">
 									<span class="quantite_produit"><?php echo $data; ?> </span>
 									<span class="nom_produit"><?php echo $donnees5['nom']; ?></span><br /> <!-- Nom du produit -->
@@ -134,6 +135,11 @@
 												<input class="poidsPanier" type="number" name="poids" step="1" placeholder="<?php echo $data2; ?>" min="0" />
 												
 											<button class="buttonPanier" type="submit" name="changer" value="Modifier">Modifier</button>
+
+											<button class="trash_icon" type="submit" value="Delete" name="changer">
+												<i class="fa fa-trash-o fa-2x"></i>
+											</button>
+											
 										</form>
 									</div>
 
@@ -141,11 +147,9 @@
 											<?php echo $donnees3['prix']; ?>€/kg
 										</div> <!-- fin prix produit, mis en place d'une case -->
 										
-										<a href="">
-											<button class="trash_icon" type="submit" value="Delete" name="changer">
-												<i class="fa fa-trash-o fa-2x"></i>
-											</button>
-										</a>
+										
+											
+										
 
 
 												
@@ -157,18 +161,11 @@
 
     	</div> <!-- fin de classe panier -->
     </div> <!-- fin de id panier -->
+		
 
-	<?php 			
-=======
-							<form action="<?php echo "panier.php?product=".$product." "; ?> " method="POST">			<!-- On cree un formulaire qui permet de changer le nombre de produit acheter ou de delete cet item au panier -->
-								<input type="number" name="quantite" step="1" placeholder="<?php echo $data; ?>" min="0" />
-								<input type="number" name="poids" step="1" placeholder="<?php echo $data2; ?>" min="0" />
-									<?php echo $donnees4['nom'].' '.$donnees4['prenom'].' '.$donnees5['nom'].' '.$donnees3['prix']; ?>
-								<input type="submit" name="changer" value="Valider">
-								<input type="submit" name="changer" value="Delete" />
-							</form> </br> 
-							<?php 			
->>>>>>> e405c34e3417acdb413771887c1d40ced28a45b6
+		
+
+							<?php
 						}
 					}
 				}
