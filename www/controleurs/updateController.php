@@ -115,8 +115,8 @@ function updateprofil($user){		// Fonction pour update le profif
 			if(!empty($ville)){
 				$city = $ville;
 			}else{
-				$sql8='SELECT ville FROM user WHERE id="'.$user.'" ';
-				$reponse = $bdd->query($sql8);
+				$sql9='SELECT ville FROM user WHERE id="'.$user.'" ';
+				$reponse = $bdd->query($sql9);
 				while ($donnees = $reponse->fetch())
 				{
 					$city = $donnees['ville'];
@@ -140,7 +140,7 @@ function updateprofil($user){		// Fonction pour update le profif
 					$reponse = $bdd->query($sql9);
 					while ($donnees = $reponse->fetch())
 					{
-						$pass = sha1($donnees['mdp']);
+						$pass = $donnees['mdp'];
 					}
 				} else {
 					$pass = sha1($mdp);
@@ -150,7 +150,7 @@ function updateprofil($user){		// Fonction pour update le profif
 				$reponse = $bdd->query($sql9);
 				while ($donnees = $reponse->fetch())
 				{
-					$pass = sha1($donnees['mdp']);
+					$pass = $donnees['mdp'];
 				}
 			}		
 		$reponse2->execute();

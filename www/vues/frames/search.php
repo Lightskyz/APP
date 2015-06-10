@@ -1,8 +1,3 @@
- 
-				
-	
-
-
 <section class="search">
 	<div class="wrapper">
 		<?php

@@ -26,8 +26,18 @@
 
 	<div class="profil profil_block" id="affichageProfil">
 		<h1>Votre profil</h1>
-			<div id="photoProfil">
-				<img alt="profil"/><!-- pouvoir cliquer sur l\'image pour la modifier -->
+
+		 <?php
+                if(!empty($_POST['update'])){
+                    include("../../controleurs/ajoutimageController.php");
+                    ajout_image2($_SESSION["id"]);
+                }
+                $fichier = $_SESSION['image'];
+                $dossier = '../../assets/img/users/'.$fichier.'';
+        ?>
+
+			<div >
+				<img id="photoProfil" alt="profil" src="<?php echo $dossier; ?>"/><!-- pouvoir cliquer sur l\'image pour la modifier -->
 			</div> <!-- photo profil -->
 			<div>
 				<ul class="infoProfil">
@@ -51,7 +61,7 @@
 
 	<div class="form profil_block" id="modifProfil">
 		<h1>Modification du profil</h1>
-			<form action="" method="POST">
+			<form action="" method="post" enctype="multipart/form-data">
 
 				<div class="top-row">
 					<div class="field-wrap">
@@ -124,22 +134,29 @@
 					</div>
 				</div> <!-- fin de la div top row -->
 
-					<button type="submit" name="update" class="button button-block"> Mettre à jour le profil </button>
+				<div class="field-wrap">
+        <p id="birth">Photo de profil (JPG, PNG ou GIF | max. 100 Ko)<span class="req">*</span></p>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+                    <input type="file" name="avatar" id="avatar"/><br />
+        </div>
+
+
+					<button type="submit" name="update" class="button button-block" value="ok"> Mettre à jour le profil </button>
 			</form>
 
 			
 	</div> <!-- fin de form -->
 <?php 
-afficheAnnonce($_SESSION['id']);
-if(!empty($_POST['changer'])){			// On recuperer la variable changer du formulaire
-										// Si elle a pour valeur 'Delete', alors on lance la fonction deletepanier
-	deleteAnnonce($user, $_GET['product']);
-}
-if($_POST['delete']){
-	sedesincrire($_SESSION['id']);
-}
+		afficheAnnonce($_SESSION['id']);
+		if(!empty($_POST['changer'])){			// On recuperer la variable changer du formulaire
+												// Si elle a pour valeur 'Delete', alors on lance la fonction deletepanier
+			deleteAnnonce($user, $_GET['product']);
+		}
+		if($_POST['delete']){
+			sedesincrire($_SESSION['id']);
+		}
 ?>
-	<form action="../../modele/sessionStop.php" method="POST">
+	<form action="" method="POST">
 		<input type="submit" name="delete" value="Se désincrire" />
 	</form> </br> 
 </div><!-- profil -->

@@ -24,7 +24,7 @@
 		$reponse -> bindParam(':actif', $actif );
 		$reponse ->execute();					// Execution de la requete SQL.
 
-		$sql3 = 'SELECT * FROM detailcommande WHERE id_product = "'.$product.'" AND id_user ="'.$user.'" AND quantite ="'.$quantite.'" AND poids="'.$poids.'" AND actif = 1  ';
+		$sql3 = 'SELECT * FROM detailcommande WHERE id_product = "'.$product.'" AND id_user = "'.$user.'" AND quantite = "'.$quantite.'" AND poids="'.$poids.'" AND actif = 1  ';
 		$reponse3 = $bdd->query($sql3);
 		while ($donnees = $reponse3 -> fetch())		// Mise en forme de tableau.
 			{
@@ -217,7 +217,7 @@
  
   Bonjour,
 
-  Vous avez acheté "'.$var.'" de "'.$donnees5['nom'].'" sur <a href="http://www.lightskyz.com">Pear2Pear</a>.
+  Vous avez acheté "'.$var.'" de "'.$donnees5['nom'].'" sur "<a href="http://www.lightskyz.com">Pear2Pear</a>."
   
   Pour contacter votre vendeur, envoyé lui un email:
   	Son adresse : "'.$donnees4['email'].'"

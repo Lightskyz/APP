@@ -20,6 +20,7 @@ function afficheprofil($user){
 		$_SESSION['cdp'] = $donnees["cdp"];
 		$_SESSION['ville'] = $donnees["ville"];
 		$_SESSION['telephone'] = $donnees["telephone"];
+		$_SESSION['image'] = $donnees['image'];
 		$_SESSION['isAdmin'] = $donnees["isAdmin"];
 		$_SESSION['mdp'] = $donnees['mdp'];
 		$_SESSION['age'] = floor((time() - strtotime($_SESSION['born']))/3600/24/365);
@@ -31,7 +32,7 @@ function afficheAnnonce($user){
 
 	include("../../modele/modele.php");
 
-	$sql = 'SELECT * FROM produit WHERE id_user LIKE "%'.$user.'%" ORDER BY '.$order.' DESC';
+	$sql = 'SELECT * FROM produit WHERE id_user LIKE "%'.$user.'%" ORDER BY id DESC';
 	$reponse = $bdd->query($sql);
 	while ($donnees = $reponse->fetch())
 	{

@@ -27,10 +27,10 @@
     <h3>Ajouter une catégorie</h3>
         <!--formulaire ajout catégorie-->
         <?php
-                if(!empty($_POST['nom'])){
+                if(!empty($_POST['nom2'])){
                     create_categorie();
                     include("../../controleurs/ajoutimageController.php");
-                    ajout_image($_POST['nom']);
+                    ajout_image($_POST['nom2']);
                 }
         ?>
         <div class="form">    
@@ -39,7 +39,7 @@
                 	<label>
                         Nom du produit
                     </label>
-                <input type="text" name="nom"/>
+                <input type="text" name="nom2"/>
                 </div> 
 
                 <div class="field-wrap">
@@ -85,7 +85,7 @@
     <h3>Gestion des utilisateurs</h3>
                 <!--formulaire ajout utilisateur-->
             <div class="form">
-    			<form method="post" action="">
+    			<form method="post" action="../../controleurs/inscriptionController.php">
 
                     <div class="top-row">
                     <div class="field-wrap">
@@ -145,9 +145,10 @@
                         <input type="text" name="telephone" required />
                     </div>
 
-					<button name="submit3" type="submit" class="button button-block" value="Ajouter"/> Ajouter un utilisateur </button>
+					<button name="submit3" type="submit3" class="button button-block" value="Ajouter"/> Ajouter un utilisateur </button>
     		</form>
         </div>
+
 
     <h3>Tout les utilisateurs inscrits</h3>
         <?php 
@@ -158,32 +159,6 @@
                 ban_user();
             }
             ?> </br>
-
-
-            <!--<h3>Suppression d'un utilisateur</h3>-->
-                <!--formulaire suppression utilisateur-->
-               <!--
-                <div class="form">
-                     <form method="post" action="">
-                     <div class="top-row">
-                        <div class="field-wrap">
-                            <label>
-                                Nom
-                            </label>
-                            <input type="text" name="nom2"/>
-                        </div>
-                        <div class="field-wrap">
-                            <label>
-                                Prenom
-                            </label>
-                            <input type="text" name="prenom2"/>
-                        </div>
-                    </div>
-                        <button type="submit" name="submit3" class="button button-block">Supprimer</button><br />
-                        <button type="submit" name="submit4" class="button button-block">Bannir</button>
-                        
-                    </form>
-                </div> -->
 
     <h3>Tout les utilisateurs bannis</h3>
         

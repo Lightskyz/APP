@@ -12,7 +12,7 @@ function addproduct($user){
 
                 $categorie = $_POST['categorie'];
                 $description = $_POST['description'];
-                if(!empty($_POST['quantite'])
+                if(!empty($_POST['quantite'])){
                     $quantite = $_POST['quantite'];
                     $poids = 0;
                 }else{
@@ -45,8 +45,8 @@ function addproduct($user){
                 //ajout_image();
                 echo'<p>Votre produit a bien été ajouté</p>';
             }
-  
         }
+        
 
 ?>
 
