@@ -13,7 +13,7 @@
 	if(!empty($_POST['recherche'])){
 			$requete = $_POST['recherche'];
 			recherche_champ($requete);
-		}
+	}
 	if(empty($choix)){
 		
 	} else if($choix != 'Tout les produits' ){

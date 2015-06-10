@@ -5,6 +5,7 @@
 function recherche_champ($requete) {
 
 include("../../modele/modele.php");
+include("../../controleurs/voirProduit.php")
 
 	$sql2 = 'SELECT COUNT(*) FROM categorie WHERE nom LIKE "%'.$requete.'%" ';
 	$count = current($bdd->query($sql2)->fetch());
@@ -14,7 +15,7 @@ include("../../modele/modele.php");
 	$reponse = $bdd->query($sql);
 	while ($donnees = $reponse->fetch())
 	{
-		echo $donnees['nom']."</br>"; 
+		voirpProduit($donnees['id']);
 	}
 }
 
