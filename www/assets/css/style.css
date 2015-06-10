@@ -1389,12 +1389,14 @@ button.go_search:hover{
 .panier ul{
     list-style: none;
     margin:10px;
+
 }
 
 .panier ul li {
     margin:20px;
     background-color: white;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 1);
+    height:160px;
 }
 
 .panier ul li div.information_produit{
@@ -1491,7 +1493,7 @@ button.go_search:hover{
     padding: 2px;
     padding-top: 5px;
     position: absolute;
-    bottom: 0px;
+    bottom: -5px;
     right:0px;
     border-radius: 100%;
 }
@@ -1607,15 +1609,45 @@ article #signature{
 
 
 /******* Nouveau panier **********/
+.formulairePanier form input{
+  font-size: 11px;
+  display: block;
+  width: 30%;
+  height:24px;
+  padding: 5px 10px;
+  margin-bottom: 2px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: black;
+  font-weight: 1100;
+  font-family: "lato-bold", Helvetica, Arial, sans-serif;
+  position: relative;
 
-.formulairePanier{
-    width:70px;
+
+  border-radius: 0;
+  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+          transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+.formulairePanier .buttonPanier{
     position: absolute;
-    bottom:-10px;
+    bottom:-50px;
+    height:30px;
+    background: rgba(28, 54, 85, 0.95);
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+.formulairePanier{
+    margin-top:15px;
+} 
+.formulairePanier label{
+    color:black;
 }
 .quantityPanier{
-    
+    height:40px;
+    display: inline-block;
 }
 .poidsPanier{
-
+    height:40px;
+    display: inline-block;
 }

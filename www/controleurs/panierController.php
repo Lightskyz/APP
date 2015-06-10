@@ -126,12 +126,13 @@
 
 									<div class="formulairePanier">
 										<form action="<?php echo "panier.php?product=".$product." "; ?> " method="POST">			<!-- On cree un formulaire qui permet de changer le nombre de produit acheter ou de delete cet item au panier -->
-											<label> Quantité </label>
+
+											<p> Modifier quantité </p>
 												<input class="quantityPanier" type="number" name="quantite" step="1" placeholder="<?php echo $data; ?>" min="0" />
-											<label> Poids </label>
+											<p> Modifier poids </p>
 												<input class="poidsPanier" type="number" name="poids" step="1" placeholder="<?php echo $data2; ?>" min="0" />
 												
-											<input type="submit" name="changer" value="Modifier">
+											<button class="buttonPanier" type="submit" name="changer" value="Modifier">Modifier</button>
 										</form>
 									</div>
 
@@ -152,9 +153,6 @@
 									</li>
 
 								</ul>
-
-			<span class="totalSpan">TOTAL : </span><div class="total_panier">100€ <!--somme des élements du panier --></div>
-			<button type="submit" value="Valider" "name">Acheter/Echanger</button>
 
     	</div> <!-- fin de classe panier -->
     </div> <!-- fin de id panier -->

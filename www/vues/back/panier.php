@@ -31,11 +31,14 @@
 			}
 		}
 		?>
-		
+		<div class="form">
+		<div class="top-row">
 		<form method="post" action="" id="contact" >
 			<button type="submit" class="button button-block" name="valider" value="valider" >Valider</button>
 		</form>
-	
+		</div>
+		</div>
+
 		<?php
 	if(!empty($_POST['valider'])){
 		facture($user, $panier);
