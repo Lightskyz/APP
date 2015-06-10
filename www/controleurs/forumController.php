@@ -34,7 +34,7 @@ function affichage_topic($forum){		// Fonction pour afficher les differents topi
 
 	include("../../modele/modele.php");		// On include le modele pour avoir acces a la bdd
 
-	echo "<a href='../front/forum.php'><span class='accueil'>Accueil du forum</span></a></br>" ;	// Lien pour retourner a l'acceuil du forum
+	
 
 	$sql = ' SELECT * FROM topic WHERE id_forum = '.$forum.' ORDER BY nom ASC ';		// Requete SQL pour afficher l'ensemble des elements de la table topic avec id_forum egal a la variable $forum
 	$req = $bdd -> query($sql);
@@ -56,8 +56,6 @@ function affichage_topic($forum){		// Fonction pour afficher les differents topi
 function affichage_message($forum, $topic){		// Fonction pour afficher les messages relatif au topic et au forum correspondant
 
 	include("../../modele/modele.php");		// On include le modele pour avoir acces a la bdd
-
-	echo "<a href='../front/forum.php'><span class='accueil'>Accueil du forum</span></a></br>" ;	// Lien pour retourner a l'acceuil du forum
 
 	$sql = ' SELECT * FROM message WHERE id_topic = '.$topic.' ORDER BY date ASC ';		// Requete SQL pour afficher l'ensemble des messages de la table message ou id_topic egal a $topic ordonnes par date ascendante
 	$req = $bdd -> query($sql);
@@ -114,7 +112,7 @@ function affichage_mes_messages($user){ 	// Fonction pour afficher les messages 
 	
 	include("../../modele/modele.php");		// On include le modele pour avoir acces a la bdd
 
-	echo "<a href='../front/forum.php'><span class='accueil'>Accueil du forum</span></a><br /><br /><hr>" ;	// Lien pour retourner a l'acceuil du forum
+		
 
 	$sql = ' SELECT * FROM message WHERE id_user = '.$user.' ORDER BY date ASC ';		// Ensemble de requete SQL pour obtenir l'ensemble des messages de l'utilisateur
 	$req = $bdd -> query($sql);
@@ -130,8 +128,8 @@ function affichage_mes_messages($user){ 	// Fonction pour afficher les messages 
 
 				//Tous les messages que l'utilisateur à écrit (récupérer nom du forum et du topic sur lequel il a posté)
 
-				echo " Forum ".$donnees3['nom']." Topic ".$donnees2['nom']." Message ".$donnees['message']." 
-				<a href='../front/forum.php?forum=".$donnees3['id']."&topic=".$donnees2['id']." '> Accéder au topic </a></br>"; // Lien pour acceder au topic relatif au message
+				echo "<br /><br /> Forum ".$donnees3['nom']." Topic ".$donnees2['nom']." Message ".$donnees['message']." 
+				<a href='../front/forum.php?forum=".$donnees3['id']."&topic=".$donnees2['id']." '> Accéder au topic </a><br /><br /><hr>"; // Lien pour acceder au topic relatif au message
 			}
 		}
 	}

@@ -15,14 +15,15 @@
 		<?php include("../frames/menu.php"); ?>
 
 		<h1 class="titreForum"> Bienvenue sur le forum de Pear2Pear </h1>
-		
-		<nav>
+		<div class="wrapper">
+		<nav class="navForum">
 			<ul>
-				<a href="../front/forum.php"><li> Accueil</li></a>
-				<a href="<?php echo'../front/forum.php?forum=.$forum.&topic=".$donnees["id"]."'; ?>"><li>Topic </li></a>
-				<a href="../front/forum.php?mes-message=1"><li> Mes messages </li></a>
+				<li><a href="../front/forum.php">Accueil</a></li>
+				<li><a href="<?php echo'../front/forum.php?forum=.$forum.&topic=".$donnees["id"]."'; ?>">Topic </a></li>
+				<li><a href="../front/forum.php?mes-message=1"> Mes messages </a></li>
 			</ul>
 		</nav>
+		</div>
 
 <?php
 

@@ -177,7 +177,7 @@ function voir_commande(){			// Fonction pour voir l'ensemble des commandes actue
 								$req6 = $bdd -> query($sql6);
 								while ($donnees6 = $req6->fetch())
 								{
-									echo " Vendeur : ".$donnees5['nom']." ".$donnees5['prenom']." Produit : ".$donnees6['nom']." Quantité : ".$donnees3['quantite']." Acheteur : ".$donnees2['nom']." ".$donnees2['prenom']. "</br>";
+									echo " Vendeur : ".$donnees5['nom']." ".$donnees5['prenom']."<br /> Produit : ".$donnees6['nom']." <br />Quantité : ".$donnees3['quantite']." <br />Acheteur : ".$donnees2['nom']." ".$donnees2['prenom']. "<br /> ------------------------------------------ <br />";
 									// On affiche l'ensemble de ces informations
 								}
 							}

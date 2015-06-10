@@ -16,10 +16,12 @@
 		<?php include("../frames/menu.php"); ?>
 		<?php include("../frames/search.php"); ?>
 			
-			<p>Votre message a bien été posté.</p>
+			<p> Vous avez ajouté une nouvelle catégorie avec succés !</p>
 
 		<?php include("../frames/footer.php"); ?>
 
 	</body>
 
 </html>
+
+<?php header('location: ../../vues/front/ajoutCategorie.php'); ?>

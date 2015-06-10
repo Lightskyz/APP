@@ -16,7 +16,7 @@
 		<?php include("../frames/menu.php"); ?>
 		<?php include("../frames/search.php"); ?>
 			
-			<p>Votre message a bien été posté.</p>
+			<p> Votre commande a été faite avec succés, vous recevrez un email de confirmation.</p>
 
 		<?php include("../frames/footer.php"); ?>
 
