@@ -129,6 +129,19 @@
 
 			
 	</div> <!-- fin de form -->
+<?php 
+afficheAnnonce($_SESSION['id']);
+if(!empty($_POST['changer'])){			// On recuperer la variable changer du formulaire
+										// Si elle a pour valeur 'Delete', alors on lance la fonction deletepanier
+	deleteAnnonce($user, $_GET['product']);
+}
+if($_POST['delete']){
+	sedesincrire($_SESSION['id']);
+}
+?>
+	<form action="../../modele/sessionStop.php" method="POST">
+		<input type="submit" name="delete" value="Se désincrire" />
+	</form> </br> 
 </div><!-- profil -->
 
 		<?php include("../frames/footer.php"); ?>
