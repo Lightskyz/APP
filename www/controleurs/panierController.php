@@ -113,14 +113,53 @@
 							$data2 = $donnees2['poids'];
 							?>
 
-							<form action="<?php echo "panier.php?product=".$product." "; ?> " method="POST">			<!-- On cree un formulaire qui permet de changer le nombre de produit acheter ou de delete cet item au panier -->
-								<input type="number" name="quantite" step="1" placeholder="<?php echo $data; ?>" min="0" />
-								<input type="number" name="poids" step="1" placeholder="<?php echo $data2; ?>" min="0" />
-									<?php echo $donnees4['nom'].' '.$donnees4['prenom'].' '.$donnees5['nom'].' '.$donnees3['prix']; ?>
-								<input type="submit" name="changer" value="Valider">
-								<input type="submit" name="changer" value="Delete" />
-							</form> </br> 
-							<?php 			
+		<div id="panier">
+    		<h1>Panier de <?php echo $_SESSION['nom']; ?> </h1>
+    			<div class="panier">
+					<ul><!-- Liste des produits ajouter au panier -->
+						<li>
+							<img src="../../assets/img/products/fraise.jpg" alt="" title="" class="property_img block" /> <!-- Image du produit ajouté au panier -->							
+								<div class="information_produit block">
+									<span class="quantite_produit"><?php echo $data; ?> </span>
+									<span class="nom_produit"><?php echo $donnees5['nom']; ?></span><br /> <!-- Nom du produit -->
+									<span class="nom_vendeur">Vendu par : <?php echo $donnees4['nom'].' '.$donnees4['prenom'].''; ?></span><br />
+
+									<div class="formulairePanier">
+										<form action="<?php echo "panier.php?product=".$product." "; ?> " method="POST">			<!-- On cree un formulaire qui permet de changer le nombre de produit acheter ou de delete cet item au panier -->
+											<label> Quantité </label>
+												<input class="quantityPanier" type="number" name="quantite" step="1" placeholder="<?php echo $data; ?>" min="0" />
+											<label> Poids </label>
+												<input class="poidsPanier" type="number" name="poids" step="1" placeholder="<?php echo $data2; ?>" min="0" />
+												
+											<input type="submit" name="changer" value="Modifier">
+										</form>
+									</div>
+
+										<div class="prix_produit"> 
+											<?php echo $donnees3['prix']; ?>€/kg
+										</div> <!-- fin prix produit, mis en place d'une case -->
+										
+										<a href="">
+											<button class="trash_icon" type="submit" value="Delete" name="changer">
+												<i class="fa fa-trash-o fa-2x"></i>
+											</button>
+										</a>
+
+
+												
+											</div> <!-- fin information_produit -->
+										
+									</li>
+
+								</ul>
+
+			<span class="totalSpan">TOTAL : </span><div class="total_panier">100€ <!--somme des élements du panier --></div>
+			<button type="submit" value="Valider" "name">Acheter/Echanger</button>
+
+    	</div> <!-- fin de classe panier -->
+    </div> <!-- fin de id panier -->
+
+	<?php 			
 						}
 					}
 				}
@@ -217,7 +256,7 @@
  
   Bonjour,
 
-  Vous avez acheté "'.$var.'" de "'.$donnees5['nom'].'" sur "<a href="http://www.lightskyz.com">Pear2Pear</a>."
+  Vous avez acheté "'.$var.'" de "'.$donnees5['nom'].'" sur Pear2Pear (http://www.lightskyz.com).
   
   Pour contacter votre vendeur, envoyé lui un email:
   	Son adresse : "'.$donnees4['email'].'"

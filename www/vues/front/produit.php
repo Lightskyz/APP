@@ -39,18 +39,12 @@
 					
 					}
 				
-				/*if(!empty($_GET['product'])){
-					if(!empty($_GET['quantite'])){
-						addpanier($_SESSION["id"], $_GET['product'], $_POST['quantite'], 0); 
-				}
-				else{
-						addpanier($_SESSION["id"], $_GET['product'], 0,  $_POST['poids']);
-				}
-			}*/
 		?>
 
 		</ul>
 	</div>
+
+
 </section>	<!--  end listing section  -->
 
 <?php include("../frames/footer.php"); ?>
