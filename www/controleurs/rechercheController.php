@@ -7,8 +7,8 @@ function recherche_champ($requete) {
 include("../../modele/modele.php");
 include("../../controleurs/voirProduit.php")
 
-	$sql2 = 'SELECT COUNT(*) FROM categorie WHERE nom LIKE "%'.$requete.'%" ';
-	$count = current($bdd->query($sql2)->fetch());
+	$sql02 = 'SELECT COUNT(*) FROM categorie WHERE nom LIKE "%'.$requete.'%" ';
+	$count = current($bdd->query($sql02)->fetch());
 	echo $count."</br>";
 	
 	$sql = 'SELECT * FROM categorie WHERE nom LIKE "%'.$requete.'%" ORDER BY id DESC';

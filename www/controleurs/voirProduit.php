@@ -2,13 +2,13 @@
 /*
 	Payraudeau Maxime
 */
-function voirProduit($id_categorie){		// Fonction pour afficher l'ensemble des produits de la base de donnee
+function voirProduit(){		// Fonction pour afficher l'ensemble des produits de la base de donnee
 
 	include("../../modele/modele.php");		// On include le modele pour avoir acces a la bdd
 	include("../../controleurs/panierController.php");
 
 
-	$sql = 'SELECT * FROM produit WHERE id_categorie = "'.$id_categorie.'" ' ;
+	$sql = 'SELECT * FROM produit ' ;
 	$req = $bdd -> query($sql);
 	while( $donnees = $req -> fetch() )
 	{

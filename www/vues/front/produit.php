@@ -28,12 +28,8 @@
 
 				<?php 
 				 include("../../controleurs/voirProduit.php"); 				
-				//include("../../controleurs/panierController.php");
-				$sql = 'SELECT * FROM categorie ORDER BY nom DESC';
-				$reponse = $bdd->query($sql);
-				while ($donnees = $reponse->fetch())
-				{		  
-					voirProduit($données['id']);
+				//include("../../controleurs/panierController.php");		  
+					voirProduit();
 				 	if(!empty($_GET['product'])){
 
 						$quantite = $_POST['quantite'];
@@ -42,7 +38,7 @@
 						addpanier($_SESSION['id'], $_GET['product'], $quantite, $poids );
 					
 					}
-				}
+				
 				/*if(!empty($_GET['product'])){
 					if(!empty($_GET['quantite'])){
 						addpanier($_SESSION["id"], $_GET['product'], $_POST['quantite'], 0); 
