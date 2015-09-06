@@ -29,7 +29,7 @@
 				<?php 
 				 include("../../controleurs/voirProduit.php"); 				
 				//include("../../controleurs/panierController.php");		  
-				if($_SESSION['recherche'] == 1 ){
+				if($_SESSION['recherche'] != 1 ){
 					voirProduit();
 				
 				 	if(!empty($_GET['product'])){

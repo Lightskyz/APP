@@ -10,7 +10,7 @@ function ajout_image($categorie){ // Fonction pour ajouter une image et ajouter 
 // On creer le chemin du fichier avec des variable et des extensions.
     $dossier = '../../assets/img/products/';
     $fichier = basename($_FILES['avatar']['name']);
-    $taille_maxi = 100000;
+    $taille_maxi = 1000000;
     $taille = filesize($_FILES['avatar']['tmp_name']); // ou  utiliser $_FILES['avatar']['size']; 
     $extensions = array('.png', '.gif', '.jpg', '.jpeg');
     $extension = strrchr($_FILES['avatar']['name'], '.');
@@ -59,7 +59,7 @@ function ajout_image2($user){ // Fonction pour ajouter une image et ajouter un l
 // On creer le chemin du fichier avec des variable et des extensions.
     $dossier = '../../assets/img/users/';
     $fichier = basename($_FILES['avatar']['name']);
-    $taille_maxi = 100000;
+    $taille_maxi = 1000000;
     $taille = filesize($_FILES['avatar']['tmp_name']); // ou  utiliser $_FILES['avatar']['size']; 
     $extensions = array('.png', '.gif', '.jpg', '.jpeg');
     $extension = strrchr($_FILES['avatar']['name'], '.');

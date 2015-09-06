@@ -34,8 +34,10 @@
 
 				<?php 
 			include("../../controleurs/voirProduit.php");
-			if($_SESSION['recherche'] == 1 ){
-				affichenewproduct();
+			affichenewproduct();
+			if($_SESSION['recherche'] != 1 ){
+
+				
 				if(!empty($_GET['product'])){
 
 					$quantite = $_POST['quantite'];

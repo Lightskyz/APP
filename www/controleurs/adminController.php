@@ -9,8 +9,8 @@ function create_categorie(){					// Fonction pour ajouter une categorie dans la 
 	
 	include ('../../modele/modele.php');		// On include le modele pour avoir acces a la bdd
 
-	if(!empty($_POST['nom']) ) {				// On recupere le post "nom" du formulaire de la vue
-		$nom = $_POST['nom'];					// On assigne le post a la variable $nom
+	if(!empty($_POST['nom2']) ) {				// On recupere le post "nom" du formulaire de la vue
+		$nom = $_POST['nom2'];					// On assigne le post a la variable $nom
 			$sql2 = 'INSERT INTO categorie(nom) VALUES ( :nom ) ';			// Requete SQL pour inserer un nouvel element dans la table categorie
 			$req = $bdd->prepare($sql2);									// On prepare la requete SQL
 			$req -> bindParam(':nom' , $nom );								// On associe la donnee :nom a la variable $nom

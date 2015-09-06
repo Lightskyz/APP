@@ -19,7 +19,6 @@
 		<nav class="navForum">
 			<ul>
 				<li><a href="../front/forum.php">Accueil</a></li>
-				<li><a href="<?php echo'../front/forum.php?forum=.$forum.&topic=".$donnees["id"]."'; ?>">Topic </a></li>
 				<li><a href="../front/forum.php?mes-message=1"> Mes messages </a></li>
 			</ul>
 		</nav>

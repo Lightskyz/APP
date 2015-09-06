@@ -43,8 +43,8 @@
                 </div> 
 
                 <div class="field-wrap">
-        			<p id="birth">Image (JPG, PNG ou GIF | max. 100 Ko)<span class="req">*</span></p>
-                    <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+        			<p id="birth">Image (JPG, PNG ou GIF | max. 1 Mo)<span class="req">*</span></p>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
                     <input type="file" name="avatar" id="avatar"/><br />
         		</div>
         			<button type="submit" name="submit" class="button button-block"/>Ajouter une catégorie</button>

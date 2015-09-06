@@ -135,8 +135,8 @@
 				</div> <!-- fin de la div top row -->
 
 				<div class="field-wrap">
-        <p id="birth">Photo de profil (JPG, PNG ou GIF | max. 100 Ko)<span class="req">*</span></p>
-                    <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+        <p id="birth">Photo de profil (JPG, PNG ou GIF | max. 1 Mo)<span class="req">*</span></p>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
                     <input type="file" name="avatar" id="avatar"/><br />
         </div>
 

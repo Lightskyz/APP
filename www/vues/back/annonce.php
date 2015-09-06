@@ -30,7 +30,7 @@
 					<label for="prix">
 						Prix (en €/kg ou €/ù)
 					</label>
-				<input  type="int" name="prix" id="prix" required>
+				<input  type="double" name="prix" id="prix" required>
 				</div>
 
 				<div class="field-wrap">
@@ -62,26 +62,23 @@
 
 				
 	
-				<button type="submit" class="button button-block" name="envoyer" value="envoyer">Poster une annonce</button>		
-			</form>
+				<button type="submit" class="button button-block" name="envoyer1" value="envoyer">Poster une annonce</button>
+					</form>
+					<?php 
+						include("../../controleurs/annonceController.php"); 
 
-		<?php 
-			include("../../controleurs/annonceController.php"); 
+						if(!empty($_POST['envoyer1'])){
+							addproduct($_SESSION['id']);	//A titre indicatif pour les tests, sera à mener à changer plus tard
+						}
+						else{
+							
+						}
+					?>
 
-			if(!empty($_POST['envoyer'])){
-				addproduct($_SESSION["id"]);	//A titre indicatif pour les tests, sera à mener à changer plus tard
-			}
-		?>
-
-		</div> <!-- fin de form -->
-
-
-
-		<!-- contenu de notre site -->
-
-
-
+			
+	</div>
 		<?php include("../frames/footer.php"); ?>
+		
 
 	</body>
 
